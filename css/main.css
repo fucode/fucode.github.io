@@ -1,0 +1,49 @@
+.slider .btn {
+  margin-top: 20px;
+}
+
+.section-slider {
+  height: 1280px;
+  min-height: 600px;
+}
+
+.section-search input {
+  padding: 5px !important;
+  font-size: 18px !important;
+  width: 90% !important;
+  border: #f4f4f4 3px solid !important;
+}
+
+.autocomplete-content {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.section-follow .fa-4x {
+  margin: 5px 10px;
+}
+
+.section-contact h5 {
+  margin-bottom: 30px;
+}
+
+.section-icons {
+  padding-top: 50px;
+}
+
+.section-gallery {
+  padding-top: 50px;
+}
+
+.section-gallery h4 {
+  padding-bottom: 30px;
+}
+
+.section-ux {
+  padding-top: 50px;
+}
+
+.section-search {
+  padding: 10px auto;
+}
