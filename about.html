@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Materialize Theme</title>
+</head>
+
+<body id="home" class="scrollspy">
+  <div class="navbar-fixed">
+    <nav class="light-blue accent-4">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#home" class="brand-logo">Faraz Uddin</a>
+          <a href="#" data-activates="mobile-nav" class="button-collapse">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href=index.html>Home</a>
+            </li>
+            <li>
+              <a href="#ux">Projects</a>
+            </li>
+            <li>
+              <a href="#art">Art</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <ul class="side-nav" id="mobile-nav">
+    <li>
+      <a href="#home">Home</a>
+    </li>
+    <li>
+      <a href="#search">Search</a>
+    </li>
+    <li>
+      <a href="#popular">Popular Places</a>
+    </li>
+    <li>
+      <a href="#gallery">Gallery</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+
+  <!-- Section: About-->
+  <section class="About">
+    <div class="container">
+      <h1 class="center">About</h1>
+      <h4 class="align-left">I am a natural born artist with a analytically gifted mind. My career has been as a
+        business
+        and
+        data analyst, but I want to pursue a more creative role. I want to harness my creative and analytical skills
+        and become a UX/UI Designer.</h4>
+    </div>
+
+
+
+    <!-- Section: Follow -->
+
+
+    <!-- Footer -->
+    <footer class="section section-follow light-blue accent-4 white-text center">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <h4>Faraz Uddin</h4>
+            <a href="https://linkedin.com" target="_blank" class="white-text">
+              <i class="fab fa-linkedin fa-4x"></i>
+            </a>
+            <a href="https://github.com" target="_blank" class="white-text">
+              <i class="fab fa-github fa-4x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Init Side nav
+        $('.button-collapse').sideNav();
+
+        // Init Slider
+        $('.slider').slider({
+          indicators: false,
+          height: 500,
+          transition: 500,
+          interval: 6000
+        });
+
+        // Init Scrollspy
+        $('.scrollspy').scrollSpy();
+
+      });
+    </script>
+</body>
+
+</html>
