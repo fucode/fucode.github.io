@@ -36,13 +36,14 @@
 }
 
 .slider .slides li:first-child img {
-  background-position-y: 23% !important;
+  background-position-y: 60% !important;
 }
 
 .slider .slides li:nth-child(2) img {
-  background-position-y: 1% !important;
+  background-position-y: 60% !important;
 }
 
 .slider .slides li:nth-child(3) img {
   background-position-y: 10% !important;
 }
+
