@@ -13,50 +13,61 @@
   <title>Faraz Uddin | Portfolio</title>
 </head>
 
-<body id="home" class="scrollspy">
-  <div class="navbar-fixed">
-    <nav class="black accent-4">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="#home" class="brand-logo">Faraz Uddin</a>
-          <a href="#" data-activates="mobile-nav" class="button-collapse">
-            <i class="material-icons">menu</i>
-          </a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#ux">Projects</a>
-            </li>
-            <li>
-              <a href="#art">Art</a>
-            </li>
-            <li>
-              <a href=about.html>About</a>
-            </li>
-          </ul>
-        </div>
+<body>
+  <nav class="black">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">Faraz Uddin</a>
+        <a href="#" data-activates="side-nav" class="button-collapse show-on-large right">
+          <i class="material-icons">menu</i>
+        </a>
+        <!-- Side nav -->
+        <ul id="side-nav" class="side-nav black">
+          <li>
+            <div class="user-view">
+              <a href="#">
+                <img src="img/person1.jpg" alt="" class="circle large">
+              </a>
+              <a href="#">
+                <span class="name white-text">Faraz Uddin</span>
+              </a>
+              <a href="#">
+                <span class="email white-text">jdoe@gmail.com</span>
+              </a>
+            </div>
+          </li>
+          <li class="blue">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header white-text waves-effect waves" href="about.html"><i class="material-icons white-text ">mood</i>About
+                </a>
+                <ul class="collapsible collapsible-accordion">
+                  <li>
+                    <a class="collapsible-header white-text waves-effect waves "><i class="material-icons white-text ">important_devices</i>Design
+                      Projects
+                      <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+                    <div class="collapsible-body z-depth-3">
+                      <ul>
+                        <li><a class="waves-effect waves" href="#">UX/UI Projects</a></li>
+                        <li><a class="waves-effect waves" href="#">Logos</a></li>
+                      </ul>
+                  <li>
+                    <ul class="collapsible collapsible-accordion">
+                      <li>
+                        <a class="collapsible-header white-text waves-effect"><i class="material-icons white-text ">bug_report</i>Code
+                          Projects
+                          <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i></a>
+                        <div class="collapsible-body z-depth-3">
+                          <ul>
+                            <li><a class="waves-effect waves" href="#">Website Projects</a></li>
+                            <li><a class="waves-effect waves" href="#">Front-End Projects</a></li>
+                          </ul>
+
+
+                        </div>
       </div>
-    </nav>
-  </div>
-  <ul class="side-nav" id="mobile-nav">
-    <li>
-      <a href="#home">Home</a>
-    </li>
-    <li>
-      <a href="#search">Search</a>
-    </li>
-    <li>
-      <a href="#popular">Popular Places</a>
-    </li>
-    <li>
-      <a href="#gallery">Gallery</a>
-    </li>
-    <li>
-      <a href="#contact">Contact</a>
-    </li>
-  </ul>
+  </nav>
+
 
   <!-- Section: Slider -->
   <section class="slider">
@@ -235,69 +246,6 @@
       </div>
 
 
-      <!-- Section: Gallery -->
-      <section id="art" class="section section-art grey lighten-3 scrollspy">
-        <div class="container">
-          <h1 class="center">Art Gallery</h1>
-
-          <h4 class="center">
-            Graphic Design | Illustration | Photography
-          </h4>
-          <div class="row">
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="/img/gallery/gal1.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal2.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal3.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal4.jpg" alt="">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal5.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal6.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal7.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal8.jpg" alt="">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal9.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal10.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal11.jpg" alt="">
-            </div>
-            <div class="col s12 m3">
-              <img class="materialboxed responsive-img" src="img/gallery/gal12.jpg" alt="">
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col s12 center">
-            <a href="#contact" class="btn btn-large blue">
-              <i class="material-icons left">send</i> Contact</a>
-          </div>
-        </div>
-        </div>
-
-      </section>
 
 
 
