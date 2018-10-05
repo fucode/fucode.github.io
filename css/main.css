@@ -7,32 +7,12 @@
   min-height: 600px;
 }
 
-.section-follow .fa-4x {
-  margin: 5px 10px;
-}
-
-.section-contact h5 {
-  margin-bottom: 30px;
-}
-
 .section-icons {
   padding-top: 50px;
 }
 
-.section-gallery {
-  padding-top: 50px;
-}
-
-.section-gallery h4 {
-  padding-bottom: 30px;
-}
-
 .section-ux {
   padding-top: 50px;
-}
-
-.section-search {
-  padding: 10px auto;
 }
 
 .slider .slides li:first-child img {
@@ -45,44 +25,4 @@
 
 .slider .slides li:nth-child(3) img {
   background-position-y: 30% !important;
-}
-// FIX SIDENAV SPACING
-.side-nav li > a {
-  padding: 0 16px;
-}
-//FIX SIDEBAR DIVIDERS
-.side-nav .divider {
-  margin: 0;
-  height: 8px;
-  border-bottom: 1px solid #e0e0e0;
-  background-color: transparent;
-}
-
-// SIDENAV HEADER
-.sidenav-header {
-  background: url('../images/user-bg.jpg') no-repeat center center;
-  background-size: cover;
-  margin-bottom: 0px;
-  padding: 15px 0 0 15px;
-  .row {
-    margin-bottom: 0;
-  }
-}
-.sidenav-footer {
-  margin-bottom: 0px;
-  padding: 0;
-  .row {
-    margin-bottom: 0;
-    .social-icons {
-      a {
-        opacity: 0.5;
-        padding: 0;
-        text-align: center;
-        &:hover {
-          background-color: inherit;
-          opacity: 1;
-        }
-      }
-    }
-  }
 }
