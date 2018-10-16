@@ -28,7 +28,7 @@
 }
 
 h3 {
- color: #2196f3;
+  color: #2196f3;
 }
 
 .sidenav-footer {
@@ -46,4 +46,13 @@ h3 {
 .sidenav-footer .row .social-icons a:hover {
   background-color: inherit;
   opacity: 1;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5,
+.row-6 {
+  opacity: 0;
 }
