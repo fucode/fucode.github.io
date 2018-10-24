@@ -52,3 +52,38 @@
 .row-6 {
   opacity: 0;
 }
+
+
+ 
+  .animation {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2196f3;
+  }
+  
+  .section-icons h1 {
+    text-align: center;
+    color: white;
+    font-family: roboto;
+    font-size: 90px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-shadow: 0 1px 0 #efefef,
+           0 2px 0 #efefef,
+           0 3px 0 #efefef,
+           0 4px 0 #efefef,
+           0 30px 5px rgba(0,0,0,.1);
+  
+    animation: float 3s linear infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes float {
+    from { transform: rotate(3deg); }
+  
+    to { transform: rotate(-3deg); }
+  }
+  
+}
