@@ -778,84 +778,93 @@
   </footer>
 
   <!-- Side nav -->
-  <ul id="side-nav" class="side-nav blue">
-    <li>
-      <div class="user-view black">
-        <a href="#">
-          <span class="name white-text">Faraz Uddin
-            <br> UX/UI Designer
-          </span>
-        </a>
-        <a href="mailto:farazuddinva@gmail.com">
-          <span class="email white-text">farazuddinva@gmail.com</span>
-        </a>
-      </div>
-    </li>
+  <section class="sidenav">
+    <ul id="side-nav" class="side-nav blue">
+      <li>
+        <div class="user-view black">
+          <a href="#">
+            <span class="name white-text">Faraz Uddin
+              <br> UX/UI Designer
+            </span>
+          </a>
+          <a href="mailto:farazuddinva@gmail.com">
+            <span class="email white-text">farazuddinva@gmail.com</span>
+          </a>
+        </div>
+      </li>
 
-    <li class="blue">
-    <li>
-      <div class="row">
-        <div class="social-icons">
-          <div class="col 12">
-            <a href="https://linkedin.com" target="_blank" class="white-text">
-              <i class="fab fa-linkedin fa-3x"></i>
-            </a>
-            <a href="https://github.com" target="_blank" class="white-text">
-              <i class="fab fa-github fa-3x"></i>
-            </a>
+      <li class="blue">
+      <li>
+        <div class="row">
+          <div class="social-icons">
+            <div class="col 12">
+              <a href="https://linkedin.com" target="_blank" class="white-text">
+                <i class="fab fa-linkedin fa-3x"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="white-text">
+                <i class="fab fa-github fa-3x"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </li>
-    </li>
-
-    <ul class="collapsible collapsible-accordion">
-      <li>
-        <a class="collapsible-header white-text waves-effect waves" href="about.html">
-          <i class="material-icons white-text ">face</i>About
-        </a>
       </li>
-    </ul>
-
-    <ul class="collapsible collapsible-accordion">
-      <li>
-        <a class="collapsible-header white-text waves-effect waves ">
-          <i class="material-icons white-text ">important_devices</i>Design Projects
-          <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i>
-        </a>
-        <div class="collapsible-body z-depth-4">
-          <ul>
-            <li>
-              <a class="waves-effect waves" href="FFitness.html">Ferrari Fitness</a>
-            </li>
-            <li>
-              <a class="waves-effect waves" href="#">Pending Project 2</a>
-            </li>
-          </ul>
-        </div>
       </li>
-    </ul>
 
-    <li>
-      <ul class="collapsible collapsible-accordion blue">
+      <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header white-text waves-effect">
-            <i class="material-icons white-text ">bug_report</i>Coding Projects
+          <a class="collapsible-header white-text waves-effect waves" href="index.html">
+            <i class="material-icons white-text ">home</i>Home
+          </a>
+        </li>
+      </ul>
+
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header white-text waves-effect waves" href="about.html">
+            <i class="material-icons white-text ">face</i>About
+          </a>
+        </li>
+      </ul>
+
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header white-text waves-effect waves ">
+            <i class="material-icons white-text ">important_devices</i>Design Projects
             <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i>
           </a>
-          <div class="collapsible-body z-depth-3">
+          <div class="collapsible-body z-depth-4">
             <ul>
               <li>
-                <a class="waves-effect waves" href="#">Website Projects</a>
+                <a class="waves-effect waves" href="FFitness.html">Ferrari Fitness</a>
               </li>
               <li>
-                <a class="waves-effect waves" href="#">Javascript Projects</a>
+                <a class="waves-effect waves" href="#">Pending Project 2</a>
               </li>
             </ul>
+          </div>
         </li>
-    </li>
-  </ul>
+      </ul>
 
+      <li>
+        <ul class="collapsible collapsible-accordion blue">
+          <li>
+            <a class="collapsible-header white-text waves-effect">
+              <i class="material-icons white-text ">bug_report</i>Coding Projects
+              <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i>
+            </a>
+            <div class="collapsible-body z-depth-3">
+              <ul>
+                <li>
+                  <a class="waves-effect waves" href="#">Website Projects</a>
+                </li>
+                <li>
+                  <a class="waves-effect waves" href="#">Javascript Projects</a>
+                </li>
+              </ul>
+          </li>
+      </li>
+    </ul>
+  </section>
 
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -886,6 +895,17 @@
 
     });
   </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128628853-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-128628853-1');
+  </script>
+
 </body>
 
 </html>
