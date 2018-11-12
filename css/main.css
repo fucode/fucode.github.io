@@ -77,14 +77,10 @@
   height: 125px;
 }
 
-.arrow-icon {
-  margin-top: 10px;
-}
-
 .bounce {
-  -moz-animation: bounce 2.5s infinite;
-  -webkit-animation: bounce 2.5s infinite;
-  animation: bounce 2.5s infinite;
+  -moz-animation: bounce 3 infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
 }
 
 @keyframes bounce {
