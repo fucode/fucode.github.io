@@ -1,18 +1,49 @@
-.slider .btn {
-  margin-top: 20px;
+.hero {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
 }
 
-.section-slider {
-  height: 1280px;
-  min-height: 600px;
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.section-icons {
-  padding-top: 50px;
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.section-ux {
-  padding-top: 50px;
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.section-arrow {
+  padding-top: 200px;
 }
 
 .slider .slides li:first-child img {
@@ -71,10 +102,6 @@
 
 .flow-text {
   line-height: 150%;
-}
-
-.section-arrow {
-  height: 125px;
 }
 
 .bounce {
