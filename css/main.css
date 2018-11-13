@@ -64,21 +64,8 @@
   background-position-y: 30% !important;
 }
 
-.sidenav-footer {
-  margin-bottom: 0px;
-  padding: 0;
-}
-.sidenav-footer .row {
-  margin-bottom: 0;
-}
-.sidenav-footer .row .social-icons a {
-  opacity: 0.5;
-  padding: 0;
-  text-align: center;
-}
-.sidenav-footer .row .social-icons a:hover {
-  background-color: inherit;
-  opacity: 1;
+.sidenav {
+  text-align: left;
 }
 
 .row-1,
