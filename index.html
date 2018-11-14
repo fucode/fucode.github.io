@@ -20,7 +20,7 @@
     <title>Faraz Uddin | Portfolio</title>
   </head>
 
-  <body class="hero">
+  <body>
     <section class="navbar">
       <div class="navbar-fixed">
         <nav class="black">
@@ -42,24 +42,22 @@
       </div>
     </section>
 
-    <section class="hero-text white-text">
+    <section class="hero-text white-text hero">
       <div class="caption center-align">
         <br />
         <br />
-        <h1>Hello! I'm Faraz Uddin a UX/UI Designer</h1>
+        <h1 class="heading-primary-main">Hello! I'm Faraz Uddin a UX/UI Designer</h1>
         <br />
-        <h3>Specializing in product concept to development</h3>
+        <h3 class="heading-primary-sub">Specializing in product concept to development</h3>
         <br />
-        <h4>Based in Washington D.C.</h4>
-      </div>
-    </section>
-
-    <section class="section-arrow center">
-      <a href="#projects">
-        <i class="arrow-icon material-icons large white-text bounce"
-          >expand_more</i
-        ></a
-      >
+        <h4 class="heading-primary-sub">Based in Washington D.C.</h4>
+        <br>
+        <br>
+        <a href="#projects" class="btn-animated">
+          <i class="arrow-icon material-icons large bounce white-text "
+            >expand_more</i
+          ></a
+        >
     </section>
 
     <section id="projects">
@@ -70,7 +68,7 @@
     <section>
       <div class="container">
         <div class="row row-1">
-          <h1 class="center white-text">UX/UI Projects</h1>
+          <h1 class="center">UX/UI Projects</h1>
           <div class="col s12 m12 l6 offset-l3">
             <a href="FFitness.html">
               <div class="card hoverable">
@@ -95,10 +93,11 @@
       <div class="container">
         <div class="row">
           <div class="col s12">
-            <h2 class="center">Faraz Uddin</h2>
+            <h3 class="center">Faraz Uddin</h3>
             <a href="https://linkedin.com" target="_blank" class="white-text">
               <i class="fab fa-linkedin fa-4x"></i>
             </a>
+            &nbsp;
             <a href="https://github.com" target="_blank" class="white-text">
               <i class="fab fa-github fa-4x"></i>
             </a>
@@ -156,7 +155,7 @@
         <ul class="collapsible collapsible-accordion">
           <li>
             <a class="collapsible-header white-text waves-effect waves ">
-              <i class="material-icons white-text ">important_devices</i>Design
+              <i class="material-icons white-text ">color_lens</i>Design
               Projects
               <i class="material-icons right white-text" style="margin-right:0;"
                 >arrow_drop_down</i
@@ -169,9 +168,6 @@
                     >Ferrari Fitness</a
                   >
                 </li>
-                <li>
-                  <a class="waves-effect waves" href="#">Pending Project 2</a>
-                </li>
               </ul>
             </div>
           </li>
@@ -181,8 +177,8 @@
           <ul class="collapsible collapsible-accordion blue">
             <li>
               <a class="collapsible-header white-text waves-effect">
-                <i class="material-icons white-text ">bug_report</i>Coding
-                Projects
+                <i class="material-icons white-text ">important_devices</i
+                >Coding Projects
                 <i
                   class="material-icons right white-text"
                   style="margin-right:0;"
@@ -217,10 +213,10 @@
     <script>
       $(document).ready(function() {
         // Init Side nav
-        $(".button-collapse").sideNav();
+        $('.button-collapse').sideNav();
 
         // Init SliderSlider
-        $(".slider").slider({
+        $('.slider').slider({
           indicators: false,
           height: 500,
           transition: 500,
@@ -228,26 +224,26 @@
         });
 
         // Init Scrollspy
-        $(".scrollspy").scrollSpy();
+        $('.scrollspy').scrollSpy();
 
         // Scrollfire
         const options = [
           {
-            selector: ".row-1",
+            selector: '.row-1',
             offset: 200,
             callback: function(el) {
               Materialize.fadeInImage($(el));
             }
           },
           {
-            selector: ".row-2",
+            selector: '.row-2',
             offset: 200,
             callback: function(el) {
               Materialize.fadeInImage($(el));
             }
           },
           {
-            selector: ".row-3",
+            selector: '.row-3',
             offset: 200,
             callback: function(el) {
               Materialize.fadeInImage($(el));
@@ -259,13 +255,13 @@
       });
 
       // Smooth Scrolling
-      $("a").on("click", function(event) {
-        if (this.hash !== "") {
+      $('a').on('click', function(event) {
+        if (this.hash !== '') {
           event.preventDefault();
 
           const hash = this.hash;
 
-          $("html, body").animate(
+          $('html, body').animate(
             {
               scrollTop: $(hash).offset().top
             },
@@ -288,9 +284,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "UA-128628853-1");
+      gtag('config', 'UA-128628853-1');
     </script>
   </body>
 </html>
