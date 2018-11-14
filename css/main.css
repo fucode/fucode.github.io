@@ -1,5 +1,5 @@
 .hero {
-  background: linear-gradient(-45deg, #ff3d00, #d50000, #396afc, #2948ff);
+  background: linear-gradient(-45deg, #ff3d00, #1a237e, #396afc, #d50000);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
@@ -52,16 +52,61 @@
   }
 }
 
-.slider .slides li:first-child img {
-  background-position-y: 60% !important;
+.heading-primary-main {
+  display: block;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+
+  backface-visibility: hidden;
 }
 
-.slider .slides li:nth-child(2) img {
-  background-position-y: 60% !important;
+.heading-primary-sub {
+  display: block;
+  animation: moveInRight 3s ease-out;
+
+  backface-visibility: hidden;
 }
 
-.slider .slides li:nth-child(3) img {
-  background-position-y: 30% !important;
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.btn-animated {
+  animation: moveInBottom 2s ease-out 4s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translatey(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .sidenav {
@@ -82,7 +127,13 @@
 } /*Color of underline*/
 
 .bio {
-  max-width: 800px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.study-text {
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -98,7 +149,7 @@
 }
 
 .bounce {
-  -moz-animation: bounce 3 infinite;
+  -moz-animation: bounce 3s infinite;
   -webkit-animation: bounce 3s infinite;
   animation: bounce 3s infinite;
 }
@@ -112,9 +163,9 @@
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
   }
   60% {
-    transform: translateY(-15px);
+    transform: translateY(-5px);
   }
 }
