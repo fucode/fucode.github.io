@@ -1,9 +1,9 @@
 .hero {
   background: linear-gradient(-45deg, #ff3d00, #1a237e, #396afc, #d50000);
   background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
+  -webkit-animation: Gradient 20s ease infinite;
+  -moz-animation: Gradient 20s ease infinite;
+  animation: Gradient 20s ease infinite;
 }
 
 @-webkit-keyframes Gradient {
@@ -93,7 +93,7 @@
 }
 
 .btn-animated {
-  animation: moveInBottom 2s ease-out 4s;
+  animation: moveInBottom 2s ease-out 3s;
   animation-fill-mode: backwards;
 }
 
@@ -127,15 +127,20 @@
 } /*Color of underline*/
 
 .bio {
-  max-width: 900px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.section-study {
+  padding: 20px;
+}
+
 .study-text {
-  max-width: 900px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
 }
 
 @media (max-width: 600px) {
