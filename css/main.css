@@ -1,9 +1,9 @@
 .hero {
-  background: linear-gradient(-45deg, #ff3d00, #1a237e, #396afc, #d50000);
+  background: linear-gradient(135deg, #ff3d00, #1a237e, #396afc, #d50000);
   background-size: 400% 400%;
-  -webkit-animation: Gradient 20s ease infinite;
-  -moz-animation: Gradient 20s ease infinite;
-  animation: Gradient 20s ease infinite;
+  -webkit-animation: Gradient 30s ease infinite;
+  -moz-animation: Gradient 30s ease infinite;
+  animation: Gradient 30s ease infinite;
 }
 
 @-webkit-keyframes Gradient {
@@ -42,6 +42,10 @@
   }
 }
 
+.hero-text {
+  color: #bdbdbd !important;
+}
+
 .section-arrow {
   padding-top: 150px;
 }
@@ -59,6 +63,7 @@
   animation-timing-function: ease-out;
 
   backface-visibility: hidden;
+  white-space: nowrap;
 }
 
 .heading-primary-sub {
@@ -107,6 +112,14 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.delivcards {
+  height: 385px;
+}
+
+.personacard {
+  height: 575px;
 }
 
 .sidenav {
