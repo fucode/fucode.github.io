@@ -74,3 +74,30 @@ new Chart(document.getElementById('doughnut-chart'), {
     }
   }
 });
+
+//horizontal chart
+new Chart(document.getElementById('bar-chart-horizontal'), {
+  type: 'horizontalBar',
+  data: {
+    labels: ['Google Drive', 'Dropbox', 'Pintrest', 'Other', 'None'],
+    datasets: [
+      {
+        label: '%',
+        backgroundColor: [
+          '#3e95cd',
+          '#8e5ea2',
+          '#3cba9f',
+          '#e8c3b9',
+          '#c45850'
+        ],
+        data: [61.1, 16.7, 5.6, 9, 7.6]
+      }
+    ]
+  },
+  options: {
+    legend: { display: false },
+    title: {
+      display: true
+    }
+  }
+});

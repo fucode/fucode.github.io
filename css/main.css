@@ -34,6 +34,10 @@
   }
 }
 
+.hero-area {
+  height: 65vh;
+}
+
 .hero-text {
   color: rgba(255, 255, 255, 0.4) !important;
 }
@@ -135,7 +139,7 @@
 } /*Color of underline*/
 
 .bio {
-  max-width: 800px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
