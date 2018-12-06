@@ -42,6 +42,10 @@
   color: rgba(255, 255, 255, 0.4) !important;
 }
 
+.caption {
+  padding-top: 75px;
+}
+
 .section-arrow {
   padding-top: 150px;
 }
@@ -145,7 +149,7 @@
 }
 
 .section-study {
-  padding: 20px;
+  padding: 30px;
 }
 
 .study-text {
