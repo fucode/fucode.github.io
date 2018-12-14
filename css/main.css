@@ -35,7 +35,7 @@
 }
 
 .hero-area {
-  height: 600px;
+  height: 100vh;
 }
 
 .hero-text {
@@ -54,6 +54,13 @@
   .section-arrow {
     padding-top: 0px;
   }
+}
+
+.bullet {
+  display: block;
+  float: left;
+  margin-bottom: 1rem;
+  margin-right: 0.75rem;
 }
 
 .heading-primary-main {
@@ -96,6 +103,8 @@
 }
 
 .btn-animated {
+  display: block;
+  margin-top: 75px;
   animation: moveInBottom 2s ease-out 4s;
   animation-fill-mode: backwards;
   opacity: 0.4;
