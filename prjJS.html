@@ -46,7 +46,7 @@
       <div class="container">
         <div class="row">
           <h4 class="center">Javascript Projects</h4>
-          <div class="col s12">
+          <div class="col s12 m6">
             <a href="prjJS/ColorGame/colorGame.html" target="_blank">
               <div class="card hoverable">
                 <div class="card-image">
@@ -60,7 +60,7 @@
             </a>
           </div>
 
-          <div class="col s12">
+          <div class="col s12 m6">
             <a href="prjJS/tasklist" target="_blank">
               <div class="card hoverable">
                 <div class="card-image">
@@ -222,64 +222,7 @@
     <script>
       $(document).ready(function() {
         // Init Side nav
-        $('.button-collapse').sideNav();
-
-        // Init SliderSlider
-        $('.slider').slider({
-          indicators: false,
-          height: 500,
-          transition: 500,
-          interval: 6000
-        });
-
-        // Init Scrollspy
-        $('.scrollspy').scrollSpy();
-
-        // Scrollfire
-        const options = [
-          {
-            selector: '.row-1',
-            offset: 200,
-            callback: function(el) {
-              Materialize.fadeInImage($(el));
-            }
-          },
-          {
-            selector: '.row-2',
-            offset: 200,
-            callback: function(el) {
-              Materialize.fadeInImage($(el));
-            }
-          },
-          {
-            selector: '.row-3',
-            offset: 200,
-            callback: function(el) {
-              Materialize.fadeInImage($(el));
-            }
-          }
-        ];
-
-        Materialize.scrollFire(options);
-      });
-
-      // Smooth Scrolling
-      $('a').on('click', function(event) {
-        if (this.hash !== '') {
-          event.preventDefault();
-
-          const hash = this.hash;
-
-          $('html, body').animate(
-            {
-              scrollTop: $(hash).offset().top
-            },
-            800,
-            function() {
-              window.location.hash = hash;
-            }
-          );
-        }
+        $(".button-collapse").sideNav();
       });
     </script>
 
@@ -293,9 +236,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'UA-128628853-1');
+      gtag("config", "UA-128628853-1");
     </script>
   </body>
 </html>
