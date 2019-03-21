@@ -53,11 +53,13 @@
         <div class="col l6 s12">
           <br />
           <br />
-          <h2 class="heading-primary-main ">Hello! I'm <span class="white-text">Faraz Uddin</span> a <span class="white-text">UX/UI
+          <h2 class="heading-primary-main ">Hello! I'm <span class="white-text">Faraz Uddin</span> a <span
+              class="white-text">UX/UI
               Designer</span></h2>
           <h4 class="heading-primary-sub">Based in <span class="white-text">Washington D.C.</span></h4>
           <br />
-          <h5 class="heading-primary-sub">I combine my <span class="white-text">analytical</span> and <span class="white-text">artistic</span>
+          <h5 class="heading-primary-sub">I combine my <span class="white-text">analytical</span> and <span
+              class="white-text">artistic</span>
             talents to create <span class="white-text">user-centered digital designs</span></h5>
         </div>
         <div class="col l6 s12">
@@ -141,120 +143,97 @@
     </div>
   </footer>
 
-  <!-- Side nav -->
-  <section class="sidenav">
-    <ul id="side-nav" class="side-nav blue">
-      <li>
-        <div class="user-view black">
-          <a href="#">
-            <span class="name white-text">Faraz Uddin <br />
-              UX/UI Designer
-            </span>
-          </a>
-          <a href="mailto:farazuddinva@gmail.com">
-            <span class="email white-text">farazuddinva@gmail.com</span>
-          </a>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/faraz-uddin-429b9a15a/" target="_blank" class="white-text">
-              <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            &nbsp;
-            <a href="https://github.com/farazdesign" target="_blank" class="white-text">
-              <i class="fab fa-github fa-2x"></i>
-            </a>
-          </div>
-        </div>
-      </li>
 
 
 
-      <!-- Import jQuery before materialize.js -->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script>
-        $(document).ready(function () {
-          // Init Side nav
-          $('.button-collapse').sideNav();
+  <!-- Import jQuery before materialize.js -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-          $('.carousel').carousel({});
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Init Side nav
+      $('.button-collapse').sideNav();
 
-          autoplay()
+      $('.carousel').carousel({});
 
-          function autoplay() {
-            $('.carousel').carousel('next');
-            setTimeout(autoplay, 2000);
+      autoplay()
+
+      function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 2000);
+      }
+
+      // Init SliderSlider
+      $('.slider').slider({
+        indicators: false,
+        height: 500,
+        transition: 500,
+        interval: 6000
+      });
+
+      // Init Scrollspy
+      $('.scrollspy').scrollSpy();
+
+      // Scrollfire
+      const options = [{
+          selector: '.row-1',
+          offset: 200,
+          callback: function (el) {
+            Materialize.fadeInImage($(el));
           }
-
-          // Init SliderSlider
-          $('.slider').slider({
-            indicators: false,
-            height: 500,
-            transition: 500,
-            interval: 6000
-          });
-
-          // Init Scrollspy
-          $('.scrollspy').scrollSpy();
-
-          // Scrollfire
-          const options = [{
-              selector: '.row-1',
-              offset: 200,
-              callback: function (el) {
-                Materialize.fadeInImage($(el));
-              }
-            },
-            {
-              selector: '.row-2',
-              offset: 200,
-              callback: function (el) {
-                Materialize.fadeInImage($(el));
-              }
-            },
-            {
-              selector: '.row-3',
-              offset: 200,
-              callback: function (el) {
-                Materialize.fadeInImage($(el));
-              }
-            }
-          ];
-
-          Materialize.scrollFire(options);
-        });
-
-        // Smooth Scrolling
-        $('a').on('click', function (event) {
-          if (this.hash !== '') {
-            event.preventDefault();
-
-            const hash = this.hash;
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-              },
-              800,
-              function () {
-                window.location.hash = hash;
-              }
-            );
+        },
+        {
+          selector: '.row-2',
+          offset: 200,
+          callback: function (el) {
+            Materialize.fadeInImage($(el));
           }
-        });
-      </script>
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128628853-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-          dataLayer.push(arguments);
+        },
+        {
+          selector: '.row-3',
+          offset: 200,
+          callback: function (el) {
+            Materialize.fadeInImage($(el));
+          }
         }
-        gtag('js', new Date());
+      ];
 
-        gtag('config', 'UA-128628853-1');
-      </script>
+      Materialize.scrollFire(options);
+    });
+
+    // Smooth Scrolling
+    $('a').on('click', function (event) {
+      if (this.hash !== '') {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          },
+          800,
+          function () {
+            window.location.hash = hash;
+          }
+        );
+      }
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128628853-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-128628853-1');
+  </script>
 </body>
 
 </html>
