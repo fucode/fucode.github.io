@@ -49,6 +49,13 @@
 .section-arrow {
   padding-top: 150px;
 }
+.caption .carousel {
+  overflow: visible;
+}
+.caption .carousel .carousel-item {
+  width: 33.333%;
+  height: auto;
+}
 
 @media only screen and (max-width: 600px) {
   .section-arrow {
@@ -198,4 +205,12 @@
   60% {
     transform: translateY(-5px);
   }
+}
+
+.min-line-2 {
+  min-height: 2em;
+}
+
+.card-content-min-height {
+  min-height: 700px;
 }
