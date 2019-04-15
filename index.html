@@ -53,13 +53,11 @@
         <div class="col l6 s12">
           <br />
           <br />
-          <h2 class="heading-primary-main ">Hello! I'm <span class="white-text">Faraz Uddin</span> a <span
-              class="white-text">UX/UI
+          <h2 class="heading-primary-main ">Hello! I'm <span class="white-text">Faraz Uddin</span> a <span class="white-text">UX/UI
               Designer</span></h2>
           <h4 class="heading-primary-sub">Based in <span class="white-text">Washington D.C.</span></h4>
           <br />
-          <h5 class="heading-primary-sub">I combine my <span class="white-text">analytical</span> and <span
-              class="white-text">artistic</span>
+          <h5 class="heading-primary-sub">I combine my <span class="white-text">analytical</span> and <span class="white-text">artistic</span>
             talents to create <span class="white-text">user-centered digital designs</span></h5>
         </div>
         <div class="col l6 s12">
@@ -124,6 +122,28 @@
     </div>
   </section>
 
+
+  <section>
+    <div class="container">
+      <div class="row row-2">
+        <h4 class="center">Coding Projects</h4>
+        <div class="col s12 m6 offset-m3">
+          <a href="https://stoic-elion-c2ab97.netlify.com/" target="_blank">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img src="img/ReactScreenShot.png" alt="" />
+              </div>
+              <div class="card-content">
+                <span class="card-title black-text">My First React Site</span>
+                <p class="black-text min-line-2">
+                  A fun project to get use to React
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+  </section>
+
   <!-- Footer -->
   <footer class="section  black white-text center">
     <div class="container">
@@ -178,26 +198,26 @@
 
       // Scrollfire
       const options = [{
-          selector: '.row-1',
-          offset: 200,
-          callback: function (el) {
-            Materialize.fadeInImage($(el));
-          }
-        },
-        {
-          selector: '.row-2',
-          offset: 200,
-          callback: function (el) {
-            Materialize.fadeInImage($(el));
-          }
-        },
-        {
-          selector: '.row-3',
-          offset: 200,
-          callback: function (el) {
-            Materialize.fadeInImage($(el));
-          }
+        selector: '.row-1',
+        offset: 200,
+        callback: function (el) {
+          Materialize.fadeInImage($(el));
         }
+      },
+      {
+        selector: '.row-2',
+        offset: 200,
+        callback: function (el) {
+          Materialize.fadeInImage($(el));
+        }
+      },
+      {
+        selector: '.row-3',
+        offset: 200,
+        callback: function (el) {
+          Materialize.fadeInImage($(el));
+        }
+      }
       ];
 
       Materialize.scrollFire(options);
@@ -211,8 +231,8 @@
         const hash = this.hash;
 
         $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          },
+          scrollTop: $(hash).offset().top
+        },
           800,
           function () {
             window.location.hash = hash;
