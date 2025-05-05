@@ -63,4 +63,14 @@
   transform: scale(1.05); /* Slightly enlarge the button */
 }
 
+/* Ensure mobile menu is readable when expanded */
+.navbar-collapse.show {
+  background-color: #212529; /* Solid Bootstrap bg-dark */
+  padding: 1rem;
+  border-radius: 0 0 10px 10px;
+  z-index: 999; /* Make sure it's above everything */
+}
 
+.navbar-collapse {
+  transition: background-color 0.3s ease;
+}
