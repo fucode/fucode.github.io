@@ -15,36 +15,61 @@
     <title>Faraz Uddin</title>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <div class="container">
-        <a href="index.html" class="navbar-brand">
-          <img src="images/TIAA/bluelogo.png" alt="" width="65" height="50" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item px-2">  <a href="index.html" class="nav-link fw-semibold">Home</a>
-            </li>
-            <li class="nav-item px-2">  <a href="TIAA.html" class="nav-link fw-semibold">Work</a>
-            </li>
-            <li class="nav-item px-2">  <a
-                href="/images/TIAA/PO.BA_Faraz.Uddin.Resume_2024.pdf"
-                class="nav-link btn btn-outline-light fw-semibold px-4 mx-4"
-                >Resume</a
-              >
-            </li>
+
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="images/TIAA/bluelogo.png" alt="Logo" width="65" height="50" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item px-3 py-2">
+          <a href="index.html" class="nav-link fw-semibold">Home</a>
+        </li>
+
+        <!-- Work Dropdown -->
+        <li class="nav-item dropdown px-3 py-2">
+          <a
+            class="nav-link dropdown-toggle fw-semibold"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Work
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item py-2" href="bofa.html">Bank of America</a></li>
+            <li><a class="dropdown-item py-2" href="TIAA.html">TIAA</a></li>
           </ul>
-        </div>
-      </div>
-    </nav>
+        </li>
+
+        <li class="nav-item px-3 py-2">
+          <a
+            href="/images/TIAA/PO.BA_Faraz.Uddin.Resume_2024.pdf"
+            class="nav-link btn btn-outline-light fw-semibold px-4"
+          >
+            Resume
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
     <!-- Header -->
     <header class="header">
@@ -75,77 +100,67 @@
       </svg>
     </header>
 
-<!-- Contact Form -->
-<section class="contact bg-light pb-4">
+<!-- TIAA Experience -->
+<section class="bg-light py-5">
   <div class="container">
-      <div class="row">
-          <div class="col-10 offset-1">
-              <div class="text-center mb-4">
-                  <div class="col-lg-6 mx-auto"><img class="img-fluid rounded-3" src="images/TIAA/Tiaa Logo.png" alt="Scrum Bro"></div>
-                  <br>
-                  <h2>At TIAA, I collaborated with two distinct Agile Scrum teams, each with their own unique structure and dedicated scrum teams.</h2>
-              </div>
-          </div>
+    <div class="text-center mb-5">
+      <div class="col-lg-6 mx-auto mb-4">
+        <img class="img-fluid rounded-3 mb-4" src="images/TIAA/Tiaa Logo.png" alt="TIAA Logo">
       </div>
-      <div class="row gx-5 z-1">
-          <div class="col-lg-6 mb-4" data-aos="fade-up">
-              <div class="card pricing h-100">
-                  <div class="card-body p-4">
-                      <div class="text-center">
-                          <h2>MOD Team</h2>
-                          <p>Product Owner | Scrum Master</p>
-                      </div>
-                          <ul class="fa-ul pricing-list">
-                              <li class="pricing-list-item">
-                                  <span class="fa-li"><i class="far fa-square text-primary"></i></span>
-                                  <span class="text-dark">The MOD Team leveraged a comprehensive suite of TIAA's internal and external communication channels, including public websites, microsites, secure applications like myTIAA and PlanFocus, as well as legacy systems.</span>
-                              </li>
-                              <li class="pricing-list-item">
-                                  <span class="fa-li"><i class="far fa-square text-primary"></i></span>
-                                  <span class="text-dark">The MOD team oversees the investment screener tool and over 9,000 fund profile pages across various channels. Each profile page is uniquely designed with distinct features and components, providing users with in-depth insights into each fund. This comprehensive information enables users to conduct thorough analyses and make well-informed investment decisions.</span>
-                              </li>
-                              <li class="pricing-list-item">
-                                  <span class="fa-li"><i class="far fa-square text-primary"></i></span>
-                                  <span class="text-dark">The MOD team also contributed to our Brokerage platform by implementing feature enhancements.</span>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-            </div>
-            <div class="col-lg-6 mb-4" data-aos="fade-up">
-              <div class="card pricing h-100">
-                  <div class="card-body p-4">
-                      <div class="text-center">
-                          <h3>PlanFocus Team</h3>
-                          <p>Business Analyst</p>
-                      </div>
-                          <ul class="fa-ul pricing-list">
-                              <li class="pricing-list-item">
-                                  <span class="fa-li"><i class="far fa-square text-primary"></i></span>
-                                  <span class="text-dark">The Planfocus app helps institutional retirement plan sponsors: These are typically human resources or benefits personnel within companies or organizations who are responsible for overseeing their organization's retirement plan.</span>
-                              </li>
-                              <li class="pricing-list-item">
-                                  <span class="fa-li"><i class="far fa-square text-primary"></i></span>
-                                  <span class="text-dark">The Planfocus app helps manage participant information allowing users to securely search and review participant data, ensuring accuracy and facilitating informed decision-making.</span>
-                              </li>
-                              <li class="pricing-list-item">
-                                  <span class="fa-li"><i class="far fa-square text-primary"></i></span>
-                                  <span class="text-dark">The Planfocus app helps enhance employee financial wellness. Plan sponsors can gain insights into plan performance and participant engagement, allowing data-driven strategies to improve employee financial well-being.</span>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
+      <h3>At TIAA, I dedicated approximately 50% of my time to each of two Agile Scrum teams, supporting their unique goals and structures in parallel.</h3>
+
+    </div>
+
+    <div class="row gx-5">
+      <!-- MOD Team -->
+      <div class="col-lg-6 mb-4" data-aos="fade-up">
+        <h4 class="fw-bold mb-2">Market on Demand (MOD) Team</h4>
+        <p class="fw-semibold">Role: Product Owner & Scrum Master</p>
+        <ul class="fa-ul lh-lg">
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Managed content and user experience across <strong>public sites, microsites, secure portals</strong> like myTIAA and PlanFocus, and various legacy platforms.
+          </li>
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Oversaw the <strong>Investment Screener</strong> tool and more than <strong>9,000 unique fund profile pages</strong>, enabling users to conduct deep fund analysis and make informed investment decisions.
+          </li>
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Delivered feature enhancements for TIAA’s <strong>Brokerage platform</strong>.
+          </li>
+        </ul>
       </div>
+
+      <!-- PlanFocus Team -->
+      <div class="col-lg-6 mb-4" data-aos="fade-up">
+        <h4 class="fw-bold mb-2">PlanFocus Team</h4>
+        <p class="fw-semibold">Role: Business Analyst</p>
+        <ul class="fa-ul lh-lg">
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Supported institutional <strong>retirement plan sponsors</strong> (e.g., HR and Benefits teams) in managing participant and plan data.
+          </li>
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Enabled secure search and review of <strong>participant information</strong> to drive accurate reporting and plan compliance.
+          </li>
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Helped sponsors use the platform to gain insights into <strong>financial wellness and engagement</strong>, enhancing plan strategy with actionable analytics.
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 
 
 
+
 <!-- Key Team Members -->
-<section class="contact  pb-4">
+<section class="contact pb-4">
   <div class="container">
     <div class="row">
       <div class="col-10 offset-1">
@@ -153,8 +168,8 @@
           <div class="col-lg-6 mx-auto">
             <img class="img-fluid rounded-3" src="images/TIAA/Scrum board-bro.png" alt="Investment data">
           </div>
-          <h2>Key Roles and Responsiblities in Delivering Value</h2>
-          <p>To achieve outstanding results in any business, it is essential to understand the dynamics of cross-functional teams, enabling the delivery of maximum value to stakeholders. Here is a list of the various roles at TIAA with which I collaborated to create this value to our end-users.</p>
+          <h2>Key Roles and Responsibilities in Delivering Value</h2>
+          <p>At TIAA I worked cross-functional teams, enabling the delivery of maximum value to stakeholders. Here is a list of the various roles at TIAA with which I collaborated to create this value to our end-users.</p>
         </div>
       </div>
     </div>
@@ -162,69 +177,67 @@
       <div class="col-lg-12 mb-4" data-aos="fade-up">
         <div class="card pricing h-100">
           <div class="card-body p-4">
-
-              <table class="table table-bordered table-striped">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>Role</th>
-                    <th>Focus</th>
-                    <th>Responsibilities</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Scrum Master</td>
-                    <td>Scrum Process</td>
-                    <td>Ensures the team follows Scrum principles, facilitates ceremonies, removes roadblocks</td>
-                  </tr>
-                  <tr>
-                    <td>Product Owner</td>
-                    <td>Product Vision & Backlog</td>
-                    <td>Represents stakeholders, prioritizes product backlog, defines user stories</td>
-                  </tr>
-                  <tr>
-                    <td>Product Manager</td>
-                    <td>Product Strategy & Lifecycle</td>
-                    <td>Owns the overall product strategy, conducts market research, defines product roadmap</td>
-                  </tr>
-                  <tr>
-                    <td>UX Designer</td>
-                    <td>User Experience</td>
-                    <td>Conducts user research, designs user interfaces, ensures usability</td>
-                  </tr>
-                  <tr>
-                    <td>QA Tester</td>
-                    <td>Quality Assurance</td>
-                    <td>Tests functionality, identifies and reports bugs, creates automated testing scripts</td>
-                  </tr>
-                  <tr>
-                    <td>Front-End UI Developer</td>
-                    <td>User Interface</td>
-                    <td>Develops the front-end of the application (what users see and interact with)</td>
-                  </tr>
-                  <tr>
-                    <td>Back-End Developer</td>
-                    <td>Server-Side Logic</td>
-                    <td>Develops the back-end of the application (data storage, processing)</td>
-                  </tr>
-                  <tr>
-                    <td>Dev/Tech Lead</td>
-                    <td>Development Team</td>
-                    <td>Leads the development team, estimates tasks, assigns work, ensures technical quality</td>
-                  </tr>
-                  <tr>
-                    <td>RTE (Release Train Engineer)</td>
-                    <td>Scaled Agile (SAFe) Delivery</td>
-                    <td>Plans and executes product releases across multiple Agile teams, coordinates dependencies</td>
-                  </tr>
-                  <tr>
-                    <td>Business Systems Analyst</td>
-                    <td>Business Needs & Requirements</td>
-                    <td>Analyzes business needs, elicits and documents requirements, bridges gap between business and development</td>
-                  </tr>
-                </tbody>
-              </table>
-
+            <table class="table table-bordered table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Role</th>
+                  <th>Focus</th>
+                  <th>Responsibilities</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Product Manager</td>
+                  <td>Product Strategy & Lifecycle</td>
+                  <td>Owns the overall product strategy, conducts market research, defines product roadmap</td>
+                </tr>
+                <tr>
+                  <td>RTE (Release Train Engineer)</td>
+                  <td>Scaled Agile (SAFe) Delivery</td>
+                  <td>Plans and executes product releases across multiple Agile teams, coordinates dependencies</td>
+                </tr>
+                <tr>
+                  <td>UX Designer</td>
+                  <td>User Experience</td>
+                  <td>Conducts user research, designs user interfaces, ensures usability</td>
+                </tr>
+                <tr>
+                  <td>Product Owner</td>
+                  <td>Product Vision & Backlog</td>
+                  <td>Represents stakeholders, prioritizes product backlog, defines user stories</td>
+                </tr>
+                <tr>
+                  <td>Scrum Master</td>
+                  <td>Scrum Process</td>
+                  <td>Ensures the team follows Scrum principles, facilitates ceremonies, removes roadblocks</td>
+                </tr>
+                <tr>
+                  <td>Business Systems Analyst</td>
+                  <td>Business Needs & Requirements</td>
+                  <td>Analyzes business needs, elicits and documents requirements, bridges gap between business and development</td>
+                </tr>
+                <tr>
+                  <td>Dev/Tech Lead</td>
+                  <td>Development Team</td>
+                  <td>Leads the development team, estimates tasks, assigns work, ensures technical quality</td>
+                </tr>
+                <tr>
+                  <td>Front-End UI Developer</td>
+                  <td>User Interface</td>
+                  <td>Develops the front-end of the application (what users see and interact with)</td>
+                </tr>
+                <tr>
+                  <td>Back-End Developer</td>
+                  <td>Server-Side Logic</td>
+                  <td>Develops the back-end of the application (data storage, processing)</td>
+                </tr>
+                <tr>
+                  <td>QA Tester</td>
+                  <td>Quality Assurance</td>
+                  <td>Tests functionality, identifies and reports bugs, creates automated testing scripts</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -328,7 +341,8 @@
             <img class="img-fluid rounded-3" src="images/TIAA/Manage money-amico.png" alt="Investment data">
           </div>
           <h2>MOD & Investment Performance User Personas</h2>
-          <p>To gain insights into TIAA's Investment Performance MOD apps, it's crucial to delve into the diverse user personas who utilize these applications for research purposes and comprehend their respective objectives.</p>
+          <p>To design and build great applications, you must first understand the different types of user personas. The list below provides an overview of the user personas we considered when designing our investment performance applications. These personas are valuable across the entire financial industry, helping many firms deliver targeted value to their end-users.</p>
+
         </div>
         <br>
       </div>
