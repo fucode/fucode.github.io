@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/favicon.png" />
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .weather-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      margin: auto; /* Centers vertically within flex */
+    }
+    .weather-icon {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="images/TIAA/bluelogo.png" alt="Logo" width="65" height="50" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item px-3 py-2">
+            <a href="index.html" class="nav-link fw-semibold">Home</a>
+          </li>
+          <li class="nav-item dropdown px-3 py-2">
+            <a class="nav-link dropdown-toggle fw-semibold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Work
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item py-2" href="BOFA.html">Bank of America</a></li>
+              <li><a class="dropdown-item py-2" href="TIAA.html">TIAA</a></li>
+              <li><a class="dropdown-item py-2" href="API.html">API Testing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item px-3 py-2">
+            <a href="/images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf" class="nav-link btn btn-outline-light fw-semibold px-4">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="hero text-white pt-7 pb-4">
+      <!-- Hero content can go here -->
+    </div>
+    <svg class="frame-decoration" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 192.275">
+      <defs><style>.cls-1 { fill: #f3f6f9; }</style></defs>
+      <path class="cls-1" d="M0,158.755s63.9,52.163,179.472,50.736c121.494-1.5,185.839-49.738,305.984-49.733,109.21,0,181.491,51.733,300.537,50.233,123.941-1.562,225.214-50.126,390.43-50.374,123.821-.185,353.982,58.374,458.976,56.373,217.907-4.153,284.6-57.236,284.6-57.236V351.03H0V158.755Z" transform="translate(0 -158.755)"/>
+    </svg>
+  </header>
+
+<!-- Experience with APIs -->
+<section class="bg-white py-5" id="APIs">
+  <div class="container">
+    <h3 class="mb-4 text-center">Experience with Application Programming Interfaces (APIs)</h3>
+
+    <div class="row gx-5 z-1">
+      <div class="col-lg-10 offset-lg-1">
+
+        <div class="mb-4">
+          <h5><strong>API Testing</strong></h5>
+          <p>
+            At TIAA, as part of the testing process, we simulated various real-world scenarios to ensure that the APIs integrated smoothly into the system, delivering the right data at the right time. This ensured that our financial applications remained reliable and trustworthy for users.
+          </p>
+        </div>
+
+        <h5 class="mb-4">Example: Stock Data in JSON Format</h5>
+        <p class="mt-3">
+          This is an example of a JSON response that might be returned from a stock market API. The format shown is similar to the internal tools I used at TIAA to test and validate fund profiles, ensuring accurate data flow for financial applications.
+        </p>
+        
+        <pre class="bg-dark text-white p-4 rounded">
+{
+  "symbol": "AAPL",
+  "companyName": "Apple Inc.",
+  "latestPrice": 150.25,
+  "change": -1.35,
+  "changePercent": -0.89,
+  "high": 152.00,
+  "low": 148.50,
+  "open": 149.00,
+  "volume": 74321512,
+  "marketCap": 2489680000000,
+  "peRatio": 28.45,
+  "lastTradeTime": "2025-05-09T16:00:00"
+}
+        </pre>
+
+        <h5 class="mb-4">Fund Profiles at TIAA</h5>
+        <p>
+          In addition to stock data, at TIAA, I also worked extensively with APIs to pull fund profile data for various types of funds available on our platform.
+        </p>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Fund Type</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bond Funds</strong></td>
+              <td>Invest in bonds and provide income with lower risk.</td>
+            </tr>
+            <tr>
+              <td><strong>Balanced Funds</strong></td>
+              <td>A mix of stocks and bonds to balance growth and risk.</td>
+            </tr>
+            <tr>
+              <td><strong>Money Market Funds</strong></td>
+              <td>Provide stability and liquidity, investing in short-term debt.</td>
+            </tr>
+            <tr>
+              <td><strong>Target-Date Funds</strong></td>
+              <td>Adjust investments based on the target retirement date.</td>
+            </tr>
+            <tr>
+              <td><strong>International Funds</strong></td>
+              <td>Invest in non-U.S. markets for global diversification.</td>
+            </tr>
+            <tr>
+              <td><strong>Fixed Annuities</strong></td>
+              <td>Provide guaranteed income and are not subject to market fluctuations.</td>
+            </tr>
+            <tr>
+              <td><strong>Variable Annuities</strong></td>
+              <td>Investments that provide income based on market performance and offer potential for growth.</td>
+            </tr>
+            <tr>
+            <tr>
+              <td><strong>TIAA Real Estate</strong></td>
+              <td>Invests in real estate markets, offering exposure to both residential and commercial properties.</td>
+            </tr>
+            <tr>
+              <td><strong>Mutual Funds</strong></td>
+              <td>Investment products that pool money from many investors to invest in a diversified portfolio of stocks, bonds, or other securities.</td>
+            </tr>
+            <tr>
+              <td><strong>FDIC Insured Products</strong></td>
+              <td>Savings accounts and CDs that are insured by the Federal Deposit Insurance Corporation (FDIC) for safety.</td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="#HowAPIWorks">
+        <i class="fas fa-chevron-down fa-2x text-primary"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- How an API Works (Professional Explanation) -->
+<section class="bg-light py-5" id="HowAPIWorks">
+  <div class="container">
+    <h3 class="mb-4 text-center">How Organizations Use APIs</h3>
+    <div class="row gx-5">
+      <div class="col-lg-10 offset-lg-1">
+        <ul class="fa-ul lh-lg">
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>API as a Communication Bridge:</strong> An API (Application Programming Interface) enables communication between different software systems, allowing one system to request and retrieve data from another system.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Request and Response Process:</strong> When a user interacts with an application, the system sends a request to an API. The API queries the backend system (like a database or service), retrieves the necessary data, and sends it back to the application for display.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Real-Time Data Access:</strong> APIs ensure that applications have access to the most current, accurate data, such as portfolio details, fund performance, or transaction history, in real time.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Cross-Team Collaboration:</strong> The APIs built and maintained by our Scrum team at TIAA were leveraged by various other teams across the firm, enabling them to integrate real-time data and enhance the functionality of their own applications, creating a unified and consistent data experience throughout the organization.
+          </li>
+          
+        </ul>
+        <div class="text-center mt-5">
+          <a href="#WeatherAPIInfo">
+            <i class="fas fa-chevron-down fa-2x text-primary"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+ <!-- How the Weather API Works -->
+<section class="bg-white py-5 mb-4" id="WeatherAPIInfo">
+  <div class="container">
+    <h3 class="mb-4 text-center">Below is a simple Weather API app I created. Feel free to try it out!</h3>
+
+    <div class="row gx-5 z-1">
+      <div class="col-lg-10 offset-lg-1">
+        <ul class="fa-ul lh-lg">
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>User Input:</strong> Enter a city name in the input field of the app below and click “Search” to initiate the process.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>API Call:</strong> The app uses JavaScript's `fetch()` method to send a request to the OpenWeatherMap API, passing in the city and an API key.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Data Handling:</strong> The API responds with weather details such as temperature, conditions, and an icon that visually represents the current weather.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Display:</strong> The app parses the JSON response and displays the weather data dynamically below the search box.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Try It Out:</strong> You can test the app right below to check real-time weather conditions in any city around the world.
+          </li>
+        </ul>
+        <div class="text-center mt-5 mb-4">
+          <a href="#weatherApp">
+            <i class="fas fa-chevron-down fa-2x text-primary"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Weather App Section -->
+   <section class="mb-4">
+  <div class="weather-card" id="weatherApp">
+    <h3 class="mb-4">Simple Weather App</h3>
+    <div class="input-group mb-3">
+      <input type="text" id="cityInput" class="form-control" placeholder="Enter city">
+      <button class="btn btn-primary" onclick="getWeather()">Search</button>
+    </div>
+    <div id="weatherResult" class="mt-4"></div>
+  </div>
+</section>
+
+<!-- How the Stock API Works -->
+<section class="bg-white py-5 mb-4" id="StockAPIInfo">
+  <div class="container">
+    <h3 class="mb-4 text-center">Below is a simple Stock API app I created. Feel free to try it out!</h3>
+
+    <div class="row gx-5 z-1">
+      <div class="col-lg-10 offset-lg-1">
+        <ul class="fa-ul lh-lg">
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>User Input:</strong> Enter a stock ticker symbol (like AAPL, MSFT, or TSLA) into the input field and click “Search” to start.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>API Call:</strong> The app uses JavaScript’s fetch() method to query a stock market API, passing the ticker and API key.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Data Handling:</strong> The response includes real-time data like price, volume, day change, and more, returned in JSON format.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Display:</strong> The app parses the JSON and updates the UI dynamically with clean, readable stock information.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Try It Out:</strong> Use the app below to check real-time stock data by entering different company ticker symbols.
+          </li>
+        </ul>
+        <div class="text-center mt-5 mb-4">
+          <a href="#stockApp">
+            <i class="fas fa-chevron-down fa-2x text-primary"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Simple Stock Screener App -->
+<section class="bg-white py-5" id="stockApp">
+  <div class="container">
+    <div class="card shadow-lg mx-auto" id="stockScreenerCard" style="max-width: 500px;">
+      <!-- Title within the card -->
+      <div class="card-header text-center">
+        <h3 class="mb-0">Simple Stock Screener App</h3>
+      </div>
+      <div class="card-body">
+        <!-- Input Form -->
+        <div class="input-group mb-3">
+          <input type="text" id="stockSymbol" class="form-control" placeholder="Enter Stock Symbol (e.g., AAPL)">
+          <button class="btn btn-primary" onclick="getStockData()">Get Quote</button>
+        </div>
+        <!-- Result Area -->
+        <div id="stockResult" class="text-center mt-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+  <!-- Social Section -->
+  <section class="social text-bg-dark py-6 overflow-hidden mt-5" id="stockResult">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 text-center fs-4">
+          <div class="social-icons d-flex justify-content-center gap-4">
+            <a href="https://www.linkedin.com/in/faraz-uddin-429b9a15a/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-top border-primary bg-dark text-white py-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+          <p class="mb-0">Hand Coded By Faraz Uddin</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Note: API keys are used for demo purposes only. -->
+
+  <!-- Scripts -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    async function getWeather() {
+      const city = document.getElementById("cityInput").value;
+      const weatherResult = document.getElementById("weatherResult");
+      const apiKey = "e3368c23bed1c1d9ac231dc281baaf14"; // Ideally store this securely, not in frontend
+    
+      if (!city) {
+        weatherResult.innerHTML = '<div class="text-danger">Please enter a city name.</div>';
+        return;
+      }
+    
+      weatherResult.innerHTML = 'Loading...';
+    
+      try {
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=imperial`
+        );
+        const data = await response.json();
+    
+        if (data.cod !== 200) {
+          weatherResult.innerHTML = `<div class="text-danger">${data.message}</div>`;
+          return;
+        }
+    
+        const { name, main, weather } = data;
+        const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+    
+        weatherResult.innerHTML = `
+          <h4>${name}</h4>
+          <img src="${iconUrl}" class="weather-icon" alt="${weather[0].description}">
+          <p class="mb-0 text-capitalize">${weather[0].description}</p>
+          <h5 class="mt-2">${main.temp} °F</h5>
+        `;
+      } catch (error) {
+        weatherResult.innerHTML = '<div class="text-danger">Failed to fetch weather data.</div>';
+      }
+    }
+  </script>
+
+<script>
+  async function getStockData() {
+    const symbol = document.getElementById('stockSymbol').value.toUpperCase();
+    const resultDiv = document.getElementById('stockResult');
+    const apiKey = 'd0epqt9r01qlbf857jrgd0epqt9r01qlbf857js0';
+
+    if (!symbol) {
+      resultDiv.innerHTML = `<p class="text-danger">Please enter a stock symbol.</p>`;
+      return;
+    }
+
+    try {
+      resultDiv.innerHTML = `<p>Loading...</p>`;
+      const response = await fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`);
+      const data = await response.json();
+
+      if (data.c && data.c !== 0) {
+        resultDiv.innerHTML = `
+          <div class="card shadow p-3">
+            <h5>${symbol}</h5>
+            <p><strong>Current Price:</strong> $${data.c}</p>
+            <p><strong>High:</strong> $${data.h}</p>
+            <p><strong>Low:</strong> $${data.l}</p>
+            <p><strong>Open:</strong> $${data.o}</p>
+            <p><strong>Previous Close:</strong> $${data.pc}</p>
+          </div>
+        `;
+      } else {
+        resultDiv.innerHTML = `<p class="text-danger">No data found. Please check the stock symbol.</p>`;
+      }
+    } catch (error) {
+      console.error(error);
+      resultDiv.innerHTML = `<p class="text-danger">Error fetching data. Please try again later.</p>`;
+    }
+  }
+</script>
+  
+</body>
+</html>
