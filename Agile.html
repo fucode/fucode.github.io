@@ -39,6 +39,7 @@
             <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item py-2" href="BOFA.html">Bank of America</a></li>
               <li><a class="dropdown-item py-2" href="TIAA.html">TIAA</a></li>
+              <li><a class="dropdown-item py-2" href="Grooming.html">Agile Grooming Process</a></li>
               <li><a class="dropdown-item py-2" href="Agile.html">SDLC Experience</a></li>
               <li><a class="dropdown-item py-2" href="API.html">API Testing</a></li>
             </ul>
@@ -234,70 +235,103 @@
 </section>
 
 
-<!-- SDLC Methodologies Section -->
-<section id="methodologies" class="py-5 bg-light">
-  <div class="container-xl">
-    <h3 class="text-center mb-5">Recap of SDLC Methodologies in recent projects: Waterfall, Agile, SAFe Agile, and Kanban</h3>
-    
-    <div class="row g-4">
-      <!-- Waterfall -->
-      <div class="col-md-6">
-        <div class="p-4 border rounded bg-white h-100">
-          <h4 class="fw-bold text-center">Waterfall</h4>
-          <p>
-            Waterfall is a traditional linear model where each development phase is completed before the next begins. It works well when requirements are stable and fully defined upfront.
-          </p>
-          <ul>
-            <li><strong>Pros:</strong> Structured, predictable timelines, strong documentation.</li>
-            <li><strong>Cons:</strong> Inflexible to change, delayed feedback, high risk with evolving requirements.</li>
-          </ul>
-        </div>
-      </div>
+<!-- SDLC Methodologies Section - 2x2 Card Layout -->
+<section class="container my-5 bg-light">
+  <h2 class="mb-4 text-center">SDLC Methodologies in Recent Projects</h2>
 
-      <!-- Agile -->
-      <div class="col-md-6">
-        <div class="p-4 border rounded bg-white h-100">
-          <h4 class="fw-bold text-center">Agile</h4>
-          <p>
-            Agile is an iterative approach that emphasizes collaboration, adaptability, and customer feedback. It delivers value in short cycles and adjusts based on evolving needs.
-          </p>
-          <ul>
-            <li><strong>Pros:</strong> Fast delivery, responsive to change, strong stakeholder engagement.</li>
-            <li><strong>Cons:</strong> Requires experienced teams, less emphasis on upfront planning, scope creep risk.</li>
-          </ul>
-        </div>
-      </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
 
-      <!-- SAFe Agile -->
-      <div class="col-md-6">
-        <div class="p-4 border rounded bg-white h-100">
-          <h4 class="fw-bold text-center">SAFe Agile</h4>
-          <p>
-            SAFe (Scaled Agile Framework) extends Agile to enterprise-scale, aligning multiple teams across the organization. It introduces roles, ceremonies, and planning at scale.
-          </p>
-          <ul>
-            <li><strong>Pros:</strong> Scales Agile across large teams, provides structure, fosters alignment.</li>
-            <li><strong>Cons:</strong> Can be bureaucratic, slower to adopt, risk of process over people.</li>
-          </ul>
+    <!-- Waterfall Card -->
+    <div class="col">
+      <div class="card h-100 shadow-lg border-0 hover-shadow">
+        <div class="card-header bg-secondary text-white text-center">
+          <i class="fas fa-water fa-2x"></i>
+          <h5 class="card-title mt-2">Waterfall</h5>
         </div>
-      </div>
-
-      <!-- Kanban -->
-      <div class="col-md-6">
-        <div class="p-4 border rounded bg-white h-100">
-          <h4 class="fw-bold text-center">Kanban</h4>
-          <p>
-            Kanban is a flow-based visual framework that emphasizes continuous delivery, limiting work in progress, and optimizing workflow efficiency without fixed-length sprints.
+        <div class="card-body">
+          <p class="card-text">
+            Waterfall is a traditional linear model where each phase must be completed before moving to the next. Best suited when requirements are well understood upfront.
+            <ul>
+              <li><strong>Pros:</strong> Structured process, clear milestones, strong documentation.</li>
+              <li><strong>Cons:</strong> Inflexible to change, slow feedback loop, higher risk for evolving projects.</li>
+            </ul>
           </p>
-          <ul>
-            <li><strong>Pros:</strong> Visual workflow, flexibility, ideal for maintenance or ops teams.</li>
-            <li><strong>Cons:</strong> Lacks sprint structure, potential for scope drift without discipline.</li>
-          </ul>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Used for: Projects with fixed scope and well-defined requirements</small>
         </div>
       </div>
     </div>
+
+    <!-- Agile Card -->
+    <div class="col">
+      <div class="card h-100 shadow-lg border-0 hover-shadow">
+        <div class="card-header bg-danger text-white text-center">
+          <i class="fas fa-sync-alt fa-2x"></i>
+          <h5 class="card-title mt-2">Agile</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Agile promotes iterative development with a focus on collaboration, feedback, and responsiveness to change.
+            <ul>
+              <li><strong>Pros:</strong> Quick value delivery, flexibility, strong customer involvement.</li>
+              <li><strong>Cons:</strong> Requires skilled teams, minimal upfront planning, potential for scope creep.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Used for: Projects needing adaptability and frequent feedback</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFe Agile Card -->
+    <div class="col">
+      <div class="card h-100 shadow-lg border-0 hover-shadow">
+        <div class="card-header bg-primary text-white text-center">
+          <i class="fas fa-layer-group fa-2x"></i>
+          <h5 class="card-title mt-2">SAFe Agile</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            SAFe extends Agile across large enterprises, aligning teams and stakeholders under a common framework.
+            <ul>
+              <li><strong>Pros:</strong> Scales Agile, promotes alignment, provides structure at scale.</li>
+              <li><strong>Cons:</strong> May introduce overhead, slower adoption, risk of over-engineering.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Used for: Large organizations with multiple Agile teams</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kanban Card -->
+    <div class="col">
+      <div class="card h-100 shadow-lg border-0 hover-shadow">
+        <div class="card-header bg-success text-white text-center">
+          <i class="fas fa-columns fa-2x"></i>
+          <h5 class="card-title mt-2">Kanban</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Kanban is a visual and flow-based method focused on continuous delivery and limiting work in progress.
+            <ul>
+              <li><strong>Pros:</strong> Visual management, continuous flow, highly flexible.</li>
+              <li><strong>Cons:</strong> No timeboxing, scope may drift, requires team discipline.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Used for: Maintenance, operations, or support workflows</small>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- Agile Ceremonies Table -->
 <section class="container my-5">
