@@ -149,12 +149,200 @@
   </div>
 </section>
 
+<!-- Agile Work Item Hierarchy: Card Layout -->
+<section class="container my-5 bg-white">
+  <h2 class="mb-4 text-center">Agile Work Item Hierarchy</h2>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+
+    <!-- Initiative Card -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Initiative</h5>
+          <p class="card-text">
+            A high-level strategic objective or deliverable that aligns with business goals. Initiatives span quarters or years and help drive enterprise-wide transformation.
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Timeframe: Quarterly / Annual</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Epic Card -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Epic</h5>
+          <p class="card-text">
+            A large body of work that supports one or more initiatives. Epics are too big for a sprint and are typically split into features before implementation.
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Timeframe: Multi-PI / Multi-sprint</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Card -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Feature</h5>
+          <p class="card-text">
+            A service or functionality that delivers value to the user. Features are derived from epics and are broken down into user stories for development.
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Timeframe: 1–2 Sprints</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story Card -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Story</h5>
+          <p class="card-text">
+            A user-facing requirement typically written in the format: "As a user, I want...". Stories are the smallest units of work in a sprint.
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Timeframe: 1 Sprint</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Prioritization and Quality Frameworks: 2-Card Layout with Acronym Definitions -->
+<section class="container my-5 bg-white">
+  <h2 class="mb-4 text-center">Prioritization and Quality Frameworks</h2>
+
+  <!-- Prioritization and Quality Frameworks Section -->
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+
+    <!-- RICE Framework Card -->
+    <div class="col">
+      <div class="card h-100 shadow-lg border-0 hover-shadow">
+        <div class="card-header bg-primary text-white text-center">
+          <i class="fas fa-chart-bar fa-2x"></i> <!-- Icon -->
+          <h5 class="card-title mt-2">RICE Framework</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            The RICE framework is used for prioritizing features or initiatives based on four criteria:
+            <ul>
+              <li><strong>Reach:</strong> How many people will this feature impact in a given timeframe?</li>
+              <li><strong>Impact:</strong> How much will this feature impact the users, from a small to a massive effect?</li>
+              <li><strong>Confidence:</strong> How confident are we that the feature will achieve the desired impact?</li>
+              <li><strong>Effort:</strong> How much effort, in terms of person-hours, will it take to complete this feature?</li>
+            </ul>
+            These factors are used to calculate a score for each feature, helping teams make data-driven decisions about what to prioritize next.
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Used for: Prioritizing Features and Initiatives</small>
+        </div>
+      </div>
+    </div>
+    
+    <!-- MoSCoW Framework Card -->
+    <div class="col">
+      <div class="card h-100 shadow-lg border-0 hover-shadow">
+        <div class="card-header bg-warning text-white text-center">
+          <i class="fas fa-clipboard-list fa-2x"></i> <!-- Icon -->
+          <h5 class="card-title mt-2">MoSCoW Framework</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            The MoSCoW method is used to prioritize requirements or features. It helps in categorizing them into four buckets:
+            <ul>
+              <li><strong>Must have:</strong> Essential requirements that must be included in the current iteration.</li>
+              <li><strong>Should have:</strong> Important features that should be included if possible but are not essential.</li>
+              <li><strong>Could have:</strong> Nice-to-have features that could be included if time and resources permit.</li>
+              <li><strong>Won't have:</strong> Features that will not be included in the current iteration but might be considered later.</li>
+            </ul>
+            MoSCoW helps teams focus on delivering the most critical features first, while also managing scope and expectations.
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Used for: Prioritizing Features or Requirements</small>
+        </div>
+      </div>
+    </div>
+
+        <!-- SMART Framework Card -->
+        <div class="col">
+          <div class="card h-100 shadow-lg border-0 hover-shadow">
+            <div class="card-header bg-info text-white text-center">
+              <i class="fas fa-bullseye fa-2x"></i> <!-- Icon -->
+              <h5 class="card-title mt-2">SMART Framework</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                The SMART framework helps in setting clear, actionable goals. It stands for:
+                <ul>
+                  <li><strong>Specific:</strong> The goal should be clearly defined and focused on a single outcome.</li>
+                  <li><strong>Measurable:</strong> There should be clear criteria to measure progress or success.</li>
+                  <li><strong>Achievable:</strong> The goal should be realistic and attainable, given the available resources.</li>
+                  <li><strong>Relevant:</strong> The goal must be aligned with broader objectives and meaningful to stakeholders.</li>
+                  <li><strong>Time-bound:</strong> The goal should have a clear deadline or timeframe to create a sense of urgency.</li>
+                </ul>
+                SMART ensures that goals are not only clear but also feasible and measurable for proper tracking.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Used for: Setting Clear, Actionable Goals</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- INVEST Framework Card -->
+        <div class="col">
+          <div class="card h-100 shadow-lg border-0 hover-shadow">
+            <div class="card-header bg-success text-white text-center">
+              <i class="fas fa-check-circle fa-2x"></i> <!-- Icon -->
+              <h5 class="card-title mt-2">INVEST Framework</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                The INVEST framework is a checklist designed to ensure high-quality user stories. The elements are:
+                <ul>
+                  <li><strong>Independent:</strong> The user story should be self-contained, without dependencies on other stories.</li>
+                  <li><strong>Negotiable:</strong> The user story should allow for discussion and negotiation regarding the details.</li>
+                  <li><strong>Valuable:</strong> The story should deliver value to the customer or end-user.</li>
+                  <li><strong>Estimable:</strong> The team should be able to estimate the effort required to complete the story.</li>
+                  <li><strong>Small:</strong> The story should be small enough to be completed within a single sprint.</li>
+                  <li><strong>Testable:</strong> There should be clear acceptance criteria so that the story can be tested upon completion.</li>
+                </ul>
+                INVEST helps in creating well-structured user stories that are clear, actionable, and valuable for the team and stakeholders.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Used for: Structuring High-Quality User Stories</small>
+            </div>
+          </div>
+        </div>
+
+  </div>
+
+</section>
+
+
+<br>
+<br>
+
+
 
 
 
 <!-- User Story for Filtering Funds by Morningstar Rating -->
 <section class="container my-5 bg-white">
-  <h2 class="mb-4 text-center">User Story: Filtering Funds by Morningstar Rating</h2>
+  <h2 class="mb-4 text-center">Sample User Story: Filtering Funds by Morningstar Rating</h2>
   
   <div class="row mb-4">
     <div class="col-md-12">
