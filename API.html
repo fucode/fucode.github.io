@@ -60,6 +60,7 @@
             <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item py-2" href="BOFA.html">Bank of America</a></li>
               <li><a class="dropdown-item py-2" href="TIAA.html">TIAA</a></li>
+              <li><a class="dropdown-item py-2" href="Agile.html">SDLC Experience</a></li>
               <li><a class="dropdown-item py-2" href="API.html">API Testing</a></li>
             </ul>
           </li>
@@ -93,15 +94,25 @@
         <div class="mb-4">
           <h5><strong>API Testing</strong></h5>
           <p>
-            At TIAA, as part of the testing process, we simulated various real-world scenarios to ensure that the APIs integrated smoothly into the system, delivering the right data at the right time. This ensured that our financial applications remained reliable and trustworthy for users.
+            At TIAA, I tested APIs by simulating real-world scenarios to ensure seamless integration with our systems. These tests verified that the APIs delivered accurate and timely data, maintaining the reliability and integrity of our financial applications.
           </p>
         </div>
 
-        <h5 class="mb-4">Example: Stock Data in JSON Format</h5>
-        <p class="mt-3">
-          This is an example of a JSON response that might be returned from a stock market API. The format shown is similar to the internal tools I used at TIAA to test and validate fund profiles, ensuring accurate data flow for financial applications.
+        <div class="mb-4">
+          <h5><strong>Understanding JSON and JavaScript Objects in relation to APIs</strong></h5>
+          <p>
+            <strong>JSON</strong> stands for <em>JavaScript Object Notation</em>. It is a lightweight data format used to structure data as key-value pairs. JSON is both human-readable and easy for machines to parse and generate, making it the most common format for modern APIs.
+          </p>
+          <p>
+            A typical JSON structure closely resembles a <strong>JavaScript object</strong>—a foundational data type in JavaScript. JSON objects can be directly used in code to access and manipulate data. JSON is particularly useful when working with data that needs to be easily consumed by both humans and machines.
+          </p>
+        </div>
+
+        <h5 class="mb-3">Example: Stock Data in JSON Format</h5>
+        <p>
+          Below is a sample JSON response from a stock market API. This format is similar to the ones I worked with while validating fund profiles at TIAA.
         </p>
-        
+
         <pre class="bg-dark text-white p-4 rounded">
 {
   "symbol": "AAPL",
@@ -119,79 +130,103 @@
 }
         </pre>
 
-        <h5 class="mb-4">Fund Profiles at TIAA</h5>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fund Profiles via API at TIAA -->
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row gx-5 z-1">
+      <div class="col-lg-10 offset-lg-1">
+
+        <h3 class="mb-4 text-center">Fund Profiles at TIAA</h3>
         <p>
-          In addition to stock data, at TIAA, I also worked extensively with APIs to pull fund profile data for various types of funds available on our platform.
+          In addition to stock data, I also worked extensively with APIs to retrieve and validate fund profile data for a variety of investment products available on the TIAA platform.
         </p>
 
         <table class="table table-bordered">
-          <thead>
+          <thead class="table-primary text-dark">
             <tr>
               <th scope="col">Fund Type</th>
               <th scope="col">Description</th>
+              <th scope="col">User Persona (Investor Persona)</th>
             </tr>
           </thead>
+          
           <tbody>
-            <tr>
-              <td><strong>Bond Funds</strong></td>
-              <td>Invest in bonds and provide income with lower risk.</td>
-            </tr>
-            <tr>
-              <td><strong>Balanced Funds</strong></td>
-              <td>A mix of stocks and bonds to balance growth and risk.</td>
-            </tr>
-            <tr>
-              <td><strong>Money Market Funds</strong></td>
-              <td>Provide stability and liquidity, investing in short-term debt.</td>
-            </tr>
             <tr>
               <td><strong>Target-Date Funds</strong></td>
               <td>Adjust investments based on the target retirement date.</td>
+              <td>Ideal for long-term investors who want a hands-off, age-appropriate strategy that rebalances over time.</td>
             </tr>
             <tr>
-              <td><strong>International Funds</strong></td>
-              <td>Invest in non-U.S. markets for global diversification.</td>
-            </tr>
-            <tr>
-              <td><strong>Fixed Annuities</strong></td>
-              <td>Provide guaranteed income and are not subject to market fluctuations.</td>
+              <td><strong>Mutual Funds</strong></td>
+              <td>Pool investor funds into diversified portfolios of stocks, bonds, or other securities.</td>
+              <td>Great for investors looking for diversification and professional fund management.</td>
             </tr>
             <tr>
               <td><strong>Variable Annuities</strong></td>
               <td>Investments that provide income based on market performance and offer potential for growth.</td>
+              <td>Suited for individuals seeking growth potential with optional income guarantees in retirement.</td>
             </tr>
             <tr>
+              <td><strong>Fixed Annuities</strong></td>
+              <td>Provide guaranteed income and are not subject to market fluctuations.</td>
+              <td>Best for risk-averse retirees who want steady, predictable income.</td>
+            </tr>
+            <tr>
+              <td><strong>Bond Funds</strong></td>
+              <td>Invest in bonds and provide income with lower risk.</td>
+              <td>Appeals to conservative investors focused on capital preservation and income.</td>
+            </tr>
+            <tr>
+              <td><strong>Balanced Funds</strong></td>
+              <td>A mix of stocks and bonds to balance growth and risk.</td>
+              <td>Good for moderate investors who want a mix of safety and growth.</td>
+            </tr>
+            <tr>
+              <td><strong>Money Market Funds</strong></td>
+              <td>Provide stability and liquidity, investing in short-term debt.</td>
+              <td>Great for short-term savers or those parking cash temporarily with minimal risk.</td>
+            </tr>
+            <tr>
+              <td><strong>International Funds</strong></td>
+              <td>Invest in non-U.S. markets for global diversification.</td>
+              <td>Ideal for investors looking to diversify beyond the U.S. and tap into global opportunities.</td>
+            </tr>
             <tr>
               <td><strong>TIAA Real Estate</strong></td>
-              <td>Invests in real estate markets, offering exposure to both residential and commercial properties.</td>
-            </tr>
-            <tr>
-              <td><strong>Mutual Funds</strong></td>
-              <td>Investment products that pool money from many investors to invest in a diversified portfolio of stocks, bonds, or other securities.</td>
+              <td>Invests in residential and commercial real estate for diversified exposure.</td>
+              <td>Attractive to investors seeking alternative assets for long-term stability and income.</td>
             </tr>
             <tr>
               <td><strong>FDIC Insured Products</strong></td>
-              <td>Savings accounts and CDs that are insured by the Federal Deposit Insurance Corporation (FDIC) for safety.</td>
+              <td>Savings and CD products insured by the Federal Deposit Insurance Corporation (FDIC).</td>
+              <td>Perfect for highly conservative investors or those near retirement who prioritize safety over growth.</td>
             </tr>
           </tbody>
         </table>
-        
-      </div>
-    </div>
 
-    <div class="text-center mt-5">
-      <a href="#HowAPIWorks">
-        <i class="fas fa-chevron-down fa-2x text-primary"></i>
-      </a>
+        <div class="text-center mt-5">
+          <a href="#HowAPIWorks">
+            <i class="fas fa-chevron-down fa-2x text-primary"></i>
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
 
 
+
+
 <!-- How an API Works (Professional Explanation) -->
-<section class="bg-light py-5" id="HowAPIWorks">
+<section class="bg-white py-5" id="HowAPIWorks">
   <div class="container">
-    <h3 class="mb-4 text-center">How Organizations Use APIs</h3>
+    <h3 class="mb-4 text-center">How TIAA & Other Firms Use APIs</h3>
     <div class="row gx-5">
       <div class="col-lg-10 offset-lg-1">
         <ul class="fa-ul lh-lg">
@@ -227,9 +262,11 @@
 
 
  <!-- How the Weather API Works -->
-<section class="bg-white py-5 mb-4" id="WeatherAPIInfo">
+<section class="bg-light py-5 mb-4" id="WeatherAPIInfo">
   <div class="container">
-    <h3 class="mb-4 text-center">Below is a simple Weather API app I created. Feel free to try it out!</h3>
+    <h3 class="mb-4 text-center">Try out this simple demo Weather API app I built.</h3>
+    <p class="mb-4 text-center"><em>For demonstration and educational purposes only.</em></p>
+    
 
     <div class="row gx-5 z-1">
       <div class="col-lg-10 offset-lg-1">
@@ -281,7 +318,9 @@
 <!-- How the Stock API Works -->
 <section class="bg-white py-5 mb-4" id="StockAPIInfo">
   <div class="container">
-    <h3 class="mb-4 text-center">Below is a simple Stock API app I created. Feel free to try it out!</h3>
+    <h3 class="mb-4 text-center">Try out this simple demo Stock API app I built.</h3>
+    <p class="mb-4 text-center"><em>For demonstration and educational purposes only.</em></p>
+    
 
     <div class="row gx-5 z-1">
       <div class="col-lg-10 offset-lg-1">
