@@ -262,7 +262,7 @@
                   <li><strong>Independent:</strong> The user story should be self-contained, without dependencies on other stories.</li>
                   <li><strong>Negotiable:</strong> The user story should allow for discussion and negotiation regarding the details.</li>
                   <li><strong>Valuable:</strong> The story should deliver value to the customer or end-user.</li>
-                  <li><strong>Estimable:</strong> The team should be able to estimate the effort required to complete the story.</li>
+                  <li><strong>Estimatable:</strong> The team should be able to estimate the effort required to complete the story.</li>
                   <li><strong>Small:</strong> The story should be small enough to be completed within a single sprint.</li>
                   <li><strong>Testable:</strong> There should be clear acceptance criteria so that the story can be tested upon completion.</li>
                 </ul>
@@ -312,17 +312,22 @@
 
   <div class="row mb-4">
     <div class="col-md-12">
-      <h5>Acceptance Criteria (Rules-Based) Details:</h5>
-      <ul>
-        <li>The user should be able to select the "Morningstar Rating" filter from the list of available criteria.</li>
-        <li>The user should be able to choose a rating from "1 Star" to "5 Stars" for filtering funds.</li>
-        <li>The tool should display only the funds that match the selected Morningstar rating after the filter is applied.</li>
-        <li>The filter should update the investment results in real-time as soon as the user selects a star rating (1-5).</li>
-        <li>If the user deselects the "Morningstar Rating" filter, the tool should reset the filter and display all available funds.</li>
-        <li>The tool should allow users to apply additional filters (e.g., risk level, asset class) alongside the "Morningstar Rating" filter.</li>
-      </ul>
+      <div class="card bg-info text-white">
+        <div class="card-body">
+          <h5 class="card-title">Example Acceptance Criteria (Rules-Based) Details:</h5>
+          <ul>
+            <li>The user should be able to select the "Morningstar Rating" filter from the list of available criteria.</li>
+            <li>The user should be able to choose a rating from 1-5 stars for filtering funds.</li>
+            <li>The tool should display only the funds that match the selected Morningstar rating after the filter is applied.</li>
+            <li>The filter should update the investment results in real-time as soon as the user selects a star rating 1-5.</li>
+            <li>If the user deselects the "Morningstar Rating" filter, the tool should reset the filter and display all available funds.</li>
+            <li>The tool should allow users to apply additional filters (e.g., risk level, asset class) alongside the "Morningstar Rating" filter.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
+  
 
   <!-- Gherkin Style Acceptance Criteria Section -->
   <div class="row mb-4">
@@ -340,21 +345,30 @@
       <h5>Purpose:</h5>
       <p>To provide a clear, shared language between business stakeholders, developers, and testers, enabling alignment on how a feature should behave through structured, testable scenarios.</p>
   
-      <h5>Examples:</h5>
-      <ul>
-        <li><strong>Given</strong> the user is on the Public, Microsite, or Legacy Investment Screener tool page,<br>
-            <strong>When</strong> the user selects the "Morningstar Rating" filter and chooses "5 Stars,"<br>
-            <strong>Then</strong> the tool should display a list of funds that have a Morningstar rating of 5 stars.
-        </li>
-        <li><strong>Given</strong> the user has applied the "Morningstar Rating" filter and selects "1-5 Stars,"<br>
-            <strong>When</strong> the user applies additional filters such as "Asset Class" or "Risk Level,"<br>
-            <strong>Then</strong> the tool should display only funds that meet both the selected Morningstar Rating and the additional filter criteria.
-        </li>
-        <li><strong>Given</strong> the user has applied the "Morningstar Rating" filter with a selection of "1-5 Stars,"<br>
-            <strong>When</strong> the user clears the filter selection for "Morningstar Rating,"<br>
-            <strong>Then</strong> the tool should reset the filter and display all available funds.
-        </li>
-      </ul>
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="card bg-success text-white">
+            <div class="card-body">
+              <h5 class="card-title">Examples:</h5>
+              <ul>
+                <li><strong>Given</strong> the user is on the Public, Microsite, or Legacy Investment Screener tool page,<br>
+                    <strong>When</strong> the user selects the "Morningstar Rating" filter and chooses 1-5 Stars,<br>
+                    <strong>Then</strong> the tool should display a list of funds that have a Morningstar rating of 1-5 stars based on the user's selection. 
+                </li>
+                <li><strong>Given</strong> the user has applied the "Morningstar Rating" filter and selects 1-5 Stars,<br>
+                    <strong>When</strong> the user applies additional filters such as "Asset Class" or "Risk Level,"<br>
+                    <strong>Then</strong> the tool should display only funds that meet both the selected Morningstar Rating and the additional filter criteria.
+                </li>
+                <li><strong>Given</strong> the user has applied the "Morningstar Rating" filter with a selection of 1-5 Stars,<br>
+                    <strong>When</strong> the user clears the filter selection for "Morningstar Rating,"<br>
+                    <strong>Then</strong> the tool should reset the filter and display all available funds.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 
