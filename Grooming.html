@@ -81,11 +81,13 @@
   </div>
 </header>
 
-
-<!-- Agile Work Item Hierarchy: 4-Card Layout -->
+<!-- Agile Work Item Hierarchy: 6-Card Layout -->
 <section class="container my-5 bg-white" id="skills">
   <h2 class="mb-4 text-center">Agile Work Item Hierarchy</h2>
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <h5 class="mb-4 text-center">
+    <em>At both Bank of America and TIAA, work was broken down into Initiatives, Epics, Features, Stories, Tasks, and Deliverables.</em>
+  </h5>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
     <!-- Initiative Card -->
     <div class="col">
@@ -150,7 +152,7 @@
         </div>
         <div class="card-body">
           <p class="card-text">
-            The smallest unit of work, typically written in the format: "As a [user], I want [goal] so that [reason].". Stories are sprint-sized and focused on delivering a specific outcome.
+            The smallest unit of work that delivers user value. Typically written as: "As a [user], I want [goal] so that [reason]." Stories are sized to be completed in a sprint.
           </p>
         </div>
         <div class="card-footer bg-transparent border-top-0">
@@ -159,15 +161,56 @@
       </div>
     </div>
 
+    <!-- Task Card -->
+    <div class="col">
+      <div class="card h-100 shadow-lg border-0 hover-shadow">
+        <div class="card-header bg-secondary text-white text-center">
+          <i class="fas fa-tasks fa-2x"></i>
+          <h5 class="card-title mt-2">Task</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            The smallest executable unit of work used to fulfill a story. Tasks may include development, testing, documentation, or technical research (Spikes).
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Timeframe: Hours to a Day</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deliverable Card -->
+    <div class="col">
+      <div class="card h-100 shadow-lg border-0 hover-shadow">
+        <div class="card-header bg-dark text-white text-center">
+          <i class="fas fa-box-open fa-2x"></i>
+          <h5 class="card-title mt-2">Deliverable</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            The tangible result of completed work — such as a working feature, report, or integration. Deliverables are produced after stories and tasks are completed.
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          <small class="text-muted">Outcome: Released or Demoed</small>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <br>
 
 
 <!-- Prioritization and Quality Frameworks: 2-Card Layout with Acronym Definitions -->
 <section class="container my-5 bg-white">
-  <h2 class="mb-4 text-center">Prioritization and Quality Frameworks</h2>
+  <h2 class="text-center mb-3">Prioritization and Quality Frameworks</h2>
+  <h5 class="text-center mb-4">
+    <em>At both Bank of America and TIAA, we used various frameworks to help plan and groom our epics and stories.</em>
+  </h5>
+  
 
   <!-- Prioritization and Quality Frameworks Section -->
   <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -294,7 +337,7 @@
   
   <div class="row mb-4">
     <div class="col-md-12">
-      <h3 class="text-center">User Story</h3>
+      <h3 class="text-center">User Story Example</h3>
       <p>
         As a TIAA Investment Screener Tool user, I want to filter funds by their Morningstar rating so that I can view funds with ratings from 1 to 5 stars, ensuring I have the flexibility to choose funds based on my desired level of performance.
       </p>
