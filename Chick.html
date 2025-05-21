@@ -77,7 +77,7 @@
 
   <section class="py-5 bg-white" id="pleasure">
     <div class="container text-center" style="max-width: 700px;">
-      <h2 class="mb-4 fw-bold">“My Pleasure!”</h2>
+      <h2 class="mb-4 fw-bold">Chick-fil-A</h2>
       <p class="fs-5 mb-4">
         Chick-fil-A has emerged as a beacon of exceptional <strong>Customer Experience (CX)</strong>, <strong>User Experience (UX)</strong>, and service design. Their signature phrase <strong>“My pleasure!”</strong> perfectly captures their service philosophy, which can be summarized in five key principles:
       </p>
@@ -105,11 +105,9 @@
       </ul>
     </div>
   </section>
-  
-  
-  
 
 
+  
   <section class="py-5 bg-light">
     <div class="container text-center" style="max-width: 700px;">
       <h2 class="mb-4">Chick-fil-A’s Success</h2>
@@ -122,6 +120,340 @@
       </ul>
     </div>
   </section>
+
+
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-5 fw-bold">SWOT Analysis: Chick-fil-A</h2>
+    <div class="row g-4">
+
+<!-- Strengths -->
+<div class="col-12 col-lg-6">
+  <div class="card h-100 border-0 shadow-sm bg-success text-white">
+    <div class="card-body text-center">
+      <i class="bi bi-hand-thumbs-up-fill fs-1 mb-3"></i>
+      <h5 class="card-title">Strengths</h5>
+      <ul class="list-unstyled text-start small">
+        <li>✔ Exceptional customer service</li>
+        <li>✔ Strong brand loyalty with a devoted customer base</li>
+        <li>✔ High food quality with fresh, made-to-order ingredients</li>
+        <li>✔ Signature menu items like the original chicken sandwich</li>
+        <li>✔ Efficient drive-thru operations with industry-leading speed and accuracy</li>
+        <li>✔ Strong franchise model with strict standards and selective franchisee vetting</li>
+        <li>✔ Chicken-centric business model for menu clarity and specialization</li>
+        <li>✔ Chicken-based items are faster and easier to prepare, streamlining operations</li>
+        <li>✔ Commitment to improving the UX/UI of the mobile app</li>
+        <li>✔ Rewards system that incentivizes loyal customers</li>
+        <li>✔ Consistent customer experience across all locations</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <!-- Weaknesses -->
+      <div class="col-12 col-lg-6">
+        <div class="card h-100 border-0 shadow-sm bg-danger text-white">
+          <div class="card-body text-center">
+            <i class="bi bi-hand-thumbs-down-fill fs-1 mb-3"></i>
+            <h5 class="card-title">Weaknesses</h5>
+            <ul class="list-unstyled text-start small">
+              <li>✖ Closed on Sundays</li>
+              <li>✖ Limited menu options</li>
+              <li>✖ Slower innovation pace</li>
+              <li>✖ Regional concentration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opportunities -->
+      <div class="col-12 col-lg-6">
+        <div class="card h-100 border-0 shadow-sm bg-primary text-white">
+          <div class="card-body text-center">
+            <i class="bi bi-graph-up-arrow fs-1 mb-3"></i>
+            <h5 class="card-title">Opportunities</h5>
+            <ul class="list-unstyled text-start small">
+              <li>➕ Expansion into new markets</li>
+              <li>➕ Digital ordering & delivery</li>
+              <li>➕ New product innovation</li>
+              <li>➕ International growth</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Threats -->
+      <div class="col-12 col-lg-6">
+        <div class="card h-100 border-0 shadow-sm bg-warning text-dark">
+          <div class="card-body text-center">
+            <i class="bi bi-exclamation-triangle-fill fs-1 mb-3"></i>
+            <h5 class="card-title">Threats</h5>
+            <ul class="list-unstyled text-start small">
+              <li>⚠ Intense fast-food competition</li>
+              <li>⚠ Health-conscious consumer trends</li>
+              <li>⚠ Supply chain risks</li>
+              <li>⚠ Reputation challenges</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  
+
+  <canvas id="salesChart" height="120"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('salesChart').getContext('2d');
+
+  const salesChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['2018', '2021', '2022', '2023'],
+      datasets: [{
+        label: 'Chick-fil-A Sales (Billion USD)',
+        data: [10.79, 15, 18.81, 21.58],  // 2018 approx half of 2023 per your note
+        backgroundColor: 'lightblue',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+        borderRadius: 5
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Chick-fil-A Total Sales Growth (2018-2023)'
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => `$${ctx.parsed.y.toFixed(2)} Billion`
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Sales in Billion USD'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Year'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+<section class="py-4 bg-white">
+  <div class="container text-center" style="max-width: 600px; margin: auto;">
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem;">
+      <thead>
+        <tr style="background-color: #f8f8f8;">
+          <th style="border: 1px solid #ddd; padding: 8px;">Year</th>
+          <th style="border: 1px solid #ddd; padding: 8px;">Sales (Billion USD)</th>
+          <th style="border: 1px solid #ddd; padding: 8px;">YoY Growth (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 8px;">2018</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">$10.79</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">–</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 8px;">2021</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">$15.00</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">+39.2%</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 8px;">2022</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">$18.81</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">+25.4%</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 8px;">2023</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">$21.58</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">+14.7%</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 0.9rem; color: #555;">
+      Source: <a href="https://www.nrn.com/quick-service/chick-fil-a-continues-to-gain-market-share-while-setting-another-average-unit-volume-record" target="_blank" rel="noopener noreferrer">
+        Nation's Restaurant News – Chick-fil-A Market Share &amp; Sales Record (2023)
+      </a>
+    </p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="mb-4">2023 Revenue per Location (Fast Food Chains)</h2>
+      <canvas id="revenuePerLocationChart"></canvas>
+    </div>
+  </section>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const revenueData = {
+      labels: ['Chick-fil-A', 'Shake Shack', 'McDonald\'s'],
+      datasets: [{
+        label: 'Revenue per Location (in Millions USD)',
+        data: [8.7, 4.0, 3.0],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+  
+    const revenueConfig = {
+      type: 'bar',
+      data: revenueData,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          title: {
+            display: true,
+            text: 'Revenue per Location (2023)'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Millions of USD'
+            }
+          }
+        }
+      }
+    };
+  
+    new Chart(
+      document.getElementById('revenuePerLocationChart'),
+      revenueConfig
+    );
+  </script>
+
+<section class="py-5 bg-white">
+  <div class="container">
+    <p class="mt-4 text-center text-muted" style="max-width: 700px; margin: 0 auto;">
+      <strong>Note:</strong> In 2023, Chick-fil-A generated the most revenue per location on average compared to any other fast food restaurant in the United States. In fact, they beat competitors by more than 2x, and they did so with one less day in the week (Chick-fil-A is not open on Sunday).<br><br>
+      <strong>Source:</strong> <a href="https://www.boringbusinessnerd.com/post/how-chick-fil-a-generates-more-revenue-per-location-than-other-fast-food-restaurants" target="_blank" rel="noopener">Boring Business Nerd</a>
+    </p>
+  </div>
+</section>
+
+  
+  
+  
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4">Number of Stores in the USA</h2>
+    <div class="chart-wrapper mx-auto" style="max-width: 600px;">
+      <canvas id="storeCountChart"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const storeData = {
+    labels: ['Chick-fil-A', 'McDonald\'s', 'Wendy\'s', 'Popeyes', 'KFC'],
+    datasets: [{
+      label: 'Number of Stores (USA)',
+      data: [3228, 13800, 5900, 3000, 3900], // Approximate figures as of recent data
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  const storeConfig = {
+    type: 'pie',
+    data: storeData,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'right',
+        },
+        title: {
+          display: true,
+          text: 'Store Count by Brand (USA)'
+        }
+      }
+    }
+  };
+
+  new Chart(
+    document.getElementById('storeCountChart'),
+    storeConfig
+  );
+</script>
+
+
+
+
+
+
+  
+  
+  
+
+
   
   
 
