@@ -31,7 +31,7 @@ if (navEl) {
 
 // Inject Footer
 const footerEl = document.getElementById('footer-placeholder');
-if (footerEl) {
+if (footerEl) {DocumentTimeline
   footerEl.innerHTML = `
     <footer class="border-top border-primary bg-dark text-white py-4">
       <div class="container">
