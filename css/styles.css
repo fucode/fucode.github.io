@@ -120,3 +120,26 @@
   left: auto;
   right: -0.75rem;
 }
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -0.75rem;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+@media (max-width: 767.98px) {
+  .timeline-line {
+    display: none !important;
+  }
+  .timeline-content::before {
+    display: none;
+  }
+}
+

@@ -28,3 +28,19 @@ if (navEl) {
     })
     .catch(error => console.error('Error loading navigation:', error));
 }
+
+// Inject Footer
+const footerEl = document.getElementById('footer-placeholder');
+if (footerEl) {
+  footerEl.innerHTML = `
+    <footer class="border-top border-primary bg-dark text-white py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4 text-center">
+            <p>Hand Coded By Faraz Uddin</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  `;
+}
