@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="images/favicon.png" />
+  <title>Faraz Uddin</title>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div id="nav-placeholder"></div>
+
+
+<!-- Header -->
+<header class="header">
+  <div class="hero text-white pt-5 mt-5">
+    <div class="container-xl">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="image-container mb-5 px-4">
+            <img src="images/TIAA/Business Plan-bro.png" alt="Business illustration" class="img-fluid" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5">
+            <h4 class="fw-bold">Enterprise Data and Governance Practices</h4>
+            <p class="lead">
+              I have worked with several large financial institutions to establish robust data strategies.
+            </p>            
+            <div class="d-flex justify-content-center mt-4">
+              <a class="btn btn-primary text-white" href="#enterprise-platforms">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Enterprise Platforms Table -->
+<section class="container my-5" id="enterprise-platforms">
+  <h2 class="mb-4 text-center">Key Enterprise Platforms Overview</h2>
+  <p class="text-center">A list of enterprise applications used to store data for internal and external business systems, and to facilitate communication with stakeholders.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Platform</th>
+          <th>Type</th>
+          <th>Primary Use</th>
+          <th>Strengths</th>
+          <th>Challenges</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Salesforce CRM</td>
+          <td>Customer Relationship Management (SaaS)</td>
+          <td>Sales, marketing automation, customer support</td>
+          <td>
+            Market leader; rich third-party ecosystem; customizable workflows;
+            seamless integration with tools like Slack and Tableau
+          </td>
+          <td>
+            Licensing can be expensive; complex permission model; integration with legacy systems may require custom APIs
+          </td>
+        </tr>
+        <tr>
+          <td>AWS Cloud</td>
+          <td>Cloud Infrastructure (IaaS / PaaS)</td>
+          <td>Hosting apps, data lakes, compute, storage, analytics</td>
+          <td>
+            Broadest set of services; scalability; mature ecosystem; global reach
+          </td>
+          <td>
+            Cost control and forecasting can be difficult; vendor lock-in; requires skilled DevOps/cloud engineers
+          </td>
+        </tr>
+        <tr>
+          <td>Snowflake</td>
+          <td>Cloud Data Warehouse (SaaS)</td>
+          <td>Data warehousing, analytics, BI, data sharing</td>
+          <td>
+            Decoupled storage/compute; near-zero maintenance; supports semi-structured data (JSON, Parquet)
+          </td>
+          <td>
+            Performance tuning limited to cost control; billing tied to compute time; less control than traditional DBMS
+          </td>
+        </tr>
+        <tr>
+          <td>Oracle Database</td>
+          <td>Relational Database (On-Prem / Cloud)</td>
+          <td>Core enterprise systems, finance, ERP, transactional systems</td>
+          <td>
+            High performance; mature features; strong security and compliance capabilities
+          </td>
+          <td>
+            High license costs; complex to manage; slower to adapt to modern cloud-native paradigms
+          </td>
+        </tr>
+        <tr>
+          <td>Microsoft Dynamics</td>
+          <td>CRM + ERP Platform</td>
+          <td>Customer engagement, finance, operations, supply chain</td>
+          <td>
+            Deep Microsoft integration (Outlook, Teams, Azure); customizable modules for industry verticals
+          </td>
+          <td>
+            Less intuitive UI vs Salesforce; requires skilled Dynamics consultants for complex workflows
+          </td>
+        </tr>
+        <tr>
+          <td>Jira</td>
+          <td>Agile Project Management</td>
+          <td>Scrum/Kanban boards, issue tracking, sprint planning</td>
+          <td>
+            Strong support for Agile frameworks; extensive plugin ecosystem; integrates well with DevOps tools
+          </td>
+          <td>
+            Can become cluttered without proper governance; configuration overhead for enterprise use
+          </td>
+        </tr>
+        <tr>
+          <td>Confluence</td>
+          <td>Knowledge Management / Collaboration</td>
+          <td>Documentation, project wikis, team collaboration</td>
+          <td>
+            Seamless Jira integration; easy content editing; version control and permissions
+          </td>
+          <td>
+            Navigation and search can degrade at scale; dependency on user discipline for content organization
+          </td>
+        </tr>
+        <tr>
+          <td>SAP</td>
+          <td>ERP Platform (On-Prem / Cloud)</td>
+          <td>Enterprise resource planning, finance, HR, supply chain</td>
+          <td>
+            Deep vertical industry support; comprehensive process control; high integration standards
+          </td>
+          <td>
+            High cost and complexity; long implementation cycles; requires SAP specialists
+          </td>
+        </tr>
+        <tr>
+          <td>SAS</td>
+          <td>Analytics / Statistical Software</td>
+          <td>Advanced analytics, risk modeling, statistical analysis</td>
+          <td>
+            Strong in regulated industries; robust statistical capabilities; reliable for enterprise-scale analytics
+          </td>
+          <td>
+            Licensing costs are high; less flexibility than open-source analytics stacks (e.g., Python, R)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<section class="container my-5" id="data-governance">
+  <h2 class="mb-4 text-center">Data Governance: Key Concepts and Considerations</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Aspect</th>
+          <th>Description</th>
+          <th>Why It Matters</th>
+          <th>Example in Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data Stewardship</td>
+          <td>Assignment of responsibility for managing data quality, usage, and policies</td>
+          <td>Ensures accountability and proper data handling throughout the lifecycle</td>
+          <td>Financial institution assigns stewards to maintain customer data accuracy</td>
+        </tr>
+        <tr>
+          <td>Data Ownership</td>
+          <td>Defines who “owns” data and has authority over access and changes</td>
+          <td>Clarifies decision rights and control to reduce conflicts and risks</td>
+          <td>Marketing department owns lead data and governs access permissions</td>
+        </tr>
+        <tr>
+          <td>Data Lineage</td>
+          <td>Tracking data origins, movements, transformations, and destinations</td>
+          <td>Supports transparency, troubleshooting, and impact analysis</td>
+          <td>Tracing credit risk data through ETL pipelines for audit purposes</td>
+        </tr>
+        <tr>
+          <td>Data Quality Management</td>
+          <td>Processes for profiling, cleansing, validating, and monitoring data</td>
+          <td>Ensures trustworthiness and usability of data for decision-making</td>
+          <td>Automated checks on transaction records to prevent fraud errors</td>
+        </tr>
+        <tr>
+          <td>Data Policies & Standards</td>
+          <td>Rules and guidelines governing data collection, storage, and usage</td>
+          <td>Helps maintain compliance and consistency across the enterprise</td>
+          <td>Policy mandating encryption for all PII stored on cloud systems</td>
+        </tr>
+        <tr>
+          <td>Compliance & Regulatory Requirements</td>
+          <td>Adherence to laws like GDPR, HIPAA, SOX, and industry standards</td>
+          <td>Mitigates legal risks and protects sensitive information</td>
+          <td>Regular audits to ensure customer data handling meets GDPR standards</td>
+        </tr>
+        <tr>
+          <td>Data Access Control</td>
+          <td>Managing who can view, modify, or share data based on roles</td>
+          <td>Prevents unauthorized access and enforces least privilege principles</td>
+          <td>Role-based permissions restricting financial data access to auditors only</td>
+        </tr>
+        <tr>
+          <td>Data Catalog & Metadata Management</td>
+          <td>Centralized inventory of data assets with descriptions and tags</td>
+          <td>Improves data discoverability and enables self-service analytics</td>
+          <td>Use of tools like Collibra to catalog and classify data sets</td>
+        </tr>
+        <tr>
+          <td>Data Lifecycle Management</td>
+          <td>Managing data from creation through archiving and deletion</td>
+          <td>Optimizes storage costs and ensures data is retained according to policy</td>
+          <td>Archiving transactional data after 7 years in compliance with SOX</td>
+        </tr>
+        <tr>
+          <td>Data Ethics & Usage</td>
+          <td>Ensuring data is used responsibly and without bias</td>
+          <td>Maintains trust and avoids harm from improper or unethical use</td>
+          <td>Reviewing AI models to avoid discriminatory outcomes in lending</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- Data Formats Table -->
+<section class="container my-5" id="data-formats">
+  <h2 class="mb-4 text-center">Common Data Formats Overview</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Data Format</th>
+          <th>File Extension(s)</th>
+          <th>Description</th>
+          <th>Common Use Cases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Excel</td>
+          <td>.xls, .xlsx</td>
+          <td>Spreadsheet format with support for formulas, charts, and macros</td>
+          <td>Financial reports, ad hoc data analysis, data exchange with business users</td>
+        </tr>
+        <tr>
+          <td>CSV (Comma-Separated Values)</td>
+          <td>.csv</td>
+          <td>Plain text tabular data, each line is a record with comma-separated fields</td>
+          <td>Data import/export, simple tabular datasets, ETL pipelines</td>
+        </tr>
+        <tr>
+          <td>JSON (JavaScript Object Notation)</td>
+          <td>.json</td>
+          <td>Lightweight, hierarchical text format representing objects and arrays</td>
+          <td>APIs, configuration files, semi-structured data interchange</td>
+        </tr>
+        <tr>
+          <td>XML (eXtensible Markup Language)</td>
+          <td>.xml</td>
+          <td>Markup language for hierarchical data with custom tags</td>
+          <td>Web services (SOAP), document storage, configuration files</td>
+        </tr>
+        <tr>
+          <td>YAML</td>
+          <td>.yaml, .yml</td>
+          <td>Human-readable data serialization format with indentation-based structure</td>
+          <td>Configuration files, automation scripts, Kubernetes manifests</td>
+        </tr>
+        <tr>
+          <td>TXT (Plain Text)</td>
+          <td>.txt</td>
+          <td>Unformatted text, often line-based records or logs</td>
+          <td>Logs, simple notes, raw data dumps</td>
+        </tr>
+        <tr>
+          <td>Google Sheets</td>
+          <td>Online spreadsheet (no direct extension)</td>
+          <td>Cloud-based collaborative spreadsheet</td>
+          <td>Collaborative data entry, sharing, lightweight data manipulation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="container my-5" id="common-data-types">
+  <h2 class="mb-4 text-center">Common Data Types in Large Enterprises</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Examples / Use Cases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Structured Data</td>
+          <td>Highly organized data in fixed fields or columns</td>
+          <td>Customer info, transactions, invoices, ERP records</td>
+        </tr>
+        <tr>
+          <td>Unstructured Data</td>
+          <td>Data without predefined format or organization</td>
+          <td>Emails, documents, presentations, PDFs, social media posts</td>
+        </tr>
+        <tr>
+          <td>Semi-structured Data</td>
+          <td>Data with some organizational properties but flexible format</td>
+          <td>JSON, XML, logs, sensor data</td>
+        </tr>
+        <tr>
+          <td>Transactional Data</td>
+          <td>Data generated from business transactions</td>
+          <td>Purchase orders, payments, bookings</td>
+        </tr>
+        <tr>
+          <td>Master Data</td>
+          <td>Core business entities used across systems</td>
+          <td>Customer, product, supplier, employee records</td>
+        </tr>
+        <tr>
+          <td>Reference Data</td>
+          <td>Standardized data used for categorization</td>
+          <td>Country codes, currency codes, industry codes (NAICS)</td>
+        </tr>
+        <tr>
+          <td>Time Series Data</td>
+          <td>Data points indexed in time order</td>
+          <td>Stock prices, IoT sensor readings, server logs</td>
+        </tr>
+        <tr>
+          <td>Geospatial Data</td>
+          <td>Data related to geographic locations</td>
+          <td>GPS coordinates, maps, location-based services</td>
+        </tr>
+        <tr>
+          <td>Multimedia Data</td>
+          <td>Audio, video, and image files</td>
+          <td>Marketing videos, call recordings, security footage</td>
+        </tr>
+        <tr>
+          <td>Big Data</td>
+          <td>Very large and complex datasets with high variety and velocity</td>
+          <td>Clickstream data, telemetry, social feeds</td>
+        </tr>
+        <tr>
+          <td>Metadata</td>
+          <td>Data about data, providing context and characteristics</td>
+          <td>Data dictionaries, tags, provenance info</td>
+        </tr>
+        <tr>
+          <td>Log Data</td>
+          <td>Records of system events and transactions</td>
+          <td>Application logs, security logs, audit trails</td>
+        </tr>
+        <tr>
+          <td>Sensor / IoT Data</td>
+          <td>Data generated by connected devices</td>
+          <td>Temperature sensors, smart meters, wearables</td>
+        </tr>
+        <tr>
+          <td>Customer Data</td>
+          <td>Personal and behavioral information about customers</td>
+          <td>Demographics, preferences, purchase history</td>
+        </tr>
+        <tr>
+          <td>Financial Data</td>
+          <td>Monetary-related data</td>
+          <td>Account balances, ledgers, expense reports</td>
+        </tr>
+        <tr>
+          <td>Compliance Data</td>
+          <td>Data required for regulatory purposes</td>
+          <td>Audit logs, consent records, risk assessments</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+<!-- Data Storage Methods Table -->
+<section class="container my-5" id="data-storage">
+  <h2 class="mb-4 text-center">Enterprise Data Storage Overview</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Storage Type</th>
+          <th>Examples</th>
+          <th>Primary Use Case</th>
+          <th>Security/Control Considerations</th>
+          <th>Enterprise Use Case Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Relational Databases</td>
+          <td>Oracle, Microsoft SQL Server, PostgreSQL, MySQL</td>
+          <td>Structured data, transactional systems (OLTP)</td>
+          <td>Role-based access control, row-level encryption, backup and replication</td>
+          <td>Core banking systems, customer account management, financial transactions</td>
+        </tr>
+        <tr>
+          <td>NoSQL Databases</td>
+          <td>MongoDB, Cassandra, Couchbase</td>
+          <td>Semi-structured/unstructured data, high-speed document or key-value stores</td>
+          <td>Access tokens, field-level encryption, audit logging</td>
+          <td>Storing customer activity logs, real-time session data, product catalogs</td>
+        </tr>
+        <tr>
+          <td>Application Servers</td>
+          <td>WebLogic, Tomcat, JBoss</td>
+          <td>Run business logic and interact with back-end databases</td>
+          <td>Authentication enforcement, patch management, encrypted config files</td>
+          <td>Hosting APIs for internal applications, customer portals, middleware</td>
+        </tr>
+        <tr>
+          <td>File Servers</td>
+          <td>Windows Server, NFS, SMB shares</td>
+          <td>Shared documents and files, enterprise file storage</td>
+          <td>NTFS permissions, data loss prevention (DLP), endpoint detection</td>
+          <td>Internal document sharing, compliance reports storage, HR files</td>
+        </tr>
+        <tr>
+          <td>Data Warehouse</td>
+          <td>Snowflake, Amazon Redshift, Google BigQuery, Teradata</td>
+          <td>Analytics on structured data, BI/reporting, OLAP workloads</td>
+          <td>Data masking, column-level access, strong identity federation</td>
+          <td>Financial performance dashboards, sales reporting, risk analysis</td>
+        </tr>
+        <tr>
+          <td>Data Lake</td>
+          <td>Amazon S3, Azure Data Lake Storage, Hadoop HDFS</td>
+          <td>Storage of raw, structured, semi-structured, and unstructured data</td>
+          <td>Object-level policies, encryption at rest, data tagging and classification</td>
+          <td>Aggregating logs, clickstream data, IoT telemetry for machine learning</td>
+        </tr>
+        <tr>
+          <td>Cloud Object Storage</td>
+          <td>Amazon S3, Azure Blob Storage, Google Cloud Storage</td>
+          <td>Backup archives, large unstructured data sets, streaming ingestion</td>
+          <td>Bucket policies, lifecycle rules, MFA delete, public access blocking</td>
+          <td>Disaster recovery backups, video archives, bulk ingestion for analytics</td>
+        </tr>
+        <tr>
+          <td>Cloud File Storage</td>
+          <td>Amazon EFS, Azure Files, Google Filestore</td>
+          <td>Lift-and-shift workloads, file-based legacy app support</td>
+          <td>IAM integration, encryption in transit, backup snapshots</td>
+          <td>Legacy app file shares, user home directories in cloud migrations</td>
+        </tr>
+        <tr>
+          <td>Object Storage On-Prem</td>
+          <td>MinIO, Dell ECS, IBM Cloud Object Storage (on-prem)</td>
+          <td>Private cloud deployments, internal archive storage</td>
+          <td>Tenant isolation, air-gapped backups, WORM configurations</td>
+          <td>Sensitive internal archives, regulatory data retention, isolated storage</td>
+        </tr>
+        <tr>
+          <td>Cold Storage / Archive</td>
+          <td>Amazon Glacier, Azure Archive, on-prem tape libraries</td>
+          <td>Long-term archival of infrequently accessed data</td>
+          <td>Access delay SLAs, retrieval auditing, encryption at rest</td>
+          <td>Historical transaction records, compliance archives, audit logs</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Data-Specific Competencies Section -->
+<section class="container my-5" id="data-competencies">
+  <h2 class="mb-4 text-center">Data-Specific Competencies for Data Product Owners</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Category</th>
+          <th>Key Topics</th>
+          <th>Why It Matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data Governance</td>
+          <td>Data stewardship, lineage, ownership</td>
+          <td>Ensure trust, compliance, and clarity around data</td>
+        </tr>
+        <tr>
+          <td>Data Privacy & Security</td>
+          <td>PII/PHI handling, GDPR, HIPAA, encryption</td>
+          <td>Protect sensitive data and ensure regulatory compliance</td>
+        </tr>
+        <tr>
+          <td>Data Architecture</td>
+          <td>Data lakes vs warehouses, ETL/ELT, APIs</td>
+          <td>Collaborate effectively with data engineering teams</td>
+        </tr>
+        <tr>
+          <td>Metadata & Cataloging</td>
+          <td>Glossaries, data dictionaries, tools like Alation, Collibra</td>
+          <td>Improve discoverability and self-service analytics</td>
+        </tr>
+        <tr>
+          <td>Data Quality Management</td>
+          <td>Profiling, validation, deduplication</td>
+          <td>Ensure reliable decision-making and downstream usage</td>
+        </tr>
+        <tr>
+          <td>Data Integration</td>
+          <td>APIs, batch vs real-time, connectors</td>
+          <td>Enable data product interoperability</td>
+        </tr>
+        <tr>
+          <td>BI & Analytics Tools</td>
+          <td>Tableau, Power BI, Looker, SQL basics</td>
+          <td>Understand how end-users consume data</td>
+        </tr>
+        <tr>
+          <td>ML / AI Basics</td>
+          <td>Model lifecycle, explainability, fairness</td>
+          <td>Support data science teams with productization efforts</td>
+        </tr>
+        <tr>
+          <td>Data Contracts</td>
+          <td>Schema agreements between producers/consumers</td>
+          <td>Reduce downstream breakage and technical debt</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Business & Domain Knowledge Section -->
+<section class="container my-5" id="business-domain-knowledge">
+  <h2 class="mb-4 text-center">Business & Domain Knowledge for Data Product Owners</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Focus Area</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Industry Regulations</td>
+          <td>FINRA, SOX, Basel III (for finance); HIPAA (for health)</td>
+        </tr>
+        <tr>
+          <td>KPIs & Metrics</td>
+          <td>Define success metrics for the product, measure outcomes</td>
+        </tr>
+        <tr>
+          <td>Value Stream Mapping</td>
+          <td>Understand how data flows and adds value across the business</td>
+        </tr>
+        <tr>
+          <td>Customer Journeys</td>
+          <td>Align data needs to customer-facing features</td>
+        </tr>
+        <tr>
+          <td>Monetization Models</td>
+          <td>Know how data products drive revenue, reduce costs, or improve efficiency</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Technical Collaboration Section -->
+<section class="container my-5" id="technical-collaboration">
+  <h2 class="mb-4 text-center">Technical Collaboration Awareness</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Skill</th>
+          <th>Tools / Concepts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>API basics</td>
+          <td>REST, JSON, Swagger/OpenAPI</td>
+        </tr>
+        <tr>
+          <td>Data modeling</td>
+          <td>ERDs, dimensional modeling, star/snowflake schemas</td>
+        </tr>
+        <tr>
+          <td>Infrastructure as Code (IaC)</td>
+          <td>Terraform, CloudFormation (for cloud-native products)</td>
+        </tr>
+        <tr>
+          <td>CI/CD</td>
+          <td>Understanding pipelines and how data products are deployed</td>
+        </tr>
+        <tr>
+          <td>Agile DevOps</td>
+          <td>Versioning data pipelines, monitoring, alerting</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+<!-- Data Storage Methods Table -->
+<section class="container my-5" id="data-storage">
+  <h2 class="mb-4 text-center">Enterprise Data Storage Overview</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Storage Type</th>
+          <th>Examples</th>
+          <th>Primary Use Case</th>
+          <th>Security/Control Considerations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Relational Databases</td>
+          <td>Oracle, Microsoft SQL Server, PostgreSQL, MySQL</td>
+          <td>Structured data, transactional systems (OLTP)</td>
+          <td>Role-based access control, row-level encryption, backup and replication</td>
+        </tr>
+        <tr>
+          <td>NoSQL Databases</td>
+          <td>MongoDB, Cassandra, Couchbase</td>
+          <td>Semi-structured/unstructured data, high-speed document or key-value stores</td>
+          <td>Access tokens, field-level encryption, audit logging</td>
+        </tr>
+        <tr>
+          <td>Application Servers</td>
+          <td>WebLogic, Tomcat, JBoss</td>
+          <td>Run business logic and interact with back-end databases</td>
+          <td>Authentication enforcement, patch management, encrypted config files</td>
+        </tr>
+        <tr>
+          <td>File Servers</td>
+          <td>Windows Server, NFS, SMB shares</td>
+          <td>Shared documents and files, enterprise file storage</td>
+          <td>NTFS permissions, data loss prevention (DLP), endpoint detection</td>
+        </tr>
+        <tr>
+          <td>Data Warehouse</td>
+          <td>Snowflake, Amazon Redshift, Google BigQuery, Teradata</td>
+          <td>Analytics on structured data, BI/reporting, OLAP workloads</td>
+          <td>Data masking, column-level access, strong identity federation</td>
+        </tr>
+        <tr>
+          <td>Data Lake</td>
+          <td>Amazon S3, Azure Data Lake Storage, Hadoop HDFS</td>
+          <td>Storage of raw, structured, semi-structured, and unstructured data</td>
+          <td>Object-level policies, encryption at rest, data tagging and classification</td>
+        </tr>
+        <tr>
+          <td>Cloud Object Storage</td>
+          <td>Amazon S3, Azure Blob Storage, Google Cloud Storage</td>
+          <td>Backup archives, large unstructured data sets, streaming ingestion</td>
+          <td>Bucket policies, lifecycle rules, MFA delete, public access blocking</td>
+        </tr>
+        <tr>
+          <td>Cloud File Storage</td>
+          <td>Amazon EFS, Azure Files, Google Filestore</td>
+          <td>Lift-and-shift workloads, file-based legacy app support</td>
+          <td>IAM integration, encryption in transit, backup snapshots</td>
+        </tr>
+        <tr>
+          <td>Object Storage On-Prem</td>
+          <td>MinIO, Dell ECS, IBM Cloud Object Storage (on-prem)</td>
+          <td>Private cloud deployments, internal archive storage</td>
+          <td>Tenant isolation, air-gapped backups, WORM configurations</td>
+        </tr>
+        <tr>
+          <td>Cold Storage / Archive</td>
+          <td>Amazon Glacier, Azure Archive, on-prem tape libraries</td>
+          <td>Long-term archival of infrequently accessed data</td>
+          <td>Access delay SLAs, retrieval auditing, encryption at rest</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+
+<!-- Data Controls Table -->
+<section class="container my-5" id="data-controls">
+  <h2 class="mb-4 text-center">Typical Data Controls in Large Financial Enterprises</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Control Area</th>
+          <th>Description</th>
+          <th>Common Tools</th>
+          <th>Purpose/Compliance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data Classification</td>
+          <td>Categorizing data based on sensitivity (e.g., Public, Internal, Confidential)</td>
+          <td>Microsoft Purview, Varonis</td>
+          <td>Supports GDPR, CCPA, internal access policies</td>
+        </tr>
+        <tr>
+          <td>Access Management</td>
+          <td>RBAC, ABAC, and entitlement reviews for secure access control</td>
+          <td>Okta, SailPoint, Active Directory</td>
+          <td>SOX, GLBA, zero trust architecture</td>
+        </tr>
+        <tr>
+          <td>Encryption</td>
+          <td>Encrypting data at rest and in transit with secure key management</td>
+          <td>AWS KMS, Azure Key Vault, Thales HSM</td>
+          <td>PCI-DSS, HIPAA, ISO 27001</td>
+        </tr>
+        <tr>
+          <td>Data Loss Prevention (DLP)</td>
+          <td>Monitoring and preventing unauthorized data exfiltration</td>
+          <td>Symantec DLP, Microsoft Purview, Forcepoint</td>
+          <td>Protect PII/PCI, internal data protection standards</td>
+        </tr>
+        <tr>
+          <td>Retention & Archival</td>
+          <td>Automated data retention, archival, and purging based on policy</td>
+          <td>IBM FileNet, AWS S3 Glacier, Commvault</td>
+          <td>SEC 17a-4, FINRA, legal holds</td>
+        </tr>
+        <tr>
+          <td>Audit Logging & Monitoring</td>
+          <td>Tracking access and activity on critical data assets</td>
+          <td>Splunk, Elastic, AWS CloudTrail</td>
+          <td>Incident response, forensic investigation, compliance audits</td>
+        </tr>
+        <tr>
+          <td>Data Quality</td>
+          <td>Validating, profiling, and reconciling data for accuracy</td>
+          <td>Informatica, Talend, Collibra</td>
+          <td>Reliable reporting, operational integrity</td>
+        </tr>
+        <tr>
+          <td>Data Masking & Tokenization</td>
+          <td>Obfuscating or substituting sensitive data in non-prod environments</td>
+          <td>Protegrity, Delphix, IBM Guardium</td>
+          <td>PCI DSS, GDPR, testing without real PII</td>
+        </tr>
+        <tr>
+          <td>Change Management</td>
+          <td>Controlling schema, pipeline, and infrastructure changes</td>
+          <td>GitLab CI/CD, dbt, Apache Airflow</td>
+          <td>Auditability, rollback readiness, SDLC governance</td>
+        </tr>
+        <tr>
+          <td>Third-Party Data Governance</td>
+          <td>Monitoring and controlling vendor data usage and risk</td>
+          <td>OneTrust, ServiceNow, custom DSAs</td>
+          <td>Third-party risk, vendor compliance</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- Data Classification Table -->
+<section class="container my-5" id="data-classification">
+  <h2 class="mb-4 text-center">Data Classification Levels</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Classification Level</th>
+          <th>Description</th>
+          <th>Examples</th>
+          <th>Typical Controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Public</td>
+          <td>Information that is intended for public consumption and poses no risk if disclosed.</td>
+          <td>Marketing brochures, press releases, public financial reports</td>
+          <td>No encryption needed, open access, monitored for brand consistency</td>
+        </tr>
+        <tr>
+          <td>Internal</td>
+          <td>Data meant for internal use but not sensitive; limited to employees and contractors.</td>
+          <td>Intranet content, internal process documentation, training materials</td>
+          <td>Access controls (RBAC), internal firewalls, monitoring for leakage</td>
+        </tr>
+        <tr>
+          <td>Confidential</td>
+          <td>Sensitive business or client data that could harm the organization if leaked.</td>
+          <td>Client account details, internal financials, business strategy</td>
+          <td>Encryption at rest/in transit, role-based access, DLP, logging</td>
+        </tr>
+        <tr>
+          <td>Restricted</td>
+          <td>Highly sensitive data with strict legal or regulatory requirements.</td>
+          <td>Social Security Numbers, cardholder data, medical records</td>
+          <td>Strong encryption, MFA, access audits, data masking, zero trust architecture</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- Encryption Table -->
+<section class="container my-5" id="encryption-controls">
+  <h2 class="mb-4 text-center">Encryption Standards and Controls</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Use Case</th>
+          <th>Data Type</th>
+          <th>Encryption Method</th>
+          <th>Key Management Practices</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data at Rest</td>
+          <td>Databases, File Systems, Backups</td>
+          <td>AES-256, Transparent Data Encryption (TDE), Volume-based encryption</td>
+          <td>HSM-backed keys, regular key rotation, centralized KMS (e.g., AWS KMS, Azure Key Vault)</td>
+        </tr>
+        <tr>
+          <td>Data in Transit</td>
+          <td>API calls, emails, internal service communications</td>
+          <td>TLS 1.2/1.3, HTTPS, S/MIME for email</td>
+          <td>Certificate lifecycle management, mutual TLS, secure channel enforcement</td>
+        </tr>
+        <tr>
+          <td>Client-Side Encryption</td>
+          <td>End-user communications, file uploads</td>
+          <td>PGP, end-to-end encryption protocols</td>
+          <td>User-managed keys (where applicable), device trust validation</td>
+        </tr>
+        <tr>
+          <td>Tokenization</td>
+          <td>Cardholder data, PII in analytics systems</td>
+          <td>Format-preserving encryption, vault-based tokenization</td>
+          <td>Secure vault access controls, key obfuscation, token revocation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<section class="container my-5" id="common-data-terms">
+  <h2 class="mb-4 text-center">Common Data Terms Glossary</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Term</th>
+          <th>Definition</th>
+          <th>Why It Matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data Set</td>
+          <td>A collection of related data points organized for analysis</td>
+          <td>Foundation for any data-driven decision or model</td>
+        </tr>
+        <tr>
+          <td>Metadata</td>
+          <td>Data that describes other data, such as source, format, or ownership</td>
+          <td>Enables data discovery, governance, and understanding</td>
+        </tr>
+        <tr>
+          <td>Data Warehouse</td>
+          <td>Central repository for integrated, structured data used for reporting and analysis</td>
+          <td>Supports enterprise BI and long-term data storage</td>
+        </tr>
+        <tr>
+          <td>Data Lake</td>
+          <td>Storage repository holding raw, unprocessed data in various formats</td>
+          <td>Allows flexible data ingestion and supports big data analytics</td>
+        </tr>
+        <tr>
+          <td>ETL (Extract, Transform, Load)</td>
+          <td>Process of moving data from sources to a data warehouse after cleaning and transforming</td>
+          <td>Ensures data quality and consistency in analytics systems</td>
+        </tr>
+        <tr>
+          <td>API (Application Programming Interface)</td>
+          <td>Set of protocols for building and interacting with software applications</td>
+          <td>Enables data integration and interoperability between systems</td>
+        </tr>
+        <tr>
+          <td>Data Governance</td>
+          <td>Framework and practices ensuring data quality, security, and compliance</td>
+          <td>Ensures data is trustworthy and used properly across the organization</td>
+        </tr>
+        <tr>
+          <td>Data Steward</td>
+          <td>Person responsible for managing and overseeing data assets</td>
+          <td>Accountability role critical for maintaining data quality</td>
+        </tr>
+        <tr>
+          <td>Data Lineage</td>
+          <td>Tracking the origin, movement, and transformation of data through systems</td>
+          <td>Provides transparency and aids troubleshooting and auditing</td>
+        </tr>
+        <tr>
+          <td>Big Data</td>
+          <td>Extremely large and complex data sets that require advanced processing tools</td>
+          <td>Drives advanced analytics and machine learning</td>
+        </tr>
+        <tr>
+          <td>Machine Learning</td>
+          <td>Techniques where systems learn patterns from data to make predictions</td>
+          <td>Enables intelligent automation and data-driven insights</td>
+        </tr>
+        <tr>
+          <td>Data Quality</td>
+          <td>Degree to which data is accurate, complete, and reliable</td>
+          <td>Critical for trust in decisions based on data</td>
+        </tr>
+        <tr>
+          <td>Data Privacy</td>
+          <td>Protection of personal or sensitive data from unauthorized access</td>
+          <td>Ensures compliance with laws and maintains customer trust</td>
+        </tr>
+        <tr>
+          <td>Data Catalog</td>
+          <td>Organized inventory of data assets with metadata and usage information</td>
+          <td>Facilitates self-service analytics and data discovery</td>
+        </tr>
+        <tr>
+          <td>Schema</td>
+          <td>Structure defining the organization of data in a database or dataset</td>
+          <td>Ensures consistent data formatting and validation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+
+
+<!--Social-->
+<section class="social text-bg-dark py-6 overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center fs-4">
+        <div class="social-icons d-flex justify-content-center gap-4">
+          <a href="https://www.linkedin.com/in/faraz-uddin-429b9a15a/">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--Footer-->
+
+    <footer class="border-top border-primary bg-dark text-white py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4 text-center">
+            <p>
+              Hand Coded By Faraz Uddin
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+</body>
+
+</html>
