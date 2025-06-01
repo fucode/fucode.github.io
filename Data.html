@@ -83,10 +83,112 @@
 </section>
 
 
+<!-- Data System Types & Architectures -->
+<section class="container my-5" id="data-architectures">
+  <h2 class="mb-4 text-center">Data System Types & Architectures</h2>
+  <p class="text-center">
+    A comparison of the foundational data storage and processing architectures used in enterprise environments. From operational databases to data lakes and lakehouses, each system plays a unique role in data strategy, analytics, and scalability.
+  </p>  
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th><i class="fas fa-layer-group"></i> Category</th>
+          <th><i class="fas fa-database"></i> Description</th>
+          <th><i class="fas fa-box"></i> Common Tools/Platforms</th>
+          <th><i class="fas fa-check-circle"></i> Key Strengths</th>
+          <th><i class="fas fa-triangle-exclamation"></i> Challenges</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Transactional Database</td>
+          <td>Optimized for fast CRUD operations (Create, Read, Update, Delete); supports business applications.</td>
+          <td>PostgreSQL, MySQL, SQL Server, Oracle</td>
+          <td>ACID compliance, indexing, normalized data</td>
+          <td>Not ideal for large-scale analytics</td>
+        </tr>
+        <tr>
+          <td>Data Warehouse</td>
+          <td>Structured data optimized for analytical queries and business intelligence (BI).</td>
+          <td>Snowflake, Redshift, BigQuery, Azure Synapse</td>
+          <td>High performance queries; schema enforcement</td>
+          <td>Expensive compute; rigid schema</td>
+        </tr>
+        <tr>
+          <td>Data Lake</td>
+          <td>Stores raw and unstructured data at scale for flexible access and future processing.</td>
+          <td>Amazon S3, Hadoop, Azure Data Lake</td>
+          <td>Cheap storage; flexible schema; supports all file types</td>
+          <td>Data governance and performance can be weak</td>
+        </tr>
+        <tr>
+          <td>Lakehouse</td>
+          <td>Combines data lake flexibility with warehouse performance and governance.</td>
+          <td>Databricks Lakehouse, Delta Lake, Apache Iceberg</td>
+          <td>Unified architecture; ACID transactions on files</td>
+          <td>Newer model; tool maturity varies</td>
+        </tr>
+        <tr>
+          <td>NoSQL Database</td>
+          <td>Non-relational database models suited for flexible or schema-less data storage.</td>
+          <td>MongoDB, Cassandra, Redis, DynamoDB</td>
+          <td>Scales horizontally; fast for specific workloads</td>
+          <td>Not standardized; can lack ACID consistency</td>
+        </tr>
+        <tr>
+          <td>Data Mart</td>
+          <td>Subset of a data warehouse focused on a specific department or use case.</td>
+          <td>Redshift, BigQuery data marts</td>
+          <td>Department-specific; faster queries</td>
+          <td>Can lead to data silos</td>
+        </tr>
+        <tr>
+          <td>Operational Data Store (ODS)</td>
+          <td>Real-time, integrated store for operational reporting and quick analytics.</td>
+          <td>IBM Infosphere, custom solutions</td>
+          <td>Near real-time; supports ETL to warehouse</td>
+          <td>Not suited for complex analytics</td>
+        </tr>
+        <tr>
+          <td>Streaming/Pipelines</td>
+          <td>Systems for ingesting and processing real-time data streams and pipelines.</td>
+          <td>Apache Kafka, AWS Kinesis, Flink, Confluent</td>
+          <td>Low latency; real-time ingestion</td>
+          <td>Requires monitoring; high setup complexity</td>
+        </tr>
+        <tr>
+          <td>Time-Series DB</td>
+          <td>Optimized for storing and querying time-stamped metrics and logs.</td>
+          <td>InfluxDB, TimescaleDB, Prometheus</td>
+          <td>Efficient for metrics, observability, and sensors</td>
+          <td>Limited use cases beyond time-series</td>
+        </tr>
+        <tr>
+          <td>Search Engine DB</td>
+          <td>Designed for full-text search and fast indexing of semi-structured data.</td>
+          <td>Elasticsearch, Apache Solr</td>
+          <td>Powerful search capabilities; fast retrieval</td>
+          <td>Not suited for transactions or analytics</td>
+        </tr>
+        <tr>
+          <td>Log & Observability</td>
+          <td>Tools for collecting, analyzing, and monitoring log data across systems.</td>
+          <td>Splunk, ELK Stack, Grafana Loki</td>
+          <td>Centralized insights; alerting; visualization</td>
+          <td>Storage can grow rapidly; licensing costs</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
 
 <!-- Categorized Enterprise Platforms Table -->
 <section class="container my-5" id="enterprise-platforms">
-  <h2 class="mb-4 text-center">Categorized Enterprise Platforms</h2>
+  <h2 class="mb-4 text-center">Categorized Enterprise Platforms Supporting Business Functions and Data Flows</h2>
   <p class="text-center">
     A categorized view of key enterprise applications used across various business functions—from data management to collaboration and analytics. Each of these systems supports unique data flows and plays a critical role in modern enterprise ecosystems.
   </p>  
@@ -209,6 +311,22 @@
           <td>Complex setup; batch-oriented</td>
         </tr>
         <tr>
+          <td>Data Lake</td>
+          <td>Amazon S3 (Data Lake)</td>
+          <td>Object Storage / Data Lake</td>
+          <td>Raw data ingestion, big data storage</td>
+          <td>Scalable; low-cost; lakehouse compatible</td>
+          <td>Needs governance; performance tuning</td>
+        </tr>
+        <tr>
+          <td>Streaming</td>
+          <td>Apache Kafka</td>
+          <td>Distributed Event Streaming Platform</td>
+          <td>Real-time data pipelines and stream processing</td>
+          <td>High throughput; decouples producers & consumers</td>
+          <td>Complex operations; requires dev expertise</td>
+        </tr>
+        <tr>
           <td>Analytics</td>
           <td>Splunk</td>
           <td>Operational Intelligence Platform</td>
@@ -216,6 +334,15 @@
           <td>Real-time data insights; powerful search</td>
           <td>Expensive; storage intensive</td>
         </tr>
+        <tr>
+          <td>Investment Data</td>
+          <td>TIAA + Morningstar</td>
+          <td>Investment Performance Integration</td>
+          <td>Retirement advice, investment data flows</td>
+          <td>Integrated advice tools; Morningstar data; Nuveen managed accounts</td>
+          <td>Dependency on external data providers; limited control over methodology</td>
+        </tr>
+        
 
         <!-- Collaboration & Project Management -->
         <tr class="table-secondary">
@@ -262,6 +389,7 @@
     </table>
   </div>
 </section>
+
 
 <!-- Data Controls Table -->
 <section class="container my-5" id="data-controls">
