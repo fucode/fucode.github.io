@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>TIAA RetirePlus® | Faraz Uddin</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- AOS -->
+    <link
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      :root {
+        --tiaa-blue: #005587;
+        --tiaa-dark: #123447;
+        --tiaa-light: #eef6f9;
+        --tiaa-accent: #2b7a9b;
+        --text-dark: #243746;
+        --text-muted: #687983;
+      }
+
+      body {
+        color: var(--text-dark);
+        background: #ffffff;
+      }
+
+      .hero-retireplus {
+        min-height: 620px;
+        display: flex;
+        align-items: center;
+        background:
+          radial-gradient(
+            circle at 85% 25%,
+            rgba(72, 150, 181, 0.18),
+            transparent 32%
+          ),
+          linear-gradient(
+            135deg,
+            #092f43 0%,
+            #0d435b 48%,
+            #17647e 100%
+          );
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-retireplus::after {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        right: -220px;
+        top: -150px;
+      }
+
+      .hero-retireplus::before {
+        content: "";
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        right: -130px;
+        top: -60px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        line-height: 0.98;
+        font-weight: 700;
+        letter-spacing: -0.045em;
+      }
+
+      .hero-subtitle {
+        max-width: 720px;
+        font-size: 1.2rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.55rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: #fff;
+        font-size: 0.85rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-padding {
+        padding: 100px 0;
+      }
+
+      .section-heading {
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--tiaa-dark);
+      }
+
+      .section-intro {
+        max-width: 760px;
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      .product-card {
+        height: 100%;
+        border: 1px solid #e1eaee;
+        border-radius: 18px;
+        padding: 30px;
+        background: #fff;
+        transition: all 0.25s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 45px rgba(16, 54, 70, 0.1);
+      }
+
+      .product-icon {
+        width: 52px;
+        height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: var(--tiaa-light);
+        color: var(--tiaa-blue);
+        font-size: 1.35rem;
+        margin-bottom: 20px;
+      }
+
+      .architecture-section {
+        background: #f5f8fa;
+      }
+
+      .architecture-flow {
+        position: relative;
+      }
+
+      .architecture-node {
+        height: 100%;
+        min-height: 190px;
+        background: #fff;
+        border: 1px solid #dce7eb;
+        border-radius: 18px;
+        padding: 26px;
+        position: relative;
+      }
+
+      .architecture-number {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--tiaa-blue);
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .flow-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--tiaa-accent);
+        font-size: 1.7rem;
+      }
+
+      .comparison-card {
+        border-radius: 22px;
+        overflow: hidden;
+        border: 1px solid #dce7eb;
+        background: #fff;
+        height: 100%;
+      }
+
+      .comparison-header {
+        padding: 30px;
+        background: var(--tiaa-dark);
+        color: #fff;
+      }
+
+      .comparison-header.select {
+        background: #28647c;
+      }
+
+      .comparison-header.pro {
+        background: #123447;
+      }
+
+      .comparison-body {
+        padding: 30px;
+      }
+
+      .comparison-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .comparison-list li {
+        display: flex;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid #edf1f3;
+        line-height: 1.55;
+      }
+
+      .comparison-list li:last-child {
+        border-bottom: 0;
+      }
+
+      .comparison-list i {
+        color: var(--tiaa-blue);
+        margin-top: 3px;
+      }
+
+      .model-card {
+        border-radius: 18px;
+        padding: 30px;
+        height: 100%;
+        background: #fff;
+        border: 1px solid #dce7eb;
+      }
+
+      .model-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        color: var(--tiaa-blue);
+      }
+
+      .model-icon {
+        font-size: 2rem;
+        color: var(--tiaa-blue);
+        margin-bottom: 18px;
+      }
+
+      .participant-section {
+        background: linear-gradient(
+          135deg,
+          #f2f8fa 0%,
+          #ffffff 100%
+        );
+      }
+
+      .journey-step {
+        position: relative;
+        padding-left: 60px;
+        padding-bottom: 42px;
+      }
+
+      .journey-step:last-child {
+        padding-bottom: 0;
+      }
+
+      .journey-step::before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: 38px;
+        bottom: -5px;
+        width: 1px;
+        background: #cbdce3;
+      }
+
+      .journey-step:last-child::before {
+        display: none;
+      }
+
+      .journey-dot {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--tiaa-blue);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      .role-section {
+        background: var(--tiaa-dark);
+        color: #fff;
+      }
+
+      .role-section .section-heading {
+        color: #fff;
+      }
+
+      .role-card {
+        height: 100%;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.055);
+      }
+
+      .role-card i {
+        font-size: 1.8rem;
+        color: #8fc7dc;
+        margin-bottom: 18px;
+      }
+
+      .role-card p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+      }
+
+      .takeaway {
+        background: var(--tiaa-light);
+        border-left: 5px solid var(--tiaa-blue);
+        padding: 30px;
+        border-radius: 0 16px 16px 0;
+      }
+
+      .portfolio-tag {
+        display: inline-block;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        background: #edf5f8;
+        color: var(--tiaa-blue);
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin: 0 0.35rem 0.5rem 0;
+      }
+
+      .source-note {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 991px) {
+        .hero-retireplus {
+          min-height: 540px;
+        }
+
+        .flow-arrow {
+          transform: rotate(90deg);
+          padding: 15px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+    <!-- includes/nav.html -->
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container">
+
+        <a href="index.html" class="navbar-brand">
+          Faraz Uddin
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">
+                Portfolio
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="experience.html">
+                Experience
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                Contact
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <header class="hero-retireplus">
+
+      <div class="container hero-content">
+
+        <div
+          class="row align-items-center"
+          data-aos="fade-up"
+        >
+
+          <div class="col-lg-10">
+
+            <div class="eyebrow mb-4">
+              TIAA • Retirement Product Portfolio
+            </div>
+
+            <div class="mb-4">
+              <span class="hero-badge">
+                <i class="bi bi-graph-up-arrow"></i>
+                Asset Allocation
+              </span>
+
+              <span class="hero-badge">
+                <i class="bi bi-shield-check"></i>
+                Retirement Planning
+              </span>
+
+              <span class="hero-badge">
+                <i class="bi bi-diagram-3"></i>
+                Model Portfolios
+              </span>
+            </div>
+
+            <h1 class="hero-title mb-4">
+              TIAA<br />
+              RetirePlus<sup>®</sup>
+            </h1>
+
+            <p class="hero-subtitle mb-4">
+              A model-based retirement investment solution designed
+              to combine diversified asset allocation, automated
+              portfolio management and the potential for lifetime
+              income within an employer-sponsored retirement plan.
+            </p>
+
+            <p class="mb-0 text-white-50">
+              Product perspective • Business Analysis • Product Ownership
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         PRODUCT OVERVIEW
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            01 • Product Overview
+          </span>
+
+          <h2 class="section-heading mt-2">
+            What is RetirePlus?
+          </h2>
+
+          <p class="section-intro mx-auto mt-3">
+            RetirePlus is an asset-allocation offering that manages
+            participant portfolios through investment models. Rather
+            than functioning as a single investment, the product
+            provides a framework for allocating retirement assets
+            across multiple underlying investment options.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="product-card">
+
+              <div class="product-icon">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+
+              <h4>
+                Model-Based
+              </h4>
+
+              <p class="text-muted">
+                Participants are managed through asset-allocation
+                models rather than selecting and manually managing
+                every investment independently.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="product-card">
+
+              <div class="product-icon">
+                <i class="bi bi-pie-chart"></i>
+              </div>
+
+              <h4>
+                Diversified
+              </h4>
+
+              <p class="text-muted">
+                Models can allocate across multiple asset classes
+                and underlying investments, creating a portfolio
+                designed around the plan's investment strategy.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+
+            <div class="product-card">
+
+              <div class="product-icon">
+                <i class="bi bi-arrow-repeat"></i>
+              </div>
+
+              <h4>
+                Adaptive
+              </h4>
+
+              <p class="text-muted">
+                Depending on the model, allocations can change over
+                time as participants move closer to or through
+                retirement.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         HOW IT WORKS
+    ========================================================== -->
+
+    <section class="section-padding architecture-section">
+
+      <div class="container">
+
+        <div
+          class="mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            02 • Product Architecture
+          </span>
+
+          <h2 class="section-heading mt-2">
+            How RetirePlus Works
+          </h2>
+
+          <p class="section-intro mt-3">
+            From a product perspective, RetirePlus can be viewed as
+            an orchestration layer between the retirement plan,
+            investment models and underlying investment vehicles.
+          </p>
+
+        </div>
+
+
+        <div class="row align-items-stretch architecture-flow">
+
+          <div
+            class="col-lg"
+            data-aos="fade-up"
+          >
+
+            <div class="architecture-node">
+
+              <div class="architecture-number">
+                1
+              </div>
+
+              <h5>
+                Plan Sponsor
+              </h5>
+
+              <p class="text-muted mb-0">
+                Defines the retirement plan structure, available
+                investment options and governance requirements.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-auto flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+
+          <div
+            class="col-lg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="architecture-node">
+
+              <div class="architecture-number">
+                2
+              </div>
+
+              <h5>
+                RetirePlus Model
+              </h5>
+
+              <p class="text-muted mb-0">
+                Applies the selected investment strategy, allocation
+                rules and model structure.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-auto flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+
+          <div
+            class="col-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="architecture-node">
+
+              <div class="architecture-number">
+                3
+              </div>
+
+              <h5>
+                Asset Allocation
+              </h5>
+
+              <p class="text-muted mb-0">
+                Determines the portfolio's allocation across
+                eligible asset classes and investment vehicles.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-auto flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+
+          <div
+            class="col-lg"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+
+            <div class="architecture-node">
+
+              <div class="architecture-number">
+                4
+              </div>
+
+              <h5>
+                Participant
+              </h5>
+
+              <p class="text-muted mb-0">
+                Receives a managed retirement investment experience
+                aligned to the plan's selected model strategy.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         MODEL TYPES
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            03 • Model Strategies
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Different Ways to Build the Model
+          </h2>
+
+          <p class="section-intro mx-auto mt-3">
+            RetirePlus supports different model structures depending
+            on the plan's objectives and level of customization.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+          >
+
+            <div class="model-card">
+
+              <div class="model-icon">
+                <i class="bi bi-calendar3"></i>
+              </div>
+
+              <div class="model-label">
+                Strategy 01
+              </div>
+
+              <h4 class="mt-2">
+                Target-Date
+              </h4>
+
+              <p class="text-muted">
+                Allocations gradually shift from more aggressive
+                toward more conservative positioning based on an
+                expected retirement year.
+              </p>
+
+              <span class="portfolio-tag">
+                Retirement Year
+              </span>
+
+              <span class="portfolio-tag">
+                Glide Path
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="model-card">
+
+              <div class="model-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+
+              <div class="model-label">
+                Strategy 02
+              </div>
+
+              <h4 class="mt-2">
+                Target-Risk
+              </h4>
+
+              <p class="text-muted">
+                Maintains a defined risk profile, such as
+                conservative, moderate or aggressive, rather than
+                continuously changing toward a retirement date.
+              </p>
+
+              <span class="portfolio-tag">
+                Risk Profile
+              </span>
+
+              <span class="portfolio-tag">
+                Fixed Strategy
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="model-card">
+
+              <div class="model-icon">
+                <i class="bi bi-hourglass-split"></i>
+              </div>
+
+              <div class="model-label">
+                Strategy 03
+              </div>
+
+              <h4 class="mt-2">
+                Years-to-Retirement
+              </h4>
+
+              <p class="text-muted">
+                Uses a participant's estimated years until retirement
+                as the primary framework for moving between
+                increasingly conservative models.
+              </p>
+
+              <span class="portfolio-tag">
+                Years to Retirement
+              </span>
+
+              <span class="portfolio-tag">
+                Rebalancing
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SELECT VS PRO
+    ========================================================== -->
+
+    <section class="section-padding architecture-section">
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            04 • Product Variants
+          </span>
+
+          <h2 class="section-heading mt-2">
+            RetirePlus Select vs. RetirePlus Pro
+          </h2>
+
+          <p class="section-intro mx-auto mt-3">
+            The major product distinction is the amount of
+            customization available to the retirement plan sponsor.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <!-- SELECT -->
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-right"
+          >
+
+            <div class="comparison-card">
+
+              <div class="comparison-header select">
+
+                <div class="eyebrow text-white-50">
+                  Standardized
+                </div>
+
+                <h3 class="mt-2 mb-0">
+                  RetirePlus Select
+                </h3>
+
+              </div>
+
+              <div class="comparison-body">
+
+                <p class="text-muted">
+                  A predefined model framework designed to provide
+                  a simpler implementation path for plan sponsors.
+                </p>
+
+                <ul class="comparison-list">
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Predefined years-to-retirement models
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Conservative, moderate and aggressive model sets
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Plan investment options can be incorporated
+                      into the models
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Designed for a simpler default-investment
+                      implementation
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Model allocation framework developed using
+                      a third-party asset allocation methodology
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PRO -->
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-left"
+          >
+
+            <div class="comparison-card">
+
+              <div class="comparison-header pro">
+
+                <div class="eyebrow text-white-50">
+                  Customizable
+                </div>
+
+                <h3 class="mt-2 mb-0">
+                  RetirePlus Pro
+                </h3>
+
+              </div>
+
+              <div class="comparison-body">
+
+                <p class="text-muted">
+                  A more customizable platform that allows the plan
+                  sponsor and investment professionals to tailor
+                  the investment strategy.
+                </p>
+
+                <ul class="comparison-list">
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Target-date model support
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Target-risk model support
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Years-to-retirement model support
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Greater control over investment strategy
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>
+                      Customizable asset allocations and glide paths
+                    </span>
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         INVESTMENT LAYER
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div
+          class="row align-items-center g-5"
+          data-aos="fade-up"
+        >
+
+          <div class="col-lg-6">
+
+            <span class="eyebrow text-primary">
+              05 • Investment Layer
+            </span>
+
+            <h2 class="section-heading mt-2">
+              The Model Is Not the Investment
+            </h2>
+
+            <p class="text-muted mt-4">
+              One of the most important product concepts behind
+              RetirePlus is the separation between the allocation
+              model and the underlying investments.
+            </p>
+
+            <p class="text-muted">
+              The model determines how retirement assets should be
+              allocated. The underlying investment options provide
+              the actual vehicles used to implement that allocation.
+            </p>
+
+            <div class="takeaway mt-4">
+
+              <strong>
+                Product architecture perspective
+              </strong>
+
+              <p class="mb-0 mt-2 text-muted">
+                RetirePlus can therefore be understood as a
+                portfolio-management and allocation layer sitting
+                above the underlying investment layer.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-6">
+
+            <div class="row g-3">
+
+              <div class="col-6">
+
+                <div class="product-card">
+
+                  <i class="bi bi-bar-chart-fill fs-2 text-primary"></i>
+
+                  <h5 class="mt-3">
+                    Equities
+                  </h5>
+
+                  <p class="small text-muted mb-0">
+                    Growth-oriented investment exposure.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="col-6">
+
+                <div class="product-card">
+
+                  <i class="bi bi-bank fs-2 text-primary"></i>
+
+                  <h5 class="mt-3">
+                    Fixed Income
+                  </h5>
+
+                  <p class="small text-muted mb-0">
+                    Income and portfolio diversification.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="col-6">
+
+                <div class="product-card">
+
+                  <i class="bi bi-buildings fs-2 text-primary"></i>
+
+                  <h5 class="mt-3">
+                    Real Estate
+                  </h5>
+
+                  <p class="small text-muted mb-0">
+                    Real-asset exposure within the portfolio.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="col-6">
+
+                <div class="product-card">
+
+                  <i class="bi bi-shield-check fs-2 text-primary"></i>
+
+                  <h5 class="mt-3">
+                    Guaranteed
+                  </h5>
+
+                  <p class="small text-muted mb-0">
+                    Potential lifetime-income and guaranteed
+                    investment components.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PARTICIPANT EXPERIENCE
+    ========================================================== -->
+
+    <section class="section-padding participant-section">
+
+      <div class="container">
+
+        <div
+          class="row g-5"
+          data-aos="fade-up"
+        >
+
+          <div class="col-lg-5">
+
+            <span class="eyebrow text-primary">
+              06 • Participant Experience
+            </span>
+
+            <h2 class="section-heading mt-2">
+              From Investment Complexity to a Guided Experience
+            </h2>
+
+            <p class="text-muted mt-4">
+              RetirePlus abstracts much of the investment allocation
+              complexity from the participant. Instead of requiring
+              every participant to continuously determine the ideal
+              mix of investments, the model provides a structured
+              portfolio strategy.
+            </p>
+
+            <p class="text-muted">
+              The participant experience is therefore less about
+              manually selecting individual investments and more
+              about choosing or being assigned an appropriate model.
+            </p>
+
+          </div>
+
+
+          <div class="col-lg-7">
+
+            <div class="journey-step">
+
+              <div class="journey-dot">
+                1
+              </div>
+
+              <h5>
+                Participant Enters the Retirement Plan
+              </h5>
+
+              <p class="text-muted mb-0">
+                The participant becomes part of an employer-sponsored
+                retirement plan with an available investment menu
+                and model strategy.
+              </p>
+
+            </div>
+
+
+            <div class="journey-step">
+
+              <div class="journey-dot">
+                2
+              </div>
+
+              <h5>
+                Model Selection
+              </h5>
+
+              <p class="text-muted mb-0">
+                The participant may be placed into or select an
+                appropriate RetirePlus model depending on the
+                structure of the plan.
+              </p>
+
+            </div>
+
+
+            <div class="journey-step">
+
+              <div class="journey-dot">
+                3
+              </div>
+
+              <h5>
+                Portfolio Allocation
+              </h5>
+
+              <p class="text-muted mb-0">
+                The model determines how the participant's retirement
+                assets are allocated across eligible underlying
+                investment options.
+              </p>
+
+            </div>
+
+
+            <div class="journey-step">
+
+              <div class="journey-dot">
+                4
+              </div>
+
+              <h5>
+                Ongoing Portfolio Management
+              </h5>
+
+              <p class="text-muted mb-0">
+                Depending on the model, allocations can be adjusted
+                over time as retirement approaches.
+              </p>
+
+            </div>
+
+
+            <div class="journey-step">
+
+              <div class="journey-dot">
+                5
+              </div>
+
+              <h5>
+                Retirement & Income
+              </h5>
+
+              <p class="text-muted mb-0">
+                RetirePlus solutions can incorporate lifetime-income
+                investments, connecting the accumulation phase with
+                the participant's eventual retirement-income needs.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         QDIA / LIFETIME INCOME
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div
+          class="row align-items-center g-5"
+          data-aos="fade-up"
+        >
+
+          <div class="col-lg-7">
+
+            <span class="eyebrow text-primary">
+              07 • Retirement Strategy
+            </span>
+
+            <h2 class="section-heading mt-2">
+              Designed to Connect Saving With Retirement Income
+            </h2>
+
+            <p class="text-muted mt-4">
+              A defining feature of the RetirePlus proposition is
+              its ability to combine portfolio allocation with
+              retirement-income considerations.
+            </p>
+
+            <p class="text-muted">
+              TIAA describes RetirePlus solutions as potentially
+              QDIA-eligible, allowing employers to use the models
+              within a qualified default investment framework.
+            </p>
+
+            <p class="text-muted">
+              The solutions can also incorporate lifetime-income
+              investments, bringing TIAA's annuity capabilities into
+              the broader retirement investment strategy.
+            </p>
+
+          </div>
+
+
+          <div class="col-lg-5">
+
+            <div class="product-card">
+
+              <div class="product-icon">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+
+              <h4>
+                QDIA + Lifetime Income
+              </h4>
+
+              <p class="text-muted">
+                The product can help plan sponsors create a default
+                investment strategy while incorporating investments
+                designed to support retirement income.
+              </p>
+
+              <hr />
+
+              <div class="d-flex align-items-center gap-3 mb-3">
+
+                <i class="bi bi-check-circle-fill text-primary"></i>
+
+                <span>
+                  Default investment framework
+                </span>
+
+              </div>
+
+              <div class="d-flex align-items-center gap-3 mb-3">
+
+                <i class="bi bi-check-circle-fill text-primary"></i>
+
+                <span>
+                  Diversified portfolio strategy
+                </span>
+
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+
+                <i class="bi bi-check-circle-fill text-primary"></i>
+
+                <span>
+                  Potential lifetime-income component
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PRODUCT OWNER / BA
+    ========================================================== -->
+
+    <section class="section-padding role-section">
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-info">
+            08 • Product & Business Analysis Perspective
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Where Product Ownership Meets RetirePlus
+          </h2>
+
+          <p class="section-intro mx-auto mt-3 text-white-50">
+            A product like RetirePlus spans investment strategy,
+            participant experience, plan configuration, data,
+            business rules and enterprise technology.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+          >
+
+            <div class="role-card">
+
+              <i class="bi bi-card-checklist"></i>
+
+              <h5>
+                Requirements
+              </h5>
+
+              <p>
+                Translate business and investment requirements into
+                clear product requirements, user stories, acceptance
+                criteria and functional behavior.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="role-card">
+
+              <i class="bi bi-diagram-2"></i>
+
+              <h5>
+                Business Rules
+              </h5>
+
+              <p>
+                Define how participant attributes, model selection,
+                allocations, eligibility and retirement timelines
+                translate into system behavior.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="role-card">
+
+              <i class="bi bi-database"></i>
+
+              <h5>
+                Data & Integrations
+              </h5>
+
+              <p>
+                Understand the movement of participant, plan,
+                investment and allocation data across enterprise
+                platforms and downstream systems.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+          >
+
+            <div class="role-card">
+
+              <i class="bi bi-window"></i>
+
+              <h5>
+                UX & Digital Experience
+              </h5>
+
+              <p>
+                Translate a complex investment product into
+                participant-facing experiences that communicate
+                models, allocations and retirement progress clearly.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="role-card">
+
+              <i class="bi bi-people"></i>
+
+              <h5>
+                Stakeholder Alignment
+              </h5>
+
+              <p>
+                Coordinate across product management, investment
+                teams, compliance, operations, technology, design
+                and external stakeholders.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="role-card">
+
+              <i class="bi bi-kanban"></i>
+
+              <h5>
+                Agile Delivery
+              </h5>
+
+              <p>
+                Break complex product capabilities into manageable
+                features and stories that development and QA teams
+                can deliver incrementally.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ENTERPRISE PRODUCT VIEW
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            09 • Enterprise Product View
+          </span>
+
+          <h2 class="section-heading mt-2">
+            RetirePlus as an Enterprise Ecosystem
+          </h2>
+
+          <p class="section-intro mx-auto mt-3">
+            RetirePlus sits within a broader retirement-plan ecosystem
+            rather than operating as an isolated investment product.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div class="col-lg-3" data-aos="fade-up">
+
+            <div class="product-card">
+
+              <div class="product-icon">
+                <i class="bi bi-building"></i>
+              </div>
+
+              <h5>
+                Plan Sponsor
+              </h5>
+
+              <p class="small text-muted">
+                Plan governance, investment menu, participant
+                population and fiduciary decisions.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="product-card">
+
+              <div class="product-icon">
+                <i class="bi bi-gear-wide-connected"></i>
+              </div>
+
+              <h5>
+                TIAA Platform
+              </h5>
+
+              <p class="small text-muted">
+                Recordkeeping, participant servicing, transaction
+                processing and retirement-plan capabilities.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="product-card">
+
+              <div class="product-icon">
+                <i class="bi bi-bar-chart-line"></i>
+              </div>
+
+              <h5>
+                Investment Models
+              </h5>
+
+              <p class="small text-muted">
+                Allocation strategies, risk profiles, glide paths
+                and retirement-time-horizon logic.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="product-card">
+
+              <div class="product-icon">
+                <i class="bi bi-person-check"></i>
+              </div>
+
+              <h5>
+                Participant
+              </h5>
+
+              <p class="small text-muted">
+                The end user saving for retirement and ultimately
+                converting accumulated assets into retirement income.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PORTFOLIO CONNECTION
+    ========================================================== -->
+
+    <section class="section-padding architecture-section">
+
+      <div class="container">
+
+        <div
+          class="row align-items-center g-5"
+          data-aos="fade-up"
+        >
+
+          <div class="col-lg-6">
+
+            <span class="eyebrow text-primary">
+              10 • TIAA Digital Product Ecosystem
+            </span>
+
+            <h2 class="section-heading mt-2">
+              Where RetirePlus Fits Into the Broader TIAA Experience
+            </h2>
+
+            <p class="text-muted mt-4">
+              RetirePlus is one component of a broader retirement
+              technology ecosystem. The participant and plan-sponsor
+              experience can involve multiple digital products,
+              tools and data-driven workflows.
+            </p>
+
+            <div class="mt-4">
+
+              <span class="portfolio-tag">
+                PlanFocus
+              </span>
+
+              <span class="portfolio-tag">
+                RetirePlus
+              </span>
+
+              <span class="portfolio-tag">
+                Investment Screener
+              </span>
+
+              <span class="portfolio-tag">
+                Business Edge
+              </span>
+
+              <span class="portfolio-tag">
+                Fund Profiles
+              </span>
+
+              <span class="portfolio-tag">
+                Participant Experiences
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-lg-6">
+
+            <div class="takeaway">
+
+              <h5>
+                Product portfolio perspective
+              </h5>
+
+              <p class="text-muted mb-0 mt-3">
+                The value of a retirement platform comes from how
+                these capabilities work together: plan configuration,
+                investment research, portfolio construction,
+                participant guidance, reporting and retirement
+                outcomes.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FINAL TAKEAWAY
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div
+          class="row justify-content-center text-center"
+          data-aos="fade-up"
+        >
+
+          <div class="col-lg-9">
+
+            <span class="eyebrow text-primary">
+              11 • Product Takeaway
+            </span>
+
+            <h2 class="section-heading mt-2">
+              Turning Retirement Complexity Into a Product Experience
+            </h2>
+
+            <p class="lead text-muted mt-4">
+              RetirePlus demonstrates how a complex financial product
+              can be translated into a structured digital and
+              operational experience for plan sponsors and participants.
+            </p>
+
+            <p class="text-muted">
+              From investment models and allocation rules to participant
+              journeys, data, business requirements and enterprise
+              integrations, the product sits at the intersection of
+              financial services, technology and user experience.
+            </p>
+
+            <div class="takeaway text-start mt-5">
+
+              <strong>
+                Product Owner / Business Analyst perspective
+              </strong>
+
+              <p class="mb-0 mt-2 text-muted">
+                The challenge is not simply understanding the
+                investment product. It is translating investment
+                strategy and business rules into clear requirements,
+                intuitive experiences, reliable data flows and
+                scalable enterprise capabilities.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SOURCE / DISCLAIMER
+    ========================================================== -->
+
+    <section class="pb-5">
+
+      <div class="container">
+
+        <div class="border-top pt-4">
+
+          <p class="source-note mb-2">
+            <strong>Source:</strong>
+            TIAA Product Primer, January 2025; TIAA RetirePlus
+            product and model portfolio materials.
+          </p>
+
+          <p class="source-note mb-0">
+            This portfolio page is intended to demonstrate product,
+            business analysis and technology understanding. It is not
+            investment advice and does not represent an offer,
+            recommendation or endorsement of any investment product.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="bg-dark text-white py-5">
+
+      <div class="container">
+
+        <div class="row align-items-center">
+
+          <div class="col-md-6">
+
+            <h5 class="mb-1">
+              Faraz Uddin
+            </h5>
+
+            <p class="text-white-50 mb-0">
+              Business Analyst • Product Owner • Digital Products
+            </p>
+
+          </div>
+
+          <div class="col-md-6 text-md-end mt-3 mt-md-0">
+
+            <a
+              href="portfolio.html"
+              class="text-white text-decoration-none me-3"
+            >
+              Portfolio
+            </a>
+
+            <a
+              href="experience.html"
+              class="text-white text-decoration-none me-3"
+            >
+              Experience
+            </a>
+
+            <a
+              href="contact.html"
+              class="text-white text-decoration-none"
+            >
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         SCRIPTS
+    ========================================================== -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <script
+      src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+    ></script>
+
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 80
+      });
+    </script>
+
+  </body>
+</html>
