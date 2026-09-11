@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Faraz Uddin — Product Owner, Wells Fargo Merchant Services</title>
+<meta name="description" content="Product Owner case study: two Pega-based MVPs for Wells Fargo Merchant Services — Risk Profile Assessment and Shared Mailbox workflow migration." />
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1c2428;
+    --muted:#5c6f78;
+    --deep-green:#4361ee;
+    --deep-green-2:#03045e;
+    --gold:#7fb8d6;
+    --cream:#f4faff;
+    --line:#d9e8f2;
+  }
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces', serif;
+  }
+  .eyebrow{
+    color:var(--gold);
+    font-size:.85rem;
+    letter-spacing:.02em;
+    font-weight:600;
+  }
+  .lede{
+    max-width:42rem;
+    color:var(--muted);
+    font-size:1.15rem;
+    line-height:1.6;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--deep-green) 0%,var(--deep-green-2) 100%);
+    color:#f2f0e9;
+    padding:5.5rem 0 4rem;
+  }
+  .hero .eyebrow{ color:#d8c793; }
+  .hero h1{
+    font-size:clamp(2.4rem,5vw,3.6rem);
+    font-weight:500;
+    color:#f7f5ee;
+    margin:.75rem 0 1.25rem;
+  }
+  .hero .lede{ color:#cfd6d1; }
+  .hero-fact{
+    border-top:1px solid rgba(255,255,255,.15);
+    padding-top:1.1rem;
+    height:100%;
+  }
+  .hero-fact p{ color:#c9d1cc; font-size:.97rem; line-height:1.55; margin:0; }
+
+  /* Section rhythm */
+  section{ padding:4.5rem 0; scroll-margin-top:2rem; }
+  .section-tight{ padding:3rem 0; }
+  h2.section-title{
+    font-size:clamp(1.7rem,3vw,2.3rem);
+    font-weight:500;
+    margin-top:.5rem;
+  }
+
+  /* Tabs */
+  .product-tabs .nav-link{
+    font-family:'Fraunces', serif;
+    color:var(--muted);
+    border:none;
+    border-bottom:2px solid transparent;
+    padding:.6rem 1.4rem .6rem 0;
+    margin-right:1.5rem;
+    font-size:1.05rem;
+    background:none;
+  }
+  .product-tabs .nav-link.active{
+    color:var(--ink);
+    border-bottom-color:var(--gold);
+    background:none;
+  }
+
+  .bullet-list{ list-style:none; padding:0; margin:0; }
+  .bullet-list li{
+    display:flex;
+    gap:.85rem;
+    padding:.55rem 0;
+    color:var(--muted);
+    line-height:1.6;
+  }
+  .bullet-list li::before{
+    content:"";
+    flex:0 0 auto;
+    width:6px;
+    height:6px;
+    margin-top:.55rem;
+    border-radius:50%;
+    background:var(--gold);
+  }
+
+  .subhead{
+    font-size:1.05rem;
+    font-weight:600;
+    margin:2rem 0 .5rem;
+    color:var(--ink);
+  }
+
+  /* Approach cards */
+  .approach-card{
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:6px;
+    padding:1.6rem;
+    height:100%;
+  }
+  .approach-card p{ color:var(--muted); margin:0; line-height:1.6; }
+
+  /* UAT cards */
+  .uat-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:1.75rem;
+    height:100%;
+  }
+  .uat-card h3{
+    font-size:1.15rem;
+    font-weight:500;
+    margin-bottom:1rem;
+  }
+
+  /* Numbered process grid */
+  .process-item{ padding:1.75rem 0; border-top:1px solid var(--line); }
+  .process-num{
+    font-family:'Fraunces', serif;
+    font-size:2.4rem;
+    color:var(--gold);
+    line-height:1;
+    margin-bottom:.5rem;
+  }
+  .process-item h3{ font-size:1.15rem; font-weight:500; margin-bottom:.5rem; }
+  .process-item p{ color:var(--muted); margin:0; line-height:1.6; }
+
+  footer{
+    padding:2.5rem 0;
+    border-top:1px solid var(--line);
+    text-align:center;
+    color:var(--muted);
+    font-size:.9rem;
+  }
+  footer strong{ color:var(--ink); }
+
+  /* ===== Side Nav ===== */
+  .side-nav{
+    position:fixed;
+    top:50%;
+    left:1.75rem;
+    transform:translateY(-50%);
+    z-index:1040;
+    display:flex;
+    flex-direction:column;
+    gap:1.1rem;
+  }
+  .side-nav a{
+    display:flex;
+    align-items:center;
+    gap:.65rem;
+    text-decoration:none;
+    color:var(--muted);
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.01em;
+    white-space:nowrap;
+  }
+  .side-nav .dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#fff;
+    border:1px solid var(--gold);
+    flex:0 0 auto;
+    box-shadow:0 1px 3px rgba(0,0,0,.15);
+    transition:background .2s ease, transform .2s ease;
+  }
+  .side-nav .label{
+    color:var(--ink);
+    background:#fff;
+    border:1px solid var(--line);
+    padding:.3rem .65rem;
+    border-radius:999px;
+    box-shadow:0 1px 4px rgba(0,0,0,.12);
+    opacity:1;
+    transition:background .2s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .side-nav a:hover .label{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:#fff;
+  }
+  .side-nav a.active .label{
+    background:var(--deep-green);
+    border-color:var(--deep-green);
+    color:#fff;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+  }
+  .side-nav a.active .dot{
+    background:var(--gold);
+    transform:scale(1.15);
+  }
+  .side-nav a:hover .dot{
+    background:var(--gold);
+  }
+
+  /* Labels now always sit on a solid pill background so they read
+     over both the dark hero gradient and the light cream sections. */
+
+  .side-nav-toggle{
+    display:none;
+    position:fixed;
+    top:1.25rem;
+    left:1.25rem;
+    z-index:1050;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:#fff;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+  }
+  .side-nav-toggle span,
+  .side-nav-toggle span::before,
+  .side-nav-toggle span::after{
+    content:"";
+    display:block;
+    width:18px;
+    height:2px;
+    background:var(--ink);
+    position:relative;
+  }
+  .side-nav-toggle span::before{ position:absolute; top:-6px; }
+  .side-nav-toggle span::after{ position:absolute; top:6px; }
+
+  @media (max-width:991px){
+    .side-nav{
+      left:0;
+      top:0;
+      transform:none;
+      flex-direction:column;
+      background:#fff;
+      height:100vh;
+      width:220px;
+      padding:5.5rem 1.5rem 2rem;
+      box-shadow:2px 0 12px rgba(0,0,0,.08);
+      transition:transform .25s ease;
+      transform:translateX(-100%);
+    }
+    .side-nav.open{ transform:translateX(0); }
+    .side-nav .label{ opacity:1; transform:none; }
+    .side-nav-toggle{ display:flex; }
+  }
+
+  @media (max-width:767px){
+    .hero{ padding:3.5rem 0 2.5rem; }
+    section{ padding:3rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Side nav toggle (mobile only) -->
+<button class="side-nav-toggle" id="sideNavToggle" aria-label="Toggle navigation">
+  <span></span>
+</button>
+
+<!-- Side nav -->
+<nav class="side-nav" id="sideNav" aria-label="Page sections">
+  <a href="#hero" class="nav-dot-link"><span class="dot"></span><span class="label">Intro</span></a>
+  <a href="#products" class="nav-dot-link"><span class="dot"></span><span class="label">Products</span></a>
+  <a href="#how-i-work" class="nav-dot-link"><span class="dot"></span><span class="label">Approach</span></a>
+  <a href="#uat" class="nav-dot-link"><span class="dot"></span><span class="label">UAT</span></a>
+  <a href="#delivery" class="nav-dot-link"><span class="dot"></span><span class="label">Delivery</span></a>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="hero">
+  <div class="container">
+    <p class="eyebrow">PRODUCT OWNER — CASE STUDY</p>
+    <h1>Wells Fargo Merchant Services</h1>
+    <p class="lede">Product Owner supporting two Pega-based MVP applications across Governance, Risk &amp; Compliance (GRC) and operational workflows.</p>
+
+    <div class="row mt-5 g-4">
+      <div class="col-md-4">
+        <div class="hero-fact">
+          <p>Served as Product Owner for two Pega-based applications: Risk Profile Assessment (RPA) and Shared Mailbox (SMB).</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="hero-fact">
+          <p>Partnered with Pega and cross-functional stakeholders to define, prioritize, and deliver MVP solutions for distinct business and operational needs.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="hero-fact">
+          <p>Owned requirements, user stories, acceptance criteria, workflows, and backlog priorities across the product lifecycle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Products -->
+<section id="products">
+  <div class="container">
+    <p class="eyebrow">THE PRODUCTS</p>
+    <h2 class="section-title mb-4">Two MVPs, one platform</h2>
+
+    <ul class="nav product-tabs mb-4" id="productTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="rpa-tab" data-bs-toggle="tab" data-bs-target="#rpa" type="button" role="tab">Risk Profile Assessment (RPA)</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="smb-tab" data-bs-toggle="tab" data-bs-target="#smb" type="button" role="tab">Shared Mailbox (SMB)</button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="productTabContent">
+
+      <!-- RPA -->
+      <div class="tab-pane fade show active" id="rpa" role="tabpanel">
+        <h3 class="serif mb-2" style="font-weight:500;">Risk Profile Assessment (RPA)</h3>
+        <p class="lede mb-4">Internal underwriting &amp; risk-monitoring tool for Merchant Services Risk &amp; Credit teams.</p>
+
+        <ul class="bullet-list">
+          <li>Owned the product vision for an internal underwriting tool supporting periodic merchant risk review (yearly, quarterly, monthly, or custom cadence).</li>
+          <li>Led the migration of merchant risk analysis and underwriting workflows off an external vendor (Fiserv) onto an internal Wells Fargo platform, centralizing risk decisioning in-house.</li>
+          <li>Defined the core domain model — merchant information, risk exposure, risk rating, collateral, and credit approval amount — underpinning underwriting decisions.</li>
+          <li>Shaped requirements for the risk rating framework (Borrower, Collateral, and Asset Quality Ratings) and key exposure indicators such as chargebacks, refunds, and non-delivery exposure.</li>
+          <li>Partnered with Credit Officers, Risk &amp; Compliance, Change Managers, and onshore/offshore development teams to deliver the MVP.</li>
+          <li>Owned the Pega front-end experience and workflow, consuming APIs and Kafka event messages from the backend credit-decisioning team to drive review setup and merchant data display.</li>
+        </ul>
+
+        <p class="subhead">Hierarchy Updates</p>
+        <ul class="bullet-list">
+          <li>Updated MVP RPA to add merchant hierarchy functionality.</li>
+          <li>Led requirements to upgrade the merchant hierarchy integration from API V1 to V2, supporting updated hierarchy relationships and data structures.</li>
+          <li>Expanded processing-volume analysis from a 12- to 13-month review window, giving Risk and Credit users additional merchant activity for underwriting decisions.</li>
+          <li>Added functionality surfacing prior credit problems for high-risk merchants, improving visibility into historical risk indicators during underwriting.</li>
+        </ul>
+      </div>
+
+      <!-- SMB -->
+      <div class="tab-pane fade" id="smb" role="tabpanel">
+        <h3 class="serif mb-2" style="font-weight:500;">Shared Mailbox (SMB)</h3>
+        <p class="lede mb-4">Workflow migration modernizing a shared-mailbox intake process into a structured, trackable Pega workflow for Operations teams.</p>
+
+        <ul class="bullet-list">
+          <li>Owned the product vision for migrating manual shared-mailbox intake into a structured Pega workflow.</li>
+          <li>Ran discovery with Operations stakeholders to understand mailbox pain points, volume, and SLA risk before defining requirements.</li>
+          <li>Delivered the MVP incrementally across sprints, with UAT performed after each sprint to validate functionality and identify gaps early.</li>
+          <li>Coordinated final business sign-off and the production launch, then supported the post-launch warranty period for defects and enhancements.</li>
+        </ul>
+        <p class="text-muted small mt-3">See the delivery process below for the full sprint-by-sprint approach used for this application.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How I Work -->
+<section class="bg-white border-top border-bottom" id="how-i-work" style="border-color:var(--line) !important;">
+  <div class="container">
+    <p class="eyebrow">HOW I WORK</p>
+    <h2 class="section-title mb-4">Approach &amp; Impact</h2>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="approach-card">
+          <p>Ran discovery using stakeholder interviews and MoSCoW prioritization to scope each MVP against real operational pain points.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="approach-card">
+          <p>Wrote and refined stories against the INVEST framework, with Given/When/Then acceptance criteria covering happy path, edge cases, permissions, and integration behavior.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="approach-card">
+          <p>Drove backlog refinement, sprint planning, and sprint review/demo as the primary business voice across both applications.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="approach-card">
+          <p>Defined reporting requirements feeding the Pega → Power BI pipeline and Grafana dashboards, giving Risk and Operations leadership visibility into case aging, queue backlog, and RPA completion metrics.</p>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="approach-card">
+          <p>Managed the platform transition from Pega's legacy Cosmos UI framework to the newer Constellation design system, navigating functionality gaps and stakeholder expectations along the way.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UAT -->
+<section id="uat">
+  <div class="container">
+    <p class="eyebrow">VALIDATION</p>
+    <h2 class="section-title mb-2">UAT Testing</h2>
+    <p class="lede mb-4">Owned User Acceptance Testing planning and coordination for Pega-based MVP releases, ensuring business stakeholders validated functionality against acceptance criteria before go-live.</p>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="uat-card">
+          <h3 class="serif">UAT Testing</h3>
+          <ul class="bullet-list">
+            <li>Owned the UAT test plan, translating user stories and acceptance criteria into test scenarios covering happy path, edge cases, and permission-based access.</li>
+            <li>Validated Pega workflow behavior against business requirements before handoff to end users, catching gaps between designed functionality and actual business need.</li>
+            <li>Tracked and triaged defects surfaced during UAT, working with development teams to prioritize fixes against release timelines.</li>
+            <li>Documented test results and obtained formal sign-off from business stakeholders prior to production deployment.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="uat-card">
+          <h3 class="serif">UAT Coordination</h3>
+          <ul class="bullet-list">
+            <li>Recruited and scheduled business-side UAT testers across Risk, Credit, and Operations teams, matching tester coverage to feature scope.</li>
+            <li>Ran daily UAT stand-ups and status check-ins to surface blockers, track testing progress, and manage timeline risk ahead of release.</li>
+            <li>Served as the primary liaison between business testers and the development team, clarifying requirements and reproducing reported issues.</li>
+            <li>Coordinated with Change Managers to align UAT completion with release and deployment schedules.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="uat-card">
+          <h3 class="serif">Key Steps to Conduct UAT</h3>
+          <ul class="bullet-list">
+            <li>Defined UAT entry criteria, confirming the build was feature-complete and had passed QA/SIT before entering UAT.</li>
+            <li>Built test scripts mapped directly to acceptance criteria, so every story had a corresponding pass/fail scenario.</li>
+            <li>Set up a dedicated UAT environment with representative test data, avoiding false positives/negatives from stale or incomplete data.</li>
+            <li>Executed test scripts with business testers, logging results and defects in real time.</li>
+            <li>Triaged and retested defects, re-running affected scenarios after each fix.</li>
+            <li>Closed UAT with a formal sign-off from business stakeholders, confirming readiness for production release.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Delivery Process -->
+<section class="bg-white border-top" id="delivery" style="border-color:var(--line) !important;">
+  <div class="container">
+    <p class="eyebrow">DELIVERY MODEL</p>
+    <h2 class="section-title mb-2">Agile Delivery Process — Shared Mailbox</h2>
+    <p class="lede mb-4">An iterative delivery model used specifically for SMB, combining stakeholder discovery, sprint-based MVP delivery, continuous UAT and feedback, final business signoff, and post-launch measurement.</p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="process-item">
+          <div class="process-num">01</div>
+          <h3>Discover</h3>
+          <p>Engaged Operations stakeholders to understand mailbox pain points, workflow challenges, volume, and SLA risk before defining requirements.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="process-item">
+          <div class="process-num">02</div>
+          <h3>Refine the Backlog</h3>
+          <p>Translated discovery findings into INVEST-aligned user stories with clear acceptance criteria and prioritized the backlog for delivery.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="process-item">
+          <div class="process-num">03</div>
+          <h3>Build &amp; Validate</h3>
+          <p>Delivered the MVP incrementally across sprints, with UAT performed after each sprint to validate functionality and identify gaps early.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="process-item">
+          <div class="process-num">04</div>
+          <h3>Demo &amp; Iterate</h3>
+          <p>Demonstrated sprint increments to stakeholders, captured feedback, and refined the product and backlog through continuous iteration.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="process-item">
+          <div class="process-num">05</div>
+          <h3>Sign Off &amp; Launch</h3>
+          <p>Completed final UAT, secured business stakeholder signoff, and coordinated the production launch.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="process-item">
+          <div class="process-num">06</div>
+          <h3>Warranty &amp; Measure</h3>
+          <p>Supported the post-launch warranty period for defects and enhancements, while using Grafana reporting to monitor adoption and operational results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Hand coded by <strong>Faraz Uddin</strong>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Mobile side-nav toggle
+  const toggleBtn = document.getElementById('sideNavToggle');
+  const sideNav = document.getElementById('sideNav');
+  toggleBtn.addEventListener('click', () => sideNav.classList.toggle('open'));
+
+  // Close mobile nav after clicking a link
+  document.querySelectorAll('.nav-dot-link').forEach(link => {
+    link.addEventListener('click', () => sideNav.classList.remove('open'));
+  });
+
+  // Scroll-spy: highlight the active section's dot
+  const sections = document.querySelectorAll('section, header.hero');
+  const navLinks = document.querySelectorAll('.side-nav a');
+
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const link = document.querySelector(`.side-nav a[href="#${id}"]`);
+      if (!link) return;
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(s => spy.observe(s));
+</script>
+</body>
+</html>

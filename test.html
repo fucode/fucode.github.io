@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/favicon.png" />
+    <title>Faraz Uddin | Wells Fargo</title>
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <!-- Hero -->
+      <div class="hero text-white pt-7 pb-4"></div>
+      <svg
+        class="frame-decoration"
+        data-name="Layer 2"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        viewBox="0 0 1920 192.275"
+      >
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #ffffff;
+            }
+          </style>
+        </defs>
+        <title>frame-decoration</title>
+        <path
+          class="cls-1"
+          d="M0,158.755s63.9,52.163,179.472,50.736c121.494-1.5,185.839-49.738,305.984-49.733,109.21,0,181.491,51.733,300.537,50.233,123.941-1.562,225.214-50.126,390.43-50.374,123.821-.185,353.982,58.374,458.976,56.373,217.907-4.153,284.6-57.236,284.6-57.236V351.03H0V158.755Z"
+          transform="translate(0 -158.755)"
+        />
+      </svg>
+    </header>
+
+    <!--
+      SECTION 1: INTRO
+      Top banner for the Wells Fargo case study — company logo, role title,
+      one-line summary, and three high-level bullets.
+    -->
+    <section class="bg-white py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="col-lg-6 mx-auto mb-4">
+            <img class="img-fluid rounded-3 mb-4"
+                 src="images/Wells_Fargo-Logo.wine.png"
+                 alt="Wells Fargo Logo">
+          </div>
+
+          <h4 class="fw-bold mb-2">Wells Fargo Merchant Services — Product Owner</h4>
+          <p class="text-muted mb-4">
+            Product Owner supporting two Pega-based MVP applications across Governance, Risk &amp; Compliance (GRC) and operational workflows.
+          </p>
+
+          <div class="col-lg-10 offset-lg-1 text-start">
+            <ul class="fa-ul lh-lg">
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Served as Product Owner for two Pega-based applications: <strong>Risk Profile Assessment (RPA)</strong> and <strong>Shared Mailbox (SMB)</strong>.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Partnered with Pega and cross-functional stakeholders to define, prioritize, and deliver MVP solutions for distinct business and operational needs.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Owned requirements, user stories, acceptance criteria, workflows, and backlog priorities across the product lifecycle.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 2: RPA / SMB PROJECT TABS
+      Clickable tab widget toggling between the two projects (Risk Profile
+      Assessment and Shared Mailbox) without scrolling through both at once.
+    -->
+    <section class="bg-white py-5">
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
+
+            <ul class="nav nav-tabs mb-4" id="projectTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="rpa-tab" data-bs-toggle="tab" data-bs-target="#rpa-pane" type="button" role="tab" aria-controls="rpa-pane" aria-selected="true">
+                  Risk Profile Assessment (RPA)
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="smb-tab" data-bs-toggle="tab" data-bs-target="#smb-pane" type="button" role="tab" aria-controls="smb-pane" aria-selected="false">
+                  Shared Mailbox (SMB)
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="projectTabsContent">
+
+              <!-- RPA Pane -->
+              <div class="tab-pane fade show active" id="rpa-pane" role="tabpanel" aria-labelledby="rpa-tab" tabindex="0">
+                <h4 class="fw-bold mb-2">Risk Profile Assessment (RPA)</h4>
+                <p class="text-muted mb-3">
+                  Internal underwriting &amp; risk-monitoring tool for Merchant Services Risk &amp; Credit teams.
+                </p>
+                <ul class="fa-ul lh-lg">
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Owned the product vision for an internal underwriting tool supporting periodic merchant risk review (yearly, quarterly, monthly, or custom cadence).
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Led the migration of merchant risk analysis and underwriting workflows off an external vendor (Fiserv) onto an internal Wells Fargo platform, centralizing risk decisioning in-house.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Defined the core domain model &mdash; merchant information, risk exposure, risk rating, collateral, and credit approval amount &mdash; underpinning underwriting decisions.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Shaped requirements for the risk rating framework (Borrower, Collateral, and Asset Quality Ratings) and key exposure indicators such as chargebacks, refunds, and non-delivery exposure.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Partnered with Credit Officers, Risk &amp; Compliance, Change Managers, and onshore/offshore development teams to deliver the MVP.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Owned the Pega front-end experience and workflow, consuming APIs and Kafka event messages from the backend credit-decisioning team to drive review setup and merchant data display.
+                  </li>
+                </ul>
+
+                <h5 class="fw-bold mb-2 mt-4">Hierarchy Updates</h5>
+                <p class="text-muted mb-3">
+                  Updated MVP RPA to add merchant hierarchy functionality.
+                </p>
+                <ul class="fa-ul lh-lg">
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Led requirements to upgrade the merchant hierarchy integration from API V1 to V2, supporting updated hierarchy relationships and data structures.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Expanded processing-volume analysis from a 12- to 13-month review window, giving Risk and Credit users additional merchant activity for underwriting decisions.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Added functionality surfacing prior credit problems for high-risk merchants, improving visibility into historical risk indicators during underwriting.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- SMB Pane -->
+              <div class="tab-pane fade" id="smb-pane" role="tabpanel" aria-labelledby="smb-tab" tabindex="0">
+                <h4 class="fw-bold mb-2">Shared Mailbox (SMB) Workflow Migration</h4>
+                <p class="text-muted mb-3">Case-management application replacing manual, Outlook-based email handling with structured workflow and tracking.</p>
+
+                <ul class="fa-ul lh-lg">
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Owned the product vision for migrating the Merchant Services shared Outlook mailbox into a Pega-based case-management solution.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Addressed operational risk and SLA breaches caused by manual email triage, lack of case tracking, and limited visibility into queue volume and aging.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Defined the case model: Email Triage (ET) cases for incoming mail and linked Service Request (SR) cases for required actions, with routing rules maintained by an Admin role.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Partnered with Operations leads, Change Managers, and onshore/offshore development teams to define intake rules, routing logic, and case workflows.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Improved auditability and SLA compliance by replacing inbox-based tracking with structured case assignment, escalation paths, and reporting.
+                  </li>
+                  <li>
+                    <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                    Used the SMB foundation to stand up follow-on shared mailboxes within Merchant Services, including a mailbox routing payments tied to an Illinois state tax/tip/fee law.
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 3: APPROACH & IMPACT
+      How the user works as a Product Owner in general — discovery methods,
+      story-writing standards, ceremonies run, and reporting/tooling transitions.
+    -->
+    <section class="bg-white py-5">
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
+            <h4 class="fw-bold mb-2">Approach &amp; Impact</h4>
+
+            <ul class="fa-ul lh-lg">
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Ran discovery using stakeholder interviews and MoSCoW prioritization to scope each MVP against real operational pain points.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Wrote and refined stories against the INVEST framework, with Given/When/Then acceptance criteria covering happy path, edge cases, permissions, and integration behavior.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Drove backlog refinement, sprint planning, and sprint review/demo as the primary business voice across both applications.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Defined reporting requirements feeding the Pega &rarr; Power BI pipeline and Grafana dashboards, giving Risk and Operations leadership visibility into case aging, queue backlog, and RPA completion metrics.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Managed the platform transition from Pega's legacy Cosmos UI framework to the newer Constellation design system, navigating functionality gaps and stakeholder expectations along the way.
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 4: UAT (USER ACCEPTANCE TESTING)
+      A deep dive on running UAT: what was owned on the testing side, how the
+      humans involved were coordinated, and the step-by-step UAT process.
+    -->
+    <section class="bg-white py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h4 class="fw-bold mb-2">UAT Testing</h4>
+          <p class="text-muted mb-4">
+            Owned User Acceptance Testing (UAT) planning and coordination for Pega-based MVP releases, ensuring business stakeholders validated functionality against acceptance criteria before go-live.
+          </p>
+        </div>
+
+        <!-- UAT Testing -->
+        <div class="row gx-5">
+          <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
+            <h5 class="fw-bold mb-2">UAT Testing</h5>
+            <ul class="fa-ul lh-lg">
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Owned the UAT test plan, translating user stories and acceptance criteria into test scenarios covering happy path, edge cases, and permission-based access.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Validated Pega workflow behavior against business requirements before handoff to end users, catching gaps between designed functionality and actual business need.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Tracked and triaged defects surfaced during UAT, working with development teams to prioritize fixes against release timelines.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Documented test results and obtained formal sign-off from business stakeholders prior to production deployment.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- UAT Coordination -->
+        <div class="row gx-5">
+          <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
+            <h5 class="fw-bold mb-2">UAT Coordination</h5>
+            <ul class="fa-ul lh-lg">
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Recruited and scheduled business-side UAT testers across Risk, Credit, and Operations teams, matching tester coverage to feature scope.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Ran daily UAT stand-ups and status check-ins to surface blockers, track testing progress, and manage timeline risk ahead of release.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Served as the primary liaison between business testers and the development team, clarifying requirements and reproducing reported issues.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Coordinated with Change Managers to align UAT completion with release and deployment schedules.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Key Steps to Conduct UAT -->
+        <div class="row gx-5">
+          <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
+            <h5 class="fw-bold mb-2">Key Steps to Conduct UAT</h5>
+            <ul class="fa-ul lh-lg">
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Defined UAT entry criteria, confirming the build was feature-complete and had passed QA/SIT before entering UAT.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Built test scripts mapped directly to acceptance criteria, so every story had a corresponding pass/fail scenario.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Set up a dedicated UAT environment with representative test data, avoiding false positives/negatives from stale or incomplete data.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Executed test scripts with business testers, logging results and defects in real time.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Triaged and retested defects, re-running affected scenarios after each fix.
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+                Closed UAT with a formal sign-off from business stakeholders, confirming readiness for production release.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 5: AGILE DELIVERY PROCESS (SMB ONLY)
+      Delivery lifecycle specific to the Shared Mailbox project: discovery,
+      backlog refinement, sprint-based MVP delivery with UAT after each sprint,
+      sprint demos, final UAT signoff, launch, and post-launch warranty/reporting.
+    -->
+    <section class="bg-white py-5">
+      <div class="container">
+
+        <div class="text-center mb-5">
+          <h4 class="fw-bold mb-2">Agile Delivery Process — Shared Mailbox (SMB)</h4>
+          <p class="text-muted mb-0">
+            An iterative delivery model used specifically for SMB, combining
+            stakeholder discovery, sprint-based MVP delivery, continuous UAT
+            and feedback, final business signoff, and post-launch measurement.
+          </p>
+        </div>
+
+        <div class="row gx-4 text-center">
+
+          <!-- Step 1 -->
+          <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
+            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
+              <span class="fw-bold">1</span>
+            </div>
+            <h6 class="fw-bold mb-1">Discover</h6>
+            <p class="text-muted small mb-0">
+              Engaged Operations stakeholders to understand mailbox pain points, workflow challenges, volume, and SLA risk before defining requirements.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
+            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
+              <span class="fw-bold">2</span>
+            </div>
+            <h6 class="fw-bold mb-1">Refine the Backlog</h6>
+            <p class="text-muted small mb-0">
+              Translated discovery findings into INVEST-aligned user stories with clear acceptance criteria and prioritized the backlog for delivery.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
+            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
+              <span class="fw-bold">3</span>
+            </div>
+            <h6 class="fw-bold mb-1">Build &amp; Validate</h6>
+            <p class="text-muted small mb-0">
+              Delivered the MVP incrementally across sprints, with UAT performed after each sprint to validate functionality and identify gaps early.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
+            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
+              <span class="fw-bold">4</span>
+            </div>
+            <h6 class="fw-bold mb-1">Demo &amp; Iterate</h6>
+            <p class="text-muted small mb-0">
+              Demonstrated sprint increments to stakeholders, captured feedback, and refined the product and backlog through continuous iteration.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
+            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
+              <span class="fw-bold">5</span>
+            </div>
+            <h6 class="fw-bold mb-1">Sign Off &amp; Launch</h6>
+            <p class="text-muted small mb-0">
+              Completed final UAT, secured business stakeholder signoff, and coordinated the production launch.
+            </p>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
+            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
+              <span class="fw-bold">6</span>
+            </div>
+            <h6 class="fw-bold mb-1">Warranty &amp; Measure</h6>
+            <p class="text-muted small mb-0">
+              Supported the post-launch warranty period for defects and enhancements, while using Grafana reporting to monitor adoption and operational results.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!--
+      SECTION 6: SOCIAL / CONTACT
+      Closing bar with a LinkedIn link, dark background to signal the end
+      of this case study.
+    -->
+    <section class="social text-bg-dark py-6 overflow-hidden">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3 text-center fs-4">
+            <div class="social-icons d-flex justify-content-center gap-4">
+              <a href="https://www.linkedin.com/in/faraz-uddin-429b9a15a/">
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-top border-primary bg-dark text-white py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4 text-center">
+            <p>
+              Hand Coded By Faraz Uddin
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/load-components.js"></script>
+  </body>
+</html>
