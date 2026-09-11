@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/favicon.png" />
+    <title>Faraz Uddin | Wells Fargo</title>
+  </head>
+  <body>
+
+<!-- Navigation -->
+<div id="nav-placeholder"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <!-- Hero -->
+      <div class="hero text-white pt-7 pb-4">
+
+      </div>
+      <svg
+        class="frame-decoration"
+        data-name="Layer 2"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        viewBox="0 0 1920 192.275"
+      >
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #ffffff;
+            }
+          </style>
+        </defs>
+        <title>frame-decoration</title>
+        <path
+          class="cls-1"
+          d="M0,158.755s63.9,52.163,179.472,50.736c121.494-1.5,185.839-49.738,305.984-49.733,109.21,0,181.491,51.733,300.537,50.233,123.941-1.562,225.214-50.126,390.43-50.374,123.821-.185,353.982,58.374,458.976,56.373,217.907-4.153,284.6-57.236,284.6-57.236V351.03H0V158.755Z"
+          transform="translate(0 -158.755)"
+        />
+      </svg>
+    </header>
+
+<!-- Wells Fargo Intro -->
+<section class="bg-white py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="col-lg-6 mx-auto mb-4">
+        <img class="img-fluid rounded-3 mb-4" src="images/WellsFargo/Wells Fargo Logo.png" alt="Wells Fargo Logo">
+      </div>
+      <h3>At Wells Fargo, I served as Product Owner for the Risk Profile Assessment (RPA) initiative within Merchant Services.</h3>
+    </div>
+
+    <div class="row gx-5">
+      <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
+        <h4 class="fw-bold mb-2">Risk Profile Assessment (RPA)</h4>
+        <p class="fw-semibold">Role: Product Owner</p>
+        <ul class="fa-ul lh-lg">
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Owned the product vision for an internal underwriting tool built for the Merchant Services Risk & Credit teams to evaluate merchant risk on a periodic basis.
+          </li>
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Drove the key objective of moving merchant risk analysis and underwriting workflows off an external system (<strong>Fiserv</strong>) and onto an internal Wells Fargo platform.
+          </li>
+          <li>
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            Partnered with Credit Officers, the Risk & Compliance team, Change Managers, and onshore/offshore dev partners to build the MVP.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="#rpa-deep-dive">
+        <i class="fas fa-chevron-down fa-2x text-primary"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RPA Deep Dive -->
+<section id="rpa-deep-dive" class="py-5">
+  <div class="container">
+    <h3 class="mb-4 text-center">Strategic Contributions</h3>
+    <br>
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Building the Risk Profile Assessment (RPA) Platform</h3>
+      </div>
+      <div class="card-body">
+        <div class="text-center mb-4">
+          <i class="fas fa-shield-alt fa-2x text-primary"></i>
+        </div>
+        <p class="fs-5 mb-4">
+          As Product Owner for the Merchant Services Risk & Credit team, I led the definition of an internal underwriting tool designed to evaluate merchant risk, centralize decisioning, and reduce Wells Fargo's reliance on the external Fiserv platform.
+        </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong><i class="fas fa-map-marker-alt text-primary me-3"></i>Situation:</strong> Merchant risk analysis and underwriting workflows depended on an external system (Fiserv), creating vendor reliance and limiting Wells Fargo's ability to centralize risk decisioning internally.
+          </li>
+          <li class="list-group-item">
+            <strong><i class="fas fa-tasks text-primary me-3"></i>Task:</strong> Define and own the MVP vision for an in-house risk intelligence platform that would support Credit Officers in underwriting and monitoring, and centralize risk decisioning in-house.
+          </li>
+          <li class="list-group-item">
+            <strong><i class="fas fa-running text-primary me-3"></i>Action:</strong>
+            <ul class="fa-ul fs-5">
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Defined the core domain model the tool evaluates — merchant information, risk exposure, risk rating, collateral, and credit approval amount.</li>
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Built out the risk rating framework across three dimensions: <strong>Borrower Quality Rating (BQR)</strong> for creditworthiness and repayment behavior, <strong>Collateral Quality Rating (CQR)</strong> for liquidity and enforceability of collateral, and <strong>Asset Quality Review (AQR)</strong> for portfolio-level asset performance and risk deterioration trends.</li>
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Incorporated key credit and exposure risk indicators — chargebacks, refunds, and Non-Delivery Exposure (NDX) — as fraud and failure signals feeding into RPA decisions.</li>
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Coordinated system architecture across identity/access (PingFederate, AIMS), data and storage (CAAMS/Teradata, ICMP, MSCD), and event-driven messaging via Kafka (MSCD → Kafka → MSOW).</li>
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Defined the Risk Profile API, Search Results API, and Decision Response API to expose underwriting data and decisioning outputs.</li>
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Partnered on PEGA case management design, working across both Cosmos (traditional UI) and Constellation (modern, API-driven, component-based) frameworks for underwriting workflows and risk officer review screens.</li>
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Mapped the full RPA case lifecycle: merchant data ingested → risk signals calculated (BQR/CQR/AQR) → RPA case generated → Credit Officer review → action taken (approve, adjust credit limit, flag risk, or escalate).</li>
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Established reporting on time-to-complete, bottleneck analysis, stoppage points, and case aging, plus operational visibility into open case volume and queue backlog.</li>
+              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Balanced RPA delivery with ongoing BAU work, including vulnerability fixes, system updates, and tech debt items (TCI) under Wells Fargo governance.</li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <strong><i class="fas fa-check-circle text-primary me-3"></i>Result:</strong> Delivered a clear MVP vision and functioning case lifecycle for RPA — giving Credit Officers a centralized, internally-owned tool for merchant risk decisioning and setting the foundation to move the team off Fiserv and onto an API-driven, in-house underwriting platform.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Optimization -->
+<section class="bg-white py-5">
+  <div class="container">
+    <h3 class="mb-4 text-center">Process Optimization Goals</h3>
+    <div class="row gx-5 z-1">
+      <div class="col-lg-5 offset-lg-1">
+        <h5 class="fw-bold mb-3">Current State Issues</h5>
+        <ul class="fa-ul lh-lg">
+          <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Outlook-based workflows (manual / unstructured)</li>
+          <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Fragmented case management tools</li>
+          <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>External dependency (Fiserv)</li>
+        </ul>
+      </div>
+      <div class="col-lg-5">
+        <h5 class="fw-bold mb-3">Target State</h5>
+        <ul class="fa-ul lh-lg">
+          <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Move to SMB case management system</li>
+          <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Centralized RPA workflow</li>
+          <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>API-driven underwriting decisions</li>
+          <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Reduced manual intervention</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Detailed Experience at Wells Fargo -->
+<section class="bg-white py-5">
+  <div class="container">
+    <h3 class="mb-4 text-center">Detailed Experience at Wells Fargo</h3>
+    <div class="row gx-5 z-1">
+      <div class="col-lg-10 offset-lg-1">
+        <ul class="fa-ul lh-lg">
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Product Ownership:</strong> Owned the RPA underwriting tool end-to-end, from domain modeling through case lifecycle and reporting design.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Risk Domain Expertise:</strong> Built deep familiarity with merchant underwriting concepts — BQR, CQR, AQR, chargebacks, refunds, and NDX — translating them into actionable product requirements.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Stakeholder Alignment:</strong> Partnered with Credit Officers, Risk & Compliance, Change Managers, and onshore/offshore dev partners to keep delivery aligned to business needs.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>System & Platform Coordination:</strong> Worked across PEGA (Cosmos/Constellation), Kafka event flows, and Teradata-backed data systems (CAAMS, ICMP, MSCD) to align product requirements with technical architecture.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>Operational Reporting:</strong> Defined KPIs — time to complete, bottleneck analysis, case aging, and queue backlog — to give leadership visibility into RPA performance.
+          </li>
+          <li class="mb-3">
+            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
+            <strong>BAU Ownership:</strong> Balanced net-new RPA delivery with ongoing business-as-usual work, including vulnerability fixes, system updates, and tech debt governance (TCI).
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Social-->
+<section class="social text-bg-dark py-6 overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center fs-4">
+        <div class="social-icons d-flex justify-content-center gap-4">
+          <a href="https://www.linkedin.com/in/faraz-uddin-429b9a15a/">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Footer-->
+    <footer class="border-top border-primary bg-dark text-white py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4 text-center">
+            <p>
+              Hand Coded By Faraz Uddin
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/load-components.js"></script>
+  </body>
+</html>
