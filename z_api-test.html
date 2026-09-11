@@ -1,0 +1,1913 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Enterprise APIs | Faraz Uddin</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #0b3d91;
+        --secondary: #0f766e;
+        --dark: #172033;
+        --muted: #64748b;
+        --light-bg: #f5f7fb;
+        --border: #e2e8f0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        background: #fff;
+        line-height: 1.7;
+      }
+
+      section {
+        scroll-margin-top: 85px;
+      }
+
+      .hero {
+        padding: 155px 0 95px;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(7, 34, 79, 0.97),
+            rgba(13, 76, 111, 0.92)
+          ),
+          url("images/TIAA/bluelogo.png") center / 300px no-repeat;
+        color: #fff;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 4vw, 3.5rem);
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.08rem;
+      }
+
+      .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #38bdf8;
+      }
+
+      .section-padding {
+        padding: 85px 0;
+      }
+
+      .section-heading {
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        margin-bottom: 15px;
+      }
+
+      .section-subtitle {
+        color: var(--muted);
+        max-width: 760px;
+      }
+
+      .enterprise-card {
+        height: 100%;
+        padding: 30px;
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        background: #fff;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .enterprise-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+      }
+
+      .icon-box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        background: #e8f1ff;
+        color: var(--primary);
+        font-size: 1.4rem;
+        font-weight: 800;
+      }
+
+      .enterprise-card h4 {
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .enterprise-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .soft-section {
+        background: var(--light-bg);
+      }
+
+      .badge-soft {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 30px;
+        background: #e8f1ff;
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .architecture-wrapper {
+        padding: 35px 20px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: #fff;
+      }
+
+      .architecture-box {
+        padding: 20px 15px;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        background: #f8fafc;
+        text-align: center;
+        height: 100%;
+      }
+
+      .architecture-box h5 {
+        font-size: 1rem;
+        font-weight: 800;
+        margin-bottom: 7px;
+      }
+
+      .architecture-box p {
+        color: var(--muted);
+        font-size: 0.82rem;
+        margin: 0;
+      }
+
+      .architecture-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: var(--primary);
+        font-weight: 800;
+      }
+
+      .code-panel {
+        background: #111827;
+        color: #d1fae5;
+        border-radius: 15px;
+        padding: 28px;
+        overflow-x: auto;
+        font-size: 0.85rem;
+        line-height: 1.8;
+      }
+
+      .code-panel .comment {
+        color: #94a3b8;
+      }
+
+      .code-panel .key {
+        color: #93c5fd;
+      }
+
+      .code-panel .value {
+        color: #fcd34d;
+      }
+
+      .code-panel .string {
+        color: #86efac;
+      }
+
+      .lifecycle-step {
+        position: relative;
+        padding: 25px;
+        height: 100%;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        margin-bottom: 15px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .lifecycle-step h5 {
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .lifecycle-step p {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .case-study {
+        padding: 35px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: #fff;
+        height: 100%;
+      }
+
+      .case-study h3 {
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .case-study .company-label {
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .case-study ul {
+        padding-left: 20px;
+        margin-bottom: 0;
+      }
+
+      .case-study li {
+        margin-bottom: 10px;
+        color: #475569;
+      }
+
+      .role-card {
+        padding: 28px;
+        height: 100%;
+        border-radius: 15px;
+        background: #fff;
+        border: 1px solid var(--border);
+      }
+
+      .role-card h5 {
+        font-weight: 800;
+      }
+
+      .role-card p,
+      .role-card li {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .role-card ul {
+        padding-left: 20px;
+      }
+
+      .comparison-table {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 15px;
+      }
+
+      .comparison-table th {
+        background: #eff6ff;
+        color: var(--primary);
+        font-weight: 800;
+      }
+
+      .comparison-table td,
+      .comparison-table th {
+        padding: 18px;
+        vertical-align: top;
+      }
+
+      .check-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .check-list li {
+        margin-bottom: 12px;
+        padding-left: 28px;
+        position: relative;
+      }
+
+      .check-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #0f766e;
+        font-weight: 800;
+      }
+
+      .cta {
+        padding: 70px 0;
+        background: var(--dark);
+        color: #fff;
+      }
+
+      .cta p {
+        color: #cbd5e1;
+      }
+
+      footer {
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 25px 0;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 991px) {
+        .hero {
+          padding-top: 125px;
+        }
+
+        .architecture-arrow {
+          padding: 12px 0;
+          transform: rotate(90deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- includes/nav.html -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <img
+            src="images/TIAA/bluelogo.png"
+            alt="Faraz Uddin Logo"
+            width="65"
+            height="50"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto text-center">
+
+            <li class="nav-item">
+              <a href="index.html" class="nav-link fw-semibold">
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-semibold"
+                href="#"
+                id="workDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Work
+              </a>
+
+              <ul
+                class="dropdown-menu dropdown-menu-dark text-center"
+                aria-labelledby="workDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="WF_MS_2026.html">
+                    Wells Fargo
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="TIAA.html">
+                    TIAA
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Agile.html">
+                    SDLC Experience
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Grooming.html">
+                    Agile Grooming Process
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Stakeholder.html">
+                    Stakeholder MGMT
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Data.html">
+                    Enterprise Data
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="API.html">
+                    API Testing
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-semibold"
+                href="#"
+                id="caseStudiesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Coding Projects
+              </a>
+
+              <ul
+                class="dropdown-menu dropdown-menu-dark text-center"
+                aria-labelledby="caseStudiesDropdown"
+              >
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://fu-fitness.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Fitness App
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item px-3 py-2">
+              <a
+                href="/images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf"
+                class="nav-link btn btn-outline-light fw-semibold px-4"
+              >
+                Resume
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="eyebrow">
+              Enterprise Product Ownership • API Architecture
+            </span>
+
+            <h1 class="mt-3 mb-4">
+              How APIs Work in Enterprise Financial Services
+            </h1>
+
+            <p class="lead mb-4">
+              Understanding the systems, integrations, data flows, and
+              business requirements that connect enterprise applications
+              across Wells Fargo and TIAA.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge-soft">
+                API Requirements
+              </span>
+              <span class="badge-soft">
+                Enterprise Integrations
+              </span>
+              <span class="badge-soft">
+                API Testing
+              </span>
+              <span class="badge-soft">
+                Product Owner Perspective
+              </span>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-left">
+            <div class="enterprise-card text-dark">
+              <div class="icon-box">API</div>
+
+              <h4>
+                Connecting Enterprise Systems
+              </h4>
+
+              <p>
+                APIs allow applications to securely exchange data and
+                trigger business processes without requiring systems to
+                share their internal implementation.
+              </p>
+
+              <hr />
+
+              <p class="mb-0">
+                <strong>Focus:</strong> Financial services, risk,
+                self-service, data exchange, and enterprise delivery.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- WHAT IS AN API -->
+    <section class="section-padding">
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow text-primary">
+            01 • Fundamentals
+          </span>
+
+          <h2 class="section-heading mt-2">
+            What Is an API?
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            An Application Programming Interface (API) is a defined
+            contract that allows one software system to communicate with
+            another. In an enterprise, APIs help connect customer-facing
+            applications, business services, databases, and third-party
+            platforms.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="enterprise-card">
+              <div class="icon-box">01</div>
+
+              <h4>
+                Request
+              </h4>
+
+              <p>
+                An application sends a request to an API endpoint.
+                The request may include a URL, HTTP method, headers,
+                authentication, and data.
+              </p>
+
+              <span class="badge-soft">
+                Client → API
+              </span>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="enterprise-card">
+              <div class="icon-box">02</div>
+
+              <h4>
+                Business Logic
+              </h4>
+
+              <p>
+                The receiving service validates the request, applies
+                business rules, checks authorization, and retrieves or
+                updates information in connected systems.
+              </p>
+
+              <span class="badge-soft">
+                API → Services
+              </span>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="enterprise-card">
+              <div class="icon-box">03</div>
+
+              <h4>
+                Response
+              </h4>
+
+              <p>
+                The API returns a response, often in JSON format.
+                The response may contain requested data, a success
+                status, or an error explaining what went wrong.
+              </p>
+
+              <span class="badge-soft">
+                API → Client
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTERPRISE ARCHITECTURE -->
+    <section class="section-padding soft-section" id="architecture">
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow text-primary">
+            02 • Enterprise Architecture
+          </span>
+
+          <h2 class="section-heading mt-2">
+            How Enterprise APIs Connect Systems
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            Large financial institutions use multiple applications,
+            services, databases, security controls, and integration
+            layers. APIs provide a structured way for those systems
+            to communicate.
+          </p>
+        </div>
+
+        <div class="architecture-wrapper" data-aos="fade-up">
+
+          <div class="row align-items-center g-3">
+
+            <div class="col-lg-2 col-md-6">
+              <div class="architecture-box">
+                <h5>
+                  User
+                </h5>
+                <p>
+                  Customer, employee, or internal business user.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-1">
+              <div class="architecture-arrow">
+                →
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+              <div class="architecture-box">
+                <h5>
+                  Frontend
+                </h5>
+                <p>
+                  Web portal, mobile app, or internal application.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-1">
+              <div class="architecture-arrow">
+                →
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+              <div class="architecture-box">
+                <h5>
+                  API Gateway
+                </h5>
+                <p>
+                  Routing, access control, throttling, and monitoring.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-1">
+              <div class="architecture-arrow">
+                →
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+              <div class="architecture-box">
+                <h5>
+                  API Service
+                </h5>
+                <p>
+                  Business logic, validation, and orchestration.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-1">
+              <div class="architecture-arrow">
+                →
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row justify-content-center mt-4">
+            <div class="col-lg-4">
+              <div class="architecture-box">
+                <h5>
+                  Enterprise Data Systems
+                </h5>
+                <p>
+                  Databases, internal applications, and external
+                  service integrations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <span class="badge-soft">
+              Response travels back through the API to the requesting application
+            </span>
+          </div>
+
+        </div>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="enterprise-card">
+              <h4>
+                API Gateway
+              </h4>
+
+              <p>
+                A gateway can provide a centralized entry point for
+                APIs. Typical responsibilities include routing,
+                authentication integration, rate limiting, and
+                monitoring.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="enterprise-card">
+              <h4>
+                API Service
+              </h4>
+
+              <p>
+                The service handles business logic. It may validate
+                input, retrieve data, call other services, or update
+                enterprise records.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="enterprise-card">
+              <h4>
+                Security & Monitoring
+              </h4>
+
+              <p>
+                Enterprise APIs commonly require authentication,
+                authorization, encryption, audit logging, monitoring,
+                and appropriate protection of sensitive data.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mt-4">
+          Architecture shown is a conceptual enterprise API model.
+          Specific Wells Fargo and TIAA infrastructure, gateway products,
+          and service boundaries vary by application and are not
+          represented as confirmed internal architecture.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- HTTP METHODS -->
+    <section class="section-padding">
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow text-primary">
+            03 • API Communication
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Common API Methods
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            HTTP methods describe the action a client wants to perform
+            against an API resource.
+          </p>
+        </div>
+
+        <div class="table-responsive comparison-table" data-aos="fade-up">
+          <table class="table table-bordered mb-0">
+            <thead>
+              <tr>
+                <th scope="col">
+                  Method
+                </th>
+                <th scope="col">
+                  Purpose
+                </th>
+                <th scope="col">
+                  Enterprise Example
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <strong>GET</strong>
+                </td>
+                <td>
+                  Retrieve information.
+                </td>
+                <td>
+                  Retrieve a merchant's risk profile.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>POST</strong>
+                </td>
+                <td>
+                  Create a resource or submit an operation.
+                </td>
+                <td>
+                  Create a new risk profile assessment.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PUT</strong>
+                </td>
+                <td>
+                  Replace a resource representation.
+                </td>
+                <td>
+                  Replace an entire resource when supported by the API.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PATCH</strong>
+                </td>
+                <td>
+                  Partially update a resource.
+                </td>
+                <td>
+                  Update a specific field on an existing record.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>DELETE</strong>
+                </td>
+                <td>
+                  Delete a resource when permitted.
+                </td>
+                <td>
+                  Remove a resource under an authorized business process.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <h4 class="fw-bold mb-3">
+              Request Components
+            </h4>
+
+            <ul class="check-list">
+              <li>
+                <strong>Endpoint:</strong> The URL of the API resource.
+              </li>
+              <li>
+                <strong>Method:</strong> GET, POST, PUT, PATCH, or DELETE.
+              </li>
+              <li>
+                <strong>Headers:</strong> Metadata such as content type
+                and authorization information.
+              </li>
+              <li>
+                <strong>Parameters:</strong> Values used to identify or
+                filter resources.
+              </li>
+              <li>
+                <strong>Body:</strong> Data submitted with methods such
+                as POST, PUT, or PATCH.
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <h4 class="fw-bold mb-3">
+              Response Components
+            </h4>
+
+            <ul class="check-list">
+              <li>
+                <strong>Status code:</strong> Indicates the result of
+                the request.
+              </li>
+              <li>
+                <strong>Response body:</strong> Data returned by the
+                service, often JSON.
+              </li>
+              <li>
+                <strong>Headers:</strong> Additional response metadata.
+              </li>
+              <li>
+                <strong>Error details:</strong> Useful information for
+                troubleshooting failed requests.
+              </li>
+              <li>
+                <strong>Correlation ID:</strong> A traceable identifier
+                when provided by the enterprise platform.
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- API EXAMPLE -->
+    <section class="section-padding soft-section">
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-5" data-aos="fade-right">
+            <span class="eyebrow text-primary">
+              04 • API Example
+            </span>
+
+            <h2 class="section-heading mt-2">
+              A Simple Enterprise API Request
+            </h2>
+
+            <p class="text-muted">
+              The following is an illustrative example of a merchant
+              risk profile API. It is not a live Wells Fargo API,
+              and the endpoint and payload are fictional.
+            </p>
+
+            <p class="text-muted">
+              A Product Owner may work with developers and architects
+              to define what information the API needs, what the
+              response should contain, and how errors should be handled.
+            </p>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+
+            <div class="code-panel">
+              <div class="comment">
+                // Example request
+              </div>
+
+              <div>
+                <span class="key">GET</span>
+                /api/v1/merchants/12345/risk-profile
+              </div>
+
+              <br />
+
+              <div class="comment">
+                // Example response
+              </div>
+
+              <div>
+                {
+              </div>
+
+              <div class="ps-3">
+                <span class="key">"merchantId"</span>:
+                <span class="value">"12345"</span>,
+              </div>
+
+              <div class="ps-3">
+                <span class="key">"riskReviewType"</span>:
+                <span class="string">"Quarterly"</span>,
+              </div>
+
+              <div class="ps-3">
+                <span class="key">"riskStatus"</span>:
+                <span class="string">"Pending Review"</span>,
+              </div>
+
+              <div class="ps-3">
+                <span class="key">"reviewRequired"</span>:
+                <span class="value">true</span>
+              </div>
+
+              <div>
+                }
+              </div>
+
+              <br />
+
+              <div class="comment">
+                // Example HTTP response
+              </div>
+
+              <div>
+                <span class="key">200 OK</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- API LIFECYCLE -->
+    <section class="section-padding" id="lifecycle">
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow text-primary">
+            05 • Delivery Lifecycle
+          </span>
+
+          <h2 class="section-heading mt-2">
+            How APIs Are Delivered in an Enterprise
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            API delivery typically involves business requirements,
+            architecture, development, testing, security review,
+            deployment, and ongoing monitoring.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="lifecycle-step">
+              <span class="step-number">1</span>
+
+              <h5>
+                Business Discovery
+              </h5>
+
+              <p>
+                Identify the business problem, users, systems involved,
+                data needed, and expected outcome.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="lifecycle-step">
+              <span class="step-number">2</span>
+
+              <h5>
+                API Requirements
+              </h5>
+
+              <p>
+                Define endpoints, request fields, response fields,
+                business rules, acceptance criteria, and error scenarios.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="lifecycle-step">
+              <span class="step-number">3</span>
+
+              <h5>
+                Architecture & Design
+              </h5>
+
+              <p>
+                Determine service ownership, data flow, integration
+                dependencies, security, and technical approach.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="lifecycle-step">
+              <span class="step-number">4</span>
+
+              <h5>
+                Development
+              </h5>
+
+              <p>
+                Developers implement the API, business logic, data
+                integration, validation, and error handling.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="lifecycle-step">
+              <span class="step-number">5</span>
+
+              <h5>
+                Testing & UAT
+              </h5>
+
+              <p>
+                Validate functional behavior, integration scenarios,
+                negative cases, data accuracy, and acceptance criteria.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="lifecycle-step">
+              <span class="step-number">6</span>
+
+              <h5>
+                Deployment & Monitoring
+              </h5>
+
+              <p>
+                Release through approved environments and monitor
+                availability, errors, performance, and operational health.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WELLS FARGO -->
+    <section class="section-padding soft-section" id="wells-fargo">
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow text-primary">
+            06 • Enterprise Case Study
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Wells Fargo — Merchant Services
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            My experience supporting enterprise risk and credit
+            workflows within Merchant Services, including API-driven
+            interactions for Risk Profile Assessment.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="case-study">
+
+              <div class="company-label">
+                Wells Fargo • Merchant Services
+              </div>
+
+              <h3 class="mt-2">
+                Risk Profile Assessment (RPA)
+              </h3>
+
+              <p class="text-muted">
+                Internal underwriting and risk-monitoring application
+                supporting Merchant Services Risk & Credit teams.
+              </p>
+
+              <hr />
+
+              <h5 class="fw-bold">
+                Enterprise API Flow
+              </h5>
+
+              <div class="architecture-box my-3">
+                <h5>
+                  Search API
+                </h5>
+                <p>
+                  Locate the appropriate merchant relationship,
+                  legal entity, or merchant identifier.
+                </p>
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-3">
+                <h5>
+                  Create RPA API
+                </h5>
+                <p>
+                  Create the risk profile assessment using the
+                  appropriate merchant and review information.
+                </p>
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-3">
+                <h5>
+                  Pega RPA Workflow
+                </h5>
+                <p>
+                  Creation → Review → Analysis → Documentation →
+                  Approval → Resolution.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="case-study">
+
+              <div class="company-label">
+                Product Owner / Business Analyst Perspective
+              </div>
+
+              <h3 class="mt-2">
+                API Requirements & Delivery
+              </h3>
+
+              <p class="text-muted">
+                My role involved understanding the business workflow,
+                collaborating with stakeholders and developers, and
+                helping translate requirements into actionable delivery
+                work.
+              </p>
+
+              <ul>
+                <li>
+                  Worked with the merchant hierarchy:
+                  Relationship ID → Legal Entity (LE) → Merchant ID (MID).
+                </li>
+
+                <li>
+                  Supported the understanding of search and create
+                  RPA API interactions.
+                </li>
+
+                <li>
+                  Helped clarify business rules for risk reviews,
+                  alerts, credit approval amounts, and review types.
+                </li>
+
+                <li>
+                  Collaborated with Risk & Compliance, Credit Officers,
+                  Change Managers, and development teams.
+                </li>
+
+                <li>
+                  Used user stories, acceptance criteria, and workflow
+                  discussions to support delivery.
+                </li>
+
+                <li>
+                  Supported UAT and validation of business behavior
+                  across the RPA process.
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="enterprise-card mt-4" data-aos="fade-up">
+
+          <h4>
+            What I Learned
+          </h4>
+
+          <p class="mb-0">
+            Enterprise API work requires more than understanding an
+            endpoint. The Product Owner must understand the business
+            process, source systems, data relationships, user
+            permissions, integration dependencies, and expected
+            outcomes. The API is one component of a larger enterprise
+            workflow.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TIAA -->
+    <section class="section-padding" id="tiaa">
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow text-primary">
+            07 • Enterprise Case Study
+          </span>
+
+          <h2 class="section-heading mt-2">
+            TIAA — Digital Financial Services
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            My TIAA experience included business analysis, product
+            ownership, self-service digital experiences, and enterprise
+            systems supporting financial services.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="case-study">
+
+              <div class="company-label">
+                TIAA • Digital Platforms
+              </div>
+
+              <h3 class="mt-2">
+                Connecting Digital Experiences
+              </h3>
+
+              <p class="text-muted">
+                Enterprise financial services applications often rely
+                on integrations between customer-facing portals,
+                internal business systems, and data services.
+              </p>
+
+              <div class="architecture-box my-3">
+                <h5>
+                  Digital Experience
+                </h5>
+                <p>
+                  MyTIAA self-service portal, brokerage experiences,
+                  and other digital applications.
+                </p>
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-3">
+                <h5>
+                  Enterprise Services
+                </h5>
+                <p>
+                  Business services and integration layers that
+                  support customer and employee workflows.
+                </p>
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-3">
+                <h5>
+                  Financial Data & Systems
+                </h5>
+                <p>
+                  Account information, investment data, and other
+                  enterprise records.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="case-study">
+
+              <div class="company-label">
+                Business Analyst / Product Owner Perspective
+              </div>
+
+              <h3 class="mt-2">
+                Requirements & Integrations
+              </h3>
+
+              <p class="text-muted">
+                My work at TIAA involved understanding business needs
+                and translating them into requirements for digital
+                products and enterprise systems.
+              </p>
+
+              <ul>
+                <li>
+                  Supported digital self-service experiences,
+                  including MyTIAA.
+                </li>
+
+                <li>
+                  Worked with brokerage and investment-related
+                  business applications.
+                </li>
+
+                <li>
+                  Supported PlanFocus and Investment Screener
+                  functionality.
+                </li>
+
+                <li>
+                  Worked with enterprise content and digital
+                  experiences using Adobe Experience Manager (AEM).
+                </li>
+
+                <li>
+                  Collaborated with business stakeholders, developers,
+                  and delivery teams to clarify requirements.
+                </li>
+
+                <li>
+                  Applied Agile and Waterfall delivery practices
+                  depending on the project and team.
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="enterprise-card mt-4" data-aos="fade-up">
+
+          <h4>
+            Important Distinction
+          </h4>
+
+          <p class="mb-0">
+            This page describes the enterprise API concepts relevant
+            to my TIAA experience. It does not claim that a specific
+            TIAA internal API, endpoint, gateway, or backend integration
+            was directly implemented or tested by me unless explicitly
+            documented in the project experience.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="section-padding soft-section">
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow text-primary">
+            08 • Enterprise Comparison
+          </span>
+
+          <h2 class="section-heading mt-2">
+            API Work Across Wells Fargo & TIAA
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            Both organizations operate in financial services, where
+            secure, reliable, and governed system integration is
+            essential. The specific implementations and platforms
+            differ by business area.
+          </p>
+        </div>
+
+        <div class="table-responsive comparison-table" data-aos="fade-up">
+
+          <table class="table table-bordered mb-0">
+
+            <thead>
+              <tr>
+                <th scope="col">
+                  Area
+                </th>
+                <th scope="col">
+                  Wells Fargo
+                </th>
+                <th scope="col">
+                  TIAA
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>
+                  <strong>Business Context</strong>
+                </td>
+                <td>
+                  Merchant Services risk and credit workflows.
+                </td>
+                <td>
+                  Retirement, investment, and digital financial services.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Relevant Systems</strong>
+                </td>
+                <td>
+                  Pega RPA, merchant hierarchy, and related enterprise
+                  services.
+                </td>
+                <td>
+                  MyTIAA, PlanFocus, Investment Screener, and
+                  digital content experiences.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>API Perspective</strong>
+                </td>
+                <td>
+                  Search and create RPA API interactions.
+                </td>
+                <td>
+                  Understanding digital experience and enterprise
+                  integration requirements.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>PO / BA Responsibilities</strong>
+                </td>
+                <td>
+                  Business rules, workflow, user stories, acceptance
+                  criteria, and stakeholder alignment.
+                </td>
+                <td>
+                  Requirements, business analysis, Agile delivery,
+                  and digital product collaboration.
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Enterprise Focus</strong>
+                </td>
+                <td>
+                  Risk, credit, compliance, data accuracy, and workflow
+                  reliability.
+                </td>
+                <td>
+                  Customer experience, financial data, digital
+                  applications, and system integration.
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PO ROLE -->
+    <section class="section-padding" id="po-role">
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="eyebrow text-primary">
+            09 • Product Ownership
+          </span>
+
+          <h2 class="section-heading mt-2">
+            The Product Owner's Role in API Delivery
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            A Product Owner does not necessarily need to write the API.
+            The PO is responsible for understanding the business value,
+            defining requirements, prioritizing work, and helping the
+            team deliver the right behavior.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="role-card">
+              <div class="icon-box">01</div>
+
+              <h5>
+                Business Requirements
+              </h5>
+
+              <p>
+                Define what the API must accomplish for the business
+                and who will use it.
+              </p>
+
+              <ul>
+                <li>Business rules</li>
+                <li>Data requirements</li>
+                <li>Expected outcomes</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="role-card">
+              <div class="icon-box">02</div>
+
+              <h5>
+                User Stories & Acceptance Criteria
+              </h5>
+
+              <p>
+                Translate requirements into actionable delivery work
+                for the development team.
+              </p>
+
+              <ul>
+                <li>Endpoint behavior</li>
+                <li>Request and response fields</li>
+                <li>Positive and negative scenarios</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="role-card">
+              <div class="icon-box">03</div>
+
+              <h5>
+                Stakeholder Collaboration
+              </h5>
+
+              <p>
+                Coordinate with architecture, engineering, security,
+                data, operations, and business teams.
+              </p>
+
+              <ul>
+                <li>Dependencies</li>
+                <li>Prioritization</li>
+                <li>Delivery alignment</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="role-card">
+              <div class="icon-box">04</div>
+
+              <h5>
+                Testing & Validation
+              </h5>
+
+              <p>
+                Confirm that the API behavior supports the business
+                process and meets acceptance criteria.
+              </p>
+
+              <ul>
+                <li>UAT scenarios</li>
+                <li>Error handling</li>
+                <li>Data validation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="role-card">
+              <div class="icon-box">05</div>
+
+              <h5>
+                Risk & Compliance
+              </h5>
+
+              <p>
+                Ensure the requirements account for applicable
+                security, privacy, audit, and regulatory needs.
+              </p>
+
+              <ul>
+                <li>Access control</li>
+                <li>Sensitive data</li>
+                <li>Auditability</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="role-card">
+              <div class="icon-box">06</div>
+
+              <h5>
+                Backlog & Delivery
+              </h5>
+
+              <p>
+                Prioritize API-related work based on business value,
+                dependencies, risk, and delivery capacity.
+              </p>
+
+              <ul>
+                <li>Backlog refinement</li>
+                <li>Sprint planning</li>
+                <li>Release readiness</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- API TESTING -->
+    <section class="section-padding soft-section">
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-5" data-aos="fade-right">
+            <span class="eyebrow text-primary">
+              10 • Quality Assurance
+            </span>
+
+            <h2 class="section-heading mt-2">
+              API Testing & Validation
+            </h2>
+
+            <p class="text-muted">
+              API testing verifies that services behave as expected
+              when they receive valid requests, invalid requests,
+              missing data, and unexpected conditions.
+            </p>
+
+            <p class="text-muted">
+              From a PO perspective, testing helps ensure that the
+              technical implementation supports the intended business
+              process.
+            </p>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+
+            <div class="enterprise-card">
+
+              <h4>
+                API Test Scenarios
+              </h4>
+
+              <ul class="check-list mb-0">
+                <li>
+                  <strong>Positive test:</strong> A valid request returns
+                  the expected data.
+                </li>
+
+                <li>
+                  <strong>Negative test:</strong> Invalid input returns
+                  an appropriate error.
+                </li>
+
+                <li>
+                  <strong>Authorization test:</strong> Unauthorized
+                  access is rejected.
+                </li>
+
+                <li>
+                  <strong>Data validation:</strong> Required fields,
+                  formats, and business rules are enforced.
+                </li>
+
+                <li>
+                  <strong>Integration test:</strong> Connected systems
+                  exchange the expected information.
+                </li>
+
+                <li>
+                  <strong>UAT:</strong> The end-to-end business process
+                  meets acceptance criteria.
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="cta">
+      <div class="container text-center">
+
+        <span class="eyebrow">
+          Enterprise Delivery Experience
+        </span>
+
+        <h2 class="fw-bold mt-3 mb-3">
+          Connecting Business Requirements to Enterprise Technology
+        </h2>
+
+        <p class="mx-auto mb-4" style="max-width: 760px;">
+          My experience across Wells Fargo and TIAA has involved
+          understanding complex financial services workflows,
+          collaborating with technical and business stakeholders,
+          and translating business needs into actionable delivery
+          requirements.
+        </p>
+
+        <a href="index.html" class="btn btn-outline-light px-4">
+          Back to Portfolio
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container text-center">
+        <p class="mb-0">
+          © 2026 Faraz Uddin • Enterprise APIs & Product Ownership
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 700,
+        once: true,
+        offset: 80
+      });
+    </script>
+
+  </body>
+</html>
