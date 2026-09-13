@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Wells Fargo Merchant Services | Faraz Uddin</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Font Awesome (kept for existing site includes) -->
+    <link rel="stylesheet" href="css/font-awesome.css" />
+
+    <!-- AOS -->
+    <link
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/favicon.png" />
+
+    <style>
+      :root {
+        --brand-blue: #d71e28;
+        --brand-dark: #6e1418;
+        --brand-light: #fbeceb;
+        --brand-accent: #b91c26;
+        --text-dark: #243746;
+        --text-muted: #687983;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--text-dark);
+        background: #ffffff;
+      }
+
+      .hero-case {
+        min-height: 560px;
+        display: flex;
+        align-items: center;
+        background:
+          radial-gradient(
+            circle at 85% 25%,
+            rgba(215, 30, 40, 0.18),
+            transparent 32%
+          ),
+          linear-gradient(
+            135deg,
+            #2b0a0c 0%,
+            #5c1116 48%,
+            #8a1a20 100%
+          );
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-case::after {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        right: -220px;
+        top: -150px;
+      }
+
+      .hero-case::before {
+        content: "";
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        right: -130px;
+        top: -60px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .hero-title {
+        font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+        line-height: 1.02;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-subtitle {
+        max-width: 720px;
+        font-size: 1.15rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.55rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: #fff;
+        font-size: 0.85rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-padding {
+        padding: 100px 0;
+      }
+
+      .section-heading {
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--brand-dark);
+      }
+
+      .section-intro {
+        max-width: 760px;
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      .product-card {
+        height: 100%;
+        border: 1px solid #ecdede;
+        border-radius: 18px;
+        padding: 30px;
+        background: #fff;
+        transition: all 0.25s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 45px rgba(110, 20, 24, 0.1);
+      }
+
+      .product-icon {
+        width: 52px;
+        height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: var(--brand-light);
+        color: var(--brand-blue);
+        font-size: 1.35rem;
+        margin-bottom: 20px;
+      }
+
+      .architecture-section {
+        background: #faf5f5;
+      }
+
+      .architecture-flow {
+        position: relative;
+      }
+
+      .architecture-node {
+        height: 100%;
+        min-height: 190px;
+        background: #fff;
+        border: 1px solid #ecdede;
+        border-radius: 18px;
+        padding: 26px;
+        position: relative;
+      }
+
+      .architecture-number {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--brand-blue);
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .flow-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-accent);
+        font-size: 1.7rem;
+      }
+
+      .comparison-card {
+        border-radius: 22px;
+        overflow: hidden;
+        border: 1px solid #ecdede;
+        background: #fff;
+        height: 100%;
+      }
+
+      .comparison-header {
+        padding: 30px;
+        background: var(--brand-dark);
+        color: #fff;
+      }
+
+      .comparison-header.rpa {
+        background: #7c1a1f;
+      }
+
+      .comparison-header.smb {
+        background: #4a0e11;
+      }
+
+      .comparison-body {
+        padding: 30px;
+      }
+
+      .comparison-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .comparison-list li {
+        display: flex;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid #f4e9e9;
+        line-height: 1.55;
+      }
+
+      .comparison-list li:last-child {
+        border-bottom: 0;
+      }
+
+      .comparison-list i {
+        color: var(--brand-blue);
+        margin-top: 3px;
+      }
+
+      .model-card {
+        border-radius: 18px;
+        padding: 30px;
+        height: 100%;
+        background: #fff;
+        border: 1px solid #ecdede;
+      }
+
+      .model-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        color: var(--brand-blue);
+      }
+
+      .model-icon {
+        font-size: 2rem;
+        color: var(--brand-blue);
+        margin-bottom: 18px;
+      }
+
+      .journey-section {
+        background: linear-gradient(
+          135deg,
+          #fbf3f3 0%,
+          #ffffff 100%
+        );
+      }
+
+      .journey-step {
+        position: relative;
+        padding-left: 60px;
+        padding-bottom: 42px;
+      }
+
+      .journey-step:last-child {
+        padding-bottom: 0;
+      }
+
+      .journey-step::before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: 38px;
+        bottom: -5px;
+        width: 1px;
+        background: #e3cccc;
+      }
+
+      .journey-step:last-child::before {
+        display: none;
+      }
+
+      .journey-dot {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--brand-blue);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      .role-section {
+        background: var(--brand-dark);
+        color: #fff;
+      }
+
+      .role-section .section-heading {
+        color: #fff;
+      }
+
+      .role-card {
+        height: 100%;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.055);
+      }
+
+      .role-card i {
+        font-size: 1.8rem;
+        color: #f0b2b6;
+        margin-bottom: 18px;
+      }
+
+      .role-card p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+      }
+
+      .takeaway {
+        background: var(--brand-light);
+        border-left: 5px solid var(--brand-blue);
+        padding: 30px;
+        border-radius: 0 16px 16px 0;
+      }
+
+      .portfolio-tag {
+        display: inline-block;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        background: #fbecec;
+        color: var(--brand-blue);
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin: 0 0.35rem 0.5rem 0;
+      }
+
+      .source-note {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 991px) {
+        .hero-case {
+          min-height: 500px;
+        }
+
+        .flow-arrow {
+          transform: rotate(90deg);
+          padding: 15px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container">
+
+        <a href="index.html" class="navbar-brand">
+          Faraz Uddin
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">
+                Portfolio
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="experience.html">
+                Experience
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                Contact
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <header class="hero-case">
+
+      <div class="container hero-content">
+
+        <div class="row align-items-center" data-aos="fade-up">
+
+          <div class="col-lg-10">
+
+            <div class="eyebrow mb-4">
+              Wells Fargo Merchant Services • Product Ownership
+            </div>
+
+            <div class="mb-4">
+              <span class="hero-badge">
+                <i class="bi bi-diagram-3"></i>
+                Pega Platform
+              </span>
+
+              <span class="hero-badge">
+                <i class="bi bi-kanban"></i>
+                Agile Delivery
+              </span>
+
+              <span class="hero-badge">
+                <i class="bi bi-clipboard-check"></i>
+                UAT &amp; Release
+              </span>
+            </div>
+
+            <h1 class="hero-title mb-4">
+              Wells Fargo<br />
+              Merchant Services
+            </h1>
+
+            <p class="hero-subtitle mb-4">
+              Product Owner supporting two Pega-based MVP applications
+              across Governance, Risk &amp; Compliance (GRC) and
+              operational workflows — from requirements and backlog
+              through UAT and production launch.
+            </p>
+
+            <p class="mb-0 text-white-50">
+              Product Ownership • Requirements &amp; Backlog • UAT Leadership
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         OVERVIEW
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+
+          <span class="eyebrow text-danger">
+            01 • Role Overview
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Product Owner, Two MVP Applications
+          </h2>
+
+          <p class="section-intro mx-auto mt-3">
+            As Product Owner for Merchant Services, I owned two
+            Pega-based applications end to end — from problem
+            definition through requirements, delivery and launch.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+              <h4>Two MVP Applications</h4>
+              <p class="text-muted">
+                Served as Product Owner for Risk Profile Assessment
+                (RPA) and Shared Mailbox (SMB), two distinct
+                Pega-based MVPs built for different business needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="bi bi-people"></i>
+              </div>
+              <h4>Cross-Functional Delivery</h4>
+              <p class="text-muted">
+                Partnered with Pega and cross-functional stakeholders
+                to define, prioritize and deliver MVP solutions for
+                distinct business and operational needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card">
+              <div class="product-icon">
+                <i class="bi bi-card-checklist"></i>
+              </div>
+              <h4>End-to-End Ownership</h4>
+              <p class="text-muted">
+                Owned requirements, user stories, acceptance
+                criteria, workflows and backlog priorities across
+                the product lifecycle.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         DELIVERY PROCESS (GENERAL)
+    ========================================================== -->
+
+    <section class="section-padding architecture-section">
+
+      <div class="container">
+
+        <div class="mb-5" data-aos="fade-up">
+
+          <span class="eyebrow text-danger">
+            02 • Delivery Process
+          </span>
+
+          <h2 class="section-heading mt-2">
+            How Each MVP Moved From Idea to Launch
+          </h2>
+
+          <p class="section-intro mt-3">
+            Both RPA and SMB followed the same core delivery
+            rhythm, adapted to each application's stakeholders and
+            release cadence.
+          </p>
+
+        </div>
+
+        <div class="row align-items-stretch architecture-flow">
+
+          <div class="col-lg" data-aos="fade-up">
+            <div class="architecture-node">
+              <div class="architecture-number">1</div>
+              <h5>Discovery</h5>
+              <p class="text-muted mb-0">
+                Interviewed stakeholders and used MoSCoW
+                prioritization to scope each MVP against real
+                operational pain points.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-auto flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+          <div class="col-lg" data-aos="fade-up" data-aos-delay="100">
+            <div class="architecture-node">
+              <div class="architecture-number">2</div>
+              <h5>Backlog Refinement</h5>
+              <p class="text-muted mb-0">
+                Wrote and refined stories against the INVEST
+                framework, with Given/When/Then acceptance criteria
+                covering happy path, edge cases and permissions.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-auto flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+          <div class="col-lg" data-aos="fade-up" data-aos-delay="200">
+            <div class="architecture-node">
+              <div class="architecture-number">3</div>
+              <h5>Sprint Build &amp; UAT</h5>
+              <p class="text-muted mb-0">
+                Drove backlog refinement, sprint planning and sprint
+                review/demo as the primary business voice, with UAT
+                validating each increment.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-auto flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+          </div>
+
+          <div class="col-lg" data-aos="fade-up" data-aos-delay="300">
+            <div class="architecture-node">
+              <div class="architecture-number">4</div>
+              <h5>Sign-Off &amp; Launch</h5>
+              <p class="text-muted mb-0">
+                Closed with formal business sign-off, coordinated
+                production launch and defined reporting to measure
+                results.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         UAT DEEP DIVE
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+
+          <span class="eyebrow text-danger">
+            03 • UAT Ownership
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Owning UAT End to End
+          </h2>
+
+          <p class="section-intro mx-auto mt-3">
+            Owned User Acceptance Testing planning and coordination
+            for Pega-based MVP releases, ensuring business
+            stakeholders validated functionality before go-live.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-4" data-aos="fade-up">
+            <div class="model-card">
+              <div class="model-icon">
+                <i class="bi bi-clipboard-data"></i>
+              </div>
+              <div class="model-label">UAT Testing</div>
+              <h4 class="mt-2">Test Planning</h4>
+              <p class="text-muted">
+                Translated user stories and acceptance criteria into
+                test scenarios, validated Pega workflow behavior
+                against requirements, and tracked defects through to
+                formal sign-off.
+              </p>
+              <span class="portfolio-tag">Test Scenarios</span>
+              <span class="portfolio-tag">Defect Triage</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="model-card">
+              <div class="model-icon">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="model-label">UAT Coordination</div>
+              <h4 class="mt-2">People &amp; Timeline</h4>
+              <p class="text-muted">
+                Recruited and scheduled testers across Risk, Credit
+                and Operations, ran daily UAT stand-ups, and served
+                as the liaison between business testers and
+                development.
+              </p>
+              <span class="portfolio-tag">Tester Coverage</span>
+              <span class="portfolio-tag">Daily Stand-ups</span>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="model-card">
+              <div class="model-icon">
+                <i class="bi bi-hourglass-split"></i>
+              </div>
+              <div class="model-label">UAT Process</div>
+              <h4 class="mt-2">Entry to Sign-Off</h4>
+              <p class="text-muted">
+                Defined entry criteria, built test scripts mapped to
+                acceptance criteria, executed with business testers,
+                and closed with formal stakeholder sign-off.
+              </p>
+              <span class="portfolio-tag">Entry Criteria</span>
+              <span class="portfolio-tag">Formal Sign-Off</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         RPA VS SMB
+    ========================================================== -->
+
+    <section class="section-padding architecture-section">
+
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+
+          <span class="eyebrow text-danger">
+            04 • The Two Applications
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Risk Profile Assessment vs. Shared Mailbox
+          </h2>
+
+          <p class="section-intro mx-auto mt-3">
+            Same Product Owner, two very different problems — one an
+            underwriting and risk-monitoring tool, the other a
+            case-management workflow replacing manual email triage.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <!-- RPA -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="comparison-card">
+              <div class="comparison-header rpa">
+                <div class="eyebrow text-white-50">Underwriting &amp; Risk</div>
+                <h3 class="mt-2 mb-0">Risk Profile Assessment (RPA)</h3>
+              </div>
+              <div class="comparison-body">
+                <p class="text-muted">
+                  Internal underwriting and risk-monitoring tool for
+                  Merchant Services Risk &amp; Credit teams.
+                </p>
+                <ul class="comparison-list">
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Migrated merchant risk analysis off an external vendor (Fiserv) onto an internal platform</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Defined the core domain model: merchant info, risk exposure, risk rating, collateral, credit approval</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Shaped the risk rating framework and key exposure indicators (chargebacks, refunds, non-delivery)</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Owned the Pega front end, consuming APIs and Kafka events from backend credit-decisioning</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Upgraded merchant hierarchy from API V1 to V2 and expanded the processing-volume review window</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- SMB -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="comparison-card">
+              <div class="comparison-header smb">
+                <div class="eyebrow text-white-50">Case Management</div>
+                <h3 class="mt-2 mb-0">Shared Mailbox (SMB)</h3>
+              </div>
+              <div class="comparison-body">
+                <p class="text-muted">
+                  Case-management application replacing manual,
+                  Outlook-based email handling with structured
+                  workflow and tracking.
+                </p>
+                <ul class="comparison-list">
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Migrated the shared Outlook mailbox into a Pega-based case-management solution</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Addressed SLA breaches caused by manual triage and lack of case tracking</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Defined the case model: Email Triage (ET) cases linked to Service Request (SR) cases</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Improved auditability with structured assignment, escalation and reporting</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Used the SMB foundation to stand up follow-on mailboxes, including Illinois tax/tip/fee routing</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         APPROACH
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5" data-aos="fade-up">
+
+          <div class="col-lg-6">
+
+            <span class="eyebrow text-danger">
+              05 • Approach
+            </span>
+
+            <h2 class="section-heading mt-2">
+              Process Maturity, Not Just Project Output
+            </h2>
+
+            <p class="text-muted mt-4">
+              Alongside the two applications, I ran a consistent set
+              of practices for discovery, story writing and
+              ceremonies across both products.
+            </p>
+
+            <p class="text-muted">
+              I also managed the platform transition from Pega's
+              legacy Cosmos UI framework to the newer Constellation
+              design system, navigating functionality gaps and
+              stakeholder expectations along the way.
+            </p>
+
+            <div class="takeaway mt-4">
+              <strong>Reporting &amp; visibility</strong>
+              <p class="mb-0 mt-2 text-muted">
+                Defined reporting requirements feeding the Pega →
+                Power BI pipeline and Grafana dashboards, giving
+                Risk and Operations leadership visibility into case
+                aging, queue backlog and RPA completion metrics.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row g-3">
+
+              <div class="col-6">
+                <div class="product-card">
+                  <i class="bi bi-search fs-2 text-danger"></i>
+                  <h5 class="mt-3">Discovery</h5>
+                  <p class="small text-muted mb-0">
+                    Stakeholder interviews and MoSCoW prioritization.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="product-card">
+                  <i class="bi bi-pencil-square fs-2 text-danger"></i>
+                  <h5 class="mt-3">Story Writing</h5>
+                  <p class="small text-muted mb-0">
+                    INVEST stories with Given/When/Then criteria.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="product-card">
+                  <i class="bi bi-kanban fs-2 text-danger"></i>
+                  <h5 class="mt-3">Ceremonies</h5>
+                  <p class="small text-muted mb-0">
+                    Backlog refinement, sprint planning, review/demo.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="product-card">
+                  <i class="bi bi-bar-chart-fill fs-2 text-danger"></i>
+                  <h5 class="mt-3">Reporting</h5>
+                  <p class="small text-muted mb-0">
+                    Power BI and Grafana dashboards for leadership.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SMB DELIVERY JOURNEY
+    ========================================================== -->
+
+    <section class="section-padding journey-section">
+
+      <div class="container">
+
+        <div class="row g-5" data-aos="fade-up">
+
+          <div class="col-lg-5">
+
+            <span class="eyebrow text-danger">
+              06 • SMB Delivery in Detail
+            </span>
+
+            <h2 class="section-heading mt-2">
+              Agile Delivery Process — Shared Mailbox
+            </h2>
+
+            <p class="text-muted mt-4">
+              This delivery lifecycle applied specifically to the
+              Shared Mailbox modernization: UAT after every sprint
+              while building the MVP, sprint demos for stakeholder
+              feedback, continuous iteration, a final UAT sign-off
+              ahead of launch, and a post-launch warranty period
+              with Grafana reporting to measure success.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="journey-step">
+              <div class="journey-dot">1</div>
+              <h5>Discover</h5>
+              <p class="text-muted mb-0">
+                Engaged Operations stakeholders to understand
+                mailbox pain points, workflow challenges, volume and
+                SLA risk before defining requirements.
+              </p>
+            </div>
+
+            <div class="journey-step">
+              <div class="journey-dot">2</div>
+              <h5>Refine the Backlog</h5>
+              <p class="text-muted mb-0">
+                Translated discovery findings into INVEST-aligned
+                user stories with clear acceptance criteria and
+                prioritized the backlog for delivery.
+              </p>
+            </div>
+
+            <div class="journey-step">
+              <div class="journey-dot">3</div>
+              <h5>Build &amp; Validate</h5>
+              <p class="text-muted mb-0">
+                Delivered the MVP incrementally across sprints, with
+                UAT performed after each sprint to validate
+                functionality and identify gaps early.
+              </p>
+            </div>
+
+            <div class="journey-step">
+              <div class="journey-dot">4</div>
+              <h5>Demo &amp; Iterate</h5>
+              <p class="text-muted mb-0">
+                Demonstrated sprint increments to stakeholders,
+                captured feedback, and refined the product and
+                backlog through continuous iteration.
+              </p>
+            </div>
+
+            <div class="journey-step">
+              <div class="journey-dot">5</div>
+              <h5>Sign Off &amp; Launch</h5>
+              <p class="text-muted mb-0">
+                Completed final UAT, secured business stakeholder
+                sign-off, and coordinated the production launch.
+              </p>
+            </div>
+
+            <div class="journey-step">
+              <div class="journey-dot">6</div>
+              <h5>Warranty &amp; Measure</h5>
+              <p class="text-muted mb-0">
+                Supported the post-launch warranty period for
+                defects and enhancements, while using Grafana
+                reporting to monitor adoption and operational
+                results.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SKILLS DEMONSTRATED (ROLE SECTION)
+    ========================================================== -->
+
+    <section class="section-padding role-section">
+
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+
+          <span class="eyebrow text-light">
+            07 • Skills Demonstrated
+          </span>
+
+          <h2 class="section-heading mt-2">
+            What This Work Drew On
+          </h2>
+
+          <p class="section-intro mx-auto mt-3 text-white-50">
+            Delivering RPA and SMB in parallel called on the full
+            range of the Product Owner / Business Analyst toolkit.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="role-card">
+              <i class="bi bi-card-checklist"></i>
+              <h5>Requirements &amp; Stories</h5>
+              <p>
+                Wrote INVEST-aligned stories with Given/When/Then
+                acceptance criteria covering happy path, edge cases,
+                permissions and integrations.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="role-card">
+              <i class="bi bi-diagram-2"></i>
+              <h5>Backlog &amp; Prioritization</h5>
+              <p>
+                Ran discovery with MoSCoW prioritization and drove
+                backlog refinement and sprint planning as the
+                primary business voice.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="role-card">
+              <i class="bi bi-clipboard-check"></i>
+              <h5>UAT Ownership</h5>
+              <p>
+                Owned test planning, tester coordination and formal
+                sign-off across both applications' release cycles.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="role-card">
+              <i class="bi bi-people"></i>
+              <h5>Stakeholder Coordination</h5>
+              <p>
+                Partnered with Credit Officers, Risk &amp;
+                Compliance, Change Managers and onshore/offshore
+                development teams.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="role-card">
+              <i class="bi bi-bar-chart-line"></i>
+              <h5>Reporting &amp; Analytics</h5>
+              <p>
+                Defined requirements feeding the Pega → Power BI
+                pipeline and Grafana dashboards for leadership
+                visibility.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="role-card">
+              <i class="bi bi-arrow-repeat"></i>
+              <h5>Platform Migration</h5>
+              <p>
+                Managed the transition from Pega's Cosmos UI
+                framework to Constellation, navigating gaps and
+                stakeholder expectations.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         STAKEHOLDER ECOSYSTEM
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+
+          <span class="eyebrow text-danger">
+            08 • Stakeholder Ecosystem
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Working Across Risk, Operations and Technology
+          </h2>
+
+          <p class="section-intro mx-auto mt-3">
+            RPA and SMB each depended on a similar circle of
+            partners spanning business and delivery.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-3" data-aos="fade-up">
+            <div class="product-card">
+              <div class="product-icon"><i class="bi bi-shield-check"></i></div>
+              <h5>Risk &amp; Credit</h5>
+              <p class="small text-muted">
+                Credit Officers and Risk &amp; Compliance teams
+                driving underwriting requirements for RPA.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card">
+              <div class="product-icon"><i class="bi bi-building"></i></div>
+              <h5>Operations</h5>
+              <p class="small text-muted">
+                Operations leads defining intake rules, routing
+                logic and case workflows for SMB.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card">
+              <div class="product-icon"><i class="bi bi-arrow-left-right"></i></div>
+              <h5>Change Managers</h5>
+              <p class="small text-muted">
+                Aligning UAT completion and release readiness with
+                deployment schedules.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card">
+              <div class="product-icon"><i class="bi bi-code-slash"></i></div>
+              <h5>Development Teams</h5>
+              <p class="small text-muted">
+                Onshore and offshore engineers building against
+                Pega requirements and APIs.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         WHERE THIS FITS
+    ========================================================== -->
+
+    <section class="section-padding architecture-section">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5" data-aos="fade-up">
+
+          <div class="col-lg-6">
+
+            <span class="eyebrow text-danger">
+              09 • Platform &amp; Tooling
+            </span>
+
+            <h2 class="section-heading mt-2">
+              Where This Work Fits Into the Broader Platform
+            </h2>
+
+            <p class="text-muted mt-4">
+              RPA and SMB sit within a broader Merchant Services
+              technology ecosystem, sharing a common platform and
+              reporting layer.
+            </p>
+
+            <div class="mt-4">
+              <span class="portfolio-tag">Pega</span>
+              <span class="portfolio-tag">RPA</span>
+              <span class="portfolio-tag">Shared Mailbox</span>
+              <span class="portfolio-tag">Power BI</span>
+              <span class="portfolio-tag">Grafana</span>
+              <span class="portfolio-tag">Cosmos → Constellation</span>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <div class="takeaway">
+              <h5>Product ownership perspective</h5>
+              <p class="text-muted mb-0 mt-3">
+                The value came from how these pieces worked
+                together: discovery, backlog, delivery, UAT,
+                reporting and platform modernization, all owned by
+                the same Product Owner across two applications.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FINAL TAKEAWAY
+    ========================================================== -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div class="row justify-content-center text-center" data-aos="fade-up">
+
+          <div class="col-lg-9">
+
+            <span class="eyebrow text-danger">
+              10 • Takeaway
+            </span>
+
+            <h2 class="section-heading mt-2">
+              Two Applications, One Consistent Delivery Model
+            </h2>
+
+            <p class="lead text-muted mt-4">
+              RPA and SMB were different problems — underwriting
+              risk versus case management — but both were delivered
+              through the same disciplined product ownership model.
+            </p>
+
+            <p class="text-muted">
+              From requirements and story writing to UAT, reporting
+              and platform migration, the work sat at the
+              intersection of financial services, technology and
+              operational process.
+            </p>
+
+            <div class="takeaway text-start mt-5">
+              <strong>Product Owner / Business Analyst perspective</strong>
+              <p class="mb-0 mt-2 text-muted">
+                The challenge was never just building the Pega
+                workflow. It was translating operational and risk
+                requirements into clear stories, reliable UAT
+                coverage and reporting that gave leadership real
+                visibility.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         NOTE
+    ========================================================== -->
+
+    <section class="pb-5">
+
+      <div class="container">
+
+        <div class="border-top pt-4">
+
+          <p class="source-note mb-0">
+            This case study reflects Product Owner work performed
+            at Wells Fargo Merchant Services. Details are presented
+            at a level appropriate for a public portfolio and do not
+            disclose confidential or proprietary information.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="bg-dark text-white py-5">
+
+      <div class="container">
+
+        <div class="row align-items-center">
+
+          <div class="col-md-6">
+
+            <h5 class="mb-1">
+              Faraz Uddin
+            </h5>
+
+            <p class="text-white-50 mb-0">
+              Business Analyst • Product Owner • Digital Products
+            </p>
+
+          </div>
+
+          <div class="col-md-6 text-md-end mt-3 mt-md-0">
+
+            <a
+              href="portfolio.html"
+              class="text-white text-decoration-none me-3"
+            >
+              Portfolio
+            </a>
+
+            <a
+              href="experience.html"
+              class="text-white text-decoration-none me-3"
+            >
+              Experience
+            </a>
+
+            <a
+              href="contact.html"
+              class="text-white text-decoration-none"
+            >
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 80
+      });
+    </script>
+
+  </body>
+</html>
