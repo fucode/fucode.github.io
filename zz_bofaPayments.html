@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bank of America Payment Types — Personal &amp; Commercial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #eef0ec;
+    --paper-raised: #f7f8f5;
+    --ink: #142033;
+    --ink-soft: #4b5768;
+    --line: #cdd2c8;
+    --line-soft: #dfe3da;
+    --personal: #7a2e2e;
+    --personal-soft: #f3e6e4;
+    --commercial: #1f5c4f;
+    --commercial-soft: #e4ede9;
+    --gold: #93752f;
+    --shadow: 0 1px 0 rgba(20,32,51,0.05);
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --paper: #12161a;
+      --paper-raised: #191e24;
+      --ink: #e9ece7;
+      --ink-soft: #a7afab;
+      --line: #313a35;
+      --line-soft: #262d29;
+      --personal: #d98d8d;
+      --personal-soft: #241a1a;
+      --commercial: #7fc2ae;
+      --commercial-soft: #16221e;
+      --gold: #c9a765;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #12161a;
+    --paper-raised: #191e24;
+    --ink: #e9ece7;
+    --ink-soft: #a7afab;
+    --line: #313a35;
+    --line-soft: #262d29;
+    --personal: #d98d8d;
+    --personal-soft: #241a1a;
+    --commercial: #7fc2ae;
+    --commercial-soft: #16221e;
+    --gold: #c9a765;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  ::selection{ background: var(--gold); color:#fff; }
+
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    border-bottom:1px solid var(--line);
+    padding:38px 0 26px;
+  }
+  .masthead-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .kicker{
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+  }
+  h1{
+    font-family:"Source Serif 4", serif;
+    font-weight:700;
+    font-size:clamp(1.9rem, 3.4vw, 2.7rem);
+    margin:10px 0 8px;
+    letter-spacing:-0.01em;
+  }
+  .dek{
+    max-width:640px;
+    color:var(--ink-soft);
+    font-size:1rem;
+    margin:0;
+  }
+
+  /* ---------- ledger toggle ---------- */
+  .ledger-toggle{
+    display:inline-flex;
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+    margin-top:22px;
+    background:var(--paper-raised);
+  }
+  .ledger-toggle button{
+    appearance:none;
+    border:none;
+    background:transparent;
+    font-family:inherit;
+    font-size:0.92rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    padding:11px 22px;
+    cursor:pointer;
+    border-right:1px solid var(--line);
+    transition:background .15s ease, color .15s ease;
+  }
+  .ledger-toggle button:last-child{ border-right:none; }
+  .ledger-toggle button.active[data-mode="personal"]{
+    background:var(--personal-soft);
+    color:var(--personal);
+  }
+  .ledger-toggle button.active[data-mode="commercial"]{
+    background:var(--commercial-soft);
+    color:var(--commercial);
+  }
+
+  /* ---------- layout ---------- */
+  .layout{
+    display:grid;
+    grid-template-columns:210px 1fr;
+    gap:40px;
+    padding:34px 0 80px;
+    align-items:start;
+  }
+  @media (max-width:820px){
+    .layout{ grid-template-columns:1fr; }
+  }
+
+  nav.toc{
+    position:sticky;
+    top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  @media (max-width:820px){
+    nav.toc{
+      position:static;
+      flex-direction:row;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:8px;
+    }
+  }
+  nav.toc a{
+    text-decoration:none;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    padding:7px 4px;
+    border-left:2px solid transparent;
+    padding-left:12px;
+  }
+  nav.toc a.current{
+    border-left-color:var(--accent, var(--gold));
+    color:var(--ink);
+    font-weight:600;
+  }
+  @media (max-width:820px){
+    nav.toc a{
+      border-left:none;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:5px 12px;
+    }
+    nav.toc a.current{
+      border-color:var(--accent, var(--gold));
+      background:var(--paper-raised);
+    }
+  }
+
+  main{ min-width:0; }
+
+  .mode-panel{ display:none; }
+  .mode-panel.active{ display:block; }
+
+  .lede{
+    color:var(--ink-soft);
+    max-width:680px;
+    font-size:0.95rem;
+    margin:0 0 30px;
+    padding:14px 16px;
+    background:var(--paper-raised);
+    border-left:3px solid var(--accent);
+    border-radius:0 6px 6px 0;
+  }
+
+  section.category{
+    margin-bottom:44px;
+    scroll-margin-top:24px;
+  }
+  section.category h2{
+    font-family:"Source Serif 4", serif;
+    font-size:1.3rem;
+    font-weight:600;
+    margin:0 0 4px;
+    color:var(--accent);
+  }
+  section.category .cat-note{
+    color:var(--ink-soft);
+    font-size:0.88rem;
+    margin:0 0 18px;
+    max-width:620px;
+  }
+
+  .entry{
+    border-top:1px solid var(--line-soft);
+    padding:18px 0;
+    display:grid;
+    grid-template-columns:1fr auto auto;
+    gap:6px 22px;
+    align-items:baseline;
+  }
+  .entry:last-child{ border-bottom:1px solid var(--line-soft); }
+  @media (max-width:640px){
+    .entry{ grid-template-columns:1fr; }
+  }
+
+  .entry .name{
+    font-weight:600;
+    font-size:1.02rem;
+    grid-column:1;
+  }
+  .entry .desc{
+    grid-column:1 / -1;
+    color:var(--ink-soft);
+    font-size:0.92rem;
+    margin-top:2px;
+    max-width:640px;
+  }
+  .entry .metric{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    white-space:nowrap;
+    text-align:right;
+    align-self:start;
+    padding-top:2px;
+  }
+  .entry .metric .label{
+    display:block;
+    font-size:0.66rem;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+    opacity:0.75;
+    margin-bottom:2px;
+  }
+  @media (max-width:640px){
+    .entry .metric{ text-align:left; margin-top:4px; }
+  }
+
+  .tags{
+    grid-column:1/-1;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:8px;
+  }
+  .tag{
+    font-size:0.68rem;
+    padding:2px 8px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:22px 0 40px;
+    color:var(--ink-soft);
+    font-size:0.78rem;
+    line-height:1.7;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="kicker">Reference — Payments</span>
+      <span class="kicker" id="modeLabel">Personal accounts</span>
+    </div>
+    <h1>Bank of America Payment Types</h1>
+    <p class="dek">A working reference for how money moves in and out of Bank of America accounts — the everyday tools for personal banking, and the treasury-grade rails used by businesses and commercial clients.</p>
+
+    <div class="ledger-toggle" role="tablist" aria-label="Client type">
+      <button type="button" data-mode="personal" class="active" role="tab" aria-selected="true">Personal</button>
+      <button type="button" data-mode="commercial" role="tab" aria-selected="false">Commercial</button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <nav class="toc" id="tocPersonal">
+      <a href="#p-move" class="current">Send &amp; move money</a>
+      <a href="#p-bills">Pay bills</a>
+      <a href="#p-deposit">Deposit &amp; receive</a>
+      <a href="#p-cards">Cards</a>
+      <a href="#p-intl">International</a>
+    </nav>
+
+    <nav class="toc" id="tocCommercial" style="display:none;">
+      <a href="#c-move" class="current">Move funds</a>
+      <a href="#c-payables">Pay suppliers &amp; payroll</a>
+      <a href="#c-receivables">Collect &amp; deposit</a>
+      <a href="#c-cards">Commercial cards</a>
+      <a href="#c-intl">Global &amp; FX</a>
+      <a href="#c-platform">Platform &amp; automation</a>
+    </nav>
+
+    <main>
+
+      <!-- ================= PERSONAL ================= -->
+      <div class="mode-panel active" id="panelPersonal" style="--accent:var(--personal)">
+
+        <p class="lede">Most personal payments route through <strong>Online Banking</strong> or the <strong>mobile app</strong>, under Pay &amp; Transfer. Zelle and Bill Pay cover almost everything day to day; ACH and wire exist for the cases where speed, amount, or destination require something sturdier.</p>
+
+        <section class="category" id="p-move">
+          <h2>Send &amp; move money</h2>
+          <p class="cat-note">Moving money to other people or your own accounts elsewhere.</p>
+
+          <div class="entry">
+            <div class="name">Zelle&reg;</div>
+            <div class="metric"><span class="label">Speed</span>Minutes</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Send or request money using just a phone number or email — works with almost any U.S. bank, not only Bank of America. Best for splitting bills, paying a person back, or informal transfers between people who trust each other.</div>
+            <div class="tags"><span class="tag">P2P</span><span class="tag">app &amp; online banking</span><span class="tag">no purchase protection</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Internal transfers</div>
+            <div class="metric"><span class="label">Speed</span>Instant</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Move money between your own Bank of America checking, savings, and eligible brokerage accounts, or to another Bank of America customer's account.</div>
+            <div class="tags"><span class="tag">own accounts</span><span class="tag">other BofA customers</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">ACH transfer (linked accounts)</div>
+            <div class="metric"><span class="label">Speed</span>1–3 business days</div>
+            <div class="metric"><span class="label">Fee</span>Usually free</div>
+            <div class="desc">Electronic transfer to or from an external bank account you've linked — the standard way to move money between Bank of America and an account you hold somewhere else.</div>
+            <div class="tags"><span class="tag">external accounts</span><span class="tag">batched, not instant</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Wire transfer (domestic)</div>
+            <div class="metric"><span class="label">Speed</span>Same business day</div>
+            <div class="metric"><span class="label">Fee</span>Fee applies</div>
+            <div class="desc">For when a transfer has to land the same day and the amount or counterparty makes Zelle or ACH impractical — real estate closings, large one-off transfers.</div>
+            <div class="tags"><span class="tag">time-critical</span><span class="tag">irrevocable once sent</span></div>
+          </div>
+        </section>
+
+        <section class="category" id="p-bills">
+          <h2>Pay bills</h2>
+          <p class="cat-note">Recurring or one-off payments to companies and service providers.</p>
+
+          <div class="entry">
+            <div class="name">Bill Pay</div>
+            <div class="metric"><span class="label">Speed</span>Days (scheduled)</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Set up one-time or recurring payments to virtually any U.S. payee — utilities, landlords, credit cards, loans — from Online Banking or the app. Bank of America sends it electronically where possible, otherwise by check.</div>
+            <div class="tags"><span class="tag">recurring</span><span class="tag">any U.S. payee</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Loan &amp; mortgage payments</div>
+            <div class="metric"><span class="label">Speed</span>Scheduled</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Dedicated payment options for a Bank of America mortgage or loan, including regular payment, principal-only, or escrow-only.</div>
+            <div class="tags"><span class="tag">mortgage</span><span class="tag">auto loan</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Credit card payment</div>
+            <div class="metric"><span class="label">Speed</span>Same day–next day</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Pay a Bank of America credit card balance directly from a linked checking or savings account.</div>
+            <div class="tags"><span class="tag">statement balance</span><span class="tag">autopay available</span></div>
+          </div>
+        </section>
+
+        <section class="category" id="p-deposit">
+          <h2>Deposit &amp; receive</h2>
+          <p class="cat-note">Getting money in — from a check, an employer, or another person.</p>
+
+          <div class="entry">
+            <div class="name">Mobile check deposit</div>
+            <div class="metric"><span class="label">Speed</span>1–2 business days</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Photograph a check in the app to deposit it without a branch or ATM visit.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Direct deposit</div>
+            <div class="metric"><span class="label">Speed</span>Payday</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Payroll, benefits, or government payments deposited straight into your account via ACH — often available up to a day or two early.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Zelle® (receiving)</div>
+            <div class="metric"><span class="label">Speed</span>Minutes</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Receive money sent to your enrolled phone number or email; funds post directly to your account rather than sitting in a separate wallet.</div>
+          </div>
+        </section>
+
+        <section class="category" id="p-cards">
+          <h2>Cards</h2>
+          <p class="cat-note">Plastic (or digital) at the point of sale.</p>
+
+          <div class="entry">
+            <div class="name">Debit card</div>
+            <div class="metric"><span class="label">Speed</span>Instant</div>
+            <div class="metric"><span class="label">Fee</span>Free</div>
+            <div class="desc">Draws directly from checking; also usable for ATM withdrawals and linkable to Zelle, Apple Pay, Google Pay, and Venmo.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Credit card</div>
+            <div class="metric"><span class="label">Speed</span>Instant</div>
+            <div class="metric"><span class="label">Fee</span>Interest if carried</div>
+            <div class="desc">Bank of America-issued credit cards for purchases, with rewards programs and the option to pay in full or carry a balance.</div>
+          </div>
+        </section>
+
+        <section class="category" id="p-intl">
+          <h2>International</h2>
+          <p class="cat-note">Sending money outside the U.S.</p>
+
+          <div class="entry">
+            <div class="name">International wire transfer</div>
+            <div class="metric"><span class="label">Speed</span>1–5 business days</div>
+            <div class="metric"><span class="label">Fee</span>Fee + FX spread</div>
+            <div class="desc">Send funds abroad in U.S. dollars or foreign currency through Online Banking or a financial center; the main personal option for cross-border payments.</div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ================= COMMERCIAL ================= -->
+      <div class="mode-panel" id="panelCommercial" style="--accent:var(--commercial)">
+
+        <p class="lede">Business and commercial payments run through <strong>CashPro&reg;</strong>, Bank of America's treasury platform, or Small Business Online Banking for smaller clients. The choice of rail is usually a trade-off between speed, cost, reversibility, and how much remittance detail travels with the payment.</p>
+
+        <section class="category" id="c-move">
+          <h2>Move funds</h2>
+          <p class="cat-note">Core rails for sending money out of the business.</p>
+
+          <div class="entry">
+            <div class="name">ACH (Automated Clearing House)</div>
+            <div class="metric"><span class="label">Speed</span>1–2 business days</div>
+            <div class="metric"><span class="label">Fee</span>Low, per-item</div>
+            <div class="desc">The workhorse for batched, predictable payments — payroll, recurring vendor payments, and collections. Cheap and reliable, but not instant and reversible within limits.</div>
+            <div class="tags"><span class="tag">payroll</span><span class="tag">vendor payments</span><span class="tag">batch</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Wire transfer (domestic &amp; international)</div>
+            <div class="metric"><span class="label">Speed</span>Same day</div>
+            <div class="metric"><span class="label">Fee</span>Higher, flat</div>
+            <div class="desc">For high-value or time-critical B2B payments, including cross-border. Final and irrevocable once sent, which is exactly why it's used for large, one-off transactions.</div>
+            <div class="tags"><span class="tag">high value</span><span class="tag">irrevocable</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Real-Time Payments (RTP&reg;)</div>
+            <div class="metric"><span class="label">Speed</span>Seconds, 24/7/365</div>
+            <div class="metric"><span class="label">Fee</span>Per-item</div>
+            <div class="desc">Instant, final, irrevocable payments on the RTP network, with limits up to $10 million. Used for vendor payments, emergency disbursements, payroll, and increasingly for deal closings — anywhere waiting for the next ACH batch or business day isn't good enough.</div>
+            <div class="tags"><span class="tag">instant</span><span class="tag">final on receipt</span><span class="tag">not reversible</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Zelle for Business</div>
+            <div class="metric"><span class="label">Speed</span>Minutes</div>
+            <div class="metric"><span class="label">Fee</span>Free / low</div>
+            <div class="desc">Small-business version of Zelle, with higher sending limits than personal accounts — used for routine payments to vendors, contractors, or customers who prefer a simple, fast transfer.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Recipient Select&reg; / Digital Disbursements</div>
+            <div class="metric"><span class="label">Speed</span>Minutes–days</div>
+            <div class="metric"><span class="label">Fee</span>Per-item</div>
+            <div class="desc">Bank of America's own tools for paying individuals — rebates, insurance claims, gig payouts — by phone or email instead of collecting their bank account details.</div>
+          </div>
+        </section>
+
+        <section class="category" id="c-payables">
+          <h2>Pay suppliers &amp; payroll</h2>
+          <p class="cat-note">Accounts-payable-specific tools that decide which rail a payment should ride on.</p>
+
+          <div class="entry">
+            <div class="name">Complete AP</div>
+            <div class="metric"><span class="label">Speed</span>Varies by method</div>
+            <div class="metric"><span class="label">Fee</span>Program-based</div>
+            <div class="desc">End-to-end accounts payable automation: invoices are approved through the platform, then paid automatically by virtual card, ACH, or check — whichever the supplier prefers.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Virtual Payables Direct</div>
+            <div class="metric"><span class="label">Speed</span>Fast, near-instant to supplier</div>
+            <div class="metric"><span class="label">Fee</span>Program-based</div>
+            <div class="desc">Lets a buyer make large, one-off, or last-minute B2B payments without the supplier needing any card-acceptance setup — the supplier gets paid quickly by bank transfer instead.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Check issuance &amp; Positive Pay</div>
+            <div class="metric"><span class="label">Speed</span>Days</div>
+            <div class="metric"><span class="label">Fee</span>Per-item</div>
+            <div class="desc">Paper checks are still supported for suppliers who require them; Positive Pay matches every check presented for payment against what the business actually issued, to catch fraud before it clears.</div>
+          </div>
+        </section>
+
+        <section class="category" id="c-receivables">
+          <h2>Collect &amp; deposit</h2>
+          <p class="cat-note">Getting customer and payer money into the business.</p>
+
+          <div class="entry">
+            <div class="name">Lockbox (wholesale &amp; retail)</div>
+            <div class="metric"><span class="label">Speed</span>Daily processing</div>
+            <div class="metric"><span class="label">Fee</span>Program-based</div>
+            <div class="desc">Customers mail payments to a P.O. box Bank of America manages; the bank opens, processes, and deposits them, and converts paper payments to electronic where possible — used by businesses with high check volume.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Commercial &amp; remote deposit</div>
+            <div class="metric"><span class="label">Speed</span>Same/next business day</div>
+            <div class="metric"><span class="label">Fee</span>Program-based</div>
+            <div class="desc">Quick Business Deposit for in-branch drop-off, or Remote Deposit to scan and deposit checks straight from the office.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Pay by Bank</div>
+            <div class="metric"><span class="label">Speed</span>Instant at checkout</div>
+            <div class="metric"><span class="label">Fee</span>Lower than card interchange</div>
+            <div class="desc">Lets a business's customers pay directly from their bank account at checkout instead of by card — simpler checkout, no card data stored, typically cheaper than card acceptance.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Intelligent Order to Cash / Receivables Matching</div>
+            <div class="metric"><span class="label">Speed</span>Automated, ongoing</div>
+            <div class="metric"><span class="label">Fee</span>Program-based</div>
+            <div class="desc">Uses automation to match incoming payments to open invoices and manage deductions — cuts the manual reconciliation work that comes with high receivables volume.</div>
+          </div>
+        </section>
+
+        <section class="category" id="c-cards">
+          <h2>Commercial cards</h2>
+          <p class="cat-note">Card-based spend and payables.</p>
+
+          <div class="entry">
+            <div class="name">Commercial / purchasing cards</div>
+            <div class="metric"><span class="label">Speed</span>Instant</div>
+            <div class="metric"><span class="label">Fee</span>Program-based, rebate-eligible</div>
+            <div class="desc">Corporate cards for travel and general spend, with the reporting controls a finance team needs to track who spent what, and often a rebate on volume.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Virtual cards (ePayables)</div>
+            <div class="metric"><span class="label">Speed</span>Instant to supplier</div>
+            <div class="metric"><span class="label">Fee</span>Rebate-eligible</div>
+            <div class="desc">Single-use, supplier-specific card numbers generated for individual payments — a way to pay vendors by card even when they don't take walk-up card payments.</div>
+          </div>
+        </section>
+
+        <section class="category" id="c-intl">
+          <h2>Global &amp; FX</h2>
+          <p class="cat-note">Cross-border payments and currency risk.</p>
+
+          <div class="entry">
+            <div class="name">International wires &amp; global payments</div>
+            <div class="metric"><span class="label">Speed</span>1–5 business days</div>
+            <div class="metric"><span class="label">Fee</span>Fee + FX spread</div>
+            <div class="desc">Cross-border B2B payments in local currency or U.S. dollars, with guidance for navigating destination-country requirements.</div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Transactional FX</div>
+            <div class="metric"><span class="label">Speed</span>Tied to payment</div>
+            <div class="metric"><span class="label">Fee</span>Spread-based</div>
+            <div class="desc">Currency conversion built into cross-border payment flows, for businesses that regularly pay or get paid in a foreign currency.</div>
+          </div>
+        </section>
+
+        <section class="category" id="c-platform">
+          <h2>Platform &amp; automation</h2>
+          <p class="cat-note">The infrastructure that ties all of the above together.</p>
+
+          <div class="entry">
+            <div class="name">CashPro&reg;</div>
+            <div class="metric"><span class="label">Speed</span>&mdash;</div>
+            <div class="metric"><span class="label">Fee</span>&mdash;</div>
+            <div class="desc">Bank of America's global treasury platform — one place for payments, receivables, liquidity management, investments, FX, and trade, with real-time visibility across all of it. Most of the tools above are initiated or monitored through CashPro.</div>
+            <div class="tags"><span class="tag">treasury hub</span><span class="tag">used by 94% of the Fortune 500</span></div>
+          </div>
+
+          <div class="entry">
+            <div class="name">Account Validation</div>
+            <div class="metric"><span class="label">Speed</span>Pre-payment check</div>
+            <div class="metric"><span class="label">Fee</span>Program-based</div>
+            <div class="desc">Confirms a recipient's account status and ownership before a payment is sent — faster than older pre-notification or micro-deposit methods, and a straightforward way to cut fraud and misdirected payments.</div>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+  </div>
+
+  <footer>
+    Built as a study reference on Bank of America's payment products. Rails, limits, and fees change — verify current details at business.bofa.com or bankofamerica.com before relying on this for a client-facing decision.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var toggleBtns = document.querySelectorAll('.ledger-toggle button');
+  var panels = { personal: document.getElementById('panelPersonal'), commercial: document.getElementById('panelCommercial') };
+  var tocs = { personal: document.getElementById('tocPersonal'), commercial: document.getElementById('tocCommercial') };
+  var modeLabel = document.getElementById('modeLabel');
+
+  function setMode(mode){
+    toggleBtns.forEach(function(b){
+      var active = b.getAttribute('data-mode') === mode;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    Object.keys(panels).forEach(function(k){
+      panels[k].classList.toggle('active', k === mode);
+    });
+    tocs.personal.style.display = mode === 'personal' ? 'flex' : 'none';
+    tocs.commercial.style.display = mode === 'commercial' ? 'flex' : 'none';
+    modeLabel.textContent = mode === 'personal' ? 'Personal accounts' : 'Commercial & business clients';
+    try { window.scrollTo({top: document.querySelector('header.masthead').getBoundingClientRect().height, behavior:'instant'}); } catch(e){}
+  }
+
+  toggleBtns.forEach(function(b){
+    b.addEventListener('click', function(){ setMode(b.getAttribute('data-mode')); });
+  });
+
+  // highlight current TOC link on scroll, per active panel
+  function currentToc(){
+    return panels.personal.classList.contains('active') ? tocs.personal : tocs.commercial;
+  }
+
+  window.addEventListener('scroll', function(){
+    var toc = currentToc();
+    var links = toc.querySelectorAll('a');
+    var current = null;
+    links.forEach(function(link){
+      var id = link.getAttribute('href').slice(1);
+      var section = document.getElementById(id);
+      if(section){
+        var rect = section.getBoundingClientRect();
+        if(rect.top <= 120){ current = link; }
+      }
+    });
+    links.forEach(function(l){ l.classList.remove('current'); });
+    if(current){ current.classList.add('current'); } else if(links[0]){ links[0].classList.add('current'); }
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>

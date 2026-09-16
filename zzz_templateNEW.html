@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BofA Payment Types 101 — Personal &amp; Commercial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#eaf6ff;
+    --paper-raised:#ffffff;
+    --ink:#0d2b45;
+    --ink-soft:#5c7893;
+    --line:#cfe9fb;
+    --sky:#2f97e6;
+    --sky-deep:#0f6fb8;
+    --sky-tint:#dcf1ff;
+    --navy:#124a78;
+    --navy-tint:#e2edf6;
+    --pop:#ff9a3d;
+    --pop-tint:#ffe9d6;
+    --nav-h:60px;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --paper:#0b1620;
+      --paper-raised:#101c28;
+      --ink:#e7f2fb;
+      --ink-soft:#8fa9bf;
+      --line:#1e3446;
+      --sky:#5cb6f5;
+      --sky-deep:#8fd0ff;
+      --sky-tint:#12293a;
+      --navy:#7fc0ee;
+      --navy-tint:#122232;
+      --pop:#ffb267;
+      --pop-tint:#2c1d10;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0b1620;
+    --paper-raised:#101c28;
+    --ink:#e7f2fb;
+    --ink-soft:#8fa9bf;
+    --line:#1e3446;
+    --sky:#5cb6f5;
+    --sky-deep:#8fd0ff;
+    --sky-tint:#12293a;
+    --navy:#7fc0ee;
+    --navy-tint:#122232;
+    --pop:#ffb267;
+    --pop-tint:#2c1d10;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter", sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:"Baloo 2", sans-serif;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--ink);
+  }
+  p{ margin:0; }
+  a{ color:inherit; }
+  ::selection{ background:var(--pop); color:#fff; }
+
+  .wrap{ max-width:940px; margin:0 auto; padding:0 24px; }
+
+  #progress{
+    position:fixed; top:0; left:0; height:3px; width:0%;
+    background:linear-gradient(90deg, var(--sky), var(--pop));
+    z-index:60; transition:width .1s linear;
+  }
+
+  nav.topnav{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--paper) 85%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav-inner{
+    max-width:940px; margin:0 auto; padding:0 24px;
+    height:var(--nav-h);
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{ font-family:"Baloo 2", sans-serif; font-weight:700; font-size:1.05rem; white-space:nowrap; }
+  .brand span{ color:var(--sky-deep); }
+  .navlinks{ display:flex; gap:4px; overflow-x:auto; scrollbar-width:none; }
+  .navlinks::-webkit-scrollbar{ display:none; }
+  .navlinks a{
+    flex:0 0 auto; text-decoration:none; font-size:0.82rem; font-weight:600;
+    color:var(--ink-soft); padding:8px 12px; border-radius:999px; white-space:nowrap;
+    transition:background .15s ease, color .15s ease;
+  }
+  .navlinks a.current{ background:var(--sky-tint); color:var(--sky-deep); }
+
+  header.hero{ padding:60px 0 34px; border-bottom:1px solid var(--line); }
+  .eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:0.8rem; font-weight:600; color:var(--sky-deep); margin-bottom:16px; }
+  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--pop); }
+  h1.hero-title{ font-size:clamp(2rem, 5vw, 3rem); font-weight:800; line-height:1.08; max-width:680px; margin-bottom:16px; }
+  h1.hero-title em{ font-style:normal; color:var(--sky-deep); }
+  .hero-dek{ max-width:600px; color:var(--ink-soft); font-size:1.02rem; margin-bottom:26px; }
+
+  .mode-toggle{
+    display:inline-flex; padding:5px; border-radius:999px; background:var(--paper-raised);
+    border:1px solid var(--line); box-shadow:0 2px 10px rgba(15,111,184,0.08);
+  }
+  .mode-toggle button{
+    appearance:none; border:none; background:transparent; font-family:"Baloo 2", sans-serif;
+    font-size:0.92rem; font-weight:700; color:var(--ink-soft); padding:10px 22px; border-radius:999px;
+    cursor:pointer; transition:background .15s ease, color .15s ease;
+  }
+  .mode-toggle button.active{ background:var(--sky); color:#fff; }
+
+  .glance{ display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid var(--line); }
+  @media (max-width:700px){ .glance{ grid-template-columns:repeat(2,1fr); } }
+  .glance-item{ padding:24px; border-right:1px solid var(--line); }
+  .glance-item:nth-child(4n){ border-right:none; }
+  @media (max-width:700px){
+    .glance-item:nth-child(2n){ border-right:none; }
+    .glance-item:nth-child(4n){ border-right:1px solid var(--line); }
+  }
+  .glance-number{ font-family:"Baloo 2", sans-serif; font-size:1.5rem; color:var(--sky-deep); }
+  .glance-label{ font-size:0.82rem; font-weight:700; margin:2px 0 4px; }
+  .glance-desc{ font-size:0.78rem; color:var(--ink-soft); }
+
+  main{ padding:44px 0 20px; }
+
+  .mode-panel{ display:none; }
+  .mode-panel.active{ display:block; }
+
+  .lede{
+    max-width:700px; color:var(--ink-soft); font-size:0.95rem; margin:0 0 32px;
+    padding:16px 18px; background:var(--sky-tint); border-radius:14px;
+  }
+
+  section.category{ margin-bottom:20px; scroll-margin-top:calc(var(--nav-h) + 12px); }
+
+  .accordion{
+    border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    background:var(--paper-raised); box-shadow:0 2px 10px rgba(15,111,184,0.05);
+  }
+  .accordion + .accordion{ margin-top:14px; }
+  .accordion-head{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:20px 24px; cursor:pointer; -webkit-tap-highlight-color:transparent;
+  }
+  .accordion-head-left{ display:flex; align-items:center; gap:14px; }
+  .accordion-icon{
+    width:38px; height:38px; border-radius:12px; flex:0 0 auto;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--sky-tint); color:var(--sky-deep);
+  }
+  .accordion-head h3{ font-size:1.08rem; font-weight:700; }
+  .accordion-head .cat-note{ font-size:0.82rem; color:var(--ink-soft); font-weight:400; font-family:"Inter",sans-serif; margin-top:2px; }
+  .accordion-head .count{
+    font-size:0.72rem; font-weight:700; color:var(--sky-deep); background:var(--sky-tint);
+    padding:3px 10px; border-radius:999px; flex:0 0 auto;
+  }
+  .accordion-head .plus{ font-size:1.3rem; color:var(--sky-deep); transition:transform .2s ease; flex:0 0 auto; }
+  .accordion.open .plus{ transform:rotate(45deg); }
+  .accordion-body{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
+  .accordion.open .accordion-body{ max-height:3000px; }
+  .accordion-body-inner{ padding:0 24px 22px; }
+
+  .entry{
+    border-top:1px solid var(--line); padding:16px 0; display:grid;
+    grid-template-columns:1fr auto auto; gap:6px 18px; align-items:baseline;
+  }
+  .entry:first-child{ border-top:none; }
+  @media (max-width:600px){ .entry{ grid-template-columns:1fr; } }
+  .entry .name{ font-weight:700; font-size:0.98rem; grid-column:1; }
+  .entry .desc{ grid-column:1/-1; color:var(--ink-soft); font-size:0.88rem; margin-top:3px; max-width:620px; }
+  .chip{
+    font-size:0.72rem; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap;
+    text-align:center; align-self:start;
+  }
+  .chip.speed{ background:var(--sky-tint); color:var(--sky-deep); }
+  .chip.fee{ background:var(--pop-tint); color:#a15613; }
+  :root[data-theme="dark"] .chip.fee{ color:var(--pop); }
+  @media (max-width:600px){ .chip{ margin-top:6px; justify-self:start; } }
+
+  .tags{ grid-column:1/-1; display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .tag{ font-size:0.68rem; padding:3px 9px; border-radius:999px; background:var(--navy-tint); color:var(--navy); font-weight:600; }
+
+  footer{ padding:30px 0 60px; color:var(--ink-soft); font-size:0.82rem; text-align:center; }
+
+  .skip{ position:absolute; left:-999px; top:0; background:var(--ink); color:var(--paper); padding:10px 16px; z-index:100; }
+  .skip:focus{ left:12px; top:12px; }
+</style>
+</head>
+<body>
+
+<a href="#hero" class="skip">Skip to content</a>
+<div id="progress"></div>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">BofA <span>Payments 101</span></div>
+    <div class="navlinks" id="navlinksPersonal">
+      <a href="#p-move">Send &amp; move</a>
+      <a href="#p-bills">Bills</a>
+      <a href="#p-deposit">Deposit</a>
+      <a href="#p-cards">Cards</a>
+      <a href="#p-intl">Global</a>
+    </div>
+    <div class="navlinks" id="navlinksCommercial" style="display:none;">
+      <a href="#c-move">Move funds</a>
+      <a href="#c-payables">Payables</a>
+      <a href="#c-receivables">Receivables</a>
+      <a href="#c-cards">Cards</a>
+      <a href="#c-intl">Global &amp; FX</a>
+      <a href="#c-platform">Platform</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> Bank of America · Payments cheat sheet</div>
+    <h1 class="hero-title">Every way money moves through <em>Bank of America</em>.</h1>
+    <p class="hero-dek">A quick-reference for personal and commercial payment rails — what each one is for, how fast it moves, and what it costs. Tap a category to expand it.</p>
+
+    <div class="mode-toggle" role="tablist">
+      <button type="button" data-mode="personal" class="active">Personal</button>
+      <button type="button" data-mode="commercial">Commercial</button>
+    </div>
+  </div>
+</header>
+
+<div class="glance" id="glancePersonal">
+  <div class="glance-item">
+    <div class="glance-number">11</div>
+    <div class="glance-label">Personal rails</div>
+    <div class="glance-desc">Across 5 categories</div>
+  </div>
+  <div class="glance-item">
+    <div class="glance-number">Zelle</div>
+    <div class="glance-label">Fastest &amp; free</div>
+    <div class="glance-desc">Minutes, no fee</div>
+  </div>
+  <div class="glance-item">
+    <div class="glance-number">Wire</div>
+    <div class="glance-label">Biggest, priciest</div>
+    <div class="glance-desc">Same day, fee applies</div>
+  </div>
+  <div class="glance-item">
+    <div class="glance-number">ACH</div>
+    <div class="glance-label">Everyday workhorse</div>
+    <div class="glance-desc">1–3 days, usually free</div>
+  </div>
+</div>
+
+<div class="glance" id="glanceCommercial" style="display:none;">
+  <div class="glance-item">
+    <div class="glance-number">18</div>
+    <div class="glance-label">Commercial rails</div>
+    <div class="glance-desc">Across 6 categories</div>
+  </div>
+  <div class="glance-item">
+    <div class="glance-number">RTP</div>
+    <div class="glance-label">Fastest</div>
+    <div class="glance-desc">Seconds, 24/7/365</div>
+  </div>
+  <div class="glance-item">
+    <div class="glance-number">$10M</div>
+    <div class="glance-label">RTP limit</div>
+    <div class="glance-desc">Per transaction</div>
+  </div>
+  <div class="glance-item">
+    <div class="glance-number">CashPro</div>
+    <div class="glance-label">The hub</div>
+    <div class="glance-desc">Where it's all managed</div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ================= PERSONAL ================= -->
+  <div class="mode-panel active" id="panelPersonal">
+
+    <p class="lede">Most personal payments route through <strong>Online Banking</strong> or the mobile app, under Pay &amp; Transfer. Zelle and Bill Pay cover almost everything day to day — ACH and wire exist for when speed, amount, or destination need something sturdier.</p>
+
+    <section class="category" id="p-move">
+      <div class="accordion open" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
+            <div>
+              <h3>Send &amp; move money</h3>
+              <div class="cat-note">Moving money to people or your own accounts elsewhere</div>
+            </div>
+          </div>
+          <span class="count">4</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">Zelle&reg;</div>
+              <div class="chip speed">Minutes</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Send or request money with just a phone number or email — works with almost any U.S. bank. Best for splitting bills, paying someone back, or informal transfers between people who trust each other.</div>
+              <div class="tags"><span class="tag">P2P</span><span class="tag">no purchase protection</span></div>
+            </div>
+            <div class="entry">
+              <div class="name">Internal transfers</div>
+              <div class="chip speed">Instant</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Move money between your own Bank of America checking, savings, and eligible brokerage accounts, or to another Bank of America customer.</div>
+            </div>
+            <div class="entry">
+              <div class="name">ACH transfer (linked accounts)</div>
+              <div class="chip speed">1–3 days</div>
+              <div class="chip fee">Usually free</div>
+              <div class="desc">Electronic transfer to or from an external bank account you've linked — the standard way to move money between Bank of America and an account you hold elsewhere.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Wire transfer (domestic)</div>
+              <div class="chip speed">Same day</div>
+              <div class="chip fee">Fee applies</div>
+              <div class="desc">For when a transfer has to land the same day and the amount or counterparty makes Zelle or ACH impractical — real estate closings, large one-off transfers.</div>
+              <div class="tags"><span class="tag">irrevocable once sent</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="p-bills">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg></span>
+            <div>
+              <h3>Pay bills</h3>
+              <div class="cat-note">Recurring or one-off payments to companies</div>
+            </div>
+          </div>
+          <span class="count">3</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">Bill Pay</div>
+              <div class="chip speed">Scheduled</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Set up one-time or recurring payments to virtually any U.S. payee — utilities, landlords, credit cards, loans — from Online Banking or the app.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Loan &amp; mortgage payments</div>
+              <div class="chip speed">Scheduled</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Dedicated options for a Bank of America mortgage or loan, including regular payment, principal-only, or escrow-only.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Credit card payment</div>
+              <div class="chip speed">Same–next day</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Pay a Bank of America credit card balance directly from a linked checking or savings account.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="p-deposit">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v12M6 12l6 6 6-6"/><path d="M4 20h16"/></svg></span>
+            <div>
+              <h3>Deposit &amp; receive</h3>
+              <div class="cat-note">Getting money in</div>
+            </div>
+          </div>
+          <span class="count">3</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">Mobile check deposit</div>
+              <div class="chip speed">1–2 days</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Photograph a check in the app to deposit it without a branch or ATM visit.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Direct deposit</div>
+              <div class="chip speed">Payday</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Payroll, benefits, or government payments deposited straight into your account via ACH — often available up to a day or two early.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Zelle&reg; (receiving)</div>
+              <div class="chip speed">Minutes</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Receive money sent to your enrolled phone number or email; funds post directly to your account.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="p-cards">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></span>
+            <div>
+              <h3>Cards</h3>
+              <div class="cat-note">Plastic (or digital) at the point of sale</div>
+            </div>
+          </div>
+          <span class="count">2</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">Debit card</div>
+              <div class="chip speed">Instant</div>
+              <div class="chip fee">Free</div>
+              <div class="desc">Draws directly from checking; also usable for ATM withdrawals and linkable to Zelle, Apple Pay, Google Pay, and Venmo.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Credit card</div>
+              <div class="chip speed">Instant</div>
+              <div class="chip fee">Interest if carried</div>
+              <div class="desc">Bank of America-issued credit cards with rewards programs, plus the option to pay in full or carry a balance.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="p-intl">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9z"/></svg></span>
+            <div>
+              <h3>International</h3>
+              <div class="cat-note">Sending money outside the U.S.</div>
+            </div>
+          </div>
+          <span class="count">1</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">International wire transfer</div>
+              <div class="chip speed">1–5 days</div>
+              <div class="chip fee">Fee + FX spread</div>
+              <div class="desc">Send funds abroad in U.S. dollars or foreign currency through Online Banking or a financial center — the main personal option for cross-border payments.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ================= COMMERCIAL ================= -->
+  <div class="mode-panel" id="panelCommercial">
+
+    <p class="lede">Business and commercial payments run through <strong>CashPro&reg;</strong>, Bank of America's treasury platform, or Small Business Online Banking for smaller clients. The choice of rail is usually a trade-off between speed, cost, reversibility, and how much remittance detail travels with the payment.</p>
+
+    <section class="category" id="c-move">
+      <div class="accordion open" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span>
+            <div>
+              <h3>Move funds</h3>
+              <div class="cat-note">Core rails for sending money out of the business</div>
+            </div>
+          </div>
+          <span class="count">5</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">ACH (Automated Clearing House)</div>
+              <div class="chip speed">1–2 days</div>
+              <div class="chip fee">Low, per-item</div>
+              <div class="desc">The workhorse for batched, predictable payments — payroll, recurring vendor payments, collections. Cheap and reliable, but not instant.</div>
+              <div class="tags"><span class="tag">payroll</span><span class="tag">vendor payments</span></div>
+            </div>
+            <div class="entry">
+              <div class="name">Wire transfer (domestic &amp; international)</div>
+              <div class="chip speed">Same day</div>
+              <div class="chip fee">Higher, flat</div>
+              <div class="desc">For high-value or time-critical B2B payments, including cross-border. Final and irrevocable once sent.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Real-Time Payments (RTP&reg;)</div>
+              <div class="chip speed">Seconds, 24/7</div>
+              <div class="chip fee">Per-item</div>
+              <div class="desc">Instant, final, irrevocable payments with limits up to $10 million. Used for vendor payments, emergency disbursements, payroll, even deal closings.</div>
+              <div class="tags"><span class="tag">instant</span><span class="tag">not reversible</span></div>
+            </div>
+            <div class="entry">
+              <div class="name">Zelle for Business</div>
+              <div class="chip speed">Minutes</div>
+              <div class="chip fee">Free / low</div>
+              <div class="desc">Small-business version of Zelle with higher sending limits — used for routine payments to vendors, contractors, or customers.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Recipient Select&reg; / Digital Disbursements</div>
+              <div class="chip speed">Minutes–days</div>
+              <div class="chip fee">Per-item</div>
+              <div class="desc">Bank of America's own tools for paying individuals — rebates, insurance claims, gig payouts — by phone or email instead of collecting bank details.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="c-payables">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg></span>
+            <div>
+              <h3>Pay suppliers &amp; payroll</h3>
+              <div class="cat-note">Accounts-payable tools that decide which rail a payment rides</div>
+            </div>
+          </div>
+          <span class="count">3</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">Complete AP</div>
+              <div class="chip speed">Varies</div>
+              <div class="chip fee">Program-based</div>
+              <div class="desc">End-to-end accounts payable automation: invoices approved through the platform, then paid automatically by virtual card, ACH, or check — whichever the supplier prefers.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Virtual Payables Direct</div>
+              <div class="chip speed">Near-instant</div>
+              <div class="chip fee">Program-based</div>
+              <div class="desc">Lets a buyer make large, one-off, or last-minute B2B payments without the supplier needing any card-acceptance setup.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Check issuance &amp; Positive Pay</div>
+              <div class="chip speed">Days</div>
+              <div class="chip fee">Per-item</div>
+              <div class="desc">Paper checks still supported for suppliers who require them; Positive Pay matches every check presented against what the business actually issued, to catch fraud before it clears.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="c-receivables">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v12M6 12l6 6 6-6"/><path d="M4 20h16"/></svg></span>
+            <div>
+              <h3>Collect &amp; deposit</h3>
+              <div class="cat-note">Getting customer and payer money into the business</div>
+            </div>
+          </div>
+          <span class="count">4</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">Lockbox (wholesale &amp; retail)</div>
+              <div class="chip speed">Daily</div>
+              <div class="chip fee">Program-based</div>
+              <div class="desc">Customers mail payments to a P.O. box Bank of America manages; the bank opens, processes, and deposits them, converting paper to electronic where possible.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Commercial &amp; remote deposit</div>
+              <div class="chip speed">Same–next day</div>
+              <div class="chip fee">Program-based</div>
+              <div class="desc">Quick Business Deposit for in-branch drop-off, or Remote Deposit to scan and deposit checks from the office.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Pay by Bank</div>
+              <div class="chip speed">Instant</div>
+              <div class="chip fee">Lower than card</div>
+              <div class="desc">Lets a business's customers pay directly from their bank account at checkout instead of by card — cheaper than card acceptance, no card data stored.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Intelligent Order to Cash / Receivables Matching</div>
+              <div class="chip speed">Automated</div>
+              <div class="chip fee">Program-based</div>
+              <div class="desc">Uses automation to match incoming payments to open invoices and manage deductions — cuts manual reconciliation work.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="c-cards">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></span>
+            <div>
+              <h3>Commercial cards</h3>
+              <div class="cat-note">Card-based spend and payables</div>
+            </div>
+          </div>
+          <span class="count">2</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">Commercial / purchasing cards</div>
+              <div class="chip speed">Instant</div>
+              <div class="chip fee">Rebate-eligible</div>
+              <div class="desc">Corporate cards for travel and general spend, with the reporting controls finance teams need — often earn a rebate on volume.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Virtual cards (ePayables)</div>
+              <div class="chip speed">Instant to supplier</div>
+              <div class="chip fee">Rebate-eligible</div>
+              <div class="desc">Single-use, supplier-specific card numbers generated per payment — pay vendors by card even when they don't take walk-up card payments.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="c-intl">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9z"/></svg></span>
+            <div>
+              <h3>Global &amp; FX</h3>
+              <div class="cat-note">Cross-border payments and currency risk</div>
+            </div>
+          </div>
+          <span class="count">2</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">International wires &amp; global payments</div>
+              <div class="chip speed">1–5 days</div>
+              <div class="chip fee">Fee + FX spread</div>
+              <div class="desc">Cross-border B2B payments in local currency or U.S. dollars, with guidance for navigating destination-country requirements.</div>
+            </div>
+            <div class="entry">
+              <div class="name">Transactional FX</div>
+              <div class="chip speed">Tied to payment</div>
+              <div class="chip fee">Spread-based</div>
+              <div class="desc">Currency conversion built into cross-border payment flows, for businesses that regularly pay or get paid in a foreign currency.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category" id="c-platform">
+      <div class="accordion" data-acc>
+        <div class="accordion-head">
+          <div class="accordion-head-left">
+            <span class="accordion-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span>
+            <div>
+              <h3>Platform &amp; automation</h3>
+              <div class="cat-note">The infrastructure that ties it all together</div>
+            </div>
+          </div>
+          <span class="count">2</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <div class="entry">
+              <div class="name">CashPro&reg;</div>
+              <div class="chip speed">&mdash;</div>
+              <div class="chip fee">&mdash;</div>
+              <div class="desc">Bank of America's global treasury platform — payments, receivables, liquidity, investments, FX, and trade in one place with real-time visibility. Most tools above are initiated or monitored here.</div>
+              <div class="tags"><span class="tag">used by 94% of the Fortune 500</span></div>
+            </div>
+            <div class="entry">
+              <div class="name">Account Validation</div>
+              <div class="chip speed">Pre-payment</div>
+              <div class="chip fee">Program-based</div>
+              <div class="desc">Confirms a recipient's account status and ownership before a payment is sent — faster than pre-notification or micro-deposits, and cuts fraud and misdirected payments.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  Built as a study reference on Bank of America's payment products. Rails, limits, and fees change — verify current details at business.bofa.com or bankofamerica.com before relying on this for a client-facing decision.
+</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var scrolled = (h.scrollTop || document.body.scrollTop);
+    var height = h.scrollHeight - h.clientHeight;
+    bar.style.width = height > 0 ? (scrolled / height * 100) + '%' : '0%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive:true });
+  updateProgress();
+
+  var toggleBtns = document.querySelectorAll('.mode-toggle button');
+  var panels = { personal: document.getElementById('panelPersonal'), commercial: document.getElementById('panelCommercial') };
+  var navs = { personal: document.getElementById('navlinksPersonal'), commercial: document.getElementById('navlinksCommercial') };
+  var glances = { personal: document.getElementById('glancePersonal'), commercial: document.getElementById('glanceCommercial') };
+
+  function setMode(mode){
+    toggleBtns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-mode') === mode); });
+    Object.keys(panels).forEach(function(k){ panels[k].classList.toggle('active', k === mode); });
+    navs.personal.style.display = mode === 'personal' ? 'flex' : 'none';
+    navs.commercial.style.display = mode === 'commercial' ? 'flex' : 'none';
+    glances.personal.style.display = mode === 'personal' ? 'grid' : 'none';
+    glances.commercial.style.display = mode === 'commercial' ? 'grid' : 'none';
+    updateNav();
+  }
+  toggleBtns.forEach(function(b){ b.addEventListener('click', function(){ setMode(b.getAttribute('data-mode')); }); });
+
+  function currentNav(){
+    return panels.personal.classList.contains('active') ? navs.personal : navs.commercial;
+  }
+  function updateNav(){
+    var nav = currentNav();
+    var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+    var pos = window.scrollY + 90;
+    var current = null;
+    links.forEach(function(link){
+      var section = document.getElementById(link.getAttribute('href').slice(1));
+      if(section && section.offsetTop <= pos){ current = link; }
+    });
+    links.forEach(function(l){ l.classList.remove('current'); });
+    (current || links[0]) && (current || links[0]).classList.add('current');
+  }
+  window.addEventListener('scroll', updateNav, { passive:true });
+  updateNav();
+
+  document.querySelectorAll('[data-acc]').forEach(function(acc){
+    acc.querySelector('.accordion-head').addEventListener('click', function(){
+      acc.classList.toggle('open');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
