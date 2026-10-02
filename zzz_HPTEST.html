@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="icon" href="images/favicon.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+  <title>Faraz Uddin</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0a0a0a;
+      --text-muted: #666666;
+      --border: #e7e7e7;
+      --card-bg: #f5f5f5;
+      --radius: 16px;
+      --radius-lg: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Navigation placeholder */
+    #nav-placeholder {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 8rem 1.5rem 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero {
+        padding: 5rem 1.25rem 4rem;
+      }
+    }
+
+    .hero-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.75rem, 5vw, 3.75rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content .lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-content .roles {
+      font-size: 0.9375rem;
+      color: var(--text);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.5rem;
+      border-radius: 9999px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      background: var(--card-bg);
+    }
+
+    /* Experience Section */
+    .experience {
+      padding: 5rem 1.5rem 8rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    #lottie-container {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 3rem;
+      opacity: 0.9;
+    }
+
+    /* Experience Cards */
+    .exp-card {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3.5rem;
+      align-items: center;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .exp-card:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (max-width: 800px) {
+      .exp-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .exp-card.reverse {
+      direction: rtl;
+    }
+
+    .exp-card.reverse > * {
+      direction: ltr;
+    }
+
+    .exp-logo {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+    }
+
+    .exp-logo img {
+      max-width: 80%;
+      max-height: 120px;
+      object-fit: contain;
+    }
+
+    .exp-content h3 {
+      font-size: 1.375rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .exp-content > p {
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      font-size: 1.025rem;
+    }
+
+    .exp-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .exp-list li {
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-list strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+    }
+
+    .exp-list p {
+      color: var(--text-muted);
+      font-size: 0.975rem;
+      line-height: 1.55;
+    }
+
+    .exp-list ul {
+      margin-top: 0.75rem;
+      padding-left: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .exp-list ul li {
+      margin-bottom: 0.4rem;
+      list-style: disc;
+    }
+
+    /* Footer placeholder */
+    #footer-placeholder {
+      border-top: 1px solid var(--border);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Utility */
+    .text-muted {
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Placeholder -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-grid">
+      <div class="hero-image">
+        <img src="images/TIAA/Business Plan-bro.png" alt="Business illustration" />
+      </div>
+      <div class="hero-content">
+        <h1>Faraz Uddin</h1>
+        <p class="lead">
+          Agile Product Leader at the intersection of business, data, and digital platforms. Driving outcomes through strategy, collaboration, and continuous improvement.
+        </p>
+        <p class="roles">Product Owner · Business Analyst · Scrum Master</p>
+        <a class="btn btn-primary" href="#experience">
+          Learn more
+          <span style="font-size: 1.1em;">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Recent Experience -->
+  <section class="experience" id="experience">
+    <div class="section-header">
+      <div id="lottie-container"></div>
+      <h2>Recent Experience</h2>
+    </div>
+
+    <!-- Wells Fargo -->
+    <div class="exp-card reverse">
+      <div class="exp-logo">
+        <img src="images/Wells_Fargo-Logo.wine.png" alt="Wells Fargo Logo" />
+      </div>
+      <div class="exp-content">
+        <h3>Wells Fargo – Product Owner</h3>
+        <p>
+          As a Product Owner supporting Wells Fargo Merchant Services, I led Agile delivery for internal risk, credit, and operations solutions designed to improve merchant risk assessments, automate workflows, and modernize operational processes.
+        </p>
+        <ul class="exp-list">
+          <li>
+            <strong>Risk Profile Assessment (RPA)</strong>
+            <p>
+              Owned the product backlog and delivery of a Pega-based Risk Profile Assessment solution that automated periodic merchant risk reviews, surfaced risk alerts, and streamlined workflows across Risk, Credit, Compliance, and development teams.
+            </p>
+          </li>
+        </ul>
+        <a class="btn btn-outline" href="WF_MS_2026.html">
+          Learn more
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- TIAA -->
+    <div class="exp-card">
+      <div class="exp-logo">
+        <img src="images/TIAA/Tiaa Logo.png" alt="TIAA Logo" />
+      </div>
+      <div class="exp-content">
+        <h3>TIAA – Product Owner | Scrum Master | Business Analyst</h3>
+        <p>
+          For two years, I served as a consultant at TIAA, splitting my time evenly between two Agile Scrum teams focused on investment performance and retirement plan management platforms.
+        </p>
+        <ul class="exp-list">
+          <li>
+            <strong>Markit on Demand (MOD): Investment Performance Research</strong>
+            <p>
+              Managed TIAA’s fund screener tool and over 9,000 fund profile pages, collaborating closely with Marketing, Investment Performance teams, and vendor partner Fincentric (an S&P Global company).
+            </p>
+          </li>
+          <li>
+            <strong>PlanFocus: Retirement Plan Management</strong>
+            <p>
+              PlanFocus is a cloud-based tool for institutional retirement plan management. My contributions helped empower users including Plan Sponsors, Administrators, and Consultants to:
+            </p>
+            <ul>
+              <li>Streamline plan management through efficient tools and workflows.</li>
+              <li>Enhance participant engagement with clear communication tools.</li>
+              <li>Drive data-informed decision-making to improve retirement outcomes.</li>
+            </ul>
+          </li>
+        </ul>
+        <a class="btn btn-outline" href="TIAA.html">
+          Learn more
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'images/Lottie/Web-Design.json'
+    });
+  </script>
+</body>
+
+</html>

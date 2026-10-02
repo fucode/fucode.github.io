@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" />
+
+  <!-- Bootstrap CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <title>Wells Fargo Merchant Services | Faraz Uddin</title>
+
+  <!-- Page-Specific Styles -->
+  <style>
+    :root {
+      --wf-red: #d71e28;
+      --wf-dark-red: #8f141b;
+      --wf-light-red: #fdf0f1;
+      --wf-border: #ead8d9;
+      --wf-text: #343a40;
+      --wf-muted: #6c757d;
+      --wf-light-bg: #f8f9fa;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    .section-light {
+      background-color: var(--wf-light-bg);
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--wf-muted);
+      line-height: 1.8;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--bs-primary);
+    }
+
+    .study-card {
+      height: 100%;
+      background: #ffffff;
+      border: 1px solid #e9ecef;
+      border-radius: 14px;
+      padding: 28px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .study-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .study-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(13, 110, 253, 0.1);
+      color: var(--bs-primary);
+      border-radius: 12px;
+      font-size: 1.25rem;
+      margin-bottom: 18px;
+    }
+
+    .system-card {
+      height: 100%;
+      border-radius: 16px;
+      border: 1px solid #e4e4e4;
+      background: #ffffff;
+      padding: 30px;
+    }
+
+    .system-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: rgba(13, 110, 253, 0.1);
+      color: var(--bs-primary);
+      margin-bottom: 12px;
+    }
+
+    .system-card ul {
+      padding-left: 1.2rem;
+    }
+
+    .system-card li {
+      margin-bottom: 10px;
+      color: var(--wf-muted);
+    }
+
+    .architecture-box {
+      height: 100%;
+      border: 1px solid #dee2e6;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .architecture-number {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bs-primary);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .architecture-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bs-primary);
+      font-size: 1.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 9px;
+      border-radius: 20px;
+      margin: 3px;
+      background: #e9f2ff;
+      color: var(--bs-primary);
+    }
+
+    .workflow-item {
+      position: relative;
+      padding-left: 65px;
+      padding-bottom: 38px;
+    }
+
+    .workflow-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .workflow-item::before {
+      content: "";
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      background: #dee2e6;
+    }
+
+    .workflow-item:last-child::before {
+      display: none;
+    }
+
+    .workflow-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bs-primary);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .callout {
+      border-left: 5px solid var(--bs-primary);
+      background: #eef5ff;
+      border-radius: 0 12px 12px 0;
+      padding: 25px;
+    }
+
+    .study-table {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #dee2e6;
+    }
+
+    .study-table table {
+      margin-bottom: 0;
+    }
+
+    .study-table thead th {
+      background: #343a40;
+      color: #ffffff;
+      border: none;
+      padding: 15px;
+    }
+
+    .study-table td {
+      padding: 15px;
+      vertical-align: top;
+    }
+
+    .interview-box {
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 991px) {
+      .architecture-arrow {
+        transform: rotate(90deg);
+        padding: 12px 0;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       NAVIGATION
+       Uses the same shared navigation as index.html
+  ====================================================== -->
+
+  <div id="nav-placeholder"></div>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="header">
+
+    <div class="hero text-white pt-5 mt-5">
+
+      <div class="container-xl">
+
+        <div class="row align-items-center">
+
+          <!-- Image -->
+          <div class="col-md-6">
+
+            <div class="image-container mb-5 px-4 text-center">
+
+              <img
+                src="images/Wells_Fargo-Logo.wine.png"
+                alt="Wells Fargo Logo"
+                class="img-fluid"
+              />
+
+            </div>
+
+          </div>
+
+
+          <!-- Header Text -->
+          <div class="col-md-6">
+
+            <div
+              class="text-container p-4 d-flex flex-column
+                     justify-content-center h-100 mb-5"
+            >
+
+              <p class="text-uppercase fw-semibold mb-2">
+                Wells Fargo Merchant Services
+              </p>
+
+              <h1 class="display-3 fw-bold">
+                Product Owner
+              </h1>
+
+              <h2 class="h3 fw-semibold mb-4">
+                MSOW & Risk Profile Assessment
+              </h2>
+
+              <p class="lead">
+
+                Led Agile product delivery for a Pega-based
+                Merchant Services platform supporting merchant
+                risk assessment, credit underwriting, workflow
+                automation, data integration, and operational
+                processes.
+
+              </p>
+
+              <p>
+                Product Ownership |
+                Pega |
+                MSOW |
+                RPA |
+                APIs |
+                Data |
+                UAT
+              </p>
+
+              <div
+                class="d-flex justify-content-center
+                       justify-content-md-start mt-4"
+              >
+
+                <a
+                  class="btn btn-primary text-white"
+                  href="#overview"
+                >
+                  View Case Study
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Frame Decoration -->
+
+    <svg
+      class="frame-decoration"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      viewBox="0 0 1920 192.275"
+    >
+
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #ffffff;
+          }
+        </style>
+      </defs>
+
+      <path
+        class="cls-1"
+        d="M0,158.755s63.9,52.163,179.472,50.736c121.494-1.5,
+        185.839-49.738,305.984-49.733,109.21,0,
+        181.491,51.733,300.537,50.233,123.941-1.562,
+        225.214-50.126,390.43-50.374,123.821-.185,
+        353.982,58.374,458.976,56.373,217.907-4.153,
+        284.6-57.236,284.6-57.236V351.03H0V158.755Z"
+        transform="translate(0 -158.755)"
+      />
+
+    </svg>
+
+  </header>
+
+
+  <!-- =====================================================
+       01 - OVERVIEW
+  ====================================================== -->
+
+  <section class="section-padding" id="overview">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          01 • Business Overview
+        </p>
+
+        <h1 class="section-title">
+          Risk Profile Assessment (RPA)
+        </h1>
+
+        <p class="section-subtitle">
+
+          Risk Profile Assessment supported Wells Fargo Merchant
+          Services Credit and Risk teams in evaluating merchants
+          and determining whether the merchant's overall risk profile
+          and credit exposure remained acceptable to the bank.
+
+        </p>
+
+      </div>
+
+
+      <div class="row g-4">
+
+        <!-- Merchant Assessment -->
+        <div class="col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-store"></i>
+            </div>
+
+            <h4>
+              Merchant Assessment
+            </h4>
+
+            <p class="text-muted">
+
+              Brought merchant information, processing activity,
+              risk indicators, exposure, and relationship information
+              together for underwriting review.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Risk -->
+        <div class="col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+
+            <h4>
+              Risk Evaluation
+            </h4>
+
+            <p class="text-muted">
+
+              Credit Officers and Underwriters evaluated merchant
+              exposure, risk rating, processing activity, collateral,
+              and other relevant risk factors.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Decision -->
+        <div class="col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+
+            <h4>
+              Credit Decision Support
+            </h4>
+
+            <p class="text-muted">
+
+              RPA organized the information, documentation, analysis,
+              and approvals required to support merchant credit-risk
+              decisions and case resolution.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       02 - MSOW VS MSCD
+  ====================================================== -->
+
+  <section class="section-padding section-light">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          02 • Application Architecture
+        </p>
+
+        <h2 class="section-title">
+          MSOW vs. MSCD
+        </h2>
+
+        <p class="section-subtitle">
+
+          A key architectural concept was the separation between
+          MSOW, which provided the Pega user interface and workflow,
+          and MSCD, which served as an upstream merchant-data
+          application and API provider.
+
+        </p>
+
+      </div>
+
+
+      <div class="row g-4">
+
+        <!-- MSCD -->
+        <div class="col-lg-6">
+
+          <div class="system-card">
+
+            <span class="system-label">
+              Upstream / Backend
+            </span>
+
+            <h2>
+              MSCD
+            </h2>
+
+            <p class="text-muted">
+
+              MSCD functioned as an upstream Merchant Services
+              application and data store supporting merchant-data
+              processing, storage, and analysis.
+
+            </p>
+
+            <hr />
+
+            <h5>
+              Key Responsibilities
+            </h5>
+
+            <ul>
+
+              <li>
+                Receive merchant-related data from upstream sources.
+              </li>
+
+              <li>
+                Store merchant information.
+              </li>
+
+              <li>
+                Support analysis used for periodic RPA reviews.
+              </li>
+
+              <li>
+                Receive or process alert-related information that
+                could contribute to merchant reviews.
+              </li>
+
+              <li>
+                Provide merchant information and functionality
+                through APIs.
+              </li>
+
+              <li>
+                Serve as an upstream system for MSOW.
+              </li>
+
+              <li>
+                Support approximately 10 years of data retention.
+              </li>
+
+            </ul>
+
+            <div class="mt-4">
+
+              <span class="tag">Upstream</span>
+              <span class="tag">Data Store</span>
+              <span class="tag">API Provider</span>
+              <span class="tag">Merchant Data</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MSOW -->
+        <div class="col-lg-6">
+
+          <div class="system-card">
+
+            <span class="system-label">
+              UI / Workflow
+            </span>
+
+            <h2>
+              MSOW
+            </h2>
+
+            <p class="text-muted">
+
+              MSOW was the Pega-based application providing the
+              user interface, case-management experience, and
+              workflow used by Merchant Services users to perform
+              the Risk Profile Assessment.
+
+            </p>
+
+            <hr />
+
+            <h5>
+              Key Responsibilities
+            </h5>
+
+            <ul>
+
+              <li>
+                Consume APIs provided by MSCD.
+              </li>
+
+              <li>
+                Present merchant information to users.
+              </li>
+
+              <li>
+                Create and manage RPA cases.
+              </li>
+
+              <li>
+                Guide users through Pega stages and process steps.
+              </li>
+
+              <li>
+                Support underwriting analysis.
+              </li>
+
+              <li>
+                Support document-related processes.
+              </li>
+
+              <li>
+                Support approval and case-resolution workflows.
+              </li>
+
+              <li>
+                Maintain its own application and case data.
+              </li>
+
+              <li>
+                Support approximately 3 years of data retention.
+              </li>
+
+            </ul>
+
+            <div class="mt-4">
+
+              <span class="tag">Pega</span>
+              <span class="tag">UI Layer</span>
+              <span class="tag">Workflow</span>
+              <span class="tag">API Consumer</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       03 - DATA FLOW
+  ====================================================== -->
+
+  <section class="section-padding">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          03 • Data Architecture
+        </p>
+
+        <h2 class="section-title">
+          Merchant Data Flow
+        </h2>
+
+        <p class="section-subtitle">
+
+          The easiest way to understand the architecture is to
+          follow merchant information from its source into MSCD,
+          through APIs, and finally into the MSOW RPA workflow.
+
+        </p>
+
+      </div>
+
+
+      <div class="row align-items-stretch g-2">
+
+        <!-- Source -->
+        <div class="col-lg">
+
+          <div class="architecture-box">
+
+            <div class="architecture-number">
+              1
+            </div>
+
+            <h5>
+              Fiserv / Merchant Data
+            </h5>
+
+            <p class="text-muted">
+
+              Merchant data originated from source systems used
+              within Merchant Services.
+
+            </p>
+
+            <span class="tag">
+              Data Source
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-auto architecture-arrow">
+
+          <i class="fas fa-arrow-right"></i>
+
+        </div>
+
+
+        <!-- MSCD -->
+        <div class="col-lg">
+
+          <div class="architecture-box">
+
+            <div class="architecture-number">
+              2
+            </div>
+
+            <h5>
+              MSCD
+            </h5>
+
+            <p class="text-muted">
+
+              Merchant information was brought into MSCD for
+              storage and analysis.
+
+            </p>
+
+            <span class="tag">
+              Ingestion
+            </span>
+
+            <span class="tag">
+              Storage
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-auto architecture-arrow">
+
+          <i class="fas fa-arrow-right"></i>
+
+        </div>
+
+
+        <!-- API -->
+        <div class="col-lg">
+
+          <div class="architecture-box">
+
+            <div class="architecture-number">
+              3
+            </div>
+
+            <h5>
+              MSCD APIs
+            </h5>
+
+            <p class="text-muted">
+
+              MSCD exposed merchant data and functionality through
+              APIs for downstream consumption.
+
+            </p>
+
+            <span class="tag">
+              API Provider
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-auto architecture-arrow">
+
+          <i class="fas fa-arrow-right"></i>
+
+        </div>
+
+
+        <!-- MSOW -->
+        <div class="col-lg">
+
+          <div class="architecture-box">
+
+            <div class="architecture-number">
+              4
+            </div>
+
+            <h5>
+              MSOW / Pega
+            </h5>
+
+            <p class="text-muted">
+
+              MSOW consumed the APIs and presented merchant data
+              within the RPA workflow.
+
+            </p>
+
+            <span class="tag">
+              API Consumer
+            </span>
+
+            <span class="tag">
+              UI
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-auto architecture-arrow">
+
+          <i class="fas fa-arrow-right"></i>
+
+        </div>
+
+
+        <!-- Underwriter -->
+        <div class="col-lg">
+
+          <div class="architecture-box">
+
+            <div class="architecture-number">
+              5
+            </div>
+
+            <h5>
+              Underwriter
+            </h5>
+
+            <p class="text-muted">
+
+              The Credit Officer used the RPA workflow to perform
+              merchant risk analysis.
+
+            </p>
+
+            <span class="tag">
+              User
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="callout mt-5">
+
+        <h5>
+          Architecture to Remember
+        </h5>
+
+        <p class="mb-0">
+
+          <strong>
+            Fiserv / Merchant Data
+            → MSCD
+            → MSCD APIs
+            → MSOW / Pega
+            → RPA Workflow
+            → Credit Officer / Underwriter
+          </strong>
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       04 - RPA WORKFLOW
+  ====================================================== -->
+
+  <section class="section-padding section-light">
+
+    <div class="container">
+
+      <div class="row g-5">
+
+        <div class="col-lg-5">
+
+          <p class="eyebrow">
+            04 • Business Process
+          </p>
+
+          <h2 class="section-title">
+            RPA Workflow
+          </h2>
+
+          <p class="text-muted">
+
+            The RPA case guided the Credit Officer or Underwriter
+            through the information and activities required to
+            evaluate a merchant.
+
+          </p>
+
+
+          <div class="callout mt-4">
+
+            <h5>
+              Important
+            </h5>
+
+            <p class="mb-0">
+
+              This is a conceptual view of the RPA process for
+              study purposes. Not every activity necessarily occurred
+              in a strict sequential order.
+
+            </p>
+
+          </div>
+
+
+          <div class="study-card mt-4">
+
+            <h5>
+              Pega Terminology
+            </h5>
+
+            <p class="text-muted mb-0">
+
+              A Pega case progresses through
+              <strong>Stages</strong>. Each stage can contain one or
+              more <strong>Processes</strong> and
+              <strong>Steps</strong> that guide the user toward
+              case completion.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-7">
+
+          <!-- 1 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              1
+            </div>
+
+            <h5>
+              RPA Case Initiation
+            </h5>
+
+            <p class="text-muted">
+
+              An RPA case could originate from a periodic merchant
+              review or from risk / alert-related activity requiring
+              merchant evaluation.
+
+            </p>
+
+          </div>
+
+
+          <!-- 2 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              2
+            </div>
+
+            <h5>
+              Merchant Review
+            </h5>
+
+            <p class="text-muted">
+
+              The underwriter reviewed merchant profile information,
+              merchant hierarchy, processing activity, and other
+              relevant information.
+
+            </p>
+
+          </div>
+
+
+          <!-- 3 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              3
+            </div>
+
+            <h5>
+              Risk Analysis
+            </h5>
+
+            <p class="text-muted">
+
+              The Credit Officer analyzed merchant risk indicators,
+              processing behavior, exposure, risk rating, and other
+              relevant factors.
+
+            </p>
+
+          </div>
+
+
+          <!-- 4 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              4
+            </div>
+
+            <h5>
+              Gather Additional Information
+            </h5>
+
+            <p class="text-muted">
+
+              If additional information was needed, the underwriter
+              could contact other groups, including the merchant's
+              Relationship Manager.
+
+            </p>
+
+          </div>
+
+
+          <!-- 5 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              5
+            </div>
+
+            <h5>
+              Supporting Documents
+            </h5>
+
+            <p class="text-muted">
+
+              Supporting documentation could be uploaded and used
+              as part of the RPA assessment.
+
+            </p>
+
+          </div>
+
+
+          <!-- 6 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              6
+            </div>
+
+            <h5>
+              Wells Fargo Relationship Review
+            </h5>
+
+            <p class="text-muted">
+
+              The underwriter could enter or review other products
+              and services the merchant had with Wells Fargo to
+              provide additional relationship context.
+
+            </p>
+
+          </div>
+
+
+          <!-- 7 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              7
+            </div>
+
+            <h5>
+              Collateral
+            </h5>
+
+            <p class="text-muted">
+
+              Collateral could be evaluated as part of the merchant's
+              overall credit-risk assessment.
+
+            </p>
+
+          </div>
+
+
+          <!-- 8 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              8
+            </div>
+
+            <h5>
+              Credit Amount / Exposure
+            </h5>
+
+            <p class="text-muted">
+
+              The assessment considered the amount of
+              processing-related credit exposure the bank was
+              willing to assume for the merchant.
+
+            </p>
+
+          </div>
+
+
+          <!-- 9 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              9
+            </div>
+
+            <h5>
+              Concurrence / Approval
+            </h5>
+
+            <p class="text-muted">
+
+              When additional approval was required, the workflow
+              supported identifying and routing the case to the
+              appropriate approver.
+
+            </p>
+
+          </div>
+
+
+          <!-- 10 -->
+          <div class="workflow-item">
+
+            <div class="workflow-number">
+              10
+            </div>
+
+            <h5>
+              Case Resolution
+            </h5>
+
+            <p class="text-muted">
+
+              After analysis, documentation, and required approvals
+              were completed, the RPA case could move toward final
+              resolution.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       05 - INTEGRATIONS
+  ====================================================== -->
+
+  <section class="section-padding">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          05 • Integrations
+        </p>
+
+        <h2 class="section-title">
+          Supporting Systems
+        </h2>
+
+        <p class="section-subtitle">
+
+          MSOW depended on multiple systems and enterprise services
+          to provide merchant data, documents, and approval
+          information required by the RPA workflow.
+
+        </p>
+
+      </div>
+
+
+      <div class="row g-4">
+
+        <!-- MSCD -->
+        <div class="col-md-6 col-lg-3">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-database"></i>
+            </div>
+
+            <h4>
+              MSCD
+            </h4>
+
+            <p class="text-muted">
+
+              Upstream merchant-data application and API provider
+              supporting MSOW and the RPA workflow.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ICMP -->
+        <div class="col-md-6 col-lg-3">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-folder-open"></i>
+            </div>
+
+            <h4>
+              ICMP
+            </h4>
+
+            <p class="text-muted">
+
+              Wells Fargo enterprise document-storage capability
+              used to store supporting application documents.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CAAMS -->
+        <div class="col-md-6 col-lg-3">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+
+            <h4>
+              CAAMS
+            </h4>
+
+            <p class="text-muted">
+
+              MSOW communicated with CAAMS to look up appropriate
+              approvers for approval-related workflows.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- API -->
+        <div class="col-md-6 col-lg-3">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+
+            <h4>
+              APIs
+            </h4>
+
+            <p class="text-muted">
+
+              APIs allowed MSOW to consume merchant information
+              and functionality provided by MSCD and supporting
+              services.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       06 - PERSONAS
+  ====================================================== -->
+
+  <section class="section-padding section-light">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          06 • Users & Stakeholders
+        </p>
+
+        <h2 class="section-title">
+          RPA Personas
+        </h2>
+
+      </div>
+
+
+      <div class="row g-4">
+
+        <!-- Underwriter -->
+        <div class="col-md-6 col-lg-3">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+
+            <h4>
+              Credit Officer / Underwriter
+            </h4>
+
+            <p class="text-muted">
+
+              Primary user responsible for reviewing merchant
+              information and performing the Risk Profile Assessment.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Manager -->
+        <div class="col-md-6 col-lg-3">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-users"></i>
+            </div>
+
+            <h4>
+              CO / Underwriting Manager
+            </h4>
+
+            <p class="text-muted">
+
+              Supported underwriting oversight, case review,
+              escalation, concurrence, and approval activities.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Auditor -->
+        <div class="col-md-6 col-lg-3">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+
+            <h4>
+              Auditor
+            </h4>
+
+            <p class="text-muted">
+
+              Reviewed application information and case history
+              for governance, controls, compliance, and risk
+              purposes.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- RM -->
+        <div class="col-md-6 col-lg-3">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+
+            <h4>
+              Relationship Manager
+            </h4>
+
+            <p class="text-muted">
+
+              Provided merchant relationship context and additional
+              information when requested by the underwriter.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       07 - DATA GOVERNANCE
+  ====================================================== -->
+
+  <section class="section-padding">
+
+    <div class="container">
+
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-5">
+
+          <p class="eyebrow">
+            07 • Data Governance
+          </p>
+
+          <h2 class="section-title">
+            Data Retention
+          </h2>
+
+          <p class="text-muted">
+
+            MSOW and MSCD had different responsibilities for data
+            storage and retention because the applications served
+            different purposes within the Merchant Services
+            ecosystem.
+
+          </p>
+
+        </div>
+
+
+        <div class="col-lg-7">
+
+          <div class="table-responsive study-table">
+
+            <table class="table table-striped">
+
+              <thead>
+
+                <tr>
+                  <th>System</th>
+                  <th>Purpose</th>
+                  <th>Retention</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+
+                  <td>
+                    <strong>MSCD</strong>
+                  </td>
+
+                  <td>
+                    Upstream merchant-data store and backend
+                    application
+                  </td>
+
+                  <td>
+                    10 Years
+                  </td>
+
+                </tr>
+
+
+                <tr>
+
+                  <td>
+                    <strong>MSOW</strong>
+                  </td>
+
+                  <td>
+                    Pega workflow, UI, and RPA application /
+                    case data
+                  </td>
+
+                  <td>
+                    3 Years
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       08 - DATA TERMINOLOGY
+  ====================================================== -->
+
+  <section class="section-padding section-light">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          08 • Data Concepts
+        </p>
+
+        <h2 class="section-title">
+          Architecture & Data Terminology
+        </h2>
+
+        <p class="section-subtitle">
+
+          Common terminology used to describe how merchant data
+          moved between the systems supporting the RPA process.
+
+        </p>
+
+      </div>
+
+
+      <div class="table-responsive study-table">
+
+        <table class="table table-striped">
+
+          <thead>
+
+            <tr>
+              <th style="width: 25%;">
+                Term
+              </th>
+
+              <th>
+                How It Applied
+              </th>
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr>
+
+              <td>
+                <strong>Data Source</strong>
+              </td>
+
+              <td>
+                The original system or provider from which merchant
+                information originated.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Data Sourcing</strong>
+              </td>
+
+              <td>
+                Identifying and obtaining the merchant information
+                required by the business process.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Data Movement</strong>
+              </td>
+
+              <td>
+                Moving information from one system or platform to
+                another.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Data Ingestion</strong>
+              </td>
+
+              <td>
+                Bringing merchant information from source systems
+                into MSCD.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Data Store</strong>
+              </td>
+
+              <td>
+                A system or database responsible for storing data.
+                MSCD served as a merchant-data store.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Upstream System</strong>
+              </td>
+
+              <td>
+                A system that provides data or functionality to
+                another system. MSCD was upstream of MSOW.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Downstream System</strong>
+              </td>
+
+              <td>
+                A system that receives or consumes information from
+                an upstream system. MSOW consumed information from
+                MSCD.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>API Provider</strong>
+              </td>
+
+              <td>
+                The application exposing functionality or data
+                through an API. MSCD served as an API provider.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>API Consumer</strong>
+              </td>
+
+              <td>
+                The application calling an API and using the
+                returned data or functionality. MSOW served as
+                an API consumer.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Transformation</strong>
+              </td>
+
+              <td>
+                Changing the structure, format, or values of data
+                so that it meets the requirements of another
+                application or business process.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Translation / Mapping</strong>
+              </td>
+
+              <td>
+                Mapping fields, values, or representations between
+                systems so the receiving system interprets the
+                information correctly.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Data Lineage</strong>
+              </td>
+
+              <td>
+                Understanding where data originated, how it moved,
+                how it changed, and which applications consumed it.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Data Governance</strong>
+              </td>
+
+              <td>
+                Policies and controls governing data ownership,
+                quality, retention, access, and appropriate use.
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       09 - PRODUCT OWNER ROLE
+  ====================================================== -->
+
+  <section class="section-padding">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          09 • Product Ownership
+        </p>
+
+        <h2 class="section-title">
+          My Role as Product Owner
+        </h2>
+
+        <p class="section-subtitle">
+
+          I worked between Merchant Services business stakeholders
+          and technology teams, translating underwriting and
+          operational needs into deliverable Pega functionality.
+
+        </p>
+
+      </div>
+
+
+      <div class="row g-4">
+
+        <!-- Discovery -->
+        <div class="col-md-6 col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-search"></i>
+            </div>
+
+            <h4>
+              Discovery
+            </h4>
+
+            <p class="text-muted">
+
+              Worked with business stakeholders to understand
+              problems, current workflows, risk requirements,
+              pain points, and desired outcomes.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Requirements -->
+        <div class="col-md-6 col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-list-alt"></i>
+            </div>
+
+            <h4>
+              Requirements
+            </h4>
+
+            <p class="text-muted">
+
+              Translated business needs into user stories,
+              requirements, workflows, and acceptance criteria.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Backlog -->
+        <div class="col-md-6 col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+
+            <h4>
+              Backlog Management
+            </h4>
+
+            <p class="text-muted">
+
+              Prioritized and refined the backlog with stakeholders,
+              developers, and other members of the Agile team.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- APIs -->
+        <div class="col-md-6 col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+
+            <h4>
+              Integration Requirements
+            </h4>
+
+            <p class="text-muted">
+
+              Supported requirements involving MSCD APIs,
+              application integrations, merchant data, document
+              storage, and approval lookup.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- UAT -->
+        <div class="col-md-6 col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-vial"></i>
+            </div>
+
+            <h4>
+              UAT
+            </h4>
+
+            <p class="text-muted">
+
+              Translated requirements and acceptance criteria into
+              business test scenarios, coordinated testers,
+              validated Pega workflows, tracked defects, and
+              supported final business sign-off.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Delivery -->
+        <div class="col-md-6 col-lg-4">
+
+          <div class="study-card">
+
+            <div class="study-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+
+            <h4>
+              Agile Delivery
+            </h4>
+
+            <p class="text-muted">
+
+              Supported backlog refinement, sprint planning,
+              sprint reviews, stakeholder demonstrations,
+              release readiness, and production launch.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       10 - REPORTING
+  ====================================================== -->
+
+  <section class="section-padding section-light">
+
+    <div class="container">
+
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+
+          <p class="eyebrow">
+            10 • Reporting & Analytics
+          </p>
+
+          <h2 class="section-title">
+            Operational Visibility
+          </h2>
+
+          <p class="text-muted">
+
+            Reporting requirements helped provide Risk and
+            Operations leadership with visibility into RPA
+            workflow performance and operational trends.
+
+          </p>
+
+
+          <div class="mt-4">
+
+            <span class="tag">
+              Power BI
+            </span>
+
+            <span class="tag">
+              Grafana
+            </span>
+
+            <span class="tag">
+              Excel
+            </span>
+
+            <span class="tag">
+              Pega
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-6">
+
+          <div class="study-card">
+
+            <h4>
+              Example Metrics
+            </h4>
+
+            <hr />
+
+            <p>
+              <i class="fas fa-square text-primary me-2"></i>
+              Case aging
+            </p>
+
+            <p>
+              <i class="fas fa-square text-primary me-2"></i>
+              Queue backlog
+            </p>
+
+            <p>
+              <i class="fas fa-square text-primary me-2"></i>
+              RPA completion metrics
+            </p>
+
+            <p class="mb-0">
+              <i class="fas fa-square text-primary me-2"></i>
+              Operational and risk trends
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       11 - INTERVIEW STUDY
+  ====================================================== -->
+
+  <section class="section-padding">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          11 • Interview Preparation
+        </p>
+
+        <h2 class="section-title">
+          How I Explain RPA
+        </h2>
+
+        <p class="section-subtitle">
+
+          A concise way to explain the project during a Product
+          Owner or Business Analyst interview.
+
+        </p>
+
+      </div>
+
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+          <div class="interview-box">
+
+            <p>
+
+              At Wells Fargo Merchant Services, I was a Product
+              Owner supporting a Pega-based application called
+              <strong>MSOW</strong>. One of the primary workflows
+              I supported was the
+              <strong>Risk Profile Assessment, or RPA</strong>,
+              which Credit Officers and Underwriters used to
+              evaluate merchant risk.
+
+            </p>
+
+
+            <p>
+
+              Architecturally, MSOW functioned as the
+              <strong>Pega UI and workflow layer</strong>.
+              An upstream application called
+              <strong>MSCD</strong> stored and processed merchant
+              information and provided data and functionality
+              through APIs that MSOW consumed.
+
+            </p>
+
+
+            <p>
+
+              Merchant information could originate from sources
+              such as Fiserv and flow into MSCD. MSCD supported
+              merchant-data storage and analysis used for periodic
+              RPA reviews and other risk-related activity. MSOW
+              then consumed the required information through APIs
+              and presented it within the RPA case.
+
+            </p>
+
+
+            <p>
+
+              From there, the Credit Officer could review merchant
+              information, analyze risk and exposure, gather
+              additional information, work with supporting
+              documents, consider collateral and the merchant's
+              broader Wells Fargo relationship, and complete
+              required concurrence or approval activities.
+
+            </p>
+
+
+            <p class="mb-0">
+
+              My responsibility as Product Owner was to understand
+              those business and underwriting processes and
+              translate them into
+              <strong>
+                requirements, user stories, acceptance criteria,
+                workflows, and prioritized backlog items
+              </strong>.
+              I worked with business stakeholders and development
+              teams throughout Agile delivery and also supported
+              UAT, defect resolution, release readiness, and
+              production launch.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       12 - QUICK STUDY SUMMARY
+  ====================================================== -->
+
+  <section class="section-padding section-light">
+
+    <div class="container">
+
+      <div class="text-center mb-5">
+
+        <p class="eyebrow">
+          12 • Quick Reference
+        </p>
+
+        <h2 class="section-title">
+          RPA Study Summary
+        </h2>
+
+      </div>
+
+
+      <div class="table-responsive study-table">
+
+        <table class="table table-striped">
+
+          <thead>
+
+            <tr>
+              <th>
+                Topic
+              </th>
+
+              <th>
+                Remember This
+              </th>
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr>
+
+              <td>
+                <strong>RPA</strong>
+              </td>
+
+              <td>
+                Risk Profile Assessment used by Merchant Services
+                Credit / Underwriting to assess merchant risk.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>MSOW</strong>
+              </td>
+
+              <td>
+                Pega-based UI, case-management, and workflow layer.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>MSCD</strong>
+              </td>
+
+              <td>
+                Upstream merchant-data application, data store,
+                analysis platform, and API provider.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Fiserv</strong>
+              </td>
+
+              <td>
+                Source of merchant-related data feeding the broader
+                Merchant Services data process.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>ICMP</strong>
+              </td>
+
+              <td>
+                Enterprise document storage used for application
+                documents.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>CAAMS</strong>
+              </td>
+
+              <td>
+                Used by MSOW to look up appropriate approvers.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>Credit Amount</strong>
+              </td>
+
+              <td>
+                Amount of processing-related credit exposure the
+                bank is willing to assume for the merchant.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>MSCD Retention</strong>
+              </td>
+
+              <td>
+                10 years.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>MSOW Retention</strong>
+              </td>
+
+              <td>
+                3 years.
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <strong>My Role</strong>
+              </td>
+
+              <td>
+                Product Owner translating business and underwriting
+                requirements into Pega functionality and supporting
+                delivery through UAT and launch.
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CONFIDENTIALITY NOTE
+  ====================================================== -->
+
+  <section class="py-5">
+
+    <div class="container">
+
+      <div class="callout">
+
+        <h5>
+          Portfolio Note
+        </h5>
+
+        <p class="mb-0">
+
+          This case study is presented at a high level for
+          professional portfolio and interview purposes and is
+          intended to describe product-management experience
+          without disclosing confidential or proprietary
+          information.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+       Uses the same shared footer as index.html
+  ====================================================== -->
+
+  <div id="footer-placeholder"></div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+```
+<title>Faraz Uddin | Product Owner • Business Analyst</title>
+
+<!-- Bootstrap -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Font Awesome -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
+
+<!-- AOS Animation -->
+<link
+  href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+  rel="stylesheet"
+/>
+
+<!-- Favicon -->
+<link
+  rel="icon"
+  href="images/favicon.png"
+/>
+
+<style>
+  :root {
+    --primary: #0b3391;
+    --secondary: #0f766e;
+    --dark: #172033;
+    --muted: #64748b;
+    --light-bg: #f5f7fb;
+    --border: #e2e8f0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--dark);
+    background: #fff;
+    line-height: 1.7;
+  }
+
+  section {
+    scroll-margin-top: 85px;
+  }
+
+  /* =========================
+     NAVIGATION
+  ========================= */
+
+  .navbar {
+    box-shadow: 0 2px 15px rgba(15, 23, 42, 0.08);
+  }
+
+  .navbar-brand img {
+    object-fit: contain;
+  }
+
+  .dropdown-item {
+    padding: 9px 18px;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+    padding: 165px 0 110px;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(110, 121, 242, 0.97),
+        rgba(8, 6, 165, 0.94)
+      ),
+      url("images/TIAA/bluelogo.png") center / 300px no-repeat;
+    color: #fff;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+  }
+
+  .hero h2 {
+    font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .hero p {
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 1.05rem;
+    max-width: 720px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #38bdf8;
+  }
+
+  .hero-card {
+    padding: 32px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.97);
+    color: var(--dark);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+  }
+
+  .hero-card h4 {
+    font-weight: 800;
+  }
+
+  .hero-card p {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .hero-icon {
+    width: 58px;
+    height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #e8f1ff;
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .badge-soft {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: #e8f1ff;
+    color: var(--primary);
+    font-size: 0.74rem;
+    font-weight: 700;
+  }
+
+  /* =========================
+     GENERAL SECTIONS
+  ========================= */
+
+  .section-padding {
+    padding: 90px 0;
+  }
+
+  .soft-section {
+    background: var(--light-bg);
+  }
+
+  .section-heading {
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    margin-bottom: 15px;
+  }
+
+  .section-subtitle {
+    color: var(--muted);
+    max-width: 760px;
+  }
+
+  /* =========================
+     CARDS
+  ========================= */
+
+  .enterprise-card {
+    height: 100%;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: #fff;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .enterprise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 38px rgba(15, 23, 42, 0.09);
+  }
+
+  .icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background: #e8f1ff;
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+
+  .enterprise-card h4 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .enterprise-card p {
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+
+  /* =========================
+     EXPERIENCE
+  ========================= */
+
+  .experience-card {
+    height: 100%;
+    padding: 34px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: #fff;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 38px rgba(15, 23, 42, 0.09);
+  }
+
+  .company-logo {
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    background: #f8fafc;
+  }
+
+  .company-logo img {
+    max-height: 85px;
+    max-width: 85%;
+    object-fit: contain;
+  }
+
+  .company-label {
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .experience-card h3 {
+    font-weight: 800;
+    margin-top: 8px;
+  }
+
+  .experience-card p {
+    color: var(--muted);
+  }
+
+  .experience-card ul {
+    padding-left: 20px;
+    color: var(--muted);
+  }
+
+  .experience-card li {
+    margin-bottom: 9px;
+  }
+
+  /* =========================
+     VALUE PROPOSITION
+  ========================= */
+
+  .number-card {
+    height: 100%;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: #fff;
+  }
+
+  .number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+  }
+
+  .number-card h5 {
+    font-weight: 800;
+  }
+
+  .number-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  /* =========================
+     SKILLS
+  ========================= */
+
+  .skill-card {
+    padding: 25px;
+    height: 100%;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    background: #fff;
+  }
+
+  .skill-card h5 {
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+
+  .skill-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .skill-card li {
+    color: var(--muted);
+    margin-bottom: 7px;
+  }
+
+  /* =========================
+     CTA
+  ========================= */
+
+  .cta {
+    padding: 80px 0;
+    background: var(--dark);
+    color: #fff;
+  }
+
+  .cta p {
+    color: #cbd5e1;
+  }
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  footer {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 25px 0;
+    font-size: 0.85rem;
+  }
+
+  /* =========================
+     RESPONSIVE
+  ========================= */
+
+  @media (max-width: 991px) {
+    .hero {
+      padding-top: 135px;
+    }
+
+    .hero-card {
+      margin-top: 15px;
+    }
+  }
+</style>
+```
+
+  </head>
+
+  <body>
+
+```
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <div class="container">
+
+    <a href="index.html" class="navbar-brand">
+      <img
+        src="images/TIAA/bluelogo.png"
+        alt="Faraz Uddin Logo"
+        width="65"
+        height="50"
+      />
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNavDropdown"
+    >
+      <ul class="navbar-nav ms-auto text-center">
+
+        <li class="nav-item">
+          <a
+            href="index.html"
+            class="nav-link fw-semibold active"
+          >
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+
+          <a
+            class="nav-link dropdown-toggle fw-semibold"
+            href="#"
+            id="workDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Work
+          </a>
+
+          <ul
+            class="dropdown-menu dropdown-menu-dark text-center"
+            aria-labelledby="workDropdown"
+          >
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="WF_MS_2026.html"
+              >
+                Wells Fargo
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="TIAA.html"
+              >
+                TIAA
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="Agile.html"
+              >
+                SDLC Experience
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="Grooming.html"
+              >
+                Agile Grooming Process
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="Stakeholder.html"
+              >
+                Stakeholder MGMT
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="Data.html"
+              >
+                Enterprise Data
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="API.html"
+              >
+                Enterprise APIs
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+
+          <a
+            class="nav-link dropdown-toggle fw-semibold"
+            href="#"
+            id="projectsDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Coding Projects
+          </a>
+
+          <ul
+            class="dropdown-menu dropdown-menu-dark text-center"
+            aria-labelledby="projectsDropdown"
+          >
+
+            <li>
+              <a
+                class="dropdown-item"
+                href="https://fu-fitness.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fitness App
+              </a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="nav-item px-3 py-2">
+
+          <a
+            href="/images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf"
+            class="nav-link btn btn-outline-light fw-semibold px-4"
+          >
+            Resume
+          </a>
+
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <div
+        class="col-lg-8"
+        data-aos="fade-up"
+      >
+
+        <span class="eyebrow">
+          Product Ownership • Business Analysis • Agile Delivery
+        </span>
+
+        <h1 class="mt-3 mb-4">
+          Faraz Uddin
+        </h1>
+
+        <h2 class="mb-4">
+          Connecting Business Strategy, Data & Digital Technology
+        </h2>
+
+        <p class="lead mb-4">
+          Product Owner, Business Analyst, and Scrum Master with
+          experience delivering enterprise solutions across
+          financial services, digital platforms, data, and
+          operational workflows.
+        </p>
+
+        <div class="d-flex flex-wrap gap-2 mb-4">
+
+          <span class="badge-soft">
+            Product Ownership
+          </span>
+
+          <span class="badge-soft">
+            Business Analysis
+          </span>
+
+          <span class="badge-soft">
+            Agile / Scrum
+          </span>
+
+          <span class="badge-soft">
+            Enterprise Data
+          </span>
+
+          <span class="badge-soft">
+            API Requirements
+          </span>
+
+        </div>
+
+        <div class="d-flex flex-wrap gap-3">
+
+          <a
+            href="#experience"
+            class="btn btn-light px-4 fw-semibold"
+          >
+            Explore My Experience
+          </a>
+
+          <a
+            href="images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf"
+            class="btn btn-outline-light px-4 fw-semibold"
+          >
+            View Resume
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-lg-4"
+        data-aos="fade-left"
+      >
+
+        <div class="hero-card">
+
+          <div class="hero-icon">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+
+          <h4>
+            Enterprise Product Delivery
+          </h4>
+
+          <p>
+            I work at the intersection of business needs and
+            technology—turning complex requirements into
+            prioritized, actionable delivery work.
+          </p>
+
+          <hr />
+
+          <p class="mb-2">
+            <strong>Core focus</strong>
+          </p>
+
+          <p class="mb-0">
+            Strategy → Requirements → Backlog → Delivery →
+            Testing → Business Outcomes
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     PROFESSIONAL FOCUS
+========================= -->
+
+<section class="section-padding">
+
+  <div class="container">
+
+    <div
+      class="text-center mb-5"
+      data-aos="fade-up"
+    >
+
+      <span class="eyebrow text-primary">
+        01 • Professional Focus
+      </span>
+
+      <h2 class="section-heading mt-2">
+        Where Business Meets Technology
+      </h2>
+
+      <p class="section-subtitle mx-auto">
+        My experience centers on understanding business problems,
+        collaborating with technical teams, and delivering
+        products and processes that create measurable value.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+      <div
+        class="col-md-4"
+        data-aos="fade-up"
+      >
+
+        <div class="enterprise-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+
+          <h4>
+            Product Ownership
+          </h4>
+
+          <p>
+            Define product direction, manage priorities, refine
+            backlogs, clarify requirements, and keep delivery
+            aligned to business outcomes.
+          </p>
+
+          <span class="badge-soft">
+            Strategy • Backlog • Delivery
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-4"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <div class="enterprise-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+
+          <h4>
+            Business Analysis
+          </h4>
+
+          <p>
+            Translate business needs into requirements, user
+            stories, workflows, acceptance criteria, data
+            requirements, and actionable development work.
+          </p>
+
+          <span class="badge-soft">
+            Requirements • Process • Data
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-4"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+        <div class="enterprise-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-users"></i>
+          </div>
+
+          <h4>
+            Agile Delivery
+          </h4>
+
+          <p>
+            Facilitate collaboration between product,
+            engineering, business, and operational stakeholders
+            throughout the delivery lifecycle.
+          </p>
+
+          <span class="badge-soft">
+            Scrum • Kanban • SDLC
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section
+  class="section-padding soft-section"
+  id="experience"
+>
+
+  <div class="container">
+
+    <div
+      class="text-center mb-5"
+      data-aos="fade-up"
+    >
+
+      <span class="eyebrow text-primary">
+        02 • Recent Experience
+      </span>
+
+      <h2 class="section-heading mt-2">
+        Enterprise Financial Services Experience
+      </h2>
+
+      <p class="section-subtitle mx-auto">
+        Recent product and business analysis experience supporting
+        complex financial services platforms, workflows, data,
+        and digital experiences.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+      <!-- Wells Fargo -->
+
+      <div
+        class="col-lg-6"
+        data-aos="fade-right"
+      >
+
+        <div class="experience-card">
+
+          <div class="company-logo">
+
+            <img
+              src="images/Wells_Fargo-Logo.wine.png"
+              alt="Wells Fargo Logo"
+              class="img-fluid"
+            />
+
+          </div>
+
+          <div class="company-label">
+            Wells Fargo • Merchant Services
+          </div>
+
+          <h3>
+            Product Owner
+          </h3>
+
+          <p>
+            Supported Agile product delivery for internal
+            Merchant Services risk, credit, and operations
+            solutions.
+          </p>
+
+          <hr />
+
+          <h5 class="fw-bold">
+            Risk Profile Assessment (RPA)
+          </h5>
+
+          <p>
+            Owned and supported backlog delivery for a Pega-based
+            Risk Profile Assessment workflow designed to automate
+            periodic merchant risk reviews and streamline
+            operational processes.
+          </p>
+
+          <ul>
+
+            <li>
+              Risk and credit workflow requirements
+            </li>
+
+            <li>
+              Merchant hierarchy and data relationships
+            </li>
+
+            <li>
+              API-driven search and assessment creation
+            </li>
+
+            <li>
+              User stories and acceptance criteria
+            </li>
+
+            <li>
+              Risk, Credit, Compliance, and development
+              stakeholder collaboration
+            </li>
+
+            <li>
+              UAT and business validation
+            </li>
+
+          </ul>
+
+          <a
+            href="WF_MS_2026.html"
+            class="btn btn-primary mt-3 px-4"
+          >
+            Explore Wells Fargo Experience
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- TIAA -->
+
+      <div
+        class="col-lg-6"
+        data-aos="fade-left"
+      >
+
+        <div class="experience-card">
+
+          <div class="company-logo">
+
+            <img
+              src="images/TIAA/Tiaa Logo.png"
+              alt="TIAA Logo"
+              class="img-fluid"
+            />
+
+          </div>
+
+          <div class="company-label">
+            TIAA • Digital Financial Services
+          </div>
+
+          <h3>
+            Product Owner • Scrum Master • Business Analyst
+          </h3>
+
+          <p>
+            Served as a consultant across Agile teams supporting
+            investment performance and retirement plan management
+            platforms.
+          </p>
+
+          <hr />
+
+          <h5 class="fw-bold">
+            Markit on Demand (MOD)
+          </h5>
+
+          <p>
+            Supported TIAA's investment research experience,
+            including the fund screener and more than 9,000
+            fund profile pages, working with Marketing,
+            Investment Performance teams, and Fincentric.
+          </p>
+
+          <h5 class="fw-bold mt-4">
+            PlanFocus
+          </h5>
+
+          <p>
+            Supported a cloud-based retirement plan management
+            platform used by Plan Sponsors, Administrators,
+            and Consultants.
+          </p>
+
+          <ul>
+
+            <li>
+              Product requirements and backlog management
+            </li>
+
+            <li>
+              Agile Scrum delivery
+            </li>
+
+            <li>
+              Stakeholder collaboration
+            </li>
+
+            <li>
+              Digital experience requirements
+            </li>
+
+            <li>
+              Adobe Experience Manager (AEM)
+            </li>
+
+          </ul>
+
+          <a
+            href="TIAA.html"
+            class="btn btn-primary mt-3 px-4"
+          >
+            Explore TIAA Experience
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     DELIVERY APPROACH
+========================= -->
+
+<section class="section-padding">
+
+  <div class="container">
+
+    <div
+      class="text-center mb-5"
+      data-aos="fade-up"
+    >
+
+      <span class="eyebrow text-primary">
+        03 • Delivery Approach
+      </span>
+
+      <h2 class="section-heading mt-2">
+        From Problem to Product
+      </h2>
+
+      <p class="section-subtitle mx-auto">
+        I approach product delivery as a connected lifecycle,
+        ensuring that business objectives remain connected to
+        requirements, technology, testing, and outcomes.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+      <div
+        class="col-md-6 col-lg-3"
+        data-aos="fade-up"
+      >
+
+        <div class="number-card">
+
+          <div class="number">
+            01
+          </div>
+
+          <h5>
+            Understand
+          </h5>
+
+          <p>
+            Understand the business problem, users,
+            stakeholders, current process, and desired outcome.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-3"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <div class="number-card">
+
+          <div class="number">
+            02
+          </div>
+
+          <h5>
+            Define
+          </h5>
+
+          <p>
+            Translate business needs into requirements,
+            workflows, user stories, and acceptance criteria.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-3"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+        <div class="number-card">
+
+          <div class="number">
+            03
+          </div>
+
+          <h5>
+            Deliver
+          </h5>
+
+          <p>
+            Prioritize the backlog and collaborate with
+            development teams throughout iterative delivery.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-3"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+
+        <div class="number-card">
+
+          <div class="number">
+            04
+          </div>
+
+          <h5>
+            Validate
+          </h5>
+
+          <p>
+            Validate the solution through testing, UAT,
+            stakeholder feedback, and business outcomes.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CORE SKILLS
+========================= -->
+
+<section class="section-padding soft-section">
+
+  <div class="container">
+
+    <div
+      class="text-center mb-5"
+      data-aos="fade-up"
+    >
+
+      <span class="eyebrow text-primary">
+        04 • Core Capabilities
+      </span>
+
+      <h2 class="section-heading mt-2">
+        Product & Technology Skills
+      </h2>
+
+      <p class="section-subtitle mx-auto">
+        A combination of product management, business analysis,
+        Agile delivery, data, and technology experience.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+      <div
+        class="col-md-6 col-lg-4"
+        data-aos="fade-up"
+      >
+
+        <div class="skill-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+
+          <h5>
+            Product Management
+          </h5>
+
+          <ul>
+            <li>Product Backlog Management</li>
+            <li>Prioritization</li>
+            <li>User Stories</li>
+            <li>Acceptance Criteria</li>
+            <li>Roadmap & Release Planning</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-4"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <div class="skill-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-arrows-to-circle"></i>
+          </div>
+
+          <h5>
+            Agile & SDLC
+          </h5>
+
+          <ul>
+            <li>Scrum</li>
+            <li>Kanban</li>
+            <li>Waterfall</li>
+            <li>Sprint Planning</li>
+            <li>Backlog Refinement</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-4"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+        <div class="skill-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-database"></i>
+          </div>
+
+          <h5>
+            Data & Technology
+          </h5>
+
+          <ul>
+            <li>SQL</li>
+            <li>Enterprise Data</li>
+            <li>API Requirements</li>
+            <li>Data Validation</li>
+            <li>Power BI Exposure</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-4"
+        data-aos="fade-up"
+      >
+
+        <div class="skill-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-users-gear"></i>
+          </div>
+
+          <h5>
+            Stakeholder Management
+          </h5>
+
+          <ul>
+            <li>Business Stakeholders</li>
+            <li>Engineering Teams</li>
+            <li>Risk & Compliance</li>
+            <li>Vendor Collaboration</li>
+            <li>Executive Communication</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-4"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <div class="skill-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-code"></i>
+          </div>
+
+          <h5>
+            Digital & Technical
+          </h5>
+
+          <ul>
+            <li>HTML / CSS / JavaScript</li>
+            <li>API Concepts</li>
+            <li>AEM</li>
+            <li>Pega</li>
+            <li>Jira</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-4"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+        <div class="skill-card">
+
+          <div class="icon-box">
+            <i class="fa-solid fa-vial-circle-check"></i>
+          </div>
+
+          <h5>
+            Quality & Validation
+          </h5>
+
+          <ul>
+            <li>UAT</li>
+            <li>Test Scenarios</li>
+            <li>Data Validation</li>
+            <li>Acceptance Testing</li>
+            <li>Business Process Validation</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PORTFOLIO NAVIGATION
+========================= -->
+
+<section class="section-padding">
+
+  <div class="container">
+
+    <div
+      class="text-center mb-5"
+      data-aos="fade-up"
+    >
+
+      <span class="eyebrow text-primary">
+        05 • Explore My Work
+      </span>
+
+      <h2 class="section-heading mt-2">
+        Portfolio Case Studies
+      </h2>
+
+      <p class="section-subtitle mx-auto">
+        Explore how I approach product ownership, Agile delivery,
+        stakeholder management, enterprise data, and API-driven
+        technology.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3">
+        <a
+          href="WF_MS_2026.html"
+          class="text-decoration-none"
+        >
+
+          <div class="enterprise-card">
+
+            <div class="icon-box">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <h4>
+              Wells Fargo
+            </h4>
+
+            <p>
+              Merchant Services product ownership, Pega,
+              risk workflows, APIs, and Agile delivery.
+            </p>
+
+            <span class="badge-soft">
+              View Case Study →
+            </span>
+
+          </div>
+
+        </a>
+      </div>
+
+
+      <div class="col-md-6 col-lg-3">
+        <a
+          href="TIAA.html"
+          class="text-decoration-none"
+        >
+
+          <div class="enterprise-card">
+
+            <div class="icon-box">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h4>
+              TIAA
+            </h4>
+
+            <p>
+              Investment performance, retirement platforms,
+              AEM, Agile, and product ownership.
+            </p>
+
+            <span class="badge-soft">
+              View Case Study →
+            </span>
+
+          </div>
+
+        </a>
+      </div>
+
+
+      <div class="col-md-6 col-lg-3">
+        <a
+          href="Data.html"
+          class="text-decoration-none"
+        >
+
+          <div class="enterprise-card">
+
+            <div class="icon-box">
+              <i class="fa-solid fa-database"></i>
+            </div>
+
+            <h4>
+              Enterprise Data
+            </h4>
+
+            <p>
+              Data relationships, reporting, analysis,
+              validation, and enterprise workflows.
+            </p>
+
+            <span class="badge-soft">
+              Explore Data →
+            </span>
+
+          </div>
+
+        </a>
+      </div>
+
+
+      <div class="col-md-6 col-lg-3">
+        <a
+          href="API.html"
+          class="text-decoration-none"
+        >
+
+          <div class="enterprise-card">
+
+            <div class="icon-box">
+              <i class="fa-solid fa-plug"></i>
+            </div>
+
+            <h4>
+              Enterprise APIs
+            </h4>
+
+            <p>
+              API architecture, integrations, requirements,
+              testing, and Product Owner responsibilities.
+            </p>
+
+            <span class="badge-soft">
+              Explore APIs →
+            </span>
+
+          </div>
+
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+  <div class="container text-center">
+
+    <span class="eyebrow">
+      Product • Business • Technology
+    </span>
+
+    <h2 class="fw-bold mt-3 mb-3">
+      Building Better Products Through Better Collaboration
+    </h2>
+
+    <p
+      class="mx-auto mb-4"
+      style="max-width: 760px;"
+    >
+      My goal is to bridge the gap between business strategy
+      and technology delivery—helping teams understand the
+      problem, define the right solution, and deliver meaningful
+      outcomes.
+    </p>
+
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+
+      <a
+        href="images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf"
+        class="btn btn-outline-light px-4"
+      >
+        View Resume
+      </a>
+
+      <a
+        href="#experience"
+        class="btn btn-light px-4"
+      >
+        View Experience
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="container text-center">
+
+    <p class="mb-0">
+      © 2026 Faraz Uddin • Product Owner • Business Analyst • Agile Delivery
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<!-- AOS JS -->
+
+<script
+  src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+></script>
+
+<script>
+  AOS.init({
+    duration: 700,
+    once: true,
+    offset: 80
+  });
+</script>
+```
+
+  </body>
+</html>

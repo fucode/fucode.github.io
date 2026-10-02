@@ -1,0 +1,2964 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>TIAA Digital Products | Faraz Uddin</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #0b3391;
+        --secondary: #0f766e;
+        --dark: #172033;
+        --muted: #64748b;
+        --light-bg: #f5f7fb;
+        --border: #e2e8f0;
+        --tiaa-blue: #173f8a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: var(--dark);
+        background: #fff;
+        line-height: 1.7;
+      }
+
+      section {
+        scroll-margin-top: 85px;
+      }
+
+      .hero {
+        padding: 155px 0 95px;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(25, 65, 145, 0.97),
+            rgba(8, 35, 105, 0.94)
+          ),
+          url("images/TIAA/bluelogo.png") center / 300px no-repeat;
+        color: #fff;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 4vw, 3.5rem);
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 1.08rem;
+      }
+
+      .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #38bdf8;
+      }
+
+      .section-padding {
+        padding: 85px 0;
+      }
+
+      .section-heading {
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        margin-bottom: 15px;
+      }
+
+      .section-subtitle {
+        color: var(--muted);
+        max-width: 780px;
+      }
+
+      .enterprise-card {
+        height: 100%;
+        padding: 30px;
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        background: #fff;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .enterprise-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+      }
+
+      .icon-box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        background: #e8f1ff;
+        color: var(--primary);
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .enterprise-card h4 {
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .enterprise-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .soft-section {
+        background: var(--light-bg);
+      }
+
+      .badge-soft {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 30px;
+        background: #e8f1ff;
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .product-card {
+        height: 100%;
+        padding: 35px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: #fff;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(15, 23, 42, 0.09);
+      }
+
+      .product-number {
+        font-size: 0.8rem;
+        font-weight: 800;
+        color: var(--primary);
+        letter-spacing: 1px;
+      }
+
+      .product-card h3 {
+        font-weight: 800;
+        margin-top: 10px;
+        margin-bottom: 15px;
+      }
+
+      .product-card p {
+        color: var(--muted);
+      }
+
+      .product-card ul {
+        padding-left: 20px;
+        color: #475569;
+      }
+
+      .product-card li {
+        margin-bottom: 8px;
+      }
+
+      .architecture-wrapper {
+        padding: 35px 20px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: #fff;
+      }
+
+      .architecture-box {
+        padding: 22px 15px;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        background: #f8fafc;
+        text-align: center;
+        height: 100%;
+      }
+
+      .architecture-box h5 {
+        font-size: 1rem;
+        font-weight: 800;
+        margin-bottom: 7px;
+      }
+
+      .architecture-box p {
+        color: var(--muted);
+        font-size: 0.82rem;
+        margin: 0;
+      }
+
+      .architecture-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: var(--primary);
+        font-weight: 800;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .feature-list li {
+        margin-bottom: 13px;
+        padding-left: 28px;
+        position: relative;
+        color: #475569;
+      }
+
+      .feature-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--secondary);
+        font-weight: 800;
+      }
+
+      .flow-step {
+        padding: 25px;
+        height: 100%;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        margin-bottom: 15px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .flow-step h5 {
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .flow-step p {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .case-study {
+        padding: 35px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: #fff;
+        height: 100%;
+      }
+
+      .case-study h3 {
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .company-label {
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .case-study ul {
+        padding-left: 20px;
+      }
+
+      .case-study li {
+        margin-bottom: 10px;
+        color: #475569;
+      }
+
+      .comparison-table {
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 15px;
+      }
+
+      .comparison-table th {
+        background: #eff6ff;
+        color: var(--primary);
+        font-weight: 800;
+      }
+
+      .comparison-table td,
+      .comparison-table th {
+        padding: 18px;
+        vertical-align: top;
+      }
+
+      .role-card {
+        padding: 28px;
+        height: 100%;
+        border-radius: 15px;
+        background: #fff;
+        border: 1px solid var(--border);
+      }
+
+      .role-card h5 {
+        font-weight: 800;
+      }
+
+      .role-card p,
+      .role-card li {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .role-card ul {
+        padding-left: 20px;
+      }
+
+      .content-panel {
+        padding: 30px;
+        border-left: 4px solid var(--primary);
+        border-radius: 10px;
+        background: #f8fafc;
+      }
+
+      .content-panel h5 {
+        font-weight: 800;
+      }
+
+      .content-panel p {
+        color: var(--muted);
+        margin-bottom: 0;
+      }
+
+      .cta {
+        padding: 70px 0;
+        background: var(--dark);
+        color: #fff;
+      }
+
+      .cta p {
+        color: #cbd5e1;
+      }
+
+      footer {
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 25px 0;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 991px) {
+        .hero {
+          padding-top: 125px;
+        }
+
+        .architecture-arrow {
+          padding: 12px 0;
+          transform: rotate(90deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- includes/nav.html -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container">
+
+        <a href="index.html" class="navbar-brand">
+          <img
+            src="images/TIAA/bluelogo.png"
+            alt="Faraz Uddin Logo"
+            width="65"
+            height="50"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse"
+          id="navbarNavDropdown"
+        >
+
+          <ul class="navbar-nav ms-auto text-center">
+
+            <li class="nav-item">
+              <a href="index.html" class="nav-link fw-semibold">
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-semibold"
+                href="#"
+                id="workDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Work
+              </a>
+
+              <ul
+                class="dropdown-menu dropdown-menu-dark text-center"
+                aria-labelledby="workDropdown"
+              >
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="WF_MS_2026.html"
+                  >
+                    Wells Fargo
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="TIAA.html"
+                  >
+                    TIAA
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="Agile.html"
+                  >
+                    SDLC Experience
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="Grooming.html"
+                  >
+                    Agile Grooming Process
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="Stakeholder.html"
+                  >
+                    Stakeholder MGMT
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="Data.html"
+                  >
+                    Enterprise Data
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="API.html"
+                  >
+                    API Testing
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-semibold"
+                href="#"
+                id="caseStudiesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Coding Projects
+              </a>
+
+              <ul
+                class="dropdown-menu dropdown-menu-dark text-center"
+                aria-labelledby="caseStudiesDropdown"
+              >
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://fu-fitness.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Fitness App
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item px-3 py-2">
+              <a
+                href="/images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf"
+                class="nav-link btn btn-outline-light fw-semibold px-4"
+              >
+                Resume
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- ========================================================= -->
+    <!-- HERO -->
+    <!-- ========================================================= -->
+
+    <header class="hero">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div
+            class="col-lg-8"
+            data-aos="fade-up"
+          >
+
+            <span class="eyebrow">
+              TIAA • Digital Financial Services • Product Ownership
+            </span>
+
+            <h1 class="mt-3 mb-4">
+              Building Digital Investment Experiences at TIAA
+            </h1>
+
+            <p class="lead mb-4">
+              Business analysis and product ownership experience across
+              PlanFocus, Business Edge, Investment Screener,
+              Fund Profile pages, and TIAA digital microsites.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2">
+
+              <span class="badge-soft">
+                PlanFocus
+              </span>
+
+              <span class="badge-soft">
+                Business Edge
+              </span>
+
+              <span class="badge-soft">
+                Investment Screener
+              </span>
+
+              <span class="badge-soft">
+                Fund Profiles
+              </span>
+
+              <span class="badge-soft">
+                AEM
+              </span>
+
+              <span class="badge-soft">
+                Digital Products
+              </span>
+
+            </div>
+
+          </div>
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-left"
+          >
+
+            <div class="enterprise-card text-dark">
+
+              <div class="icon-box">
+                TIAA
+              </div>
+
+              <h4>
+                Digital Product Ecosystem
+              </h4>
+
+              <p>
+                My TIAA experience focused on translating business
+                and user needs into digital product requirements
+                across investment research, retirement plan
+                experiences, fund information, and content-driven
+                microsites.
+              </p>
+
+              <hr />
+
+              <p class="mb-0">
+                <strong>Role:</strong>
+                Business Analyst / Product Owner
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- OVERVIEW -->
+    <!-- ========================================================= -->
+
+    <section class="section-padding">
+
+      <div class="container">
+    
+    ```
+    <!-- Section Header -->
+    <div
+      class="text-center mb-5"
+      data-aos="fade-up"
+    >
+    
+      <span class="eyebrow text-primary">
+        01 • Product Portfolio
+      </span>
+    
+      <h2 class="section-heading mt-2">
+        TIAA Digital Products I Supported
+      </h2>
+    
+      <p class="section-subtitle mx-auto">
+        Digital financial services experiences spanning retirement
+        plan information, investment research, financial advice,
+        fund information, self-service functionality, and
+        content-driven digital experiences.
+      </p>
+    
+    </div>
+    
+    
+    <!-- Product Portfolio -->
+    <div class="row g-4">
+    
+    
+      <!-- PlanFocus -->
+      <div
+        class="col-lg-4"
+        data-aos="fade-up"
+      >
+    
+        <div class="product-card">
+    
+          <div class="product-number">
+            PRODUCT 01
+          </div>
+    
+          <h3>
+            PlanFocus
+          </h3>
+    
+          <p>
+            A digital retirement platform supporting plan information,
+            participant experiences, and financial services workflows.
+          </p>
+    
+          <hr />
+    
+          <h6 class="fw-bold">
+            Product Focus
+          </h6>
+    
+          <ul>
+            <li>Retirement plan experiences</li>
+            <li>Participant and plan information</li>
+            <li>Digital self-service</li>
+            <li>Financial data presentation</li>
+          </ul>
+    
+          <span class="badge-soft">
+            Retirement Technology
+          </span>
+    
+        </div>
+    
+      </div>
+    
+    
+      <!-- Business Edge -->
+      <div
+        class="col-lg-4"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+    
+        <div class="product-card">
+    
+          <div class="product-number">
+            PRODUCT 02
+          </div>
+    
+          <h3>
+            Business Edge
+          </h3>
+    
+          <p>
+            Investment-oriented digital functionality supporting
+            research, comparison, and financial decision-making.
+          </p>
+    
+          <hr />
+    
+          <h6 class="fw-bold">
+            Product Focus
+          </h6>
+    
+          <ul>
+            <li>Investment research</li>
+            <li>Fund discovery</li>
+            <li>Filtering and comparison</li>
+            <li>Financial information</li>
+          </ul>
+    
+          <span class="badge-soft">
+            Investment Research
+          </span>
+    
+        </div>
+    
+      </div>
+    
+    
+      <!-- TIAA Screener Tool -->
+      <div
+        class="col-lg-4"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+    
+        <div class="product-card">
+    
+          <div class="product-number">
+            PRODUCT 03
+          </div>
+    
+          <h3>
+            TIAA Screener Tool
+          </h3>
+    
+          <p>
+            A digital investment research experience designed to help
+            users discover, filter, evaluate, and compare investment
+            options.
+          </p>
+    
+          <hr />
+    
+          <h6 class="fw-bold">
+            Product Focus
+          </h6>
+    
+          <ul>
+            <li>Investment screening</li>
+            <li>Fund research</li>
+            <li>Filtering and comparison</li>
+            <li>Financial information</li>
+          </ul>
+    
+          <span class="badge-soft">
+            Investment Technology
+          </span>
+    
+        </div>
+    
+      </div>
+    
+    
+      <!-- IFA -->
+      <div
+        class="col-lg-4"
+        data-aos="fade-up"
+      >
+    
+        <div class="product-card">
+    
+          <div class="product-number">
+            PRODUCT 04
+          </div>
+    
+          <h3>
+            IFA
+          </h3>
+    
+          <p>
+            Investment and financial advice experiences supporting
+            personalized financial guidance, investment information,
+            and participant decision-making.
+          </p>
+    
+          <hr />
+    
+          <h6 class="fw-bold">
+            Product Focus
+          </h6>
+    
+          <ul>
+            <li>Investment and financial advice</li>
+            <li>Personalized financial guidance</li>
+            <li>Investment information</li>
+            <li>Participant decision-making</li>
+          </ul>
+    
+          <span class="badge-soft">
+            Financial Advice
+          </span>
+    
+        </div>
+    
+      </div>
+    
+    
+      <!-- TIAA Microsites -->
+      <div
+        class="col-lg-4"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+    
+        <div class="product-card">
+    
+          <div class="product-number">
+            PRODUCT 05
+          </div>
+    
+          <h3>
+            TIAA Microsites
+          </h3>
+    
+          <p>
+            Content-driven digital experiences designed to communicate
+            financial products, services, educational information,
+            and participant resources.
+          </p>
+    
+          <hr />
+    
+          <h6 class="fw-bold">
+            Product Focus
+          </h6>
+    
+          <ul>
+            <li>Digital content</li>
+            <li>Reusable page components</li>
+            <li>User experience</li>
+            <li>Adobe Experience Manager</li>
+          </ul>
+    
+          <span class="badge-soft">
+            Digital Experience
+          </span>
+    
+        </div>
+    
+      </div>
+    
+    
+    </div>
+    ```
+    
+      </div>
+    
+    </section>
+    
+
+
+    <!-- ========================================================= -->
+    <!-- DIGITAL ECOSYSTEM -->
+    <!-- ========================================================= -->
+
+    <section
+      class="section-padding soft-section"
+      id="ecosystem"
+    >
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            02 • Digital Ecosystem
+          </span>
+
+          <h2 class="section-heading mt-2">
+            How the Experiences Fit Together
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            The products served different user needs but shared a
+            common goal: making complex financial information easier
+            for customers, participants, and business users to
+            understand and act upon.
+          </p>
+
+        </div>
+
+
+        <div
+          class="architecture-wrapper"
+          data-aos="fade-up"
+        >
+
+          <div class="row align-items-center g-3">
+
+            <div class="col-lg-3 col-md-6">
+
+              <div class="architecture-box">
+
+                <h5>
+                  User
+                </h5>
+
+                <p>
+                  Participant, investor, plan sponsor, or
+                  financial professional.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="col-lg-1">
+
+              <div class="architecture-arrow">
+                →
+              </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+              <div class="architecture-box">
+
+                <h5>
+                  Digital Experience
+                </h5>
+
+                <p>
+                  PlanFocus, Investment Screener,
+                  Fund Profiles, or microsite.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="col-lg-1">
+
+              <div class="architecture-arrow">
+                →
+              </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+              <div class="architecture-box">
+
+                <h5>
+                  Business & Data Services
+                </h5>
+
+                <p>
+                  Business rules, financial information,
+                  investment data, and content.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="col-lg-1">
+
+              <div class="architecture-arrow">
+                →
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="row justify-content-center mt-4">
+
+            <div class="col-lg-5">
+
+              <div class="architecture-box">
+
+                <h5>
+                  Enterprise Systems
+                </h5>
+
+                <p>
+                  Underlying applications, data sources,
+                  content platforms, and integrations.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="text-center mt-4">
+
+            <span class="badge-soft">
+              Product Owner / BA connects business requirements to the digital experience
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <p class="text-muted small mt-4">
+          Conceptual product ecosystem. This diagram represents the
+          relationship between digital experiences, business needs,
+          data, and enterprise systems and is not intended to represent
+          proprietary TIAA system architecture.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- PLANFOCUS -->
+    <!-- ========================================================= -->
+
+    <section
+      class="section-padding"
+      id="planfocus"
+    >
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            03 • Product Experience
+          </span>
+
+          <h2 class="section-heading mt-2">
+            PlanFocus
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            Supporting digital experiences around retirement plans,
+            financial information, and participant-facing workflows.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-right"
+          >
+
+            <div class="case-study">
+
+              <div class="company-label">
+                TIAA • PlanFocus
+              </div>
+
+              <h3 class="mt-2">
+                Retirement Plan Digital Experience
+              </h3>
+
+              <p class="text-muted">
+                PlanFocus represented an important part of the
+                retirement technology experience, bringing plan and
+                investment-related information into digital workflows.
+              </p>
+
+              <div class="architecture-box my-4">
+
+                <h5>
+                  User Experience
+                </h5>
+
+                <p>
+                  A digital interface where users can interact with
+                  retirement plan and investment information.
+                </p>
+
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-4">
+
+                <h5>
+                  Business Requirements
+                </h5>
+
+                <p>
+                  Rules, content, data presentation, navigation,
+                  workflows, and user needs.
+                </p>
+
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-4">
+
+                <h5>
+                  Enterprise Data & Systems
+                </h5>
+
+                <p>
+                  Underlying financial and retirement information
+                  supporting the digital experience.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-left"
+          >
+
+            <div class="case-study">
+
+              <div class="company-label">
+                Business Analyst / Product Owner
+              </div>
+
+              <h3 class="mt-2">
+                Requirements & Product Thinking
+              </h3>
+
+              <p class="text-muted">
+                My role required understanding both the business
+                objective and how that objective translated into
+                a usable digital experience.
+              </p>
+
+              <ul>
+
+                <li>
+                  Translated business needs into actionable
+                  product requirements.
+                </li>
+
+                <li>
+                  Considered how financial information should be
+                  presented to users.
+                </li>
+
+                <li>
+                  Worked with business stakeholders and
+                  development teams.
+                </li>
+
+                <li>
+                  Helped clarify functionality, content,
+                  navigation, and user workflows.
+                </li>
+
+                <li>
+                  Supported Agile and Waterfall delivery practices
+                  depending on the project.
+                </li>
+
+                <li>
+                  Connected business requirements to the broader
+                  digital product experience.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="enterprise-card mt-4"
+          data-aos="fade-up"
+        >
+
+          <h4>
+            Product Owner Perspective
+          </h4>
+
+          <p class="mb-0">
+            A retirement technology product is not simply a collection
+            of screens. The Product Owner has to understand the users,
+            financial information being presented, business rules,
+            dependencies, content, and the desired outcome of each
+            workflow.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- INVESTMENT SCREENER -->
+    <!-- ========================================================= -->
+
+    <section
+      class="section-padding soft-section"
+      id="screener"
+    >
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            04 • Investment Research
+          </span>
+
+          <h2 class="section-heading mt-2">
+            TIAA Investment Screener
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            A digital investment research experience designed to help
+            users discover and evaluate investment options using
+            structured criteria and financial information.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-lg-5"
+            data-aos="fade-right"
+          >
+
+            <div class="enterprise-card">
+
+              <div class="icon-box">
+                01
+              </div>
+
+              <h4>
+                The Screening Experience
+              </h4>
+
+              <p>
+                Investment screening allows users to narrow a broad
+                set of investment choices by applying criteria
+                relevant to their research needs.
+              </p>
+
+              <ul class="feature-list">
+
+                <li>
+                  Investment discovery
+                </li>
+
+                <li>
+                  Search and filtering
+                </li>
+
+                <li>
+                  Financial attributes
+                </li>
+
+                <li>
+                  Comparison-oriented research
+                </li>
+
+                <li>
+                  Transition from screening to detailed fund information
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-7"
+            data-aos="fade-left"
+          >
+
+            <div class="enterprise-card">
+
+              <h4>
+                Conceptual User Flow
+              </h4>
+
+              <div class="row g-3 mt-2">
+
+                <div class="col-md-3">
+
+                  <div class="architecture-box">
+
+                    <h5>
+                      Search
+                    </h5>
+
+                    <p>
+                      User begins researching available investments.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                  <div class="architecture-box">
+
+                    <h5>
+                      Filter
+                    </h5>
+
+                    <p>
+                      Apply relevant investment criteria.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                  <div class="architecture-box">
+
+                    <h5>
+                      Compare
+                    </h5>
+
+                    <p>
+                      Review resulting investment options.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                  <div class="architecture-box">
+
+                    <h5>
+                      Explore
+                    </h5>
+
+                    <p>
+                      Open a detailed Fund Profile.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="row g-4 mt-4">
+
+          <div
+            class="col-md-4"
+            data-aos="fade-up"
+          >
+
+            <div class="flow-step">
+
+              <span class="step-number">
+                1
+              </span>
+
+              <h5>
+                User Intent
+              </h5>
+
+              <p>
+                Understand what the user is trying to accomplish
+                and what information is necessary to support that goal.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="flow-step">
+
+              <span class="step-number">
+                2
+              </span>
+
+              <h5>
+                Business Rules
+              </h5>
+
+              <p>
+                Define how search, filters, investment attributes,
+                and results should behave.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="flow-step">
+
+              <span class="step-number">
+                3
+              </span>
+
+              <h5>
+                User Experience
+              </h5>
+
+              <p>
+                Make complex financial information easier to
+                navigate, understand, and use.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- FUND PROFILE -->
+    <!-- ========================================================= -->
+
+    <section
+      class="section-padding"
+      id="fund-profile"
+    >
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            05 • Investment Information
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Fund Profile Pages
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            Detailed fund profile experiences provide users with
+            information needed to research and understand individual
+            investment options.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-right"
+          >
+
+            <div class="case-study">
+
+              <div class="company-label">
+                TIAA • Investment Products
+              </div>
+
+              <h3 class="mt-2">
+                From Screener to Fund Profile
+              </h3>
+
+              <p class="text-muted">
+                The Investment Screener and Fund Profile experience
+                can be viewed as connected stages of an investment
+                research journey.
+              </p>
+
+              <div class="architecture-box my-3">
+
+                <h5>
+                  Investment Screener
+                </h5>
+
+                <p>
+                  Narrow the universe of available investment options.
+                </p>
+
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-3">
+
+                <h5>
+                  Selected Fund
+                </h5>
+
+                <p>
+                  User selects an investment for deeper research.
+                </p>
+
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-3">
+
+                <h5>
+                  Fund Profile
+                </h5>
+
+                <p>
+                  Detailed information supports further evaluation.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-left"
+          >
+
+            <div class="case-study">
+
+              <div class="company-label">
+                Product Requirements
+              </div>
+
+              <h3 class="mt-2">
+                Information Architecture Matters
+              </h3>
+
+              <p class="text-muted">
+                A fund profile has to present potentially complex
+                financial information in a way that is organized,
+                understandable, and useful to the intended audience.
+              </p>
+
+              <ul>
+
+                <li>
+                  Organize information into logical sections.
+                </li>
+
+                <li>
+                  Clearly communicate important investment attributes.
+                </li>
+
+                <li>
+                  Consider how users navigate from search results
+                  into detailed information.
+                </li>
+
+                <li>
+                  Align content and functionality with business
+                  requirements.
+                </li>
+
+                <li>
+                  Coordinate requirements across business,
+                  UX, content, and development teams.
+                </li>
+
+                <li>
+                  Validate that the delivered experience reflects
+                  the intended product requirements.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="content-panel mt-4"
+          data-aos="fade-up"
+        >
+
+          <h5>
+            Product Design Principle
+          </h5>
+
+          <p>
+            The goal is not simply to display more information.
+            The goal is to present the right information at the right
+            point in the user's investment research journey.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- BUSINESS EDGE -->
+    <!-- ========================================================= -->
+
+    <section
+      class="section-padding soft-section"
+      id="business-edge"
+    >
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            06 • Business Edge
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Business Edge Fund Research
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            Business Edge brought together investment information
+            and digital research capabilities to support financial
+            decision-making and investment-related workflows.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+          >
+
+            <div class="enterprise-card">
+
+              <div class="icon-box">
+                01
+              </div>
+
+              <h4>
+                Discover
+              </h4>
+
+              <p>
+                Help users locate relevant investment products and
+                information based on their research needs.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="enterprise-card">
+
+              <div class="icon-box">
+                02
+              </div>
+
+              <h4>
+                Evaluate
+              </h4>
+
+              <p>
+                Present financial information in a structured format
+                that supports comparison and evaluation.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="enterprise-card">
+
+              <div class="icon-box">
+                03
+              </div>
+
+              <h4>
+                Decide
+              </h4>
+
+              <p>
+                Give users the information and digital experience
+                necessary to continue their investment research.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="enterprise-card mt-4">
+
+          <div class="row align-items-center g-4">
+
+            <div
+              class="col-lg-5"
+              data-aos="fade-right"
+            >
+
+              <h4>
+                Product Owner / BA Contribution
+              </h4>
+
+              <p>
+                My responsibility was to understand the business
+                objective and translate it into requirements that
+                development and design teams could execute.
+              </p>
+
+            </div>
+
+
+            <div
+              class="col-lg-7"
+              data-aos="fade-left"
+            >
+
+              <ul class="feature-list mb-0">
+
+                <li>
+                  Requirement discovery
+                </li>
+
+                <li>
+                  Business rule clarification
+                </li>
+
+                <li>
+                  User experience considerations
+                </li>
+
+                <li>
+                  Stakeholder collaboration
+                </li>
+
+                <li>
+                  Backlog and delivery support
+                </li>
+
+                <li>
+                  Functional validation
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- MICROSITES -->
+    <!-- ========================================================= -->
+
+    <section
+      class="section-padding"
+      id="microsites"
+    >
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            07 • Digital Content
+          </span>
+
+          <h2 class="section-heading mt-2">
+            TIAA Microsites & Adobe Experience Manager
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            My TIAA experience also included content-driven digital
+            experiences and microsites supported by Adobe Experience
+            Manager (AEM).
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-right"
+          >
+
+            <div class="case-study">
+
+              <div class="company-label">
+                TIAA • Adobe Experience Manager
+              </div>
+
+              <h3 class="mt-2">
+                Building Reusable Digital Experiences
+              </h3>
+
+              <p class="text-muted">
+                Microsites provide a way to deliver focused digital
+                experiences around specific products, services,
+                campaigns, or informational topics.
+              </p>
+
+              <div class="architecture-box my-4">
+
+                <h5>
+                  Content
+                </h5>
+
+                <p>
+                  Financial education, product information,
+                  messaging, and supporting content.
+                </p>
+
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-4">
+
+                <h5>
+                  AEM
+                </h5>
+
+                <p>
+                  Content management and reusable digital
+                  experience components.
+                </p>
+
+              </div>
+
+              <div class="text-center fw-bold text-primary">
+                ↓
+              </div>
+
+              <div class="architecture-box my-4">
+
+                <h5>
+                  Customer Experience
+                </h5>
+
+                <p>
+                  Responsive web pages and digital experiences.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-left"
+          >
+
+            <div class="case-study">
+
+              <div class="company-label">
+                Product / Business Analysis
+              </div>
+
+              <h3 class="mt-2">
+                Content Is Part of the Product
+              </h3>
+
+              <p class="text-muted">
+                For financial services websites, content and
+                functionality are closely connected. The Product
+                Owner must understand how content contributes to
+                the overall customer journey.
+              </p>
+
+              <ul>
+
+                <li>
+                  Define content and page requirements.
+                </li>
+
+                <li>
+                  Consider reusable page structures and components.
+                </li>
+
+                <li>
+                  Coordinate requirements between business,
+                  content, design, and development.
+                </li>
+
+                <li>
+                  Support page-level acceptance criteria.
+                </li>
+
+                <li>
+                  Validate content presentation and functionality.
+                </li>
+
+                <li>
+                  Consider responsive digital experiences.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="enterprise-card mt-4"
+          data-aos="fade-up"
+        >
+
+          <h4>
+            Why AEM Experience Matters for a Product Owner
+          </h4>
+
+          <p class="mb-0">
+            Working with AEM provided exposure to the intersection
+            of product requirements, content management, user
+            experience, reusable components, and enterprise
+            publishing workflows. It reinforced that a digital
+            product is more than its underlying technology — the
+            content and experience delivered to the user are part
+            of the product itself.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- USER JOURNEY -->
+    <!-- ========================================================= -->
+
+    <section
+      class="section-padding soft-section"
+      id="journey"
+    >
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            08 • Customer Journey
+          </span>
+
+          <h2 class="section-heading mt-2">
+            Connecting the Investment Experience
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            The strongest digital products are designed around the
+            user's journey rather than isolated features.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+          >
+
+            <div class="flow-step">
+
+              <span class="step-number">
+                1
+              </span>
+
+              <h5>
+                Enter
+              </h5>
+
+              <p>
+                The user begins with a financial or investment
+                information need.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="flow-step">
+
+              <span class="step-number">
+                2
+              </span>
+
+              <h5>
+                Search
+              </h5>
+
+              <p>
+                Investment Screener or another digital experience
+                helps the user find relevant information.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="flow-step">
+
+              <span class="step-number">
+                3
+              </span>
+
+              <h5>
+                Research
+              </h5>
+
+              <p>
+                Fund Profile pages provide deeper information
+                about individual investment options.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+
+            <div class="flow-step">
+
+              <span class="step-number">
+                4
+              </span>
+
+              <h5>
+                Act
+              </h5>
+
+              <p>
+                The digital experience supports the user's next
+                financial or investment-related action.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="text-center mt-5"
+          data-aos="fade-up"
+        >
+
+          <span class="badge-soft">
+            Discover → Filter → Research → Understand → Act
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- PRODUCT OWNER ROLE -->
+    <!-- ========================================================= -->
+
+    <section
+      class="section-padding"
+      id="po-role"
+    >
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            09 • Product Ownership
+          </span>
+
+          <h2 class="section-heading mt-2">
+            My Product Owner / BA Role
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            My TIAA experience required connecting business objectives,
+            user needs, digital experiences, and technical delivery.
+          </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+          >
+
+            <div class="role-card">
+
+              <div class="icon-box">
+                01
+              </div>
+
+              <h5>
+                Requirements
+              </h5>
+
+              <p>
+                Understand business needs and translate them into
+                actionable requirements.
+              </p>
+
+              <ul>
+
+                <li>
+                  Business rules
+                </li>
+
+                <li>
+                  Functional requirements
+                </li>
+
+                <li>
+                  User workflows
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="role-card">
+
+              <div class="icon-box">
+                02
+              </div>
+
+              <h5>
+                User Experience
+              </h5>
+
+              <p>
+                Consider how financial information should be
+                presented and navigated.
+              </p>
+
+              <ul>
+
+                <li>
+                  Information architecture
+                </li>
+
+                <li>
+                  Page behavior
+                </li>
+
+                <li>
+                  Digital workflows
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="role-card">
+
+              <div class="icon-box">
+                03
+              </div>
+
+              <h5>
+                Stakeholders
+              </h5>
+
+              <p>
+                Align business, technology, design, content,
+                and delivery stakeholders.
+              </p>
+
+              <ul>
+
+                <li>
+                  Business partners
+                </li>
+
+                <li>
+                  Developers
+                </li>
+
+                <li>
+                  UX / design
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+          >
+
+            <div class="role-card">
+
+              <div class="icon-box">
+                04
+              </div>
+
+              <h5>
+                Agile Delivery
+              </h5>
+
+              <p>
+                Support iterative development and delivery of
+                digital product capabilities.
+              </p>
+
+              <ul>
+
+                <li>
+                  Backlog refinement
+                </li>
+
+                <li>
+                  User stories
+                </li>
+
+                <li>
+                  Acceptance criteria
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="role-card">
+
+              <div class="icon-box">
+                05
+              </div>
+
+              <h5>
+                Validation
+              </h5>
+
+              <p>
+                Confirm delivered functionality meets the intended
+                business and user requirements.
+              </p>
+
+              <ul>
+
+                <li>
+                  Functional testing
+                </li>
+
+                <li>
+                  UAT support
+                </li>
+
+                <li>
+                  Requirement validation
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="role-card">
+
+              <div class="icon-box">
+                06
+              </div>
+
+              <h5>
+                Product Thinking
+              </h5>
+
+              <p>
+                Focus on the outcome and user problem rather than
+                simply delivering individual technical features.
+              </p>
+
+              <ul>
+
+                <li>
+                  User value
+                </li>
+
+                <li>
+                  Business value
+                </li>
+
+                <li>
+                  Sustainable solutions
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- COMPARISON -->
+    <!-- ========================================================= -->
+
+    <section class="section-padding soft-section">
+
+      <div class="container">
+
+        <div
+          class="text-center mb-5"
+          data-aos="fade-up"
+        >
+
+          <span class="eyebrow text-primary">
+            10 • Product Comparison
+          </span>
+
+          <h2 class="section-heading mt-2">
+            PlanFocus vs. Investment Products vs. Microsites
+          </h2>
+
+          <p class="section-subtitle mx-auto">
+            Different products required different approaches to
+            requirements, data, content, and user experience.
+          </p>
+
+        </div>
+
+
+        <div
+          class="table-responsive comparison-table"
+          data-aos="fade-up"
+        >
+
+          <table class="table table-bordered mb-0">
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Area
+                </th>
+
+                <th>
+                  PlanFocus
+                </th>
+
+                <th>
+                  Investment Screener / Business Edge
+                </th>
+
+                <th>
+                  Fund Profiles
+                </th>
+
+                <th>
+                  Microsites
+                </th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+
+                <td>
+                  <strong>
+                    Primary Focus
+                  </strong>
+                </td>
+
+                <td>
+                  Retirement plan experience
+                </td>
+
+                <td>
+                  Investment discovery and research
+                </td>
+
+                <td>
+                  Detailed fund information
+                </td>
+
+                <td>
+                  Focused digital content
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  <strong>
+                    User Need
+                  </strong>
+                </td>
+
+                <td>
+                  Access and understand plan-related information
+                </td>
+
+                <td>
+                  Find and evaluate investment options
+                </td>
+
+                <td>
+                  Research an individual fund
+                </td>
+
+                <td>
+                  Learn about a product, service, or topic
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  <strong>
+                    Product Challenge
+                  </strong>
+                </td>
+
+                <td>
+                  Present complex retirement information clearly
+                </td>
+
+                <td>
+                  Make investment discovery efficient
+                </td>
+
+                <td>
+                  Organize detailed financial information
+                </td>
+
+                <td>
+                  Deliver consistent, reusable digital content
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  <strong>
+                    BA / PO Focus
+                  </strong>
+                </td>
+
+                <td>
+                  Requirements and user workflows
+                </td>
+
+                <td>
+                  Business rules, filtering, and research experience
+                </td>
+
+                <td>
+                  Information architecture and requirements
+                </td>
+
+                <td>
+                  Content, components, and digital experience
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  <strong>
+                    Technology Context
+                  </strong>
+                </td>
+
+                <td>
+                  Enterprise digital platform
+                </td>
+
+                <td>
+                  Digital investment experience
+                </td>
+
+                <td>
+                  Financial information experience
+                </td>
+
+                <td>
+                  AEM / enterprise content management
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- WHAT I LEARNED -->
+    <!-- ========================================================= -->
+
+    <section class="section-padding">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div
+            class="col-lg-5"
+            data-aos="fade-right"
+          >
+
+            <span class="eyebrow text-primary">
+              11 • Experience
+            </span>
+
+            <h2 class="section-heading mt-2">
+              What This Experience Taught Me
+            </h2>
+
+            <p class="text-muted">
+              Financial services products require a Product Owner
+              to understand more than screens and requirements.
+              The underlying business process, information,
+              content, and user journey all matter.
+            </p>
+
+          </div>
+
+
+          <div
+            class="col-lg-7"
+            data-aos="fade-left"
+          >
+
+            <div class="enterprise-card">
+
+              <ul class="feature-list mb-0">
+
+                <li>
+                  Financial products require careful handling of
+                  complex information.
+                </li>
+
+                <li>
+                  Search and filtering are product capabilities,
+                  not merely UI features.
+                </li>
+
+                <li>
+                  Information architecture can determine how
+                  effectively users understand financial data.
+                </li>
+
+                <li>
+                  Content management is an important part of
+                  enterprise digital product delivery.
+                </li>
+
+                <li>
+                  Reusable digital components can improve
+                  consistency and delivery efficiency.
+                </li>
+
+                <li>
+                  Strong Product Owners connect business goals,
+                  users, technology, and delivery.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- CLOSING -->
+    <!-- ========================================================= -->
+
+    <section class="cta">
+
+      <div class="container text-center">
+
+        <span class="eyebrow">
+          TIAA Digital Product Experience
+        </span>
+
+        <h2 class="fw-bold mt-3 mb-3">
+          Turning Complex Financial Requirements Into Digital Experiences
+        </h2>
+
+        <p
+          class="mx-auto mb-4"
+          style="max-width: 780px;"
+        >
+          My TIAA experience gave me exposure to retirement technology,
+          investment research, fund information, digital content,
+          enterprise applications, and the Product Owner / Business
+          Analyst discipline required to bring those experiences
+          together.
+        </p>
+
+        <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+
+          <span class="badge-soft">
+            PlanFocus
+          </span>
+
+          <span class="badge-soft">
+            Business Edge
+          </span>
+
+          <span class="badge-soft">
+            Investment Screener
+          </span>
+
+          <span class="badge-soft">
+            Fund Profiles
+          </span>
+
+          <span class="badge-soft">
+            AEM
+          </span>
+
+        </div>
+
+        <a
+          href="index.html"
+          class="btn btn-outline-light px-4"
+        >
+          Back to Portfolio
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <footer>
+
+      <div class="container text-center">
+
+        <p class="mb-0">
+          © 2026 Faraz Uddin • TIAA Digital Products & Product Ownership
+        </p>
+
+      </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+
+    <!-- AOS JS -->
+
+    <script
+      src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    ></script>
+
+
+    <script>
+
+      AOS.init({
+        duration: 700,
+        once: true,
+        offset: 80
+      });
+
+    </script>
+
+  </body>
+</html>

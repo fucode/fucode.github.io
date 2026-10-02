@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Homepage typography, scoped to .pf-scope only -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="images/favicon.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+  <title>Faraz Uddin</title>
+
+  <style>
+    .pf-scope {
+      --navy: #0d1b2e;
+      --navy-2: #142840;
+      --amber: #f2a93b;
+      --teal: #2fb8ac;
+      --paper: #f7f4ee;
+      --ink: #12233d;
+      --slate: #56606d;
+      font-family: "Inter", "Open Sans", sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    .pf-scope h1, .pf-scope h2, .pf-scope h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    /* ---------- Hero ---------- */
+    .pf-hero {
+      position: relative;
+      background: var(--navy);
+      color: #fff;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 6rem 1.75rem 5rem;
+    }
+
+    .pf-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .pf-name {
+      font-size: clamp(3.2rem, 8vw, 6.2rem);
+      line-height: 0.95;
+      color: #fff;
+    }
+
+    .pf-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      margin: 1.6rem 0 1.75rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--amber);
+    }
+
+    .pf-lede {
+      max-width: 46ch;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #c8d2e0;
+      margin: 0 0 2.25rem;
+    }
+
+    .pf-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--amber);
+      color: var(--navy) !important;
+      text-decoration: none;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 0.9rem 1.6rem;
+      border-radius: 2px;
+      width: fit-content;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .pf-cta:hover { background: #ffc266; transform: translateY(-2px); }
+
+    /* burndown graphic */
+    .pf-hero-graphic {
+      position: absolute;
+      right: -4%;
+      bottom: -6%;
+      width: min(64vw, 900px);
+      z-index: 1;
+      opacity: 0.9;
+    }
+    .pf-hero-graphic .grid-line { stroke: rgba(255,255,255,0.08); stroke-width: 1; }
+    .pf-hero-graphic .burn-line {
+      fill: none;
+      stroke: var(--amber);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+      animation: pf-draw 1.8s ease-out 0.3s forwards;
+    }
+    .pf-hero-graphic .burn-dot { fill: var(--amber); }
+    @keyframes pf-draw { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .pf-hero-graphic .burn-line { animation: none; stroke-dashoffset: 0; }
+    }
+
+    /* ---------- Stat bar ---------- */
+    .pf-stats {
+      background: var(--amber);
+      padding: 2.5rem 1.75rem;
+    }
+    .pf-stats-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .pf-stat-num {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--navy);
+      line-height: 1;
+    }
+    .pf-stat-label {
+      font-size: 0.92rem;
+      color: #3a2c0d;
+      margin-top: 0.4rem;
+    }
+
+    /* ---------- Experience panels ---------- */
+    .pf-panel { padding: 5.5rem 1.75rem; }
+    .pf-panel-dark { background: var(--navy); color: #fff; }
+    .pf-panel-light { background: var(--paper); color: var(--ink); }
+
+    .pf-panel-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .pf-panel-eyebrow {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+    .pf-panel-dark .pf-panel-eyebrow { color: var(--amber); }
+    .pf-panel-light .pf-panel-eyebrow { color: #b3752a; }
+
+    .pf-panel-logo {
+      background: #fff;
+      border-radius: 6px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 220px;
+    }
+    .pf-panel-logo img { max-width: 100%; max-height: 60px; object-fit: contain; }
+
+    .pf-panel h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.3rem; }
+    .pf-panel-role {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 500;
+      margin: 0 0 1.5rem;
+    }
+    .pf-panel-dark .pf-panel-role { color: var(--teal); }
+    .pf-panel-light .pf-panel-role { color: var(--slate); }
+
+    .pf-panel-dark p { color: #c8d2e0; }
+    .pf-panel-light p { color: var(--slate); }
+    .pf-panel p { line-height: 1.7; max-width: 66ch; }
+
+    .pf-block-list { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+    .pf-block-list > li {
+      padding: 1.4rem 0;
+      border-top: 1px solid rgba(120,120,120,0.25);
+    }
+    .pf-panel-dark .pf-block-list > li { border-color: rgba(255,255,255,0.15); }
+    .pf-block-list strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .pf-panel-dark .pf-block-list strong { color: #fff; }
+    .pf-block-list ul { margin: 0.7rem 0 0; padding-left: 1.1rem; }
+    .pf-block-list ul li { margin-bottom: 0.3rem; }
+
+    .pf-more {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .pf-panel-dark .pf-more { color: var(--amber); }
+    .pf-panel-light .pf-more { color: var(--ink); border-bottom: 2px solid var(--amber); }
+    .pf-more:hover { opacity: 0.8; }
+
+    @media (max-width: 800px) {
+      .pf-panel-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+      .pf-stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .pf-hero-graphic { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <div class="pf-scope">
+
+    <!-- Hero -->
+    <header class="pf-hero">
+      <div class="pf-hero-inner">
+        <h1 class="pf-name">Faraz<br />Uddin</h1>
+        <div class="pf-roles">
+          <span>Product Owner</span>
+          <span>Business Analyst</span>
+          <span>Scrum Master</span>
+        </div>
+        <p class="pf-lede">
+          I lead Agile delivery for risk, credit, and operations platforms in financial
+          services — turning ambiguous requirements into working software on Pega-based
+          systems, one sprint at a time.
+        </p>
+        <a class="pf-cta" href="#experience">See the work</a>
+      </div>
+
+      <svg class="pf-hero-graphic" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line class="grid-line" x1="0" y1="40" x2="600" y2="40" />
+        <line class="grid-line" x1="0" y1="120" x2="600" y2="120" />
+        <line class="grid-line" x1="0" y1="200" x2="600" y2="200" />
+        <line class="grid-line" x1="0" y1="280" x2="600" y2="280" />
+        <line class="grid-line" x1="150" y1="0" x2="150" y2="340" />
+        <line class="grid-line" x1="300" y1="0" x2="300" y2="340" />
+        <line class="grid-line" x1="450" y1="0" x2="450" y2="340" />
+        <path class="burn-line" d="M20,40 L150,90 L230,110 L300,170 L380,190 L450,250 L520,270 L580,300" />
+        <circle class="burn-dot" cx="20" cy="40" r="5" />
+        <circle class="burn-dot" cx="300" cy="170" r="5" />
+        <circle class="burn-dot" cx="580" cy="300" r="5" />
+      </svg>
+    </header>
+
+    <!-- Stat bar -->
+    <div class="pf-stats">
+      <div class="pf-stats-inner">
+        <div>
+          <div class="pf-stat-num">12+</div>
+          <div class="pf-stat-label">Years in financial services</div>
+        </div>
+        <div>
+          <div class="pf-stat-num">CSM</div>
+          <div class="pf-stat-label">Certified Scrum Master</div>
+        </div>
+        <div>
+          <div class="pf-stat-num">Pega</div>
+          <div class="pf-stat-label">SAFe Agile delivery</div>
+        </div>
+        <div>
+          <div class="pf-stat-num">4</div>
+          <div class="pf-stat-label">Enterprise employers</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Experience -->
+    <section id="experience">
+
+      <!-- Wells Fargo -->
+      <article class="pf-panel pf-panel-dark">
+        <div class="pf-panel-inner">
+          <div class="pf-panel-logo">
+            <img src="images/Wells_Fargo-Logo.wine.png" alt="Wells Fargo logo" />
+          </div>
+          <div>
+            <span class="pf-panel-eyebrow">Nov 2025 &ndash; Jul 2026</span>
+            <h2>Wells Fargo Merchant Services</h2>
+            <p class="pf-panel-role">Product Owner</p>
+            <p>
+              Led Agile delivery for internal risk, credit, and operations solutions
+              designed to improve merchant risk assessments, automate workflows, and
+              modernize operational processes.
+            </p>
+            <ul class="pf-block-list">
+              <li>
+                <strong>Risk Profile Assessment (RPA)</strong>
+                Owned the product backlog and delivery of a Pega-based Risk Profile
+                Assessment solution that automated periodic merchant risk reviews,
+                surfaced risk alerts, and streamlined workflows across Risk, Credit,
+                Compliance, and development teams.
+              </li>
+            </ul>
+            <a class="pf-more" href="WF_MS_2026.html">View case study &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- TIAA -->
+      <article class="pf-panel pf-panel-light">
+        <div class="pf-panel-inner">
+          <div class="pf-panel-logo">
+            <img src="images/TIAA/Tiaa Logo.png" alt="TIAA logo" />
+          </div>
+          <div>
+            <span class="pf-panel-eyebrow">Previously</span>
+            <h2>TIAA</h2>
+            <p class="pf-panel-role">Product Owner &middot; Scrum Master &middot; Business Analyst</p>
+            <p>
+              Spent two years as a consultant, splitting time evenly between two Agile
+              Scrum teams focused on investment performance and retirement plan
+              management platforms.
+            </p>
+            <ul class="pf-block-list">
+              <li>
+                <strong>Markit on Demand (MOD): Investment Performance Research</strong>
+                Managed TIAA's fund screener tool and over 9,000 fund profile pages,
+                collaborating closely with Marketing, Investment Performance teams, and
+                vendor partner Fincentric, an S&amp;P Global company.
+                <ul>
+                  <li>Streamlined plan management through efficient tools and workflows.</li>
+                  <li>Enhanced participant engagement with clear communication tools.</li>
+                  <li>Drove data-informed decision-making to improve retirement outcomes.</li>
+                </ul>
+              </li>
+              <li>
+                <strong>PlanFocus: Retirement Plan Management</strong>
+                A cloud-based tool for institutional retirement plan management, built
+                to empower Plan Sponsors, Administrators, and Consultants.
+              </li>
+            </ul>
+            <a class="pf-more" href="TIAA.html">View case study &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+</body>
+
+</html>
