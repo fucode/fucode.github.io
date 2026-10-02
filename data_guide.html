@@ -1,0 +1,3507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Faraz Uddin | Data Product Owner & Data Governance</title>
+
+  <meta
+    name="description"
+    content="Data Product Owner and Data Governance study guide covering enterprise banking data, metadata, lineage, data quality, governance, cloud platforms, Agile delivery and data products."
+  />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Shared Site CSS -->
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- AOS -->
+  <link
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --wf-red: #d71920;
+      --wf-red-dark: #a80f15;
+      --wf-ink: #171717;
+      --wf-charcoal: #242424;
+      --wf-muted: #667085;
+      --wf-light: #f6f7f9;
+      --wf-border: #e4e7ec;
+      --wf-white: #ffffff;
+      --wf-radius: 20px;
+      --wf-shadow: 0 18px 55px rgba(16, 24, 40, 0.09);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: var(--wf-ink);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    .case-study-page a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .text-wf-red {
+      color: var(--wf-red) !important;
+    }
+
+    code {
+      padding: 3px 7px;
+      border-radius: 6px;
+      color: #fff;
+      background: rgba(215, 25, 32, 0.8);
+    }
+
+    .section-space {
+      padding: 100px 0;
+    }
+
+    .section-space-sm {
+      padding: 68px 0;
+    }
+
+    .soft-section {
+      background: var(--wf-light);
+    }
+
+    .dark-section {
+      color: #fff;
+      background: linear-gradient(135deg, #151515, #252525);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--wf-red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 30px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--wf-red);
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 20px;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      color: var(--wf-muted);
+      font-size: 1.05rem;
+    }
+
+    .dark-section .section-intro {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 135px 0 95px;
+      color: #fff;
+      background:
+        linear-gradient(
+          120deg,
+          #0f0f0f 0%,
+          #202020 68%,
+          #3a0b0d 100%
+        );
+    }
+
+    .hero::before {
+      position: absolute;
+      content: "";
+      width: 650px;
+      height: 650px;
+      right: -250px;
+      top: -300px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      position: absolute;
+      content: "";
+      width: 430px;
+      height: 430px;
+      right: -130px;
+      top: -185px;
+      border: 1px solid rgba(215, 25, 32, 0.55);
+      border-radius: 50%;
+    }
+
+    .hero-content,
+    .hero-side-card {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero-eyebrow span {
+      width: 34px;
+      height: 3px;
+      background: var(--wf-red);
+      border-radius: 99px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin-bottom: 24px;
+      font-size: clamp(2.8rem, 6vw, 5.7rem);
+      font-weight: 800;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-description {
+      max-width: 780px;
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 1.12rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-tag {
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .hero-side-card {
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--wf-radius);
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-side-card img {
+      max-width: 180px;
+      margin-bottom: 28px;
+    }
+
+    .hero-side-card small {
+      display: block;
+      margin-top: 15px;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-side-card p {
+      margin: 4px 0 0;
+      font-weight: 700;
+    }
+
+    .hero-bottom-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 5px;
+      background: var(--wf-red);
+    }
+
+    /* =========================================================
+       GENERAL CARDS
+    ========================================================= */
+
+    .stat-card,
+    .study-card,
+    .role-card,
+    .concept-card {
+      height: 100%;
+      border: 1px solid var(--wf-border);
+      border-radius: var(--wf-radius);
+      background: #fff;
+      box-shadow: var(--wf-shadow);
+    }
+
+    .stat-card {
+      padding: 28px;
+    }
+
+    .stat-number {
+      color: var(--wf-red);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .stat-title {
+      margin: 5px 0 8px;
+      font-weight: 800;
+    }
+
+    .stat-description {
+      margin: 0;
+      color: var(--wf-muted);
+      font-size: 0.9rem;
+    }
+
+    .study-card,
+    .role-card,
+    .concept-card {
+      padding: 30px;
+    }
+
+    .study-card h4,
+    .role-card h4,
+    .concept-card h4 {
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .study-card i,
+    .role-card i,
+    .concept-card i {
+      color: var(--wf-red);
+    }
+
+    .study-card ul,
+    .role-card ul,
+    .concept-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .study-card li,
+    .role-card li,
+    .concept-card li {
+      margin-bottom: 11px;
+      color: #475467;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--wf-red);
+      background: rgba(215, 25, 32, 0.08);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .dark-section .pill {
+      color: #fff;
+      border: 1px solid rgba(215, 25, 32, 0.5);
+      background: rgba(215, 25, 32, 0.18);
+    }
+
+    /* =========================================================
+       ARCHITECTURE
+    ========================================================= */
+
+    .architecture-panel {
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--wf-radius);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .architecture-panel h3,
+    .architecture-panel h4 {
+      font-weight: 800;
+    }
+
+    .architecture-panel > p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .flow-node {
+      flex: 1 1 130px;
+      min-width: 120px;
+      padding: 17px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 14px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .flow-node strong {
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .flow-node small {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.58);
+      line-height: 1.4;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--wf-red);
+    }
+
+    .architecture-note {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--wf-red);
+      color: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       GOVERNANCE
+    ========================================================= */
+
+    .governance-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .governance-card {
+      padding: 28px;
+      border: 1px solid var(--wf-border);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--wf-shadow);
+    }
+
+    .governance-card .icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      color: #fff;
+      background: var(--wf-red);
+    }
+
+    .governance-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .governance-card p {
+      margin: 0;
+      color: var(--wf-muted);
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       WORKFLOW
+    ========================================================= */
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .workflow-step {
+      padding: 23px;
+      border: 1px solid var(--wf-border);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .workflow-step .step-no {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--wf-red);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .workflow-step h4 {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .workflow-step p {
+      margin: 0;
+      color: var(--wf-muted);
+      font-size: 0.88rem;
+    }
+
+    /* =========================================================
+       TABLES
+    ========================================================= */
+
+    .compare-table {
+      overflow: hidden;
+      border: 1px solid var(--wf-border);
+      border-radius: var(--wf-radius);
+      box-shadow: var(--wf-shadow);
+    }
+
+    .compare-table table {
+      margin: 0;
+    }
+
+    .compare-table th {
+      padding: 18px;
+      color: #fff;
+      background: #202020;
+    }
+
+    .compare-table td {
+      padding: 17px 18px;
+      vertical-align: top;
+      border-color: var(--wf-border);
+    }
+
+    .compare-table td:first-child {
+      width: 22%;
+      font-weight: 800;
+    }
+
+    .dark-table {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+    }
+
+    .dark-table table {
+      margin-bottom: 0;
+    }
+
+    .dark-table th,
+    .dark-table td {
+      padding: 17px;
+      color: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.035);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .dark-table th {
+      color: #fff;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       TIMELINE
+    ========================================================= */
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      position: absolute;
+      content: "";
+      left: 20px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--wf-border);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .timeline-number {
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--wf-red);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .timeline-content {
+      padding: 20px 23px;
+      border: 1px solid var(--wf-border);
+      border-radius: 15px;
+      background: #fff;
+    }
+
+    .timeline-content h4 {
+      margin-bottom: 7px;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .timeline-content p {
+      margin: 0;
+      color: var(--wf-muted);
+    }
+
+    /* =========================================================
+       INTERVIEW
+    ========================================================= */
+
+    .interview-card {
+      height: 100%;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--wf-radius);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .interview-card h4 {
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .interview-card .question {
+      margin-bottom: 14px;
+      color: var(--wf-red);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .interview-card p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 991px) {
+      .hero {
+        padding: 110px 0 80px;
+      }
+
+      .hero-side-card {
+        margin-top: 35px;
+      }
+
+      .section-space {
+        padding: 80px 0;
+      }
+
+      .workflow-grid,
+      .governance-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .hero {
+        padding: 95px 0 70px;
+      }
+
+      .hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .section-space {
+        padding: 65px 0;
+      }
+
+      .workflow-grid,
+      .governance-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .architecture-panel {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       SHARED NAVIGATION
+  ========================================================= -->
+
+  <div id="nav-placeholder"></div>
+
+
+  <main class="case-study-page">
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <header class="hero">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-8">
+
+            <div class="hero-content" data-aos="fade-up">
+
+              <div class="hero-eyebrow">
+                <span></span>
+                Enterprise Banking Data
+              </div>
+
+              <h1>
+                Data Product Ownership
+                <span class="text-wf-red">& governance.</span>
+              </h1>
+
+              <p class="hero-description">
+                A practical study guide for understanding how a Data Product
+                Owner operates within a large financial institution—connecting
+                business strategy, data engineering, governance, risk,
+                architecture, analytics and downstream consumers.
+              </p>
+
+              <div class="hero-tags">
+
+                <span class="hero-tag">Data Product Ownership</span>
+                <span class="hero-tag">Data Governance</span>
+                <span class="hero-tag">Metadata</span>
+                <span class="hero-tag">Data Lineage</span>
+                <span class="hero-tag">Data Quality</span>
+                <span class="hero-tag">Cloud Data</span>
+                <span class="hero-tag">Agile</span>
+                <span class="hero-tag">Banking Controls</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="hero-side-card" data-aos="fade-left">
+
+              <img
+                src="images/Wells_Fargo-Logo.wine.png"
+                alt="Wells Fargo logo"
+                class="img-fluid"
+              />
+
+              <small>Role</small>
+              <p>Data Product Owner</p>
+
+              <small>Primary Focus</small>
+              <p>Trusted & Usable Enterprise Data</p>
+
+              <small>Operating Model</small>
+              <p>Product + Data + Governance</p>
+
+              <small>Key Partners</small>
+              <p class="mb-0">
+                Business, Engineering, Architecture, Risk & Analytics
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-bottom-line"></div>
+
+    </header>
+
+
+    <!-- =========================================================
+         01 OVERVIEW
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-5" data-aos="fade-right">
+
+            <div class="section-label">
+              01 / Overview
+            </div>
+
+            <h2 class="section-title">
+              Treating data as a product—not simply as a technical asset.
+            </h2>
+
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+
+            <p class="section-intro mb-4">
+              A <strong>Data Product Owner</strong> applies product-management
+              principles to enterprise data. The goal is to ensure data is
+              useful, understandable, trusted, governed and accessible to the
+              consumers who need it.
+            </p>
+
+            <p class="text-muted mb-4">
+              In a large bank, data moves through many systems and supports
+              reporting, customer experiences, risk management, regulatory
+              requirements, operations, analytics and decision-making.
+            </p>
+
+            <p class="text-muted mb-0">
+              The Data Product Owner helps connect those business needs to
+              engineering and governance requirements while maintaining a
+              prioritized backlog and measurable product outcomes.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         AT A GLANCE
+    ========================================================= -->
+
+    <section class="section-space-sm soft-section">
+
+      <div class="container">
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-number">Product</div>
+              <div class="stat-title">Business Value</div>
+              <p class="stat-description">
+                Understand consumers, prioritize use cases and create a
+                roadmap for the data product.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-number">Data</div>
+              <div class="stat-title">Technical Understanding</div>
+              <p class="stat-description">
+                Understand sources, ingestion, transformation, storage,
+                APIs and downstream consumption.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-number">Governance</div>
+              <div class="stat-title">Trust & Control</div>
+              <p class="stat-description">
+                Support ownership, metadata, lineage, quality, access,
+                controls and policy compliance.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-number">Agile</div>
+              <div class="stat-title">Delivery</div>
+              <p class="stat-description">
+                Translate data needs into epics, features, stories,
+                acceptance criteria and measurable outcomes.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         02 DATA PRODUCT OWNER
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="mb-5" data-aos="fade-up">
+
+          <div class="section-label">
+            02 / Data Product Owner
+          </div>
+
+          <h2 class="section-title">
+            What does a Data Product Owner actually own?
+          </h2>
+
+          <p class="section-intro">
+            The role sits at the intersection of business outcomes,
+            enterprise data and technology delivery.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-4">
+            <div class="role-card">
+              <h4>
+                <i class="fas fa-bullseye me-2"></i>
+                Product Direction
+              </h4>
+              <ul>
+                <li>Define the data-product vision.</li>
+                <li>Understand data consumers.</li>
+                <li>Identify business use cases.</li>
+                <li>Prioritize capabilities.</li>
+                <li>Maintain roadmap and backlog.</li>
+                <li>Measure product outcomes.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="role-card">
+              <h4>
+                <i class="fas fa-database me-2"></i>
+                Data Understanding
+              </h4>
+              <ul>
+                <li>Understand source systems.</li>
+                <li>Understand important data elements.</li>
+                <li>Understand transformations.</li>
+                <li>Understand upstream dependencies.</li>
+                <li>Understand downstream consumers.</li>
+                <li>Understand lineage and quality.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="role-card">
+              <h4>
+                <i class="fas fa-users me-2"></i>
+                Coordination
+              </h4>
+              <ul>
+                <li>Business stakeholders</li>
+                <li>Data engineers</li>
+                <li>Data architects</li>
+                <li>Data governance teams</li>
+                <li>Risk and control partners</li>
+                <li>Analytics and reporting teams</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         03 TRADITIONAL PO VS DATA PO
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="mb-5">
+
+          <div class="section-label">
+            03 / Product Comparison
+          </div>
+
+          <h2 class="section-title">
+            Traditional Product Owner vs. Data Product Owner.
+          </h2>
+
+        </div>
+
+        <div class="table-responsive compare-table">
+
+          <table class="table table-striped">
+
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Traditional Product Owner</th>
+                <th>Data Product Owner</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Product</td>
+                <td>Application, workflow or customer capability</td>
+                <td>Dataset, domain, pipeline, API or data capability</td>
+              </tr>
+
+              <tr>
+                <td>Primary Consumer</td>
+                <td>Application users</td>
+                <td>
+                  Analysts, applications, models, reporting teams and
+                  other data consumers
+                </td>
+              </tr>
+
+              <tr>
+                <td>Requirements</td>
+                <td>Features and user behavior</td>
+                <td>
+                  Data availability, definitions, quality, lineage and usability
+                </td>
+              </tr>
+
+              <tr>
+                <td>Quality</td>
+                <td>Does the feature work?</td>
+                <td>
+                  Is the data accurate, complete, timely and trustworthy?
+                </td>
+              </tr>
+
+              <tr>
+                <td>Architecture</td>
+                <td>UI, services and application integrations</td>
+                <td>
+                  Sources, pipelines, transformations, storage and consumption
+                </td>
+              </tr>
+
+              <tr>
+                <td>Governance</td>
+                <td>Application controls</td>
+                <td>
+                  Ownership, metadata, lineage, access, retention and
+                  quality controls
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         04 DATA ARCHITECTURE
+    ========================================================= -->
+
+    <section class="section-space dark-section">
+
+      <div class="container">
+
+        <div class="mb-5">
+
+          <div class="section-label">
+            04 / Enterprise Data Flow
+          </div>
+
+          <h2 class="section-title">
+            Understand how data moves through the bank.
+          </h2>
+
+          <p class="section-intro">
+            A Data Product Owner does not need to build every pipeline,
+            but should understand where data originates, how it moves,
+            how it changes and who ultimately consumes it.
+          </p>
+
+        </div>
+
+        <div class="architecture-panel">
+
+          <h3>
+            Simplified Enterprise Data Architecture
+          </h3>
+
+          <p>
+            A common conceptual flow from operational systems to
+            governed enterprise data products.
+          </p>
+
+          <div class="flow">
+
+            <div class="flow-node">
+              <strong>Source Systems</strong>
+              <small>Applications, transactions, CRM, vendors</small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>Ingestion</strong>
+              <small>Batch, streaming, APIs, files</small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>Raw Data</strong>
+              <small>Initial enterprise landing layer</small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>Transformation</strong>
+              <small>Clean, map, join, standardize</small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>Curated Product</strong>
+              <small>Trusted business-ready data</small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>Consumers</strong>
+              <small>Apps, APIs, BI, analytics, models</small>
+            </div>
+
+          </div>
+
+          <div class="architecture-note">
+            <strong>Data Product Owner mindset:</strong>
+            know where the data came from, what happened to it,
+            what it means, whether it can be trusted and who depends on it.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         05 DATA PRODUCT LIFECYCLE
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="section-label">
+          05 / Data Product Lifecycle
+        </div>
+
+        <h2 class="section-title">
+          From business problem to trusted data product.
+        </h2>
+
+        <p class="section-intro">
+          Data products should be developed around identifiable
+          consumers and measurable business outcomes.
+        </p>
+
+        <div class="workflow-grid">
+
+          <div class="workflow-step">
+            <div class="step-no">1</div>
+            <h4>Identify Need</h4>
+            <p>Understand the business problem and desired outcome.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-no">2</div>
+            <h4>Identify Consumers</h4>
+            <p>Determine who or what needs the data.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-no">3</div>
+            <h4>Identify Sources</h4>
+            <p>Determine where required information originates.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-no">4</div>
+            <h4>Define Data</h4>
+            <p>Establish definitions, attributes and business rules.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-no">5</div>
+            <h4>Build Pipeline</h4>
+            <p>Ingest, transform and prepare the required data.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-no">6</div>
+            <h4>Govern</h4>
+            <p>Establish ownership, lineage, metadata and controls.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-no">7</div>
+            <h4>Validate Quality</h4>
+            <p>Test accuracy, completeness, timeliness and consistency.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-no">8</div>
+            <h4>Publish & Monitor</h4>
+            <p>Deliver to consumers and monitor performance and quality.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         06 DATA GOVERNANCE
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          06 / Data Governance
+        </div>
+
+        <h2 class="section-title">
+          Governance establishes trust, accountability and control.
+        </h2>
+
+        <p class="section-intro">
+          Data governance defines how enterprise data is owned,
+          understood, protected, maintained and used.
+        </p>
+
+        <div class="governance-grid">
+
+          <div class="governance-card">
+            <div class="icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <h4>Ownership</h4>
+            <p>
+              Establish accountability for important data domains
+              and data elements.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <div class="icon">
+              <i class="fas fa-tags"></i>
+            </div>
+            <h4>Metadata</h4>
+            <p>
+              Document what data means, where it resides and how
+              it should be interpreted.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <div class="icon">
+              <i class="fas fa-route"></i>
+            </div>
+            <h4>Lineage</h4>
+            <p>
+              Understand how information travels and changes from
+              source to consumption.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <div class="icon">
+              <i class="fas fa-circle-check"></i>
+            </div>
+            <h4>Data Quality</h4>
+            <p>
+              Define rules and controls for accurate, complete and
+              reliable information.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <div class="icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h4>Access</h4>
+            <p>
+              Ensure appropriate users and systems can access data
+              according to policy.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <div class="icon">
+              <i class="fas fa-box-archive"></i>
+            </div>
+            <h4>Retention</h4>
+            <p>
+              Define how long information must be retained and how
+              it should eventually be disposed.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         07 GOVERNANCE ROLES
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="mb-5">
+
+          <div class="section-label">
+            07 / Governance Roles
+          </div>
+
+          <h2 class="section-title">
+            Who is responsible for the data?
+          </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-4">
+
+            <div class="study-card">
+
+              <span class="pill mb-3">Accountability</span>
+
+              <h4>Data Owner</h4>
+
+              <p class="text-muted">
+                Senior business accountability for a data domain or
+                important set of data.
+              </p>
+
+              <ul>
+                <li>Sets expectations for the data.</li>
+                <li>Approves important governance decisions.</li>
+                <li>Supports access and usage decisions.</li>
+                <li>Accountable for overall data health.</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="study-card">
+
+              <span class="pill mb-3">Operational Governance</span>
+
+              <h4>Data Steward</h4>
+
+              <p class="text-muted">
+                Helps manage data definitions, standards and quality
+                on a more operational basis.
+              </p>
+
+              <ul>
+                <li>Maintains definitions.</li>
+                <li>Supports metadata.</li>
+                <li>Reviews quality issues.</li>
+                <li>Coordinates remediation.</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="study-card">
+
+              <span class="pill mb-3">Product Delivery</span>
+
+              <h4>Data Product Owner</h4>
+
+              <p class="text-muted">
+                Connects consumer needs, product priorities and
+                technical delivery.
+              </p>
+
+              <ul>
+                <li>Owns product vision and backlog.</li>
+                <li>Represents data consumers.</li>
+                <li>Coordinates dependencies.</li>
+                <li>Drives measurable product outcomes.</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         08 METADATA
+    ========================================================= -->
+
+    <section class="section-space dark-section">
+
+      <div class="container">
+
+        <div class="row g-5 align-items-center">
+
+          <div class="col-lg-5">
+
+            <div class="section-label">
+              08 / Metadata
+            </div>
+
+            <h2 class="section-title">
+              Data about the data.
+            </h2>
+
+            <p class="section-intro">
+              Metadata gives enterprise data context so people can
+              understand what it means, where it came from and how
+              it should be used.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="architecture-panel">
+
+              <h3>
+                Example: Customer_ID
+              </h3>
+
+              <p>
+                A database column alone tells you very little.
+                Metadata provides the context around that field.
+              </p>
+
+              <div class="row g-3 mt-2">
+
+                <div class="col-md-6">
+                  <div class="flow-node">
+                    <strong>Business Definition</strong>
+                    <small>What does Customer_ID mean?</small>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="flow-node">
+                    <strong>Technical Definition</strong>
+                    <small>Table, column and datatype</small>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="flow-node">
+                    <strong>Owner / Steward</strong>
+                    <small>Who is responsible?</small>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="flow-node">
+                    <strong>Classification</strong>
+                    <small>Sensitivity and usage information</small>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="architecture-note">
+                A <strong>data catalog</strong> commonly provides a
+                searchable location where users can discover datasets,
+                definitions, ownership and other metadata.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         09 LINEAGE
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="section-label">
+          09 / Data Lineage
+        </div>
+
+        <h2 class="section-title">
+          Where did the number come from?
+        </h2>
+
+        <p class="section-intro">
+          Data lineage traces information through systems and
+          transformations from its original source to its final consumer.
+        </p>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-lg-7">
+
+            <div class="study-card">
+
+              <h4>
+                <i class="fas fa-route me-2"></i>
+                Example Lineage
+              </h4>
+
+              <div
+                class="workflow-grid"
+                style="grid-template-columns: repeat(3, 1fr);"
+              >
+
+                <div class="workflow-step">
+                  <div class="step-no">1</div>
+                  <h4>Source</h4>
+                  <p>Customer account application</p>
+                </div>
+
+                <div class="workflow-step">
+                  <div class="step-no">2</div>
+                  <h4>Ingestion</h4>
+                  <p>Data enters enterprise platform</p>
+                </div>
+
+                <div class="workflow-step">
+                  <div class="step-no">3</div>
+                  <h4>Transformation</h4>
+                  <p>Fields standardized and mapped</p>
+                </div>
+
+                <div class="workflow-step">
+                  <div class="step-no">4</div>
+                  <h4>Curated Table</h4>
+                  <p>Trusted customer data created</p>
+                </div>
+
+                <div class="workflow-step">
+                  <div class="step-no">5</div>
+                  <h4>Reporting</h4>
+                  <p>Data feeds enterprise report</p>
+                </div>
+
+                <div class="workflow-step">
+                  <div class="step-no">6</div>
+                  <h4>Business User</h4>
+                  <p>User consumes final metric</p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5">
+
+            <div class="study-card">
+
+              <h4>
+                Why Lineage Matters
+              </h4>
+
+              <ul>
+                <li>Trace incorrect numbers back to their source.</li>
+                <li>Understand transformation logic.</li>
+                <li>Perform impact analysis before changes.</li>
+                <li>Understand downstream dependencies.</li>
+                <li>Support governance and control requirements.</li>
+                <li>Improve confidence in reporting.</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         10 DATA QUALITY
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          10 / Data Quality
+        </div>
+
+        <h2 class="section-title">
+          Good data must be fit for its intended purpose.
+        </h2>
+
+        <p class="section-intro">
+          Data quality is broader than asking whether a field contains
+          a value. Different dimensions measure different types of
+          reliability.
+        </p>
+
+        <div class="governance-grid">
+
+          <div class="governance-card">
+            <h4>Accuracy</h4>
+            <p>
+              Does the data correctly represent the real-world value?
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Completeness</h4>
+            <p>
+              Are required records and attributes populated?
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Consistency</h4>
+            <p>
+              Does the information agree across systems?
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Timeliness</h4>
+            <p>
+              Is the information available when consumers need it?
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Validity</h4>
+            <p>
+              Does the data follow required formats and business rules?
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Uniqueness</h4>
+            <p>
+              Are duplicate records controlled appropriately?
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         11 DATA QUALITY FRAMEWORK
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="row g-5">
+
+          <div class="col-lg-5">
+
+            <div class="section-label">
+              11 / Data Quality Framework
+            </div>
+
+            <h2 class="section-title">
+              Turning quality expectations into measurable controls.
+            </h2>
+
+            <p class="section-intro">
+              A quality framework creates repeatable processes for
+              identifying, measuring, monitoring and resolving data issues.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                  <h4>Identify Critical Data</h4>
+                  <p>
+                    Determine which data elements are important to the
+                    business process or reporting outcome.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                  <h4>Define Quality Rules</h4>
+                  <p>
+                    Establish what valid and acceptable data should look like.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                  <h4>Measure</h4>
+                  <p>
+                    Calculate quality results against defined thresholds.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                  <h4>Monitor</h4>
+                  <p>
+                    Track exceptions, trends and threshold breaches.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                  <h4>Remediate</h4>
+                  <p>
+                    Investigate root cause and coordinate corrective action.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         12 DATA MOVEMENT, TRANSLATION & TRANSFORMATION
+    ========================================================= -->
+
+    <section class="section-space dark-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          12 / Data Engineering Concepts
+        </div>
+
+        <h2 class="section-title">
+          Movement, orchestration, transformation, translation & consumption.
+        </h2>
+
+        <p class="section-intro">
+          Use the MSOW / Pega reporting flow as a practical way to remember
+          how these concepts differ. The overall process is a data pipeline,
+          while different activities within that pipeline perform different
+          functions.
+        </p>
+
+
+        <!-- REAL-WORLD MSOW / PEGA FLOW -->
+
+        <div class="architecture-panel mt-5">
+
+          <h3>
+            MSOW / Pega Analytics Example
+          </h3>
+
+          <p>
+            A simplified example based on the MSOW reporting flow:
+            operational Pega data is processed into a structure that can
+            support analytics and Power BI reporting.
+          </p>
+
+          <div class="flow">
+
+            <div class="flow-node">
+              <strong>Pega / MSOW</strong>
+              <small>
+                Operational case data, including data stored in the Pega BLOB
+              </small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>AutoSys</strong>
+              <small>
+                Schedules / orchestrates data-processing jobs
+              </small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>Transform</strong>
+              <small>
+                Extract, parse, restructure and prepare Pega data
+              </small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>Analytics Database</strong>
+              <small>
+                Structured data available for analytics
+              </small>
+            </div>
+
+            <div class="flow-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="flow-node">
+              <strong>Power BI</strong>
+              <small>
+                Analytics team consumes the data for reporting
+              </small>
+            </div>
+
+          </div>
+
+          <div class="architecture-note">
+            <strong>Memory trick:</strong>
+            AutoSys helps <strong>orchestrate</strong> the process,
+            the pipeline <strong>moves</strong> the data,
+            transformation makes the Pega data <strong>usable</strong>,
+            translation explains what coded values <strong>mean</strong>,
+            and Power BI <strong>consumes</strong> the resulting data.
+          </div>
+
+        </div>
+
+
+        <!-- CONCEPT CARDS -->
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="architecture-panel h-100">
+
+              <span class="pill mb-3">
+                Where?
+              </span>
+
+              <h4>
+                <i class="fas fa-arrow-right-arrow-left me-2 text-wf-red"></i>
+                Data Movement
+              </h4>
+
+              <p>
+                Moving data from one system, database or environment
+                to another.
+              </p>
+
+              <div class="architecture-note mb-0">
+                <strong>MSOW Example:</strong><br />
+                Moving Pega / MSOW data into an analytics database.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="architecture-panel h-100">
+
+              <span class="pill mb-3">
+                When & In What Order?
+              </span>
+
+              <h4>
+                <i class="fas fa-gears me-2 text-wf-red"></i>
+                Orchestration
+              </h4>
+
+              <p>
+                Coordinating and scheduling the jobs or processes that
+                make up the data pipeline.
+              </p>
+
+              <div class="architecture-note mb-0">
+                <strong>MSOW Example:</strong><br />
+                AutoSys schedules or coordinates the jobs involved in
+                moving and processing the Pega data.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="architecture-panel h-100">
+
+              <span class="pill mb-3">
+                What Does It Become?
+              </span>
+
+              <h4>
+                <i class="fas fa-wand-magic-sparkles me-2 text-wf-red"></i>
+                Transformation
+              </h4>
+
+              <p>
+                Changing the structure, format or values of data so it
+                becomes usable for its intended purpose.
+              </p>
+
+              <div class="architecture-note mb-0">
+                <strong>MSOW Example:</strong><br />
+                Parsing data from a Pega BLOB and restructuring attributes
+                into usable database fields or columns for analytics.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="architecture-panel h-100">
+
+              <span class="pill mb-3">
+                What Does It Mean?
+              </span>
+
+              <h4>
+                <i class="fas fa-language me-2 text-wf-red"></i>
+                Translation
+              </h4>
+
+              <p>
+                Mapping one representation of a value to another representation
+                while preserving the underlying business meaning.
+              </p>
+
+              <div class="architecture-note mb-0">
+                <strong>Simple Examples:</strong><br />
+                <code>A</code> → <code>Active</code><br />
+                <code>I</code> → <code>Inactive</code><br /><br />
+
+                Illustrative risk example:<br />
+                <code>Risk Code 5</code> → <code>High Risk</code>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="architecture-panel h-100">
+
+              <span class="pill mb-3">
+                Where Does It Live?
+              </span>
+
+              <h4>
+                <i class="fas fa-database me-2 text-wf-red"></i>
+                Analytics Storage
+              </h4>
+
+              <p>
+                Prepared data is stored in a structured environment where
+                it can be queried and used by downstream consumers.
+              </p>
+
+              <div class="architecture-note mb-0">
+                <strong>MSOW Example:</strong><br />
+                Transformed data is made available in an analytics
+                database for reporting and analysis.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="col-md-6 col-lg-4">
+
+            <div class="architecture-panel h-100">
+
+              <span class="pill mb-3">
+                Who Uses It?
+              </span>
+
+              <h4>
+                <i class="fas fa-chart-column me-2 text-wf-red"></i>
+                Data Consumption
+              </h4>
+
+              <p>
+                Applications, analysts, dashboards, reports or models use
+                prepared data to produce business value.
+              </p>
+
+              <div class="architecture-note mb-0">
+                <strong>MSOW Example:</strong><br />
+                The analytics team consumes the prepared data through
+                Power BI to build reports and dashboards.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MEMORY TABLE -->
+
+        <div class="architecture-panel mt-5">
+
+          <div class="row g-5 align-items-center">
+
+            <div class="col-lg-4">
+
+              <span class="pill mb-3">
+                Remember This
+              </span>
+
+              <h3>
+                Five questions.
+              </h3>
+
+              <p class="mb-0">
+                Instead of memorizing technical definitions, associate
+                each concept with one question.
+              </p>
+
+            </div>
+
+            <div class="col-lg-8">
+
+              <div class="table-responsive dark-table">
+
+                <table class="table">
+
+                  <thead>
+                    <tr>
+                      <th>Concept</th>
+                      <th>Question</th>
+                      <th>Your Example</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    <tr>
+                      <td>
+                        <strong class="text-wf-red">
+                          Movement
+                        </strong>
+                      </td>
+                      <td>Where is it going?</td>
+                      <td>Pega → Analytics DB</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <strong class="text-wf-red">
+                          Orchestration
+                        </strong>
+                      </td>
+                      <td>When / in what order?</td>
+                      <td>AutoSys coordinates the jobs</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <strong class="text-wf-red">
+                          Translation
+                        </strong>
+                      </td>
+                      <td>What does it mean?</td>
+                      <td>A → Active</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <strong class="text-wf-red">
+                          Transformation
+                        </strong>
+                      </td>
+                      <td>What does it become?</td>
+                      <td>Pega BLOB → structured fields</td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <strong class="text-wf-red">
+                          Consumption
+                        </strong>
+                      </td>
+                      <td>Who uses it?</td>
+                      <td>Analytics DB → Power BI</td>
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TRANSLATION VS TRANSFORMATION -->
+
+        <div class="architecture-panel mt-4">
+
+          <div class="row g-5 align-items-center">
+
+            <div class="col-lg-5">
+
+              <span class="pill mb-3">
+                Important Distinction
+              </span>
+
+              <h3>
+                Translation vs. Transformation
+              </h3>
+
+              <p>
+                Translation can occur as part of a broader transformation,
+                but the terms emphasize different things.
+              </p>
+
+              <div class="architecture-note mb-0">
+                <strong>Translation:</strong>
+                "What does this value mean?"<br /><br />
+
+                <strong>Transformation:</strong>
+                "What do I need to do to this data?"
+              </div>
+
+            </div>
+
+            <div class="col-lg-7">
+
+              <div class="row g-3">
+
+                <div class="col-md-6">
+
+                  <div class="flow-node h-100">
+
+                    <strong class="text-wf-red">
+                      Translation
+                    </strong>
+
+                    <small>
+                      Source:<br />
+                      <code>A</code>
+                    </small>
+
+                    <div class="my-2 text-wf-red">
+                      ↓
+                    </div>
+
+                    <small>
+                      Business Meaning:<br />
+                      <code>Active</code>
+                    </small>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <div class="flow-node h-100">
+
+                    <strong class="text-wf-red">
+                      Transformation
+                    </strong>
+
+                    <small>
+                      Source:<br />
+                      Pega BLOB
+                    </small>
+
+                    <div class="my-2 text-wf-red">
+                      ↓
+                    </div>
+
+                    <small>
+                      Result:<br />
+                      Structured Analytics Fields
+                    </small>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         13 ETL / ELT
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="section-label">
+          13 / ETL & ELT
+        </div>
+
+        <h2 class="section-title">
+          Two common approaches to preparing enterprise data.
+        </h2>
+
+        <div class="table-responsive compare-table mt-5">
+
+          <table class="table table-striped">
+
+            <thead>
+              <tr>
+                <th>Concept</th>
+                <th>ETL</th>
+                <th>ELT</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Meaning</td>
+                <td>Extract → Transform → Load</td>
+                <td>Extract → Load → Transform</td>
+              </tr>
+
+              <tr>
+                <td>Sequence</td>
+                <td>Transform before loading into target</td>
+                <td>Load first and transform within target platform</td>
+              </tr>
+
+              <tr>
+                <td>Transformation</td>
+                <td>Occurs before target storage</td>
+                <td>Occurs after data reaches the target platform</td>
+              </tr>
+
+              <tr>
+                <td>Product Concern</td>
+                <td colspan="2">
+                  Understand source-to-target mapping, transformation
+                  rules, dependencies, quality and consumer expectations.
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         14 ENTERPRISE DATA MANAGEMENT
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          14 / Enterprise Data Management
+        </div>
+
+        <h2 class="section-title">
+          Managing data as an enterprise asset.
+        </h2>
+
+        <p class="section-intro">
+          Enterprise Data Management brings together the practices
+          required to make information usable, secure, governed and
+          consistent across a large organization.
+        </p>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-md-6 col-lg-4">
+            <div class="concept-card">
+              <h4>Data Architecture</h4>
+              <p class="text-muted mb-0">
+                How enterprise data platforms, domains, systems and
+                integration patterns fit together.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="concept-card">
+              <h4>Data Governance</h4>
+              <p class="text-muted mb-0">
+                Accountability, standards, definitions and controls.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="concept-card">
+              <h4>Data Quality</h4>
+              <p class="text-muted mb-0">
+                Processes for measuring and improving trustworthiness.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="concept-card">
+              <h4>Metadata Management</h4>
+              <p class="text-muted mb-0">
+                Definitions and context describing enterprise data.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="concept-card">
+              <h4>Master & Reference Data</h4>
+              <p class="text-muted mb-0">
+                Consistent shared information used across business processes.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="concept-card">
+              <h4>Lifecycle Management</h4>
+              <p class="text-muted mb-0">
+                Managing information from creation through retention
+                and disposition.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         15 CLOUD DATA
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="row g-5 align-items-center">
+
+          <div class="col-lg-5">
+
+            <div class="section-label">
+              15 / Cloud Data Platforms
+            </div>
+
+            <h2 class="section-title">
+              Modern data platforms separate storage, processing and consumption.
+            </h2>
+
+            <p class="section-intro">
+              A Data Product Owner should understand the conceptual
+              architecture even when engineers own implementation.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="study-card">
+
+              <h4>
+                <i class="fas fa-cloud me-2"></i>
+                Concepts to Understand
+              </h4>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <ul>
+                    <li>Cloud storage</li>
+                    <li>Data lakes</li>
+                    <li>Data warehouses</li>
+                    <li>Lakehouse architectures</li>
+                    <li>Batch processing</li>
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <ul>
+                    <li>Streaming data</li>
+                    <li>Compute layers</li>
+                    <li>Data pipelines</li>
+                    <li>APIs</li>
+                    <li>Analytics / BI consumption</li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         16 BANKING CONTROLS
+    ========================================================= -->
+
+    <section class="section-space dark-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          16 / Banking Data Controls
+        </div>
+
+        <h2 class="section-title">
+          Data products in banking operate inside a controlled environment.
+        </h2>
+
+        <p class="section-intro">
+          Financial institutions must consider not only whether data
+          is useful, but also whether it is appropriately controlled,
+          protected and governed.
+        </p>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-md-6 col-lg-3">
+            <div class="architecture-panel h-100">
+              <h4>Access Control</h4>
+              <p class="mb-0">
+                Who is authorized to access particular information?
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="architecture-panel h-100">
+              <h4>Data Classification</h4>
+              <p class="mb-0">
+                How sensitive is the information and how must it be handled?
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="architecture-panel h-100">
+              <h4>Retention</h4>
+              <p class="mb-0">
+                How long must information remain available?
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="architecture-panel h-100">
+              <h4>Traceability</h4>
+              <p class="mb-0">
+                Can the organization explain where important data originated?
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         17 AGILE DELIVERY
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="row g-5">
+
+          <div class="col-lg-5">
+
+            <div class="section-label">
+              17 / Agile Data Delivery
+            </div>
+
+            <h2 class="section-title">
+              Product ownership still starts with the backlog.
+            </h2>
+
+            <p class="section-intro">
+              Data stories often contain source-to-target requirements,
+              transformation logic, quality expectations and governance
+              requirements in addition to business behavior.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <div class="timeline-content">
+                  <h4>Discovery</h4>
+                  <p>
+                    Understand consumer needs, business outcome and
+                    existing data landscape.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <div class="timeline-content">
+                  <h4>Backlog Definition</h4>
+                  <p>
+                    Create epics, features, stories and acceptance criteria.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <div class="timeline-content">
+                  <h4>Technical Refinement</h4>
+                  <p>
+                    Clarify sources, transformations, interfaces and dependencies.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <div class="timeline-content">
+                  <h4>Build & Test</h4>
+                  <p>
+                    Engineering builds pipelines and data capabilities
+                    while quality is validated.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <div class="timeline-content">
+                  <h4>Consumer Validation</h4>
+                  <p>
+                    Confirm the delivered data satisfies intended business use.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-number">6</div>
+                <div class="timeline-content">
+                  <h4>Monitor & Improve</h4>
+                  <p>
+                    Track quality, adoption, reliability and future enhancements.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         18 USER STORY
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          18 / Example Data Story
+        </div>
+
+        <h2 class="section-title">
+          What does a Data Product Owner story look like?
+        </h2>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-lg-5">
+
+            <div class="study-card">
+
+              <span class="pill mb-3">
+                User Story
+              </span>
+
+              <h4>
+                Customer Account Data
+              </h4>
+
+              <p class="text-muted">
+                <strong>As a</strong> reporting analyst,
+                <strong>I want</strong> standardized customer account
+                status data available in the curated data layer
+                <strong>so that</strong> I can produce consistent
+                enterprise reporting.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="study-card">
+
+              <h4>
+                <i class="fas fa-list-check me-2"></i>
+                Example Acceptance Criteria
+              </h4>
+
+              <ul>
+                <li>
+                  Account status is sourced from the approved system of record.
+                </li>
+                <li>
+                  Source values are mapped to the approved enterprise definition.
+                </li>
+                <li>
+                  Null values are measured against an established quality threshold.
+                </li>
+                <li>
+                  Transformation logic is documented.
+                </li>
+                <li>
+                  Source-to-target lineage is available.
+                </li>
+                <li>
+                  Dataset ownership and metadata are documented.
+                </li>
+                <li>
+                  Authorized consumers can access the published data product.
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         19 KPIS
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="section-label">
+          19 / Product Metrics
+        </div>
+
+        <h2 class="section-title">
+          How do you know a data product is working?
+        </h2>
+
+        <div class="governance-grid">
+
+          <div class="governance-card">
+            <h4>Quality</h4>
+            <p>
+              Percentage of records meeting established data-quality rules.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Freshness</h4>
+            <p>
+              Whether data arrives within the expected availability window.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Reliability</h4>
+            <p>
+              Pipeline success, failures and availability.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Adoption</h4>
+            <p>
+              Number of consumers, applications or reports using the product.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Issue Resolution</h4>
+            <p>
+              Time required to identify and remediate data problems.
+            </p>
+          </div>
+
+          <div class="governance-card">
+            <h4>Business Value</h4>
+            <p>
+              Whether the data product improves the intended business outcome.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         20 TERMINOLOGY
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          20 / Terminology Cheat Sheet
+        </div>
+
+        <h2 class="section-title">
+          Terms to know for a Data Product Owner interview.
+        </h2>
+
+        <div class="table-responsive compare-table mt-5">
+
+          <table class="table table-striped">
+
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Simple Definition</th>
+                <th>Memory Example</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Data Product</td>
+                <td>
+                  Data packaged and managed to solve a specific consumer
+                  or business need.
+                </td>
+                <td>
+                  Governed dataset used by reports or applications.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Metadata</td>
+                <td>
+                  Information describing data—its meaning, structure,
+                  ownership and context.
+                </td>
+                <td>
+                  What does Customer_ID mean?
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Lineage</td>
+                <td>
+                  The path data takes from its original source through
+                  transformations to consumers.
+                </td>
+                <td>
+                  Pega → Analytics DB → Power BI
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Governance</td>
+                <td>
+                  Policies, roles, standards and processes used to
+                  manage data responsibly.
+                </td>
+                <td>
+                  Ownership + quality + lineage + access
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Quality</td>
+                <td>
+                  Whether data is sufficiently accurate, complete,
+                  consistent, timely and valid for its purpose.
+                </td>
+                <td>
+                  Can the consumer trust the data?
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Catalog</td>
+                <td>
+                  Searchable inventory helping users discover and
+                  understand enterprise data assets.
+                </td>
+                <td>
+                  Find the dataset and understand what it contains.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Owner</td>
+                <td>
+                  Business role accountable for a data domain or important data.
+                </td>
+                <td>
+                  Who is accountable?
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Steward</td>
+                <td>
+                  Role supporting definitions, standards, metadata and
+                  data-quality management.
+                </td>
+                <td>
+                  Who helps maintain the data?
+                </td>
+              </tr>
+
+              <tr>
+                <td>System of Record</td>
+                <td>
+                  Authoritative system recognized as the official source
+                  for particular information.
+                </td>
+                <td>
+                  Where should the official value come from?
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Ingestion</td>
+                <td>
+                  Bringing data into a platform for storage or processing.
+                </td>
+                <td>
+                  Bring source data into the analytics environment.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Movement</td>
+                <td>
+                  Transferring information from one location or system
+                  to another.
+                </td>
+                <td>
+                  Pega → Analytics DB
+                </td>
+              </tr>
+
+              <tr>
+                <td>Orchestration</td>
+                <td>
+                  Coordinating and scheduling the jobs in a data workflow.
+                </td>
+                <td>
+                  AutoSys coordinates scheduled jobs.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Translation</td>
+                <td>
+                  Mapping one representation of a value to another
+                  representation with the same underlying meaning.
+                </td>
+                <td>
+                  A → Active
+                </td>
+              </tr>
+
+              <tr>
+                <td>Transformation</td>
+                <td>
+                  Changing data's structure, format or values so it can
+                  support the target use.
+                </td>
+                <td>
+                  Pega BLOB → structured fields
+                </td>
+              </tr>
+
+              <tr>
+                <td>Consumption</td>
+                <td>
+                  Using prepared data in reports, applications, analytics
+                  or models.
+                </td>
+                <td>
+                  Analytics DB → Power BI
+                </td>
+              </tr>
+
+              <tr>
+                <td>ETL</td>
+                <td>
+                  Extract, Transform, Load.
+                </td>
+                <td>
+                  Transform before loading into the target.
+                </td>
+              </tr>
+
+              <tr>
+                <td>ELT</td>
+                <td>
+                  Extract, Load, Transform.
+                </td>
+                <td>
+                  Load first, then transform in the target.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Upstream</td>
+                <td>
+                  Systems or processes that provide data to your product.
+                </td>
+                <td>
+                  Where your data comes from.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Downstream</td>
+                <td>
+                  Systems, reports or consumers that depend on your data.
+                </td>
+                <td>
+                  Who depends on your data.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Critical Data Element</td>
+                <td>
+                  Data considered especially important to business,
+                  regulatory, risk or reporting processes.
+                </td>
+                <td>
+                  A field important enough to require stronger governance.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Source-to-Target Mapping</td>
+                <td>
+                  Documentation showing how source data maps into target
+                  structures and fields.
+                </td>
+                <td>
+                  Source field → transformation → target field
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         21 INTERVIEW PREP
+    ========================================================= -->
+
+    <section class="section-space dark-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          21 / Interview Prep
+        </div>
+
+        <h2 class="section-title">
+          Explain the concepts clearly without sounding overly technical.
+        </h2>
+
+        <p class="section-intro">
+          These are concise ways to frame the concepts during a
+          Product Owner or Data Product interview.
+        </p>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-lg-6">
+
+            <div class="interview-card">
+
+              <div class="question">
+                What is a Data Product Owner?
+              </div>
+
+              <h4>
+                Product ownership applied to data.
+              </h4>
+
+              <p class="mb-0">
+                A Data Product Owner treats data as a product. I would
+                focus on understanding the consumers and business outcomes,
+                prioritizing the backlog, and partnering with engineering,
+                architecture and governance to make sure the data is
+                accessible, understandable, reliable and properly governed.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="interview-card">
+
+              <div class="question">
+                What is data governance?
+              </div>
+
+              <h4>
+                Accountability and trust.
+              </h4>
+
+              <p class="mb-0">
+                Data governance establishes the ownership, definitions,
+                standards and controls around enterprise data. It helps
+                answer who owns the data, what it means, where it came
+                from, who can access it and whether it meets expected
+                quality standards.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="interview-card">
+
+              <div class="question">
+                What is data lineage?
+              </div>
+
+              <h4>
+                Trace the data from source to consumer.
+              </h4>
+
+              <p class="mb-0">
+                Data lineage shows how data travels from the original
+                source through ingestion and transformations to the final
+                report, application or other consumer. It is especially
+                useful for impact analysis, troubleshooting and governance.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="interview-card">
+
+              <div class="question">
+                What is metadata?
+              </div>
+
+              <h4>
+                Context about the data.
+              </h4>
+
+              <p class="mb-0">
+                Metadata is data about data. It provides context such as
+                the business definition, technical field name, datatype,
+                source, owner, classification and other information needed
+                to understand and use the data correctly.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="interview-card">
+
+              <div class="question">
+                Translation vs. transformation?
+              </div>
+
+              <h4>
+                Meaning vs. change.
+              </h4>
+
+              <p class="mb-0">
+                I remember translation as asking what a source value means.
+                For example, a coded value such as A may translate to Active.
+                Transformation is broader and changes the structure, format
+                or value of data. An example would be extracting information
+                from a Pega BLOB and restructuring it into fields that can
+                be used in an analytics database.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="interview-card">
+
+              <div class="question">
+                How technical should a Data PO be?
+              </div>
+
+              <h4>
+                Technical enough to connect the dots.
+              </h4>
+
+              <p class="mb-0">
+                I do not need to replace the data engineer or architect,
+                but I need enough technical understanding to discuss source
+                systems, tables, APIs, pipelines, transformations, lineage,
+                dependencies and quality so I can translate between business
+                and technical teams.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         22 MENTAL MODEL
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="row g-5 align-items-center">
+
+          <div class="col-lg-5">
+
+            <div class="section-label">
+              22 / Mental Model
+            </div>
+
+            <h2 class="section-title">
+              The six questions to ask about any data product.
+            </h2>
+
+            <p class="section-intro">
+              If you can answer these questions, you can usually understand
+              the product well enough to have a productive conversation
+              with business, governance and engineering teams.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="study-card">
+
+              <h4>
+                <i class="fas fa-brain me-2"></i>
+                Data Product Owner Checklist
+              </h4>
+
+              <ol class="text-muted mb-0">
+
+                <li class="mb-3">
+                  <strong>Where does the data come from?</strong><br />
+                  Identify the authoritative source and upstream systems.
+                </li>
+
+                <li class="mb-3">
+                  <strong>How does it get here?</strong><br />
+                  Understand ingestion, movement and interfaces.
+                </li>
+
+                <li class="mb-3">
+                  <strong>What happens to it?</strong><br />
+                  Understand transformation and business rules.
+                </li>
+
+                <li class="mb-3">
+                  <strong>What does it mean?</strong><br />
+                  Understand translation, metadata, definitions and ownership.
+                </li>
+
+                <li class="mb-3">
+                  <strong>Can we trust it?</strong><br />
+                  Understand quality rules, controls and monitoring.
+                </li>
+
+                <li>
+                  <strong>Who uses it and why?</strong><br />
+                  Understand consumers and the business outcome.
+                </li>
+
+              </ol>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         23 FINAL STUDY SUMMARY
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          23 / Study Summary
+        </div>
+
+        <h2 class="section-title">
+          Data Product Ownership connects business value to trusted data.
+        </h2>
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-lg-4">
+
+            <div class="role-card">
+
+              <h4>
+                <i class="fas fa-lightbulb me-2"></i>
+                Remember Product
+              </h4>
+
+              <ul>
+                <li>Consumer</li>
+                <li>Business problem</li>
+                <li>Vision</li>
+                <li>Roadmap</li>
+                <li>Backlog</li>
+                <li>Outcomes</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="role-card">
+
+              <h4>
+                <i class="fas fa-database me-2"></i>
+                Remember Data
+              </h4>
+
+              <ul>
+                <li>Source</li>
+                <li>Movement</li>
+                <li>Orchestration</li>
+                <li>Translation</li>
+                <li>Transformation</li>
+                <li>Consumption</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="role-card">
+
+              <h4>
+                <i class="fas fa-shield-halved me-2"></i>
+                Remember Governance
+              </h4>
+
+              <ul>
+                <li>Ownership</li>
+                <li>Metadata</li>
+                <li>Lineage</li>
+                <li>Quality</li>
+                <li>Access</li>
+                <li>Retention</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       SHARED FOOTER
+  ========================================================= -->
+
+  <div id="footer-placeholder"></div>
+
+
+  <!-- =========================================================
+       SCRIPTS
+  ========================================================= -->
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+
+  <script>
+    if (window.AOS) {
+      AOS.init({
+        duration: 750,
+        once: true,
+        offset: 70
+      });
+    }
+  </script>
+
+</body>
+</html>
