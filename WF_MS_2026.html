@@ -1,590 +1,3162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="images/favicon.png" />
-    <title>Faraz Uddin | Wells Fargo</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Navigation -->
-<div id="nav-placeholder"></div>
+  <title>Faraz Uddin | Wells Fargo Merchant Services — MSOW, RPA & SMB</title>
 
-    <!lasHeader -->
-    <header class="header">
-      <!-- Hero -->
-      <div class="hero text-white pt-7 pb-4">
+  <meta
+    name="description"
+    content="Wells Fargo Merchant Services case study covering MSOW, Risk Profile Assessment (RPA), Shared Mailbox (SMB), Pega workflows, integrations, Agile delivery and UAT."
+  />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Shared Site CSS -->
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- AOS Animation -->
+  <link
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --wf-red: #d71920;
+      --wf-red-dark: #a80f15;
+      --wf-ink: #171717;
+      --wf-charcoal: #242424;
+      --wf-muted: #667085;
+      --wf-light: #f6f7f9;
+      --wf-border: #e4e7ec;
+      --wf-white: #ffffff;
+      --wf-radius: 20px;
+      --wf-shadow: 0 18px 55px rgba(16, 24, 40, 0.09);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: var(--wf-ink);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    .case-study-page a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .text-wf-red {
+      color: var(--wf-red);
+    }
+
+    .section-space {
+      padding: 100px 0;
+    }
+
+    .section-space-sm {
+      padding: 68px 0;
+    }
+
+    .soft-section {
+      background: var(--wf-light);
+    }
+
+    .dark-section {
+      color: #fff;
+      background: linear-gradient(135deg, #151515, #252525);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--wf-red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 30px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--wf-red);
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 20px;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .section-intro {
+      max-width: 820px;
+      color: var(--wf-muted);
+      font-size: 1.05rem;
+    }
+
+    .dark-section .section-intro {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 135px 0 95px;
+      color: #fff;
+      background:
+        linear-gradient(
+          120deg,
+          #0f0f0f 0%,
+          #202020 68%,
+          #3a0b0d 100%
+        );
+    }
+
+    .hero::before {
+      position: absolute;
+      content: "";
+      width: 650px;
+      height: 650px;
+      right: -250px;
+      top: -300px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      position: absolute;
+      content: "";
+      width: 430px;
+      height: 430px;
+      right: -130px;
+      top: -185px;
+      border: 1px solid rgba(215, 25, 32, 0.55);
+      border-radius: 50%;
+    }
+
+    .hero-content,
+    .hero-side-card {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero-eyebrow span {
+      width: 34px;
+      height: 3px;
+      background: var(--wf-red);
+      border-radius: 99px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin-bottom: 24px;
+      font-size: clamp(2.8rem, 6vw, 5.7rem);
+      font-weight: 800;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-description {
+      max-width: 780px;
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 1.12rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-tag {
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .hero-side-card {
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--wf-radius);
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-side-card img {
+      max-width: 180px;
+      margin-bottom: 28px;
+    }
+
+    .hero-side-card small {
+      display: block;
+      margin-top: 15px;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-side-card p {
+      margin: 4px 0 0;
+      font-weight: 700;
+    }
+
+    .hero-bottom-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 5px;
+      background: var(--wf-red);
+    }
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
+    .stat-card,
+    .case-card,
+    .info-card,
+    .role-card,
+    .impact-card,
+    .study-card {
+      height: 100%;
+      border: 1px solid var(--wf-border);
+      border-radius: var(--wf-radius);
+      background: #fff;
+      box-shadow: var(--wf-shadow);
+    }
+
+    .stat-card {
+      padding: 28px;
+    }
+
+    .stat-number {
+      color: var(--wf-red);
+      font-size: 1.65rem;
+      font-weight: 800;
+    }
+
+    .stat-title {
+      margin: 5px 0 8px;
+      font-weight: 800;
+    }
+
+    .stat-description {
+      margin: 0;
+      color: var(--wf-muted);
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       MSOW PLATFORM MAP
+    ========================================================= */
+
+    .platform-map {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 42px;
+    }
+
+    .platform-parent {
+      grid-column: 1 / -1;
+      padding: 26px;
+      border-radius: var(--wf-radius);
+      color: #fff;
+      background: linear-gradient(135deg, #1a1a1a, #343434);
+      box-shadow: var(--wf-shadow);
+    }
+
+    .platform-parent strong {
+      color: #fff;
+      font-size: 1.35rem;
+    }
+
+    .platform-parent p {
+      margin: 7px 0 0;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .platform-child {
+      padding: 28px;
+      border: 1px solid var(--wf-border);
+      border-radius: var(--wf-radius);
+      background: #fff;
+      box-shadow: var(--wf-shadow);
+    }
+
+    .platform-child.rpa {
+      border-top: 5px solid var(--wf-red);
+    }
+
+    .platform-child.smb {
+      border-top: 5px solid #313131;
+    }
+
+    .platform-child h3 {
+      font-weight: 800;
+    }
+
+    .platform-child p {
+      color: var(--wf-muted);
+    }
+
+    .platform-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #98a2b3;
+      font-size: 1.4rem;
+    }
+
+    /* =========================================================
+       PRODUCT CARDS
+    ========================================================= */
+
+    .case-card {
+      overflow: hidden;
+    }
+
+    .case-card-top {
+      padding: 30px;
+      color: #fff;
+      background: linear-gradient(135deg, #252525, #3c3c3c);
+    }
+
+    .case-card-top.red {
+      background:
+        linear-gradient(
+          135deg,
+          var(--wf-red-dark),
+          var(--wf-red)
+        );
+    }
+
+    .case-card-number {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .case-card-number i {
+      font-size: 1.35rem;
+    }
+
+    .case-card-top h3 {
+      font-weight: 800;
+    }
+
+    .case-card-top p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .case-card-body {
+      padding: 30px;
+    }
+
+    .case-card-body ul,
+    .role-card ul,
+    .study-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .case-card-body li,
+    .role-card li,
+    .study-card li {
+      margin-bottom: 11px;
+      color: #475467;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--wf-red);
+      background: rgba(215, 25, 32, 0.08);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       ARCHITECTURE
+    ========================================================= */
+
+    .architecture-panel {
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--wf-radius);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .architecture-panel h3 {
+      font-weight: 800;
+    }
+
+    .architecture-panel > p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .flow-node {
+      flex: 1 1 145px;
+      min-width: 135px;
+      padding: 17px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 14px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .flow-node strong {
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .flow-node small {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.58);
+      line-height: 1.4;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--wf-red);
+    }
+
+    .architecture-note {
+      margin-top: 20px;
+      padding: 15px 18px;
+      border-left: 3px solid var(--wf-red);
+      color: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       WORKFLOW
+    ========================================================= */
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .workflow-step {
+      position: relative;
+      padding: 23px;
+      border: 1px solid var(--wf-border);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .workflow-step .step-no {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--wf-red);
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .workflow-step h4 {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .workflow-step p {
+      margin: 0;
+      color: var(--wf-muted);
+      font-size: 0.88rem;
+    }
+
+    /* =========================================================
+       COMPARISON TABLE
+    ========================================================= */
+
+    .compare-table {
+      overflow: hidden;
+      border: 1px solid var(--wf-border);
+      border-radius: var(--wf-radius);
+      box-shadow: var(--wf-shadow);
+    }
+
+    .compare-table table {
+      margin: 0;
+    }
+
+    .compare-table th {
+      padding: 18px;
+      color: #fff;
+      background: #202020;
+    }
+
+    .compare-table td {
+      padding: 17px 18px;
+      vertical-align: top;
+      border-color: var(--wf-border);
+    }
+
+    .compare-table td:first-child {
+      width: 22%;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       ROLE / STUDY
+    ========================================================= */
+
+    .role-card,
+    .study-card {
+      padding: 30px;
+    }
+
+    .role-card h4,
+    .study-card h4 {
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .role-card i,
+    .study-card i {
+      color: var(--wf-red);
+    }
+
+    /* =========================================================
+       TIMELINE
+    ========================================================= */
+
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      position: absolute;
+      content: "";
+      left: 20px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--wf-border);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .timeline-number {
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--wf-red);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .timeline-content {
+      padding: 20px 23px;
+      border: 1px solid var(--wf-border);
+      border-radius: 15px;
+      background: #fff;
+    }
+
+    .timeline-content h4 {
+      margin-bottom: 7px;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .timeline-content p {
+      margin: 0;
+      color: var(--wf-muted);
+    }
+
+    /* =========================================================
+       IMPACT
+    ========================================================= */
+
+    .impact-card {
+      padding: 30px;
+    }
+
+    .impact-card i {
+      margin-bottom: 20px;
+      color: var(--wf-red);
+      font-size: 1.6rem;
+    }
+
+    .impact-card h4 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .impact-card p {
+      margin-bottom: 0;
+      color: var(--wf-muted);
+      font-size: 0.92rem;
+    }
+
+    /* =========================================================
+       INTERVIEW PREP
+    ========================================================= */
+
+    .prep-box {
+      padding: 34px;
+      border-radius: var(--wf-radius);
+      color: #fff;
+      background:
+        linear-gradient(
+          135deg,
+          var(--wf-red-dark),
+          var(--wf-red)
+        );
+      box-shadow: var(--wf-shadow);
+    }
+
+    .prep-box h3 {
+      font-weight: 800;
+    }
+
+    .prep-answer {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      line-height: 1.8;
+    }
+
+    .quote-box {
+      padding: 42px;
+      border-left: 5px solid var(--wf-red);
+      border-radius:
+        0
+        var(--wf-radius)
+        var(--wf-radius)
+        0;
+      background: var(--wf-light);
+    }
+
+    .quote-box p {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 991px) {
+      .hero {
+        padding: 110px 0 80px;
+      }
+
+      .hero-side-card {
+        margin-top: 35px;
+      }
+
+      .section-space {
+        padding: 80px 0;
+      }
+
+      .platform-map {
+        grid-template-columns: 1fr;
+      }
+
+      .platform-parent {
+        grid-column: auto;
+      }
+
+      .platform-divider {
+        transform: rotate(90deg);
+        padding: 5px;
+      }
+
+      .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .hero {
+        padding: 95px 0 70px;
+      }
+
+      .hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .section-space {
+        padding: 65px 0;
+      }
+
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .architecture-panel {
+        padding: 25px;
+      }
+
+      .quote-box {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       SHARED NAVIGATION
+  ========================================================= -->
+
+  <div id="nav-placeholder"></div>
+
+
+  <main class="case-study-page">
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <header class="hero">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-8">
+
+            <div class="hero-content" data-aos="fade-up">
+
+              <div class="hero-eyebrow">
+                <span></span>
+                Wells Fargo Merchant Services
+              </div>
+
+              <h1>
+                MSOW:
+                <span class="text-wf-red">
+                  risk
+                </span>
+                and operational workflow modernization.
+              </h1>
+
+              <p class="hero-description">
+                Product Owner supporting MSOW — Merchant Services
+                Operational Workflow — a Pega-based application housing
+                two distinct business workflows: Risk Profile Assessment
+                (RPA) and Shared Mailbox (SMB).
+              </p>
+
+              <div class="hero-tags">
+
+                <span class="hero-tag">
+                  Product Ownership
+                </span>
+
+                <span class="hero-tag">
+                  Pega
+                </span>
+
+                <span class="hero-tag">
+                  Merchant Services
+                </span>
+
+                <span class="hero-tag">
+                  APIs
+                </span>
+
+                <span class="hero-tag">
+                  Email Listeners
+                </span>
+
+                <span class="hero-tag">
+                  Agile Delivery
+                </span>
+
+                <span class="hero-tag">
+                  UAT
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="hero-side-card" data-aos="fade-left">
+
+              <img
+                src="images/Wells_Fargo-Logo.wine.png"
+                alt="Wells Fargo logo"
+                class="img-fluid"
+              />
+
+              <small>
+                Role
+              </small>
+
+              <p>
+                Product Owner
+              </p>
+
+              <small>
+                Application
+              </small>
+
+              <p>
+                MSOW — Merchant Services Operational Workflow
+              </p>
+
+              <small>
+                Platform
+              </small>
+
+              <p>
+                Pega
+              </p>
+
+              <small>
+                Core Workflows
+              </small>
+
+              <p class="mb-0">
+                RPA & Shared Mailbox
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
-      <svg
-        class="frame-decoration"
-        data-name="Layer 2"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        viewBox="0 0 1920 192.275"
-      >
-        <defs>
-          <style>
-            .cls-1 {
-              fill: #ffffff;
-            }
-          </style>
-        </defs>
-        <title>frame-decoration</title>
-        <path
-          class="cls-1"
-          d="M0,158.755s63.9,52.163,179.472,50.736c121.494-1.5,185.839-49.738,305.984-49.733,109.21,0,181.491,51.733,300.537,50.233,123.941-1.562,225.214-50.126,390.43-50.374,123.821-.185,353.982,58.374,458.976,56.373,217.907-4.153,284.6-57.236,284.6-57.236V351.03H0V158.755Z"
-          transform="translate(0 -158.755)"
-        />
-      </svg>
+
+      <div class="hero-bottom-line"></div>
+
     </header>
 
-<!--
-  SECTION 1: INTRO
-  This is the top banner for the Wells Fargo case study. It shows the
-  company logo, your role title, a one-line summary of what you did,
-  and three high-level bullets. Think of this as the "elevator pitch"
-  before someone scrolls into the details.
--->
-<section class="bg-white py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <div class="col-lg-6 mx-auto mb-4">
-        <img class="img-fluid rounded-3 mb-4" 
-             src="images/Wells_Fargo-Logo.wine.png" 
-             alt="Wells Fargo Logo">
-      </div>
 
-      <h4 class="fw-bold mb-2">Wells Fargo Merchant Services — Product Owner</h4>
-      <p class="text-muted mb-4">
-        Product Owner supporting two Pega-based MVP applications across Governance, Risk &amp; Compliance (GRC) and operational workflows.
-      </p>
+    <!-- =========================================================
+         01 OVERVIEW
+    ========================================================= -->
 
-      <div class="col-lg-10 offset-lg-1 text-start">
-        <ul class="fa-ul lh-lg">
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Served as Product Owner for two Pega-based applications: <strong>Risk Profile Assessment (RPA)</strong> and <strong>Shared Mailbox (SMB)</strong>.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Partnered with Pega and cross-functional stakeholders to define, prioritize, and deliver MVP solutions for distinct business and operational needs.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Owned requirements, user stories, acceptance criteria, workflows, and backlog priorities across the product lifecycle.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="section-space">
 
-<!--
-  SECTION 2: RPA / SMB PROJECT TABS
-  This is the meat of the case study — a clickable tab widget that lets
-  a visitor toggle between your two projects (Risk Profile Assessment
-  and Shared Mailbox) without scrolling through both at once. Each tab
-  pane covers what the project was, what problem it solved, and what
-  you specifically owned.
--->
-<section class="bg-white py-5">
-  <div class="container">
-    <div class="row gx-5">
-      <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
-
-        <ul class="nav nav-tabs mb-4" id="projectTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="rpa-tab" data-bs-toggle="tab" data-bs-target="#rpa-pane" type="button" role="tab" aria-controls="rpa-pane" aria-selected="true">
-              Risk Profile Assessment (RPA)
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="smb-tab" data-bs-toggle="tab" data-bs-target="#smb-pane" type="button" role="tab" aria-controls="smb-pane" aria-selected="false">
-              Shared Mailbox (SMB)
-            </button>
-          </li>
-        </ul>
-
-        <div class="tab-content" id="projectTabsContent">
-
-          <!-- RPA Pane -->
-          <div class="tab-pane fade show active" id="rpa-pane" role="tabpanel" aria-labelledby="rpa-tab" tabindex="0">
-            <h4 class="fw-bold mb-2">Risk Profile Assessment (RPA)</h4>
-            <p class="text-muted mb-3">
-              Internal underwriting &amp; risk-monitoring tool for Merchant Services Risk &amp; Credit teams.
-            </p>
-            <ul class="fa-ul lh-lg">
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Owned the product vision for an internal underwriting tool supporting periodic merchant risk review (yearly, quarterly, monthly, or custom cadence).
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Led the migration of merchant risk analysis and underwriting workflows off an external vendor (Fiserv) onto an internal Wells Fargo platform, centralizing risk decisioning in-house.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Defined the core domain model &mdash; merchant information, risk exposure, risk rating, collateral, and credit approval amount &mdash; underpinning underwriting decisions.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Shaped requirements for the risk rating framework (Borrower, Collateral, and Asset Quality Ratings) and key exposure indicators such as chargebacks, refunds, and non-delivery exposure.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Partnered with Credit Officers, Risk &amp; Compliance, Change Managers, and onshore/offshore development teams to deliver the MVP.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Owned the Pega front-end experience and workflow, consuming APIs and Kafka event messages from the backend credit-decisioning team to drive review setup and merchant data display.
-              </li>
-            </ul>
-
-            <h5 class="fw-bold mb-2 mt-4">Hierarchy Updates</h5>
-            <p class="text-muted mb-3">
-              Updated MVP RPA to add merchant hierarchy functionality.
-            </p>
-            <ul class="fa-ul lh-lg">
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Led requirements to upgrade the merchant hierarchy integration from API V1 to V2, supporting updated hierarchy relationships and data structures.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Expanded processing-volume analysis from a 12- to 13-month review window, giving Risk and Credit users additional merchant activity for underwriting decisions.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Added functionality surfacing prior credit problems for high-risk merchants, improving visibility into historical risk indicators during underwriting.
-              </li>
-            </ul>
-          </div>
-
-          <!-- SMB Pane -->
-          <div class="tab-pane fade" id="smb-pane" role="tabpanel" aria-labelledby="smb-tab" tabindex="0">
-            <h4 class="fw-bold mb-2">Shared Mailbox (SMB) Workflow Migration</h4>
-            <p class="text-muted mb-3">Case-management application replacing manual, Outlook-based email handling with structured workflow and tracking.</p>
-
-            <ul class="fa-ul lh-lg">
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Owned the product vision for migrating the Merchant Services shared Outlook mailbox into a Pega-based case-management solution.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Addressed operational risk and SLA breaches caused by manual email triage, lack of case tracking, and limited visibility into queue volume and aging.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Defined the case model: Email Triage (ET) cases for incoming mail and linked Service Request (SR) cases for required actions, with routing rules maintained by an Admin role.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Partnered with Operations leads, Change Managers, and onshore/offshore development teams to define intake rules, routing logic, and case workflows.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Improved auditability and SLA compliance by replacing inbox-based tracking with structured case assignment, escalation paths, and reporting.
-              </li>
-              <li>
-                <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-                Used the SMB foundation to stand up follow-on shared mailboxes within Merchant Services, including a mailbox routing payments tied to an Illinois state tax/tip/fee law.
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--
-  SECTION 3: APPROACH & IMPACT
-  This zooms out from the two individual projects and shows HOW you
-  work as a Product Owner in general — discovery methods, story
-  writing standards, ceremonies you ran, and the reporting/tooling
-  transitions you managed. It's meant to demonstrate process maturity,
-  not just project outcomes.
--->
-<section class="bg-white py-5">
-  <div class="container">
-    <div class="row gx-5">
-      <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
-        <h4 class="fw-bold mb-2">Approach &amp; Impact</h4>
-
-        <ul class="fa-ul lh-lg">
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Ran discovery using stakeholder interviews and MoSCoW prioritization to scope each MVP against real operational pain points.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Wrote and refined stories against the INVEST framework, with Given/When/Then acceptance criteria covering happy path, edge cases, permissions, and integration behavior.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Drove backlog refinement, sprint planning, and sprint review/demo as the primary business voice across both applications.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Defined reporting requirements feeding the Pega &rarr; Power BI pipeline and Grafana dashboards, giving Risk and Operations leadership visibility into case aging, queue backlog, and RPA completion metrics.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Managed the platform transition from Pega's legacy Cosmos UI framework to the newer Constellation design system, navigating functionality gaps and stakeholder expectations along the way.
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--
-  SECTION 4: UAT (USER ACCEPTANCE TESTING)
-  This is a deep dive on one specific skill: running UAT. It's broken
-  into three parts — what you owned on the testing side, how you
-  coordinated the humans involved, and a step-by-step of your UAT
-  process end to end. Useful for interviewers who want to know you can
-  actually run a testing cycle, not just write requirements.
--->
-<section class="bg-white py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h4 class="fw-bold mb-2">UAT Testing</h4>
-      <p class="text-muted mb-4">
-        Owned User Acceptance Testing (UAT) planning and coordination for Pega-based MVP releases, ensuring business stakeholders validated functionality against acceptance criteria before go-live.
-      </p>
-    </div>
-
-    <!-- UAT Testing -->
-    <div class="row gx-5">
-      <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
-        <h5 class="fw-bold mb-2">UAT Testing</h5>
-        <ul class="fa-ul lh-lg">
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Owned the UAT test plan, translating user stories and acceptance criteria into test scenarios covering happy path, edge cases, and permission-based access.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Validated Pega workflow behavior against business requirements before handoff to end users, catching gaps between designed functionality and actual business need.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Tracked and triaged defects surfaced during UAT, working with development teams to prioritize fixes against release timelines.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Documented test results and obtained formal sign-off from business stakeholders prior to production deployment.
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- UAT Coordination -->
-    <div class="row gx-5">
-      <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
-        <h5 class="fw-bold mb-2">UAT Coordination</h5>
-        <ul class="fa-ul lh-lg">
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Recruited and scheduled business-side UAT testers across Risk, Credit, and Operations teams, matching tester coverage to feature scope.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Ran daily UAT stand-ups and status check-ins to surface blockers, track testing progress, and manage timeline risk ahead of release.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Served as the primary liaison between business testers and the development team, clarifying requirements and reproducing reported issues.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Coordinated with Change Managers to align UAT completion with release and deployment schedules.
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Key Steps to Conduct UAT -->
-    <div class="row gx-5">
-      <div class="col-lg-10 offset-lg-1 mb-4" data-aos="fade-up">
-        <h5 class="fw-bold mb-2">Key Steps to Conduct UAT</h5>
-        <ul class="fa-ul lh-lg">
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Defined UAT entry criteria, confirming the build was feature-complete and had passed QA/SIT before entering UAT.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Built test scripts mapped directly to acceptance criteria, so every story had a corresponding pass/fail scenario.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Set up a dedicated UAT environment with representative test data, avoiding false positives/negatives from stale or incomplete data.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Executed test scripts with business testers, logging results and defects in real time.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Triaged and retested defects, re-running affected scenarios after each fix.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Closed UAT with a formal sign-off from business stakeholders, confirming readiness for production release.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--
-  SECTION 5: AGILE DELIVERY PROCESS (SMB ONLY)
-  This section is specific to the Shared Mailbox project only — it
-  does not apply to RPA. It walks through the full delivery lifecycle
-  used for SMB: discovery, grooming, sprint-by-sprint MVP build with
-  UAT after each sprint, sprint demos for feedback and continuous
-  iteration, a final UAT signoff before prod launch, and a post-launch
-  warranty period for defects/enhancements plus Grafana reporting to
-  measure success once live.
--->
-<section class="bg-white py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h4 class="fw-bold mb-2">Agile Delivery Process — Shared Mailbox (SMB)</h4>
-      <p class="text-muted mb-0">
-        Delivery model used specifically for SMB — UAT after every sprint while building the MVP, sprint demos for stakeholder feedback, continuous iteration on that feedback, a final UAT signoff ahead of prod launch, and a post-launch warranty period with Grafana reporting to measure success.
-      </p>
-    </div>
-
-    <div class="row gx-4 text-center">
-
-      <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
-          <span class="fw-bold">1</span>
-        </div>
-        <h6 class="fw-bold mb-1">Discovery</h6>
-        <p class="text-muted small mb-0">
-          Interviewed Operations stakeholders to understand mailbox pain points, volume, and SLA risk before writing any requirements.
-        </p>
-      </div>
-
-      <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
-          <span class="fw-bold">2</span>
-        </div>
-        <h6 class="fw-bold mb-1">Groom Into Stories</h6>
-        <p class="text-muted small mb-0">
-          Broke discovery findings into INVEST-aligned backlog stories with clear acceptance criteria, ready for sprint planning.
-        </p>
-      </div>
-
-      <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
-          <span class="fw-bold">3</span>
-        </div>
-        <h6 class="fw-bold mb-1">Sprint Build &amp; UAT</h6>
-        <p class="text-muted small mb-0">
-          Built the MVP sprint by sprint, running UAT after each sprint to validate functionality as it was delivered.
-        </p>
-      </div>
-
-      <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
-          <span class="fw-bold">4</span>
-        </div>
-        <h6 class="fw-bold mb-1">Demo &amp; Iterate</h6>
-        <p class="text-muted small mb-0">
-          Ran sprint demos to gather stakeholder feedback and continuously iterated on the product based on that feedback.
-        </p>
-      </div>
-
-      <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
-          <span class="fw-bold">5</span>
-        </div>
-        <h6 class="fw-bold mb-1">Final UAT &amp; Launch</h6>
-        <p class="text-muted small mb-0">
-          Closed with a final UAT signoff from business stakeholders, then moved to production launch.
-        </p>
-      </div>
-
-      <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width:48px;height:48px;">
-          <span class="fw-bold">6</span>
-        </div>
-        <h6 class="fw-bold mb-1">Warranty &amp; Reporting</h6>
-        <p class="text-muted small mb-0">
-          Supported a post-go-live warranty period for defects and enhancements, and, where bandwidth allowed, built Grafana reporting to measure success.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!--
-  SECTION 5: AGILE DELIVERY PROCESS (SMB ONLY)
-  This delivery lifecycle applies specifically to the Shared Mailbox
-  modernization project. It covers discovery, backlog refinement,
-  sprint-based MVP delivery, UAT after each sprint, stakeholder demos,
-  continuous iteration, final UAT signoff, production launch, and
-  post-launch warranty and performance reporting.
--->
-
-<section class="bg-white py-5">
-  <div class="container">
-
-```
-<div class="text-center mb-5">
-  <h4 class="fw-bold mb-2">Agile Delivery Process — Shared Mailbox (SMB)</h4>
-  <p class="text-muted mb-0">
-    An iterative delivery model used specifically for SMB, combining
-    stakeholder discovery, sprint-based MVP delivery, continuous UAT
-    and feedback, final business signoff, and post-launch measurement.
-  </p>
-</div>
-
-<div class="row gx-4 text-center">
-
-  <!-- Step 1 -->
-  <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3"
-         style="width:48px;height:48px;">
-      <span class="fw-bold">1</span>
-    </div>
-    <h6 class="fw-bold mb-1">Discover</h6>
-    <p class="text-muted small mb-0">
-      Engaged Operations stakeholders to understand mailbox pain points,
-      workflow challenges, volume, and SLA risk before defining requirements.
-    </p>
-  </div>
-
-  <!-- Step 2 -->
-  <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3"
-         style="width:48px;height:48px;">
-      <span class="fw-bold">2</span>
-    </div>
-    <h6 class="fw-bold mb-1">Refine the Backlog</h6>
-    <p class="text-muted small mb-0">
-      Translated discovery findings into INVEST-aligned user stories
-      with clear acceptance criteria and prioritized the backlog for delivery.
-    </p>
-  </div>
-
-  <!-- Step 3 -->
-  <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3"
-         style="width:48px;height:48px;">
-      <span class="fw-bold">3</span>
-    </div>
-    <h6 class="fw-bold mb-1">Build &amp; Validate</h6>
-    <p class="text-muted small mb-0">
-      Delivered the MVP incrementally across sprints, with UAT performed
-      after each sprint to validate functionality and identify gaps early.
-    </p>
-  </div>
-
-  <!-- Step 4 -->
-  <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3"
-         style="width:48px;height:48px;">
-      <span class="fw-bold">4</span>
-    </div>
-    <h6 class="fw-bold mb-1">Demo &amp; Iterate</h6>
-    <p class="text-muted small mb-0">
-      Demonstrated sprint increments to stakeholders, captured feedback,
-      and refined the product and backlog through continuous iteration.
-    </p>
-  </div>
-
-  <!-- Step 5 -->
-  <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3"
-         style="width:48px;height:48px;">
-      <span class="fw-bold">5</span>
-    </div>
-    <h6 class="fw-bold mb-1">Sign Off &amp; Launch</h6>
-    <p class="text-muted small mb-0">
-      Completed final UAT, secured business stakeholder signoff,
-      and coordinated the production launch.
-    </p>
-  </div>
-
-  <!-- Step 6 -->
-  <div class="col-md-2 col-6 mb-4" data-aos="fade-up">
-    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3"
-         style="width:48px;height:48px;">
-      <span class="fw-bold">6</span>
-    </div>
-    <h6 class="fw-bold mb-1">Warranty &amp; Measure</h6>
-    <p class="text-muted small mb-0">
-      Supported the post-launch warranty period for defects and enhancements,
-      while using Grafana reporting to monitor adoption and operational results.
-    </p>
-  </div>
-
-</div>
-```
-
-  </div>
-</section>
-
-
-<!--
-  SECTION 6: SOCIAL / CONTACT
-  A simple closing bar with a link to your LinkedIn. Dark background so
-  it visually signals "end of this case study" before the page moves
-  on (or hits the footer).
--->
-<section class="social text-bg-dark py-6 overflow-hidden">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3 text-center fs-4">
-        <div class="social-icons d-flex justify-content-center gap-4">
-          <a href="https://www.linkedin.com/in/faraz-uddin-429b9a15a/">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!--Footer-->
-    <footer class="border-top border-primary bg-dark text-white py-4">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-4 text-center">
-            <p>
-              Hand Coded By Faraz Uddin
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/load-components.js"></script>
-  </body>
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-5" data-aos="fade-right">
+
+            <div class="section-label">
+              01 / Overview
+            </div>
+
+            <h2 class="section-title">
+              One Pega application supporting two very different
+              business problems.
+            </h2>
+
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+
+            <p class="section-intro mb-4">
+              I supported Wells Fargo Merchant Services through
+              <strong>MSOW — Merchant Services Operational Workflow</strong>,
+              a Pega-based application used to create structured,
+              trackable business workflows.
+            </p>
+
+            <p class="text-muted mb-4">
+              Within MSOW, I worked across two primary initiatives.
+              <strong>Risk Profile Assessment (RPA)</strong> supported
+              Merchant Services risk and credit review processes.
+              <strong>Shared Mailbox (SMB)</strong> focused on modernizing
+              email-driven operational work that had traditionally been
+              handled through Outlook shared mailboxes.
+            </p>
+
+            <p class="text-muted mb-0">
+              Although both workflows lived within MSOW and used Pega,
+              their integrations, data sources, users and business
+              processes were different. Understanding those differences
+              was an important part of translating business requirements
+              into executable product work.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         AT A GLANCE
+    ========================================================= -->
+
+    <section class="section-space-sm soft-section">
+
+      <div class="container">
+
+        <div class="row g-4">
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+          >
+
+            <div class="stat-card">
+
+              <div class="stat-number">
+                MSOW
+              </div>
+
+              <div class="stat-title">
+                Pega Application
+              </div>
+
+              <p class="stat-description">
+                Merchant Services Operational Workflow served as the
+                Pega application housing RPA and SMB workflows.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="stat-card">
+
+              <div class="stat-number">
+                RPA
+              </div>
+
+              <div class="stat-title">
+                Risk & Credit
+              </div>
+
+              <p class="stat-description">
+                Merchant risk-profile assessments supported by MSCD,
+                APIs and merchant-risk information.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="stat-card">
+
+              <div class="stat-number">
+                SMB
+              </div>
+
+              <div class="stat-title">
+                Operations
+              </div>
+
+              <p class="stat-description">
+                Shared-mailbox modernization using Outlook, email
+                listeners, Pega cases, queues and routing.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+
+            <div class="stat-card">
+
+              <div class="stat-number">
+                UAT
+              </div>
+
+              <div class="stat-title">
+                End-to-End Validation
+              </div>
+
+              <p class="stat-description">
+                Supported test planning, execution, defect triage,
+                retesting and business signoff.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         02 MSOW PLATFORM
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div data-aos="fade-up">
+
+          <div class="section-label">
+            02 / MSOW Platform
+          </div>
+
+          <h2 class="section-title">
+            MSOW was the application. RPA and SMB were workflows
+            within it.
+          </h2>
+
+          <p class="section-intro">
+            This distinction is important when explaining the
+            architecture. MSCD was not the backend for all of MSOW.
+            It specifically supported the RPA ecosystem, while SMB
+            relied primarily on Outlook/shared-mailbox integration
+            and Pega email-listener functionality.
+          </p>
+
+        </div>
+
+        <div class="platform-map" data-aos="fade-up">
+
+          <div class="platform-parent">
+
+            <strong>
+              MSOW — Merchant Services Operational Workflow
+            </strong>
+
+            <p>
+              Pega-based application providing workflow,
+              case-management and user-interface capabilities for
+              Merchant Services business processes.
+            </p>
+
+          </div>
+
+          <div class="platform-child rpa">
+
+            <span class="pill mb-3">
+              Workflow 01
+            </span>
+
+            <h3>
+              RPA
+            </h3>
+
+            <p>
+              Risk Profile Assessment supported merchant risk and
+              credit reviews.
+            </p>
+
+            <ul class="text-muted mb-0">
+
+              <li>
+                Merchant risk assessment
+              </li>
+
+              <li>
+                MSCD integration
+              </li>
+
+              <li>
+                API-driven merchant information
+              </li>
+
+              <li>
+                Credit exposure and collateral
+              </li>
+
+              <li>
+                Approval workflow
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="platform-divider">
+            <i class="fas fa-code-branch"></i>
+          </div>
+
+          <div class="platform-child smb">
+
+            <span class="pill mb-3">
+              Workflow 02
+            </span>
+
+            <h3>
+              SMB
+            </h3>
+
+            <p>
+              Shared Mailbox modernized email-driven Merchant Services
+              operational work.
+            </p>
+
+            <ul class="text-muted mb-0">
+
+              <li>
+                Outlook shared mailboxes
+              </li>
+
+              <li>
+                Email listeners
+              </li>
+
+              <li>
+                Pega case creation
+              </li>
+
+              <li>
+                Queues and worklists
+              </li>
+
+              <li>
+                Routing and resolution
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         03 PRODUCT PORTFOLIO
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="mb-5" data-aos="fade-up">
+
+          <div class="section-label">
+            03 / Product Portfolio
+          </div>
+
+          <h2 class="section-title">
+            Two workflows. Two integration patterns. One product
+            ownership approach.
+          </h2>
+
+          <p class="section-intro">
+            Both initiatives used Pega to create structured and
+            traceable workflows, but each addressed a different
+            Merchant Services business problem.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <!-- RPA -->
+
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <article class="case-card">
+
+              <div class="case-card-top red">
+
+                <div class="case-card-number">
+
+                  <span>
+                    Workflow 01
+                  </span>
+
+                  <i class="fas fa-shield-halved"></i>
+
+                </div>
+
+                <h3>
+                  Risk Profile Assessment
+                </h3>
+
+                <p>
+                  Internal merchant underwriting and risk-monitoring
+                  workflow for Merchant Services Risk and Credit teams.
+                </p>
+
+              </div>
+
+              <div class="case-card-body">
+
+                <span class="pill mb-4">
+                  Risk & Credit
+                </span>
+
+                <ul>
+
+                  <li>
+                    Supported periodic merchant reviews across yearly,
+                    quarterly, monthly and custom review cycles.
+                  </li>
+
+                  <li>
+                    Worked with merchant information, risk exposure,
+                    collateral, ratings and credit-approval information.
+                  </li>
+
+                  <li>
+                    Supported risk indicators including BQR, CQR, AQR,
+                    NDX, chargebacks and refunds.
+                  </li>
+
+                  <li>
+                    Worked with MSCD as an upstream Merchant Services
+                    credit-decisioning and data platform.
+                  </li>
+
+                  <li>
+                    MSOW consumed MSCD APIs to support the RPA workflow.
+                  </li>
+
+                  <li>
+                    Partnered with Risk, Credit, Compliance, Change
+                    Managers and development teams.
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <!-- SMB -->
+
+          <div
+            class="col-lg-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <article class="case-card">
+
+              <div class="case-card-top">
+
+                <div class="case-card-number">
+
+                  <span>
+                    Workflow 02
+                  </span>
+
+                  <i class="fas fa-inbox"></i>
+
+                </div>
+
+                <h3>
+                  Shared Mailbox
+                </h3>
+
+                <p>
+                  Pega case-management workflow designed to modernize
+                  fragmented Outlook-based operational handling.
+                </p>
+
+              </div>
+
+              <div class="case-card-body">
+
+                <span class="pill mb-4">
+                  Operations & Workflow
+                </span>
+
+                <ul>
+
+                  <li>
+                    Helped convert shared-mailbox activity into
+                    structured Pega cases.
+                  </li>
+
+                  <li>
+                    Supported email-listener behavior connecting
+                    Outlook/shared-mailbox activity with MSOW.
+                  </li>
+
+                  <li>
+                    Worked with worklists, unassigned queues and
+                    routing rules.
+                  </li>
+
+                  <li>
+                    Helped define relationships between ET cases and
+                    linked SR cases.
+                  </li>
+
+                  <li>
+                    Supported visibility into action-needed items,
+                    close times and operational follow-up.
+                  </li>
+
+                  <li>
+                    Partnered with Operations, Change Managers and
+                    developers through build, UAT and launch
+                    preparation.
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         04 TECHNICAL ARCHITECTURE
+    ========================================================= -->
+
+    <section class="section-space dark-section">
+
+      <div class="container">
+
+        <div class="mb-5" data-aos="fade-up">
+
+          <div class="section-label">
+            04 / Technical Context
+          </div>
+
+          <h2 class="section-title">
+            Understanding the integrations behind each workflow.
+          </h2>
+
+          <p class="section-intro">
+            As Product Owner, I did not implement every technical
+            component. My responsibility was to understand how those
+            components affected business behavior, requirements,
+            dependencies, testing and delivery.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <!-- RPA ARCHITECTURE -->
+
+          <div class="col-xl-6" data-aos="fade-right">
+
+            <div class="architecture-panel h-100">
+
+              <span class="pill mb-3">
+                RPA Architecture
+              </span>
+
+              <h3>
+                Merchant data → MSCD → MSOW
+              </h3>
+
+              <p>
+                RPA relied on merchant information and capabilities
+                supplied through the MSCD ecosystem.
+              </p>
+
+              <div class="flow">
+
+                <div class="flow-node">
+
+                  <strong>
+                    Fiserv / Merchant Data
+                  </strong>
+
+                  <small>
+                    Upstream merchant information
+                  </small>
+
+                </div>
+
+                <div class="flow-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="flow-node">
+
+                  <strong>
+                    MSCD
+                  </strong>
+
+                  <small>
+                    Credit decisioning, data and analysis
+                  </small>
+
+                </div>
+
+                <div class="flow-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="flow-node">
+
+                  <strong>
+                    MSCD APIs
+                  </strong>
+
+                  <small>
+                    Exposed data and functionality
+                  </small>
+
+                </div>
+
+                <div class="flow-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="flow-node">
+
+                  <strong>
+                    MSOW / RPA
+                  </strong>
+
+                  <small>
+                    Pega workflow and UI
+                  </small>
+
+                </div>
+
+                <div class="flow-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="flow-node">
+
+                  <strong>
+                    Risk / Credit
+                  </strong>
+
+                  <small>
+                    Review and decision
+                  </small>
+
+                </div>
+
+              </div>
+
+              <div class="architecture-note">
+                <strong>Key distinction:</strong>
+                MSCD was an upstream system and API provider for
+                <strong>RPA</strong>. MSOW/RPA was the downstream
+                consumer providing the Pega user experience and
+                workflow.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SMB ARCHITECTURE -->
+
+          <div class="col-xl-6" data-aos="fade-left">
+
+            <div class="architecture-panel h-100">
+
+              <span class="pill mb-3">
+                SMB Architecture
+              </span>
+
+              <h3>
+                Outlook → Email Listener → MSOW
+              </h3>
+
+              <p>
+                SMB used a different integration pattern centered
+                around email intake and operational case management.
+              </p>
+
+              <div class="flow">
+
+                <div class="flow-node">
+
+                  <strong>
+                    Outlook
+                  </strong>
+
+                  <small>
+                    Shared mailbox / incoming email
+                  </small>
+
+                </div>
+
+                <div class="flow-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="flow-node">
+
+                  <strong>
+                    Email Listener
+                  </strong>
+
+                  <small>
+                    Monitors and processes email
+                  </small>
+
+                </div>
+
+                <div class="flow-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="flow-node">
+
+                  <strong>
+                    MSOW / SMB
+                  </strong>
+
+                  <small>
+                    Creates structured Pega work
+                  </small>
+
+                </div>
+
+                <div class="flow-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="flow-node">
+
+                  <strong>
+                    ET / SR Cases
+                  </strong>
+
+                  <small>
+                    Case relationships
+                  </small>
+
+                </div>
+
+                <div class="flow-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="flow-node">
+
+                  <strong>
+                    Queue / Worklist
+                  </strong>
+
+                  <small>
+                    Routing and operational handling
+                  </small>
+
+                </div>
+
+              </div>
+
+              <div class="architecture-note">
+                <strong>Key distinction:</strong>
+                SMB was primarily an
+                <strong>email-listener and workflow-routing</strong>
+                solution. MSCD was not the backend for SMB.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         05 RPA DEEP DIVE
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="row g-5">
+
+          <div class="col-lg-5" data-aos="fade-right">
+
+            <div class="section-label">
+              05 / RPA Deep Dive
+            </div>
+
+            <h2 class="section-title">
+              Risk Profile Assessment.
+            </h2>
+
+            <p class="section-intro">
+              RPA supported Merchant Services Credit and Risk teams
+              in evaluating merchants and determining whether the
+              merchant's risk profile remained acceptable to the bank.
+            </p>
+
+            <div class="study-card mt-4">
+
+              <h4>
+                <i class="fas fa-database me-2"></i>
+                Important Systems
+              </h4>
+
+              <ul>
+
+                <li>
+                  <strong>MSOW:</strong>
+                  Pega workflow and UI.
+                </li>
+
+                <li>
+                  <strong>MSCD:</strong>
+                  upstream Merchant Services Credit Decisioning
+                  application/data platform.
+                </li>
+
+                <li>
+                  <strong>ICMP:</strong>
+                  enterprise document storage used for supporting
+                  documents.
+                </li>
+
+                <li>
+                  <strong>CAAMS:</strong>
+                  supported approver lookup for approval-related
+                  workflow.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+
+            <div class="study-card">
+
+              <h4>
+                <i class="fas fa-shield-halved me-2"></i>
+                What the Underwriter Reviewed
+              </h4>
+
+              <div class="row">
+
+                <div class="col-md-6">
+
+                  <ul>
+
+                    <li>
+                      Merchant profile information
+                    </li>
+
+                    <li>
+                      Merchant hierarchy
+                    </li>
+
+                    <li>
+                      Processing activity
+                    </li>
+
+                    <li>
+                      Risk exposure
+                    </li>
+
+                    <li>
+                      Risk ratings
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <ul>
+
+                    <li>
+                      Chargebacks and refunds
+                    </li>
+
+                    <li>
+                      Collateral
+                    </li>
+
+                    <li>
+                      Credit amount / exposure
+                    </li>
+
+                    <li>
+                      Bank relationship information
+                    </li>
+
+                    <li>
+                      Supporting documentation
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RPA WORKFLOW -->
+
+        <div class="mt-5 pt-4" data-aos="fade-up">
+
+          <h3 class="fw-bold">
+            Simplified RPA Workflow
+          </h3>
+
+          <p class="text-muted">
+            The exact path could vary depending on the review, but
+            the workflow can be explained through these major
+            business activities.
+          </p>
+
+          <div class="workflow-grid">
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                1
+              </div>
+
+              <h4>
+                Case Creation
+              </h4>
+
+              <p>
+                RPA initiated through periodic review activity or
+                risk/alert-related activity.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                2
+              </div>
+
+              <h4>
+                Merchant Review
+              </h4>
+
+              <p>
+                Review merchant profile, hierarchy, processing and
+                relevant risk information.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                3
+              </div>
+
+              <h4>
+                Risk Analysis
+              </h4>
+
+              <p>
+                Evaluate risk indicators, exposure, ratings and
+                processing behavior.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                4
+              </div>
+
+              <h4>
+                Gather Information
+              </h4>
+
+              <p>
+                Request additional information when needed, including
+                from Relationship Managers.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                5
+              </div>
+
+              <h4>
+                Documents
+              </h4>
+
+              <p>
+                Upload or reference supporting documentation through
+                the document-management process.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                6
+              </div>
+
+              <h4>
+                Bank Relationship
+              </h4>
+
+              <p>
+                Consider other products or services associated with
+                the merchant relationship.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                7
+              </div>
+
+              <h4>
+                Collateral
+              </h4>
+
+              <p>
+                Review collateral information as part of the overall
+                risk assessment.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                8
+              </div>
+
+              <h4>
+                Credit Exposure
+              </h4>
+
+              <p>
+                Evaluate the amount of processing-related credit risk
+                the bank is willing to assume.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                9
+              </div>
+
+              <h4>
+                Approval
+              </h4>
+
+              <p>
+                Route for appropriate approval where required.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                10
+              </div>
+
+              <h4>
+                Resolution
+              </h4>
+
+              <p>
+                Complete the assessment after analysis, documentation
+                and required approvals.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         06 SMB DEEP DIVE
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="row g-5">
+
+          <div class="col-lg-5" data-aos="fade-right">
+
+            <div class="section-label">
+              06 / SMB Deep Dive
+            </div>
+
+            <h2 class="section-title">
+              Shared Mailbox modernization.
+            </h2>
+
+            <p class="section-intro">
+              SMB addressed a different operational challenge:
+              business activity arriving through shared Outlook
+              mailboxes needed a more structured way to become
+              trackable work.
+            </p>
+
+            <p class="text-muted">
+              Rather than relying entirely on employees to manually
+              monitor, organize and track email activity, MSOW could
+              use email listeners and Pega case-management capabilities
+              to create structured operational work.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+
+            <div class="study-card">
+
+              <h4>
+                <i class="fas fa-envelope-open-text me-2"></i>
+                Key SMB Concepts
+              </h4>
+
+              <div class="row">
+
+                <div class="col-md-6">
+
+                  <ul>
+
+                    <li>
+                      Outlook shared mailboxes
+                    </li>
+
+                    <li>
+                      Email listeners
+                    </li>
+
+                    <li>
+                      Automated case creation
+                    </li>
+
+                    <li>
+                      ET cases
+                    </li>
+
+                    <li>
+                      Linked SR cases
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <ul>
+
+                    <li>
+                      Worklists
+                    </li>
+
+                    <li>
+                      Unassigned queues
+                    </li>
+
+                    <li>
+                      Routing rules
+                    </li>
+
+                    <li>
+                      Action-needed work
+                    </li>
+
+                    <li>
+                      Close-time reporting
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SMB WORKFLOW -->
+
+        <div class="mt-5 pt-4" data-aos="fade-up">
+
+          <h3 class="fw-bold">
+            Simplified SMB Workflow
+          </h3>
+
+          <p class="text-muted">
+            SMB converted incoming email activity into structured
+            operational work that could be assigned, tracked and
+            resolved inside Pega.
+          </p>
+
+          <div class="workflow-grid">
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                1
+              </div>
+
+              <h4>
+                Email Received
+              </h4>
+
+              <p>
+                Business request or communication arrives in an
+                Outlook shared mailbox.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                2
+              </div>
+
+              <h4>
+                Email Listener
+              </h4>
+
+              <p>
+                The configured listener monitors the mailbox and
+                processes incoming email.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                3
+              </div>
+
+              <h4>
+                Pega Case
+              </h4>
+
+              <p>
+                Email activity becomes structured work within the
+                MSOW Shared Mailbox workflow.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                4
+              </div>
+
+              <h4>
+                ET Case
+              </h4>
+
+              <p>
+                Email-related activity is represented and tracked
+                through the appropriate case structure.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                5
+              </div>
+
+              <h4>
+                SR Relationship
+              </h4>
+
+              <p>
+                Where applicable, related Service Request cases can
+                be linked to the email-driven work.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                6
+              </div>
+
+              <h4>
+                Queue / Worklist
+              </h4>
+
+              <p>
+                Work is placed into the appropriate queue, worklist
+                or unassigned inventory.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                7
+              </div>
+
+              <h4>
+                Routing
+              </h4>
+
+              <p>
+                Business rules help route work to the appropriate
+                operational user or team.
+              </p>
+
+            </div>
+
+            <div class="workflow-step">
+
+              <div class="step-no">
+                8
+              </div>
+
+              <h4>
+                Resolution
+              </h4>
+
+              <p>
+                Users complete the required work while Pega provides
+                case history and operational visibility.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         07 RPA VS SMB
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="mb-5" data-aos="fade-up">
+
+          <div class="section-label">
+            07 / Compare the Workflows
+          </div>
+
+          <h2 class="section-title">
+            RPA vs. SMB.
+          </h2>
+
+          <p class="section-intro">
+            This comparison is useful when explaining the breadth of
+            the MSOW work during an interview.
+          </p>
+
+        </div>
+
+        <div class="table-responsive compare-table" data-aos="fade-up">
+
+          <table class="table table-striped">
+
+            <thead>
+
+              <tr>
+                <th>
+                  Area
+                </th>
+
+                <th>
+                  RPA
+                </th>
+
+                <th>
+                  SMB
+                </th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+
+                <td>
+                  Full Name
+                </td>
+
+                <td>
+                  Risk Profile Assessment
+                </td>
+
+                <td>
+                  Shared Mailbox
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Parent Application
+                </td>
+
+                <td>
+                  MSOW / Pega
+                </td>
+
+                <td>
+                  MSOW / Pega
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Primary Business Problem
+                </td>
+
+                <td>
+                  Merchant risk and credit assessment
+                </td>
+
+                <td>
+                  Email-driven operational case management
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Primary Integration
+                </td>
+
+                <td>
+                  MSCD APIs and merchant data
+                </td>
+
+                <td>
+                  Outlook/shared mailbox and email listeners
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  MSCD Involvement
+                </td>
+
+                <td>
+                  Yes — upstream data/application and API provider
+                </td>
+
+                <td>
+                  No — MSCD was not the SMB backend
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Main Users
+                </td>
+
+                <td>
+                  Risk / Credit / Underwriting
+                </td>
+
+                <td>
+                  Merchant Services operational teams
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Key Data / Work
+                </td>
+
+                <td>
+                  Merchant information, exposure, ratings,
+                  collateral, documents and approvals
+                </td>
+
+                <td>
+                  Incoming emails, ET/SR cases, queues,
+                  assignments, routing and follow-up
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Core PO Challenge
+                </td>
+
+                <td>
+                  Translate risk rules, data dependencies and
+                  integration behavior into usable workflow
+                </td>
+
+                <td>
+                  Translate manual email operations into structured,
+                  trackable case-management behavior
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         DATA & ARCHITECTURE TERMINOLOGY
+    ========================================================= -->
+
+    <section class="section-space dark-section">
+
+      <div class="container">
+
+        <div class="mb-5" data-aos="fade-up">
+
+          <div class="section-label">
+            Data & Architecture
+          </div>
+
+          <h2 class="section-title">
+            Technical terminology I used around the products.
+          </h2>
+
+          <p class="section-intro">
+            Understanding these concepts helped bridge conversations
+            between business stakeholders, developers and other
+            technical teams.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-3">
+
+            <div class="architecture-panel h-100">
+
+              <h4>
+                Data Source
+              </h4>
+
+              <p class="mb-0">
+                The originating source of information—for example
+                merchant data entering the RPA ecosystem or email
+                entering SMB.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+
+            <div class="architecture-panel h-100">
+
+              <h4>
+                Data Ingestion
+              </h4>
+
+              <p class="mb-0">
+                Bringing information into a system so it can be
+                stored, processed or used by a workflow.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+
+            <div class="architecture-panel h-100">
+
+              <h4>
+                Transformation
+              </h4>
+
+              <p class="mb-0">
+                Changing the structure, format or representation of
+                data so the receiving system can use it.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+
+            <div class="architecture-panel h-100">
+
+              <h4>
+                API Consumer
+              </h4>
+
+              <p class="mb-0">
+                The application calling an API. In the RPA
+                relationship, MSOW consumed capabilities exposed
+                by MSCD.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         08 MY CONTRIBUTION
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="mb-5" data-aos="fade-up">
+
+          <div class="section-label">
+            08 / My Contribution
+          </div>
+
+          <h2 class="section-title">
+            Where I added value as a Product Owner.
+          </h2>
+
+          <p class="section-intro">
+            My contribution combined product ownership, business
+            analysis, stakeholder coordination, technical translation
+            and quality validation.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-4" data-aos="fade-up">
+
+            <div class="role-card">
+
+              <h4>
+                <i class="fas fa-list-check me-2"></i>
+                Product & Backlog
+              </h4>
+
+              <ul>
+
+                <li>
+                  Translated stakeholder needs into user stories.
+                </li>
+
+                <li>
+                  Defined acceptance criteria, including
+                  Gherkin-style scenarios.
+                </li>
+
+                <li>
+                  Supported refinement, prioritization and sprint
+                  readiness.
+                </li>
+
+                <li>
+                  Clarified scope, dependencies and sequencing.
+                </li>
+
+                <li>
+                  Maintained a forward-looking backlog for upcoming
+                  work.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+
+            <div class="role-card">
+
+              <h4>
+                <i class="fas fa-users me-2"></i>
+                Stakeholder Partnership
+              </h4>
+
+              <ul>
+
+                <li>
+                  Worked across Risk, Credit, Compliance and
+                  Operations.
+                </li>
+
+                <li>
+                  Partnered with Change Managers and development
+                  teams.
+                </li>
+
+                <li>
+                  Clarified business rules and workflow behavior.
+                </li>
+
+                <li>
+                  Connected business outcomes to technical
+                  discussions.
+                </li>
+
+                <li>
+                  Used demos and feedback to refine the product.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div
+            class="col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+
+            <div class="role-card">
+
+              <h4>
+                <i class="fas fa-vial me-2"></i>
+                Quality & UAT
+              </h4>
+
+              <ul>
+
+                <li>
+                  Prepared UAT scenarios mapped to stories and
+                  criteria.
+                </li>
+
+                <li>
+                  Covered happy paths, edge cases and permissions.
+                </li>
+
+                <li>
+                  Validated routing, queues, notifications and
+                  business rules.
+                </li>
+
+                <li>
+                  Coordinated defect triage, retesting and status
+                  updates.
+                </li>
+
+                <li>
+                  Supported formal business signoff before launch.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         09 DELIVERY APPROACH
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="row g-5">
+
+          <div class="col-lg-5" data-aos="fade-right">
+
+            <div class="section-label">
+              09 / Delivery Approach
+            </div>
+
+            <h2 class="section-title">
+              From discovery to production with feedback built in.
+            </h2>
+
+            <p class="section-intro">
+              The work followed iterative Agile delivery. The goal
+              was not just to write requirements—it was to
+              continuously move from business problem to testable
+              functionality and validated outcomes.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+
+                <div class="timeline-number">
+                  1
+                </div>
+
+                <div class="timeline-content">
+
+                  <h4>
+                    Discovery & Alignment
+                  </h4>
+
+                  <p>
+                    Understand the problem, users, current process,
+                    desired behavior and constraints.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="timeline-number">
+                  2
+                </div>
+
+                <div class="timeline-content">
+
+                  <h4>
+                    Requirements & Refinement
+                  </h4>
+
+                  <p>
+                    Break needs into stories, acceptance criteria,
+                    dependencies and sprint-ready scope.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="timeline-number">
+                  3
+                </div>
+
+                <div class="timeline-content">
+
+                  <h4>
+                    Sprint Build
+                  </h4>
+
+                  <p>
+                    Partner with developers and stakeholders as
+                    functionality is implemented incrementally.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="timeline-number">
+                  4
+                </div>
+
+                <div class="timeline-content">
+
+                  <h4>
+                    UAT & Defect Triage
+                  </h4>
+
+                  <p>
+                    Validate end-to-end behavior, log defects,
+                    prioritize issues and coordinate retesting.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="timeline-number">
+                  5
+                </div>
+
+                <div class="timeline-content">
+
+                  <h4>
+                    Demo, Signoff & Launch
+                  </h4>
+
+                  <p>
+                    Demonstrate functionality, incorporate feedback,
+                    secure business approval and support production
+                    readiness.
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="timeline-number">
+                  6
+                </div>
+
+                <div class="timeline-content">
+
+                  <h4>
+                    Warranty & Reporting
+                  </h4>
+
+                  <p>
+                    Support post-launch follow-up, operational
+                    visibility and reporting needs.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         10 UAT
+    ========================================================= -->
+
+    <section class="section-space">
+
+      <div class="container">
+
+        <div class="row g-5 align-items-center">
+
+          <div class="col-lg-6" data-aos="fade-right">
+
+            <div class="section-label">
+              10 / UAT
+            </div>
+
+            <h2 class="section-title">
+              Validating the business process, not just the screen.
+            </h2>
+
+            <p class="section-intro">
+              For enterprise workflows, a screen can function
+              correctly while the overall business process still
+              fails. UAT focused on whether the complete journey
+              supported real users, rules, routing and dependencies.
+            </p>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+
+            <div class="study-card">
+
+              <h4>
+                <i class="fas fa-circle-check me-2"></i>
+                UAT Coverage
+              </h4>
+
+              <ul>
+
+                <li>
+                  Confirm entry criteria after QA/system integration
+                  testing.
+                </li>
+
+                <li>
+                  Map test scripts to user stories and acceptance
+                  criteria.
+                </li>
+
+                <li>
+                  Validate happy-path, negative, edge-case and
+                  permission scenarios.
+                </li>
+
+                <li>
+                  Test workflow routing, queues, notifications and
+                  business rules.
+                </li>
+
+                <li>
+                  Coordinate daily status, defect triage and
+                  retesting.
+                </li>
+
+                <li>
+                  Support final business signoff before production
+                  launch.
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         11 OUTCOMES
+    ========================================================= -->
+
+    <section class="section-space soft-section">
+
+      <div class="container">
+
+        <div class="mb-5" data-aos="fade-up">
+
+          <div class="section-label">
+            11 / Outcomes
+          </div>
+
+          <h2 class="section-title">
+            Creating structure, traceability and operational
+            visibility.
+          </h2>
+
+          <p class="section-intro">
+            The work helped move complex business activity into
+            defined workflows with clearer ownership and more
+            consistent case history.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-3">
+
+            <div class="impact-card">
+
+              <i class="fas fa-diagram-project"></i>
+
+              <h4>
+                Structured Workflows
+              </h4>
+
+              <p>
+                Converted risk and email-driven activities into
+                defined Pega case processes.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+
+            <div class="impact-card">
+
+              <i class="fas fa-eye"></i>
+
+              <h4>
+                Better Visibility
+              </h4>
+
+              <p>
+                Supported visibility into case status,
+                action-needed work, progress and close times.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+
+            <div class="impact-card">
+
+              <i class="fas fa-link"></i>
+
+              <h4>
+                Clearer Dependencies
+              </h4>
+
+              <p>
+                Connected product requirements to APIs, data
+                sources, email listeners and supporting systems.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+
+            <div class="impact-card">
+
+              <i class="fas fa-users-gear"></i>
+
+              <h4>
+                Cross-Functional Delivery
+              </h4>
+
+              <p>
+                Aligned business users, Change Managers, developers
+                and testing partners around shared outcomes.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+  </main>
+
+
+  <!-- =========================================================
+       SHARED FOOTER
+  ========================================================= -->
+
+  <div id="footer-placeholder"></div>
+
+
+  <!-- =========================================================
+       SCRIPTS
+  ========================================================= -->
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <script
+    src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+  ></script>
+
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+
+  <script>
+    if (window.AOS) {
+      AOS.init({
+        duration: 750,
+        once: true,
+        offset: 70
+      });
+    }
+  </script>
+
+</body>
 </html>
