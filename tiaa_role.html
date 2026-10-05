@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Forms Transformation Product Management | Portfolio</title>
+
+  <style>
+    :root {
+      --navy: #07182d;
+      --navy-light: #102a49;
+      --blue: #2563eb;
+      --blue-light: #dbeafe;
+      --cyan: #0891b2;
+      --green: #059669;
+      --green-light: #d1fae5;
+      --orange: #ea580c;
+      --orange-light: #ffedd5;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --red: #dc2626;
+      --red-light: #fee2e2;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      color: var(--gray-900);
+      background: var(--gray-50);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 24, 45, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      color: white;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      color: white;
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(37,99,235,.35), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(8,145,178,.22), transparent 30%),
+        linear-gradient(135deg, #07182d, #102a49);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #93c5fd;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.03;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      color: #cbd5e1;
+      font-size: 1.15rem;
+    }
+
+    .hero-tags {
+      margin-top: 35px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-tag {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.07);
+      color: #e2e8f0;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-header {
+      margin-bottom: 42px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      max-width: 760px;
+      color: var(--gray-600);
+      font-size: 1.05rem;
+    }
+
+    .dark-section {
+      background: var(--navy);
+      color: white;
+    }
+
+    .dark-section .section-header p {
+      color: #cbd5e1;
+    }
+
+    /* CORE IDEA */
+
+    .big-idea {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+    }
+
+    .big-idea h3 {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+
+    .big-idea strong {
+      color: var(--blue);
+    }
+
+    /* FLOW */
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 35px;
+    }
+
+    .flow-step {
+      position: relative;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 25px 18px;
+      text-align: center;
+    }
+
+    .flow-number {
+      width: 35px;
+      height: 35px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue);
+      color: white;
+      font-weight: 800;
+    }
+
+    .flow-step h4 {
+      margin-bottom: 6px;
+    }
+
+    .flow-step p {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 30px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(15,23,42,.08);
+    }
+
+    .card-number {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--gray-600);
+    }
+
+    .example {
+      margin-top: 17px;
+      padding: 14px 16px;
+      background: var(--gray-50);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    /* TRANSFORMATION */
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .state {
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    .manual {
+      background: var(--red-light);
+      border: 1px solid #fecaca;
+    }
+
+    .future {
+      background: var(--green-light);
+      border: 1px solid #a7f3d0;
+    }
+
+    .state h3 {
+      margin-bottom: 18px;
+    }
+
+    .state ul {
+      padding-left: 20px;
+    }
+
+    .state li {
+      margin-bottom: 10px;
+    }
+
+    .arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    /* PIPELINE */
+
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .pipeline span {
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,.1);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .pipeline b {
+      color: #60a5fa;
+    }
+
+    /* EXAMPLE FORM */
+
+    .case-study {
+      background: white;
+      border-radius: 24px;
+      padding: 38px;
+      border: 1px solid var(--gray-200);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 28px;
+    }
+
+    .case-box {
+      padding: 25px;
+      border-radius: 16px;
+      background: var(--gray-50);
+    }
+
+    .case-box h4 {
+      margin-bottom: 13px;
+      color: var(--blue);
+    }
+
+    .case-box ul {
+      padding-left: 20px;
+    }
+
+    .case-box li {
+      margin-bottom: 8px;
+    }
+
+    /* PRIORITIZATION */
+
+    .formula {
+      padding: 35px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--blue), #4338ca);
+      color: white;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    /* METRICS */
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .metric {
+      background: white;
+      color: var(--gray-900);
+      border-radius: 16px;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--blue);
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      color: var(--gray-600);
+      font-size: .9rem;
+    }
+
+    /* STAKEHOLDERS */
+
+    .stakeholders {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .stakeholder {
+      padding: 11px 17px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      font-weight: 700;
+      color: var(--gray-700);
+    }
+
+    /* CHEAT SHEET */
+
+    .cheat {
+      display: grid;
+      gap: 15px;
+    }
+
+    .cheat-row {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 20px 22px;
+    }
+
+    .cheat-row strong {
+      color: #93c5fd;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 45px 0;
+      background: #030b16;
+      color: #94a3b8;
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cards,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .flow,
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .big-idea,
+      .case-study {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="container nav-inner">
+    <div class="brand">Forms Transformation</div>
+
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#concepts">10 Concepts</a>
+      <a href="#transformation">Transformation</a>
+      <a href="#example">Example</a>
+      <a href="#metrics">KPIs</a>
+      <a href="#interview">Interview</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="container">
+
+    <span class="eyebrow">Product Management Study Guide</span>
+
+    <h1>
+      Forms Transformation
+      & Process Automation
+    </h1>
+
+    <p>
+      A product management framework for transforming manual,
+      paper-based and PDF workflows into simplified digital experiences,
+      automated processes and integrated enterprise solutions.
+    </p>
+
+    <div class="hero-tags">
+      <span class="hero-tag">Product Management</span>
+      <span class="hero-tag">Digital Transformation</span>
+      <span class="hero-tag">Workflow Automation</span>
+      <span class="hero-tag">APIs</span>
+      <span class="hero-tag">Data Quality</span>
+      <span class="hero-tag">Financial Services</span>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- OVERVIEW -->
+
+<section id="overview">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>The Big Idea</h2>
+      <p>
+        Forms transformation is much larger than converting a PDF
+        into an online form.
+      </p>
+    </div>
+
+    <div class="big-idea">
+
+      <h3>
+        Don't just <strong>digitize the form.</strong>
+        Transform the <strong>business process around it.</strong>
+      </h3>
+
+      <p>
+        The Product Manager examines why the form exists, what information
+        is actually required, how customers interact with it, what happens
+        after submission, which systems need the data, and where manual
+        work can be eliminated.
+      </p>
+
+      <div class="flow">
+
+        <div class="flow-step">
+          <div class="flow-number">1</div>
+          <h4>Inventory</h4>
+          <p>Understand what forms exist.</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-number">2</div>
+          <h4>Rationalize</h4>
+          <p>Keep, combine or eliminate.</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-number">3</div>
+          <h4>Redesign</h4>
+          <p>Simplify the experience.</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-number">4</div>
+          <h4>Automate</h4>
+          <p>Remove manual processing.</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-number">5</div>
+          <h4>Measure</h4>
+          <p>Track business outcomes.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- 10 CONCEPTS -->
+
+<section id="concepts">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow" style="color:#2563eb;">Core Knowledge</span>
+      <h2>10 Things to Know</h2>
+      <p>
+        The core concepts a Product Manager should understand when
+        leading a forms modernization program in financial services.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-number">1</div>
+        <h3>Forms Inventory & Rationalization</h3>
+        <p>
+          Understand what forms exist, who uses them, transaction volume,
+          business purpose and whether multiple forms perform the same function.
+        </p>
+
+        <div class="example">
+          <strong>Decision:</strong>
+          Keep → Consolidate → Redesign → Digitize → Eliminate
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">2</div>
+        <h3>Current State → Future State</h3>
+        <p>
+          Map how the process works today and design a more efficient
+          future-state customer and operational experience.
+        </p>
+
+        <div class="example">
+          PDF → Customer → Signature → Upload → Operations →
+          Manual Entry becomes a connected digital workflow.
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">3</div>
+        <h3>Digitization vs Automation</h3>
+
+        <p>
+          Digitization converts a manual form into a digital experience.
+          Automation removes manual work from the process surrounding it.
+        </p>
+
+        <div class="example">
+          A fillable PDF is digital. If Operations still manually rekeys
+          the information, the process is not fully automated.
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">4</div>
+        <h3>Business Rules & Validation</h3>
+
+        <p>
+          Digital forms can validate information before submission,
+          preventing incomplete or invalid requests.
+        </p>
+
+        <div class="example">
+          Required fields • Account validation • Date validation •
+          Eligibility rules • Conditional logic
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">5</div>
+        <h3>Dynamic & Conditional Forms</h3>
+
+        <p>
+          Instead of presenting every possible question, the form dynamically
+          changes based on the customer's previous answers.
+        </p>
+
+        <div class="example">
+          IF Account Type = IRA → display IRA questions.<br>
+          IF Married = Yes → display spouse information.
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">6</div>
+        <h3>Workflow & Orchestration</h3>
+
+        <p>
+          Understand what happens after the customer clicks Submit.
+          The Product Manager should understand the entire workflow,
+          not only the form interface.
+        </p>
+
+        <div class="example">
+          Submission → Validation → Signature → Review →
+          Approval → Processing → Confirmation
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">7</div>
+        <h3>APIs & System Integration</h3>
+
+        <p>
+          APIs allow information collected from the digital experience
+          to move directly into downstream systems without employees
+          manually entering the same information again.
+        </p>
+
+        <div class="example">
+          Digital Form → API → Account / Transaction System
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">8</div>
+        <h3>Data Mapping & Data Quality</h3>
+
+        <p>
+          Every field should have a clear definition and destination.
+          Data collected from the customer must map correctly into
+          enterprise systems.
+        </p>
+
+        <div class="example">
+          First Name → Customer.FirstName<br>
+          Account Number → Account.ID<br>
+          Amount → Transaction.Amount
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">9</div>
+        <h3>Compliance, Records & Auditability</h3>
+
+        <p>
+          Financial forms can contain regulatory, legal, privacy,
+          accessibility, signature and record-retention requirements.
+        </p>
+
+        <div class="example">
+          Who submitted it? Who changed it? When was it signed?
+          What version was signed? Where is the record retained?
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-number">10</div>
+        <h3>Metrics & Prioritization</h3>
+
+        <p>
+          Forms should be prioritized according to customer impact,
+          operational cost, volume, risk and technical feasibility.
+        </p>
+
+        <div class="example">
+          High-volume + high-error + high-manual-effort forms
+          are strong transformation candidates.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TRANSFORMATION -->
+
+<section id="transformation">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Manual → Automated</h2>
+
+      <p>
+        The Product Manager identifies unnecessary steps and designs
+        a simpler future-state workflow.
+      </p>
+    </div>
+
+
+    <div class="comparison">
+
+      <div class="state manual">
+
+        <h3>❌ Current State</h3>
+
+        <ul>
+          <li>Customer downloads PDF</li>
+          <li>Customer manually completes fields</li>
+          <li>Customer signs document</li>
+          <li>Form is uploaded, mailed or emailed</li>
+          <li>Operations manually reviews submission</li>
+          <li>Employee rekeys information</li>
+          <li>Missing information causes rework</li>
+          <li>Customer waits for processing</li>
+        </ul>
+
+      </div>
+
+
+      <div class="arrow">→</div>
+
+
+      <div class="state future">
+
+        <h3>✓ Future State</h3>
+
+        <ul>
+          <li>Customer enters digital experience</li>
+          <li>Questions dynamically adapt</li>
+          <li>Information validates in real time</li>
+          <li>Customer electronically signs</li>
+          <li>Data automatically routes downstream</li>
+          <li>API updates appropriate systems</li>
+          <li>Exceptions route to Operations</li>
+          <li>Customer receives confirmation</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- END TO END PIPELINE -->
+
+<section class="dark-section">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Think End-to-End</h2>
+
+      <p>
+        A Product Manager should understand how the information travels
+        from customer interaction through downstream processing.
+      </p>
+    </div>
+
+    <div class="pipeline">
+
+      <span>Customer</span>
+      <b>→</b>
+
+      <span>Digital Form</span>
+      <b>→</b>
+
+      <span>Validation</span>
+      <b>→</b>
+
+      <span>E-Signature</span>
+      <b>→</b>
+
+      <span>Workflow</span>
+      <b>→</b>
+
+      <span>API</span>
+      <b>→</b>
+
+      <span>Downstream System</span>
+      <b>→</b>
+
+      <span>Records</span>
+      <b>→</b>
+
+      <span>Confirmation</span>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- EXAMPLE -->
+
+<section id="example">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Example Transformation</h2>
+
+      <p>
+        A simplified hypothetical retirement account distribution
+        workflow illustrates how a manual form can become a digital product.
+      </p>
+    </div>
+
+
+    <div class="case-study">
+
+      <h3>Retirement Distribution Request</h3>
+
+      <div class="case-grid">
+
+        <div class="case-box">
+
+          <h4>Traditional Process</h4>
+
+          <ul>
+            <li>Customer finds the correct PDF</li>
+            <li>Completes multiple pages</li>
+            <li>Manually enters account information</li>
+            <li>Selects distribution instructions</li>
+            <li>Provides tax withholding information</li>
+            <li>Signs the document</li>
+            <li>Uploads or mails the form</li>
+            <li>Operations manually validates information</li>
+            <li>Employee enters request into processing system</li>
+          </ul>
+
+        </div>
+
+
+        <div class="case-box">
+
+          <h4>Digital Future State</h4>
+
+          <ul>
+            <li>Customer authenticates</li>
+            <li>Account information automatically populates</li>
+            <li>Only relevant questions appear</li>
+            <li>Business rules validate selections</li>
+            <li>Tax information dynamically displays</li>
+            <li>Customer electronically signs</li>
+            <li>API sends structured transaction data</li>
+            <li>Exceptions route to Operations</li>
+            <li>Customer receives status confirmation</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRODUCT MANAGER ROLE -->
+
+<section>
+  <div class="container">
+
+    <div class="section-header">
+      <h2>What Does the Product Manager Own?</h2>
+
+      <p>
+        The PM does not need to personally code the workflow or API.
+        The role is to define the problem, prioritize outcomes and
+        coordinate delivery across business and technology.
+      </p>
+    </div>
+
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Discovery</h3>
+        <p>
+          Understand customer pain points, operational problems,
+          existing forms, business processes and technology constraints.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Product Strategy</h3>
+        <p>
+          Determine which forms should be eliminated, consolidated,
+          redesigned or automated first.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Requirements</h3>
+        <p>
+          Translate business needs into features, user stories,
+          workflows, business rules and acceptance criteria.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Cross-Functional Alignment</h3>
+        <p>
+          Coordinate Product, Operations, Technology, UX, Risk,
+          Legal, Compliance, Data and other stakeholders.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Delivery</h3>
+        <p>
+          Prioritize the backlog, manage dependencies, support Agile
+          delivery and validate the solution through testing and UAT.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Measurement</h3>
+        <p>
+          Measure whether the transformation actually reduces customer
+          friction, processing time, errors and operational cost.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRIORITIZATION -->
+
+<section>
+  <div class="container">
+
+    <div class="section-header">
+
+      <h2>How Do We Decide What to Transform First?</h2>
+
+      <p>
+        A large enterprise may have hundreds or thousands of forms.
+        Transformation requires prioritization rather than simply
+        digitizing everything.
+      </p>
+
+    </div>
+
+    <div class="formula">
+
+      PRIORITY =
+      Volume + Customer Pain + Manual Effort +
+      Error Rate + Cost + Risk + Strategic Value
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- STAKEHOLDERS -->
+
+<section>
+  <div class="container">
+
+    <div class="section-header">
+
+      <h2>Cross-Functional Stakeholders</h2>
+
+      <p>
+        Forms transformation is inherently cross-functional.
+        Product Management connects business needs with customer
+        experience, operations, governance and technology.
+      </p>
+
+    </div>
+
+
+    <div class="stakeholders">
+
+      <span class="stakeholder">Product Management</span>
+      <span class="stakeholder">Operations</span>
+      <span class="stakeholder">Technology</span>
+      <span class="stakeholder">UX / Design</span>
+      <span class="stakeholder">Data</span>
+      <span class="stakeholder">Legal</span>
+      <span class="stakeholder">Compliance</span>
+      <span class="stakeholder">Risk</span>
+      <span class="stakeholder">Information Security</span>
+      <span class="stakeholder">Records Management</span>
+      <span class="stakeholder">Accessibility</span>
+      <span class="stakeholder">Customer Service</span>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- KPIs -->
+
+<section id="metrics" class="dark-section">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <h2>How Do We Measure Success?</h2>
+
+      <p>
+        Product success should be measured by customer and business
+        outcomes rather than simply counting how many forms were digitized.
+      </p>
+
+    </div>
+
+
+    <div class="metrics">
+
+      <div class="metric">
+        <strong>↓</strong>
+        <span>Processing Time</span>
+      </div>
+
+      <div class="metric">
+        <strong>↓</strong>
+        <span>NIGO / Error Rate</span>
+      </div>
+
+      <div class="metric">
+        <strong>↓</strong>
+        <span>Manual Touches</span>
+      </div>
+
+      <div class="metric">
+        <strong>↓</strong>
+        <span>Cost Per Transaction</span>
+      </div>
+
+      <div class="metric">
+        <strong>↑</strong>
+        <span>Completion Rate</span>
+      </div>
+
+      <div class="metric">
+        <strong>↓</strong>
+        <span>Abandonment</span>
+      </div>
+
+      <div class="metric">
+        <strong>↑</strong>
+        <span>Straight-Through Processing</span>
+      </div>
+
+      <div class="metric">
+        <strong>↑</strong>
+        <span>Customer Satisfaction</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- INTERVIEW -->
+
+<section id="interview" class="dark-section">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="eyebrow">Interview Cheat Sheet</span>
+
+      <h2>10 Words to Remember</h2>
+
+      <p>
+        If you can remember this sequence, you can reconstruct
+        most of the transformation strategy during an interview.
+      </p>
+
+    </div>
+
+
+    <div class="cheat">
+
+      <div class="cheat-row">
+        <strong>1. INVENTORY</strong> — What forms do we have?
+      </div>
+
+      <div class="cheat-row">
+        <strong>2. RATIONALIZE</strong> — Do we actually need all of them?
+      </div>
+
+      <div class="cheat-row">
+        <strong>3. REDESIGN</strong> — Can we simplify the experience?
+      </div>
+
+      <div class="cheat-row">
+        <strong>4. DIGITIZE</strong> — Can the customer complete it digitally?
+      </div>
+
+      <div class="cheat-row">
+        <strong>5. VALIDATE</strong> — Can we prevent errors before submission?
+      </div>
+
+      <div class="cheat-row">
+        <strong>6. SIGN</strong> — Can signatures be handled electronically?
+      </div>
+
+      <div class="cheat-row">
+        <strong>7. AUTOMATE</strong> — What manual work can disappear?
+      </div>
+
+      <div class="cheat-row">
+        <strong>8. INTEGRATE</strong> — Where does the data need to go?
+      </div>
+
+      <div class="cheat-row">
+        <strong>9. MEASURE</strong> — Did we improve the outcome?
+      </div>
+
+      <div class="cheat-row">
+        <strong>10. IMPROVE</strong> — What should we optimize next?
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FINAL TAKEAWAY -->
+
+<section>
+  <div class="container">
+
+    <div class="big-idea">
+
+      <span class="eyebrow" style="color:#2563eb;">
+        Key Takeaway
+      </span>
+
+      <h3>
+        The goal isn't to create a better PDF.
+      </h3>
+
+      <p style="font-size:1.1rem;">
+        The goal is to create a better customer and operational
+        experience by simplifying the process, collecting better data,
+        validating information earlier, automating manual work and
+        integrating directly with enterprise systems.
+      </p>
+
+      <div class="example" style="margin-top:25px; font-size:1rem;">
+
+        <strong>Remember:</strong><br><br>
+
+        Inventory → Rationalize → Redesign → Digitize →
+        Validate → Sign → Automate → Integrate →
+        Measure → Improve
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+
+  <div class="container">
+
+    Forms Transformation & Digital Product Management
+    <br>
+    Product Management Portfolio / Study Guide
+
+  </div>
+
+</footer>
+
+</body>
+</html>
