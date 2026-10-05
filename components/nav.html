@@ -1,64 +1,143 @@
 <!-- includes/nav.html -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <div class="container">
+
+    <!-- Logo -->
     <a href="index.html" class="navbar-brand">
-      <img src="images/TIAA/bluelogo.png" alt="Faraz Uddin Logo" width="65" height="50">
+      <img
+        src="images/TIAA/bluelogo.png"
+        alt="Faraz Uddin Logo"
+        width="65"
+        height="50"
+      >
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Navigation -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto text-center">
+      <ul class="navbar-nav ms-auto text-center align-items-lg-center">
+
+        <!-- Home -->
         <li class="nav-item">
-          <a href="index.html" class="nav-link fw-semibold">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-semibold" href="#" id="workDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Work
+          <a href="index.html" class="nav-link fw-semibold">
+            Home
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="workDropdown">
-            <li><a class="dropdown-item" href="WF_MS_2026.html">Wells Fargo</a></li>
-            <li><a class="dropdown-item" href="TIAA.html">TIAA</a></li>
-            <li><a class="dropdown-item" href="data_guide.html">Data Guide</a></li>
-            <li><a class="dropdown-item" href="Agile.html">SDLC Experience</a></li>
-            <li><a class="dropdown-item" href="Grooming.html">Agile Grooming Process</a></li>
-            <li><a class="dropdown-item" href="Stakeholder.html">Stakeholder MGMT</a></li>
-            <li><a class="dropdown-item" href="Data.html">Enterprise Data</a></li>
-            <li><a class="dropdown-item" href="API.html">API Testing</a></li>
-          </ul>
         </li>
+
+        <!-- Experience -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-semibold" href="#" id="caseStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Coding Projects
+          <a
+            class="nav-link dropdown-toggle fw-semibold"
+            href="#"
+            id="experienceDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Experience
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="caseStudiesDropdown">
+
+          <ul
+            class="dropdown-menu dropdown-menu-dark text-center"
+            aria-labelledby="experienceDropdown"
+          >
             <li>
-              <a class="dropdown-item" href="https://fu-fitness.netlify.app/" target="_blank" rel="noopener noreferrer">
-                Fitness App
+              <a class="dropdown-item" href="WF_MS_2026.html">
+                Wells Fargo
               </a>
             </li>
-          </ul>          
+
+            <li>
+              <a class="dropdown-item" href="TIAA.html">
+                TIAA
+              </a>
+            </li>
+          </ul>
         </li>
-        <li class="nav-item px-3 py-2">
-          <a href="/images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf" class="nav-link btn btn-outline-light fw-semibold px-4">Resume</a>
+
+        <!-- Skills & Guides -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle fw-semibold"
+            href="#"
+            id="skillsDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Skills &amp; Guides
+          </a>
+
+          <ul
+            class="dropdown-menu dropdown-menu-dark text-center"
+            aria-labelledby="skillsDropdown"
+          >
+            <li>
+              <a class="dropdown-item" href="data_guide.html">
+                Data Product &amp; Governance
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="Data.html">
+                Enterprise Data
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="API.html">
+                API Testing
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="Agile.html">
+                SDLC &amp; Agile
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="Grooming.html">
+                Backlog Refinement
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="Stakeholder.html">
+                Stakeholder Management
+              </a>
+            </li>
+          </ul>
         </li>
+
+        <!-- Resume -->
+        <li class="nav-item ms-lg-3 my-2 my-lg-0">
+          <a
+            href="images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf"
+            class="btn btn-outline-light fw-semibold px-4"
+          >
+            Resume
+          </a>
+        </li>
+
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- 
-
-   <div id="nav-placeholder"></div>
-  <script src="js/load-components.js"></script>
-
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fw-semibold" href="#" id="kbDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Personal Knowledge Base
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="kbDropdown">
-            <li><a class="dropdown-item" href="https://farazuddin-code.netlify.app/" target="_blank" rel="noopener noreferrer">Coding KB</a></li>
-          </ul>
-        </li> 
-
---> 
+<!-- Load Navbar
+<div id="nav-placeholder"></div>
+<script src="js/load-components.js"></script>
+-->
