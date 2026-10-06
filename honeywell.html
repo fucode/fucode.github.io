@@ -1,0 +1,2989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Honeywell S/4 Product Owner | Innovation to Order Case Study</title>
+
+  <meta
+    name="description"
+    content="Product Owner portfolio case study demonstrating a proposed SAP S/4HANA Innovation-to-Order transformation approach, SAFe delivery, backlog management, PI Planning, and 90-day action plan."
+  >
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --primary: #0b1f33;
+      --secondary: #173b5e;
+      --accent: #00a6d2;
+      --light: #f5f8fb;
+      --border: #dfe7ee;
+      --text: #263746;
+      --muted: #667788;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.65;
+    }
+
+    section {
+      padding: 70px 0;
+      scroll-margin-top: 70px;
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-title {
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 900px;
+      margin-bottom: 38px;
+      font-size: 1.05rem;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      background: var(--primary);
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+    }
+
+    .nav-link {
+      font-size: .9rem;
+    }
+
+    .nav-link:hover {
+      color: #8edff3 !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(11,31,51,.98),
+          rgba(23,59,94,.95)
+        );
+      color: white;
+      padding: 110px 0 85px;
+    }
+
+    .hero-label {
+      color: #82dcf2;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-size: .85rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      max-width: 950px;
+    }
+
+    .hero p {
+      max-width: 850px;
+      font-size: 1.18rem;
+      color: #dce8f1;
+    }
+
+    .badge-custom {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: white;
+      padding: 9px 14px;
+      margin: 4px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: .9rem;
+    }
+
+    /* CARDS */
+
+    .card-custom {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: white;
+      padding: 27px;
+      height: 100%;
+      box-shadow: 0 4px 18px rgba(0,0,0,.04);
+    }
+
+    .card-custom h3,
+    .card-custom h4,
+    .card-custom h5 {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .phase-label {
+      font-size: .82rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+
+    /* PROCESS */
+
+    .process-step {
+      padding: 20px 24px;
+      border-left: 4px solid var(--accent);
+      background: white;
+      margin-bottom: 14px;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 3px 12px rgba(0,0,0,.025);
+    }
+
+    .process-step strong {
+      color: var(--primary);
+    }
+
+    /* STORY */
+
+    .story-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.04);
+    }
+
+    .gherkin {
+      background: #101820;
+      color: #e6edf3;
+      border-radius: 10px;
+      padding: 24px;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      white-space: pre-line;
+      overflow-x: auto;
+    }
+
+    /* 90 DAY */
+
+    .phase {
+      border-top: 5px solid var(--accent);
+    }
+
+    /* COMPANY */
+
+    .strategy-box {
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        );
+      color: white;
+      border-radius: 16px;
+      padding: 36px;
+      height: 100%;
+    }
+
+    .strategy-box h2,
+    .strategy-box h3,
+    .strategy-box h4 {
+      color: white;
+      font-weight: 800;
+    }
+
+    .strategy-box p {
+      color: #dce8f1;
+    }
+
+    /* KPIs */
+
+    .kpi {
+      text-align: center;
+      padding: 22px 15px;
+    }
+
+    .kpi h3 {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.15rem;
+    }
+
+    .kpi p {
+      color: var(--muted);
+      margin: 0;
+      font-size: .92rem;
+    }
+
+    /* APPENDIX */
+
+    .appendix-block {
+      scroll-margin-top: 90px;
+    }
+
+    .glossary-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-bottom: 14px;
+      transition: .2s ease;
+    }
+
+    .glossary-item:hover {
+      box-shadow: 0 5px 18px rgba(0,0,0,.06);
+      transform: translateY(-1px);
+    }
+
+    .glossary-item h5 {
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .glossary-item p {
+      margin-bottom: 0;
+    }
+
+    .simple-example {
+      background: var(--light);
+      padding: 12px 15px;
+      margin-top: 12px;
+      border-radius: 8px;
+      font-size: .92rem;
+    }
+
+    #glossarySearch {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+
+    #glossarySearch:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 .2rem rgba(0,166,210,.12);
+    }
+
+    /* FINAL SUMMARY */
+
+    .approach-summary {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+      padding: 28px 32px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.04);
+    }
+
+    .approach-flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .approach-flow .arrow {
+      color: var(--accent);
+      font-size: 1.25rem;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #cbd8e3;
+      padding: 35px 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 85px 0 60px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .card-custom {
+        padding: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold" href="#">
+      S/4 Product Owner Case Study
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
+      aria-controls="mainNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+
+      <ul class="navbar-nav ms-auto text-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#honeywell">Honeywell</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#process">I2O</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#backlog">Backlog</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#delivery">SAFe</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#plan">90 Days</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#metrics">KPIs</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#appendix">Appendix</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+  <div class="container">
+
+    <div class="hero-label mb-3">
+      Product Owner Case Study
+    </div>
+
+    <h1>
+      SAP S/4HANA
+      <br>
+      Innovation to Order
+    </h1>
+
+    <p class="mt-4">
+      A proposed Product Owner approach for translating enterprise
+      transformation strategy into prioritized, testable and
+      business-focused SAP S/4HANA capabilities.
+    </p>
+
+    <div class="mt-4">
+
+      <span class="badge-custom">SAP S/4HANA</span>
+      <span class="badge-custom">Product Ownership</span>
+      <span class="badge-custom">Innovation to Order</span>
+      <span class="badge-custom">SAFe</span>
+      <span class="badge-custom">PI Planning</span>
+      <span class="badge-custom">Jira</span>
+      <span class="badge-custom">NPI</span>
+      <span class="badge-custom">UAT</span>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     DISCLAIMER
+========================================================= -->
+
+<section class="py-4 border-bottom">
+
+  <div class="container">
+
+    <p class="mb-0 text-muted">
+
+      <strong>Portfolio Note:</strong>
+
+      This is a proposed case study demonstrating how I would approach
+      an SAP S/4HANA Product Owner role. It does not represent
+      confidential information or completed work for Honeywell.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HONEYWELL — SIMPLE OVERVIEW
+========================================================= -->
+
+<section id="honeywell">
+
+  <div class="container">
+
+    <div class="phase-label">
+      COMPANY UNDERSTANDING
+    </div>
+
+    <h2 class="section-title mt-2">
+      What Does Honeywell Do?
+    </h2>
+
+    <p class="section-intro">
+      In simple terms, Honeywell Technologies makes the hardware,
+      software, sensors, control systems and process technologies
+      that help buildings, factories and industrial operations run
+      more automatically, safely and efficiently.
+    </p>
+
+
+    <div class="strategy-box mb-5">
+
+      <div class="row align-items-center g-4">
+
+        <div class="col-lg-4">
+
+          <div class="hero-label">
+            SIMPLE MENTAL MODEL
+          </div>
+
+          <h2 class="mt-3">
+            Sense → Control → Automate → Optimize
+          </h2>
+
+        </div>
+
+        <div class="col-lg-8">
+
+          <p class="fs-5 mb-0">
+
+            A sensor <strong>detects what is happening</strong> →
+            a control system <strong>decides what should happen</strong> →
+            automation <strong>makes it happen</strong> →
+            software and data help the business
+            <strong>monitor and optimize the operation.</strong>
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <h3 class="mb-4">
+      Core Products & Technologies
+    </h3>
+
+
+    <div class="row g-4">
+
+
+      <div class="col-lg-4">
+
+        <div class="card-custom">
+
+          <div class="number">01</div>
+
+          <h4>
+            Building Automation
+          </h4>
+
+          <p>
+            Technology that helps large buildings operate safely,
+            comfortably and efficiently.
+          </p>
+
+          <strong>Products include:</strong>
+
+          <ul class="mt-2 mb-0">
+            <li>Building management systems</li>
+            <li>HVAC controls</li>
+            <li>Fire detection</li>
+            <li>Security systems</li>
+            <li>Energy management</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-4">
+
+        <div class="card-custom">
+
+          <div class="number">02</div>
+
+          <h4>
+            Industrial Automation
+          </h4>
+
+          <p>
+            Technology that helps factories and industrial equipment
+            monitor conditions and automate operations.
+          </p>
+
+          <strong>Products include:</strong>
+
+          <ul class="mt-2 mb-0">
+            <li>Sensors</li>
+            <li>Switches</li>
+            <li>Industrial controls</li>
+            <li>Safety technologies</li>
+            <li>Automation equipment</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-4">
+
+        <div class="card-custom">
+
+          <div class="number">03</div>
+
+          <h4>
+            Process Automation
+          </h4>
+
+          <p>
+            Systems that help refineries, chemical facilities,
+            manufacturers and energy operations control complex
+            industrial processes.
+          </p>
+
+          <strong>Products include:</strong>
+
+          <ul class="mt-2 mb-0">
+            <li>Process control systems</li>
+            <li>Industrial software</li>
+            <li>Monitoring systems</li>
+            <li>Automation platforms</li>
+            <li>Operational technology</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-6">
+
+        <div class="card-custom">
+
+          <div class="number">04</div>
+
+          <h4>
+            Honeywell Forge
+          </h4>
+
+          <p>
+            Honeywell's industrial software platform helps connect
+            operational information, equipment and data so companies
+            can understand performance and improve operations.
+          </p>
+
+          <div class="simple-example">
+            <strong>Simple explanation:</strong>
+            The physical equipment generates data. Forge helps turn
+            that operational data into visibility and insights.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-6">
+
+        <div class="card-custom">
+
+          <div class="number">05</div>
+
+          <h4>
+            UOP Process Technologies
+          </h4>
+
+          <p>
+            Technologies, equipment and processes used in refining,
+            petrochemicals, chemicals, fuels and energy production.
+          </p>
+
+          <div class="simple-example">
+            <strong>Simple explanation:</strong>
+            Honeywell doesn't just automate industrial plants — it
+            also provides specialized technologies used inside major
+            industrial processes.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY THIS MATTERS
+========================================================= -->
+
+<section class="section-light">
+
+  <div class="container">
+
+    <div class="phase-label">
+      CONNECTION TO THE ROLE
+    </div>
+
+    <h2 class="section-title mt-2">
+      Why This Matters to an S/4 Product Owner
+    </h2>
+
+    <p class="section-intro">
+      Honeywell builds complex physical products and industrial
+      technologies. Behind those products are thousands of materials,
+      components, suppliers, engineering changes, manufacturing
+      processes and enterprise transactions.
+    </p>
+
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-custom">
+          <div class="number">01</div>
+          <h4>Product Data</h4>
+          <p>
+            Products require accurate material, engineering and
+            manufacturing information.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-custom">
+          <div class="number">02</div>
+          <h4>Materials</h4>
+          <p>
+            Components need to be sourced, planned, purchased,
+            tracked and available.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-custom">
+          <div class="number">03</div>
+          <h4>Manufacturing</h4>
+          <p>
+            Engineering definitions must eventually become something
+            factories can actually build.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-custom">
+          <div class="number">04</div>
+          <h4>Enterprise Scale</h4>
+          <p>
+            Standardized processes and data help complex global
+            operations execute consistently.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="strategy-box mt-4">
+
+      <div class="phase-label">
+        MY CONNECTION
+      </div>
+
+      <h3 class="mt-2">
+        S/4HANA becomes part of the enterprise backbone.
+      </h3>
+
+      <p class="fs-5 mb-0">
+
+        My interest in this role is the connection between
+        <strong>innovation and execution.</strong>
+
+        Honeywell can design innovative products, but those designs
+        eventually need accurate materials, BOMs, suppliers,
+        manufacturing information and business processes.
+
+        As Product Owner, I would help translate those business needs
+        into prioritized S/4 capabilities the Agile team can deliver.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     INNOVATION TO ORDER
+========================================================= -->
+
+<section id="process">
+
+  <div class="container">
+
+    <div class="phase-label">
+      VALUE STREAM
+    </div>
+
+    <h2 class="section-title mt-2">
+      Understanding Innovation to Order
+    </h2>
+
+    <p class="section-intro">
+      My starting point would be understanding how an idea or product
+      change progresses from engineering into the enterprise data and
+      processes required for manufacturing and execution.
+    </p>
+
+
+    <div class="process-step">
+      <strong>1. Innovation / Business Need</strong><br>
+      Identify the customer, product, engineering or market need.
+    </div>
+
+
+    <div class="process-step">
+      <strong>2. Product & Engineering Definition</strong><br>
+      Define product requirements, specifications and product structure.
+    </div>
+
+
+    <div class="process-step">
+      <strong>3. Material Master & Product Data</strong><br>
+      Establish the enterprise data required to represent the product
+      and its components.
+    </div>
+
+
+    <div class="process-step">
+      <strong>4. Bill of Materials</strong><br>
+      Define which components and quantities are required to build
+      the product.
+    </div>
+
+
+    <div class="process-step">
+      <strong>5. Engineering Change Control</strong><br>
+      Manage changes to designs, components and specifications through
+      controlled approvals and traceability.
+    </div>
+
+
+    <div class="process-step">
+      <strong>6. Material & Supply Readiness</strong><br>
+      Ensure components can be sourced, purchased and made available
+      when needed.
+    </div>
+
+
+    <div class="process-step">
+      <strong>7. Manufacturing Readiness</strong><br>
+      Confirm that product data and operational requirements are ready
+      for manufacturing.
+    </div>
+
+
+    <div class="process-step">
+      <strong>8. Order / Production Execution</strong><br>
+      Move the approved product definition into operational execution.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRODUCT OWNER MODEL
+========================================================= -->
+
+<section class="section-light">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      My Product Owner Operating Model
+    </h2>
+
+    <p class="section-intro">
+      My job is to create the bridge between business strategy,
+      subject-matter expertise and technical execution.
+    </p>
+
+
+    <div class="row g-4">
+
+
+      <div class="col-md-3">
+        <div class="card-custom">
+
+          <div class="number">01</div>
+
+          <h4>Discover</h4>
+
+          <p>
+            Interview SMEs, users, process owners and technical teams.
+            Understand current-state workflows and pain points.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="card-custom">
+
+          <div class="number">02</div>
+
+          <h4>Define</h4>
+
+          <p>
+            Translate business needs into features, stories,
+            requirements and measurable acceptance criteria.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="card-custom">
+
+          <div class="number">03</div>
+
+          <h4>Prioritize</h4>
+
+          <p>
+            Order work according to business value, urgency, risk,
+            dependencies and delivery impact.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="card-custom">
+
+          <div class="number">04</div>
+
+          <h4>Validate</h4>
+
+          <p>
+            Review completed functionality, support UAT, accept stories
+            and determine whether the intended outcome was achieved.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     STRATEGY TO BACKLOG
+========================================================= -->
+
+<section id="backlog">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      From Strategy to Team Backlog
+    </h2>
+
+    <p class="section-intro">
+      One of my primary responsibilities would be converting product
+      strategy into work an Agile team can understand, estimate,
+      build and test.
+    </p>
+
+
+    <div class="row g-4">
+
+
+      <div class="col-md-3">
+        <div class="card-custom">
+
+          <small class="text-muted">LEVEL 1</small>
+
+          <h4 class="mt-2">
+            Vision
+          </h4>
+
+          <p>
+            Standardize and modernize the enterprise
+            Innovation-to-Order process.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="card-custom">
+
+          <small class="text-muted">LEVEL 2</small>
+
+          <h4 class="mt-2">
+            Feature
+          </h4>
+
+          <p>
+            Improve creation and validation of material master data
+            for new product introduction.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="card-custom">
+
+          <small class="text-muted">LEVEL 3</small>
+
+          <h4 class="mt-2">
+            Story
+          </h4>
+
+          <p>
+            Enable a Product Engineer to create required material
+            information using standardized fields and validation.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="card-custom">
+
+          <small class="text-muted">LEVEL 4</small>
+
+          <h4 class="mt-2">
+            Acceptance
+          </h4>
+
+          <p>
+            Validate required data, permissions, business rules,
+            exceptions and downstream availability.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SAMPLE USER STORY
+========================================================= -->
+
+<section class="section-light">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Example: Business Need → User Story
+    </h2>
+
+    <p class="section-intro">
+      A Product Owner should be able to take a broad business problem
+      and progressively translate it into something the delivery team
+      can build and validate.
+    </p>
+
+
+    <div class="story-box">
+
+      <div class="phase-label">
+        SAMPLE USER STORY
+      </div>
+
+      <h3 class="mt-2">
+        Material Master Validation
+      </h3>
+
+      <p>
+        <strong>As a</strong> Product Engineer,<br>
+        <strong>I want</strong> required product and material information
+        validated before submission,<br>
+        <strong>so that</strong> incomplete or inaccurate master data does
+        not create downstream manufacturing or procurement issues.
+      </p>
+
+
+      <h5 class="mt-4">
+        Example Acceptance Criteria
+      </h5>
+
+
+      <div class="gherkin">
+Given I am an authorized Product Engineer
+
+When I create a new material
+
+Then all required fields must be displayed
+
+And required fields must be completed before submission
+
+And invalid values must generate a clear validation message
+
+And successfully created material data must be available to authorized downstream processes
+
+And the transaction must maintain required audit information
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRIORITIZATION
+========================================================= -->
+
+<section>
+
+  <div class="container">
+
+    <h2 class="section-title">
+      How I Would Prioritize the Backlog
+    </h2>
+
+    <p class="section-intro">
+      Not every request should automatically become the next story.
+      Prioritization requires understanding both business value and
+      delivery impact.
+    </p>
+
+
+    <div class="row g-4">
+
+
+      <div class="col-md-4">
+        <div class="card-custom">
+
+          <h4>Business Value</h4>
+
+          <p>
+            Customer impact, operational efficiency, cost reduction,
+            compliance and strategic alignment.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="card-custom">
+
+          <h4>Delivery Impact</h4>
+
+          <p>
+            Dependencies, complexity, technical enablement,
+            sequencing and team capacity.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="card-custom">
+
+          <h4>Risk & Urgency</h4>
+
+          <p>
+            Production risk, regulatory requirements, defects,
+            deadlines and blocked downstream capabilities.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SAFE
+========================================================= -->
+
+<section id="delivery" class="section-light">
+
+  <div class="container">
+
+    <div class="phase-label">
+      SCALED AGILE DELIVERY
+    </div>
+
+    <h2 class="section-title mt-2">
+      SAFe & PI Planning
+    </h2>
+
+    <p class="section-intro">
+      PI Planning is where product strategy becomes coordinated
+      execution. My responsibility is to arrive with enough clarity
+      around priorities, dependencies and upcoming work for the team
+      to plan effectively.
+    </p>
+
+
+    <div class="row g-4">
+
+
+      <div class="col-lg-6">
+        <div class="card-custom">
+
+          <h4>
+            Before PI Planning
+          </h4>
+
+          <ul>
+            <li>Review roadmap and program priorities</li>
+            <li>Understand upcoming features</li>
+            <li>Break features into team-level work</li>
+            <li>Refine high-priority stories</li>
+            <li>Identify dependencies</li>
+            <li>Review risks and assumptions</li>
+            <li>Ensure sufficient backlog readiness</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="card-custom">
+
+          <h4>
+            During PI Planning
+          </h4>
+
+          <ul>
+            <li>Support feature decomposition</li>
+            <li>Clarify functional requirements</li>
+            <li>Align work with capacity</li>
+            <li>Coordinate dependencies</li>
+            <li>Contribute to team PI objectives</li>
+            <li>Surface risks early</li>
+            <li>Negotiate scope when necessary</li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SPRINT LOOP
+========================================================= -->
+
+<section>
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Sprint Delivery Loop
+    </h2>
+
+
+    <div class="row g-3 text-center">
+
+      <div class="col-lg-2 col-md-4">
+        <div class="card-custom">
+          <strong>Refine</strong>
+          <p class="small mt-2 mb-0">Ready backlog</p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4">
+        <div class="card-custom">
+          <strong>Plan</strong>
+          <p class="small mt-2 mb-0">Sprint goals</p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4">
+        <div class="card-custom">
+          <strong>Clarify</strong>
+          <p class="small mt-2 mb-0">Support delivery</p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4">
+        <div class="card-custom">
+          <strong>Validate</strong>
+          <p class="small mt-2 mb-0">Test against AC</p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4">
+        <div class="card-custom">
+          <strong>Accept</strong>
+          <p class="small mt-2 mb-0">Definition of Done</p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4">
+        <div class="card-custom">
+          <strong>Learn</strong>
+          <p class="small mt-2 mb-0">Improve next cycle</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     90 DAY PLAN
+========================================================= -->
+
+<section id="plan" class="section-light">
+
+  <div class="container">
+
+    <div class="phase-label">
+      ACTION PLAN
+    </div>
+
+    <h2 class="section-title mt-2">
+      My First 90 Days
+    </h2>
+
+    <p class="section-intro">
+      My objective would not be to walk in and immediately redesign
+      Honeywell's process. I would first learn the environment, then
+      take ownership of execution, and finally use delivery data and
+      stakeholder feedback to identify improvements.
+    </p>
+
+
+    <div class="row g-4">
+
+
+      <!-- DAYS 1-30 -->
+
+      <div class="col-lg-4">
+
+        <div class="card-custom phase">
+
+          <div class="phase-label">
+            DAYS 1–30
+          </div>
+
+          <h3 class="mt-2">
+            Learn & Map
+          </h3>
+
+          <p>
+            Build the business, SAP and organizational context required
+            to make informed backlog decisions.
+          </p>
+
+          <hr>
+
+          <ul>
+            <li>Meet Product Manager</li>
+            <li>Meet Scrum Master</li>
+            <li>Meet business process owners</li>
+            <li>Meet SMEs</li>
+            <li>Meet SAP functional leads</li>
+            <li>Meet technical leads</li>
+            <li>Understand the ART structure</li>
+            <li>Review the S/4 roadmap</li>
+            <li>Review current PI objectives</li>
+            <li>Review the Jira backlog</li>
+            <li>Map the I2O workflow</li>
+            <li>Understand major integrations</li>
+            <li>Learn Material Master and BOM processes</li>
+            <li>Review defects and pain points</li>
+          </ul>
+
+          <strong>
+            Deliverables
+          </strong>
+
+          <ul class="mt-2 mb-0">
+            <li>Stakeholder map</li>
+            <li>Current-state process map</li>
+            <li>System / dependency map</li>
+            <li>Backlog health assessment</li>
+            <li>Pain-point inventory</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <!-- DAYS 31-60 -->
+
+      <div class="col-lg-4">
+
+        <div class="card-custom phase">
+
+          <div class="phase-label">
+            DAYS 31–60
+          </div>
+
+          <h3 class="mt-2">
+            Execute & Own
+          </h3>
+
+          <p>
+            Transition from learning the environment to actively
+            owning Product Owner execution.
+          </p>
+
+          <hr>
+
+          <ul>
+            <li>Own assigned Team Backlog</li>
+            <li>Facilitate refinement</li>
+            <li>Improve user stories</li>
+            <li>Define acceptance criteria</li>
+            <li>Prioritize with Product Management</li>
+            <li>Support sprint planning</li>
+            <li>Provide requirement clarification</li>
+            <li>Track dependencies</li>
+            <li>Track blockers</li>
+            <li>Validate completed stories</li>
+            <li>Support UAT</li>
+            <li>Prepare upcoming PI work</li>
+            <li>Maintain N+2 / N+3 readiness</li>
+          </ul>
+
+          <strong>
+            Deliverables
+          </strong>
+
+          <ul class="mt-2 mb-0">
+            <li>Prioritized Team Backlog</li>
+            <li>Refined upcoming stories</li>
+            <li>Dependency tracker</li>
+            <li>UAT / acceptance approach</li>
+            <li>Backlog readiness view</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <!-- DAYS 61-90 -->
+
+      <div class="col-lg-4">
+
+        <div class="card-custom phase">
+
+          <div class="phase-label">
+            DAYS 61–90
+          </div>
+
+          <h3 class="mt-2">
+            Optimize & Add Value
+          </h3>
+
+          <p>
+            Move beyond managing stories and begin improving how the
+            team delivers business outcomes.
+          </p>
+
+          <hr>
+
+          <ul>
+            <li>Analyze recurring pain points</li>
+            <li>Improve backlog quality</li>
+            <li>Reduce requirement ambiguity</li>
+            <li>Improve dependency visibility</li>
+            <li>Identify standardization opportunities</li>
+            <li>Identify manual process opportunities</li>
+            <li>Analyze recurring defects</li>
+            <li>Measure delivery predictability</li>
+            <li>Improve stakeholder feedback loops</li>
+            <li>Contribute confidently to PI Planning</li>
+            <li>Recommend future backlog opportunities</li>
+            <li>Connect delivery metrics to outcomes</li>
+          </ul>
+
+          <strong>
+            Deliverables
+          </strong>
+
+          <ul class="mt-2 mb-0">
+            <li>Backlog health improvements</li>
+            <li>Process improvement recommendations</li>
+            <li>KPI baseline</li>
+            <li>Prioritized improvement opportunities</li>
+            <li>Next-PI recommendations</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     KPIs
+========================================================= -->
+
+<section id="metrics">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      How I Would Measure Success
+    </h2>
+
+    <p class="section-intro">
+      Story completion alone does not prove the transformation is
+      successful. I would evaluate both Agile delivery health and
+      business outcomes.
+    </p>
+
+
+    <div class="row g-4">
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-custom kpi">
+          <h3>Cycle Time</h3>
+          <p>
+            Time required to move priority work through delivery.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-custom kpi">
+          <h3>Backlog Readiness</h3>
+          <p>
+            Percentage of upcoming work meeting readiness standards.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-custom kpi">
+          <h3>Defects</h3>
+          <p>
+            Escaped defects and recurring functional issues.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-custom kpi">
+          <h3>PI Predictability</h3>
+          <p>
+            Delivery against planned PI objectives.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-custom kpi">
+          <h3>Data Quality</h3>
+          <p>
+            Completeness and accuracy of critical product data.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-custom kpi">
+          <h3>Rework</h3>
+          <p>
+            Work repeated because of incomplete requirements or data.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-custom kpi">
+          <h3>Process Time</h3>
+          <p>
+            Time required to complete important business process steps.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-custom kpi">
+          <h3>Adoption</h3>
+          <p>
+            Successful usage of standardized S/4 capabilities.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     VALUE ADD
+========================================================= -->
+
+<section class="section-light">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      How I Would Add Value
+    </h2>
+
+
+    <div class="row g-4">
+
+
+      <div class="col-lg-6">
+        <div class="card-custom">
+
+          <h4>
+            Business → Technology Translator
+          </h4>
+
+          <p class="mb-0">
+            Understand the business problem first and translate it into
+            requirements technical teams can execute without losing
+            the original business intent.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="card-custom">
+
+          <h4>
+            Execution Discipline
+          </h4>
+
+          <p class="mb-0">
+            Maintain a healthy, prioritized backlog and ensure upcoming
+            work has enough clarity to support predictable delivery.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="card-custom">
+
+          <h4>
+            Stakeholder Alignment
+          </h4>
+
+          <p class="mb-0">
+            Create a consistent feedback loop between Product
+            Management, SMEs, process owners, developers, testers
+            and other Product Owners.
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-6">
+        <div class="card-custom">
+
+          <h4>
+            Outcome Focus
+          </h4>
+
+          <p class="mb-0">
+            A story reaching Done is not the final measure of success.
+            I want to know whether the delivered capability actually
+            improved the underlying business process.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     COMPETITIVE LANDSCAPE
+========================================================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="phase-label">
+      MARKET UNDERSTANDING
+    </div>
+
+    <h2 class="section-title mt-2">
+      Competitive Landscape
+    </h2>
+
+    <p class="section-intro">
+      Honeywell competes across several industrial markets rather than
+      against one single company. Understanding the competitive
+      landscape provides context for why innovation, product quality,
+      efficiency and speed-to-market matter.
+    </p>
+
+
+    <div class="row g-4">
+
+
+      <div class="col-lg-4">
+        <div class="card-custom">
+
+          <h4>
+            Building Automation
+          </h4>
+
+          <ul class="mb-0">
+            <li>Johnson Controls</li>
+            <li>Schneider Electric</li>
+            <li>Siemens</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-4">
+        <div class="card-custom">
+
+          <h4>
+            Industrial Automation
+          </h4>
+
+          <ul class="mb-0">
+            <li>Emerson</li>
+            <li>Rockwell Automation</li>
+            <li>Schneider Electric</li>
+            <li>Siemens</li>
+            <li>TE Connectivity</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-4">
+        <div class="card-custom">
+
+          <h4>
+            Process Technology
+          </h4>
+
+          <ul class="mb-0">
+            <li>Emerson</li>
+            <li>Siemens</li>
+            <li>Flowserve</li>
+            <li>Topsoe</li>
+            <li>Clariant</li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     APPENDIX
+========================================================= -->
+
+<section id="appendix" class="section-light">
+
+  <div class="container">
+
+    <div class="phase-label">
+      APPENDIX
+    </div>
+
+    <h2 class="section-title mt-2">
+      Interview Reference Guide
+    </h2>
+
+    <p class="section-intro">
+      Supporting reference material covering Honeywell history,
+      SAP S/4HANA, Innovation-to-Order, manufacturing concepts and
+      SAFe terminology relevant to the Product Owner role.
+    </p>
+
+
+    <!-- APPENDIX NAVIGATION -->
+
+    <div class="row g-3 mb-5">
+
+
+      <div class="col-md-4">
+
+        <a href="#appendix-history"
+           class="text-decoration-none">
+
+          <div class="card-custom">
+
+            <div class="number">A</div>
+
+            <h4>
+              Honeywell History
+            </h4>
+
+            <p class="mb-0">
+              Key milestones and evolution of the company.
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <div class="col-md-4">
+
+        <a href="#appendix-sap"
+           class="text-decoration-none">
+
+          <div class="card-custom">
+
+            <div class="number">B</div>
+
+            <h4>
+              SAP / I2O Glossary
+            </h4>
+
+            <p class="mb-0">
+              ERP, manufacturing and Innovation-to-Order terminology.
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <div class="col-md-4">
+
+        <a href="#appendix-agile"
+           class="text-decoration-none">
+
+          <div class="card-custom">
+
+            <div class="number">C</div>
+
+            <h4>
+              Agile / SAFe Glossary
+            </h4>
+
+            <p class="mb-0">
+              Product Owner, Agile and PI Planning terminology.
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         APPENDIX A
+    ====================================================== -->
+
+    <div id="appendix-history"
+         class="appendix-block">
+
+      <div class="phase-label">
+        APPENDIX A
+      </div>
+
+      <h3 class="mt-2 mb-4">
+        Honeywell History — Quick Reference
+      </h3>
+
+
+      <div class="table-responsive">
+
+        <table class="table table-bordered align-middle bg-white">
+
+          <thead class="table-light">
+
+            <tr>
+              <th style="width:15%;">
+                Year
+              </th>
+
+              <th style="width:27%;">
+                Milestone
+              </th>
+
+              <th>
+                Why It Matters
+              </th>
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr>
+              <td><strong>1885</strong></td>
+
+              <td>
+                Albert Butz
+              </td>
+
+              <td>
+                Developed an early furnace regulator, establishing
+                roots in automatic control technology.
+              </td>
+            </tr>
+
+
+            <tr>
+              <td><strong>1906</strong></td>
+
+              <td>
+                Honeywell Heating Specialty Company
+              </td>
+
+              <td>
+                Mark Honeywell established a company focused on
+                heating and control technology.
+              </td>
+            </tr>
+
+
+            <tr>
+              <td><strong>1927</strong></td>
+
+              <td>
+                Minneapolis-Honeywell
+              </td>
+
+              <td>
+                Minneapolis Heat Regulator and Honeywell Heating
+                Specialty combined.
+              </td>
+            </tr>
+
+
+            <tr>
+              <td><strong>1960s</strong></td>
+
+              <td>
+                Aerospace & Apollo Era
+              </td>
+
+              <td>
+                Honeywell expanded its role in advanced aerospace,
+                computing and control technologies.
+              </td>
+            </tr>
+
+
+            <tr>
+              <td><strong>1999</strong></td>
+
+              <td>
+                AlliedSignal + Honeywell
+              </td>
+
+              <td>
+                AlliedSignal acquired Honeywell and retained the
+                Honeywell name.
+              </td>
+            </tr>
+
+
+            <tr>
+              <td><strong>2019</strong></td>
+
+              <td>
+                Honeywell Forge
+              </td>
+
+              <td>
+                Honeywell strengthened its focus on connected
+                operations, software, analytics and operational data.
+              </td>
+            </tr>
+
+
+            <tr>
+              <td><strong>2026</strong></td>
+
+              <td>
+                Honeywell Technologies
+              </td>
+
+              <td>
+                Honeywell Technologies emerged as a focused automation
+                company following the separation of Honeywell Aerospace.
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         APPENDIX B
+    ====================================================== -->
+
+    <div id="appendix-sap"
+         class="appendix-block mt-5">
+
+      <div class="phase-label">
+        APPENDIX B
+      </div>
+
+      <h3 class="mt-2">
+        SAP S/4HANA & Innovation-to-Order Glossary
+      </h3>
+
+      <p class="text-muted mb-4">
+        Searchable quick-reference definitions for terminology across
+        product, engineering, manufacturing, supply chain and SAP.
+      </p>
+
+
+      <input
+        type="text"
+        id="glossarySearch"
+        class="form-control form-control-lg mb-4"
+        placeholder="Search glossary — try BOM, MRP, Material Master, API..."
+        onkeyup="filterGlossary()"
+      >
+
+
+      <div id="glossaryList">
+
+
+        <div class="glossary-item">
+          <h5>
+            ERP — Enterprise Resource Planning
+          </h5>
+
+          <p>
+            Enterprise software connecting major business functions
+            such as manufacturing, procurement, inventory, finance,
+            supply chain and sales.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>SAP</h5>
+
+          <p>
+            A major enterprise software company whose systems help
+            organizations manage business processes and enterprise data.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>SAP S/4HANA</h5>
+
+          <p>
+            SAP's modern ERP platform connecting enterprise processes
+            including finance, procurement, manufacturing, supply chain
+            and master data.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>HANA</h5>
+
+          <p>
+            SAP's in-memory database technology underlying S/4HANA.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>SAP Fiori</h5>
+
+          <p>
+            SAP's modern role-based user experience used to interact
+            with SAP business processes.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>I2O — Innovation to Order</h5>
+
+          <p>
+            A value stream connecting product innovation and
+            engineering to the enterprise information and processes
+            required to manufacture and operationalize a product.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>NPI — New Product Introduction</h5>
+
+          <p>
+            The process of moving a newly designed product from
+            development toward manufacturing and market readiness.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Master Data</h5>
+
+          <p>
+            Core enterprise information reused across multiple
+            transactions and processes, such as materials, suppliers,
+            customers and products.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Material</h5>
+
+          <p>
+            An item managed within SAP, such as a raw material,
+            component, semi-finished item or finished product.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Material Master</h5>
+
+          <p>
+            The central SAP record containing information about a
+            material used across procurement, inventory, manufacturing
+            and other processes.
+          </p>
+
+          <div class="simple-example">
+            <strong>Simple example:</strong>
+            A sensor used in a Honeywell product may have a material
+            number, description, unit of measure, procurement data,
+            planning information and other attributes.
+          </div>
+
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>BOM — Bill of Materials</h5>
+
+          <p>
+            The structured list of components and quantities required
+            to build a product.
+          </p>
+
+          <div class="simple-example">
+            <strong>Think of it as:</strong>
+            The recipe for the product.
+          </div>
+
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>EBOM — Engineering Bill of Materials</h5>
+
+          <p>
+            The product structure representing how engineering
+            designed the product.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>MBOM — Manufacturing Bill of Materials</h5>
+
+          <p>
+            The product structure organized around how the product
+            will actually be manufactured.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Routing</h5>
+
+          <p>
+            The sequence of manufacturing operations or work steps
+            required to produce a product.
+          </p>
+
+          <div class="simple-example">
+            <strong>Think of it as:</strong>
+            BOM tells us <em>what</em> we need. Routing tells us
+            <em>how</em> we build it.
+          </div>
+
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Work Center</h5>
+
+          <p>
+            The machine, production line, labor group or location
+            where a manufacturing operation is performed.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>MRP — Material Requirements Planning</h5>
+
+          <p>
+            Planning logic used to determine what materials are
+            required, how many are needed and when they are needed.
+          </p>
+
+          <div class="simple-example">
+            <strong>Think of it as:</strong>
+            Do we have the parts needed to build what we plan to build?
+          </div>
+
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Procurement</h5>
+
+          <p>
+            The business process used to obtain goods and services
+            from suppliers.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Purchase Requisition</h5>
+
+          <p>
+            An internal request indicating that a material or service
+            needs to be purchased.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Purchase Order</h5>
+
+          <p>
+            A formal order sent to a supplier requesting materials
+            or services.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Inventory</h5>
+
+          <p>
+            Materials or products physically available within the
+            organization or supply chain.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Production Order</h5>
+
+          <p>
+            An SAP object authorizing and controlling production of
+            a specified quantity of a product.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Engineering Change Management</h5>
+
+          <p>
+            The controlled process for modifying product designs,
+            components, specifications or structures while maintaining
+            approvals and traceability.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>ECM — Engineering Change Management</h5>
+
+          <p>
+            Common abbreviation for the process of controlling and
+            tracking engineering changes.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>PLM — Product Lifecycle Management</h5>
+
+          <p>
+            Systems and processes used to manage product information
+            from concept and engineering through manufacturing,
+            maintenance and retirement.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>SAP PP — Production Planning</h5>
+
+          <p>
+            SAP functionality supporting production planning,
+            manufacturing requirements and execution.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>SAP MM — Materials Management</h5>
+
+          <p>
+            SAP functionality supporting materials, procurement,
+            inventory and related processes.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>SAP SD — Sales & Distribution</h5>
+
+          <p>
+            SAP functionality supporting sales orders, pricing,
+            shipping and customer fulfillment.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>SAP FI — Financial Accounting</h5>
+
+          <p>
+            SAP functionality supporting financial accounting,
+            transactions and reporting.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>SAP CO — Controlling</h5>
+
+          <p>
+            SAP functionality supporting internal cost management,
+            profitability analysis and management accounting.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Data Migration</h5>
+
+          <p>
+            Moving business data from legacy systems into a new
+            environment such as S/4HANA.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Data Quality</h5>
+
+          <p>
+            The completeness, accuracy, consistency, timeliness and
+            usability of enterprise data.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Integration</h5>
+
+          <p>
+            A connection allowing systems or applications to exchange
+            data and coordinate business processes.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>API — Application Programming Interface</h5>
+
+          <p>
+            A defined method allowing software systems to communicate
+            and exchange information.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>IDoc — Intermediate Document</h5>
+
+          <p>
+            A structured SAP message format commonly used to exchange
+            business information between SAP and other systems.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Batch Processing</h5>
+
+          <p>
+            Processing transactions or data together at scheduled
+            intervals rather than immediately.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Real-Time Integration</h5>
+
+          <p>
+            Exchanging and processing information immediately or
+            near-immediately when a business event occurs.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>UAT — User Acceptance Testing</h5>
+
+          <p>
+            Business-user validation confirming that delivered
+            functionality meets requirements and supports the
+            intended process.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Cutover</h5>
+
+          <p>
+            The coordinated activities required to transition from
+            the old system or process to the new production solution.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Go-Live</h5>
+
+          <p>
+            The point when the new system or capability becomes
+            available for production use.
+          </p>
+        </div>
+
+
+        <div class="glossary-item">
+          <h5>Hypercare</h5>
+
+          <p>
+            A period of elevated support immediately following
+            go-live to identify and resolve production issues quickly.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         APPENDIX C
+    ====================================================== -->
+
+    <div id="appendix-agile"
+         class="appendix-block mt-5">
+
+      <div class="phase-label">
+        APPENDIX C
+      </div>
+
+      <h3 class="mt-2 mb-4">
+        Product Owner / Agile / SAFe Glossary
+      </h3>
+
+
+      <div class="row g-3">
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              PO — Product Owner
+            </h5>
+
+            <p>
+              Owns and prioritizes the Team Backlog and provides
+              day-to-day clarification to the Agile team.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              PM — Product Manager
+            </h5>
+
+            <p>
+              Owns broader product strategy, roadmap and feature-level
+              priorities.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              SAFe — Scaled Agile Framework
+            </h5>
+
+            <p>
+              An approach for coordinating Agile delivery across
+              multiple teams and larger enterprise initiatives.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              ART — Agile Release Train
+            </h5>
+
+            <p>
+              A long-lived group of Agile teams working together
+              toward a shared product or solution mission.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              PI — Planning Interval
+            </h5>
+
+            <p>
+              A larger SAFe delivery timebox containing multiple
+              iterations or sprints.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              PI Planning
+            </h5>
+
+            <p>
+              A collaborative planning event where teams align on
+              priorities, objectives, capacity, risks and dependencies
+              for the upcoming PI.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Team Backlog
+            </h5>
+
+            <p>
+              The prioritized collection of stories, defects and
+              enablers owned by the Product Owner for the Agile team.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Feature
+            </h5>
+
+            <p>
+              A larger piece of functionality or business value that
+              can be decomposed into team-level stories.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              User Story
+            </h5>
+
+            <p>
+              A small, testable description of functionality from
+              the perspective of a user or stakeholder.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Acceptance Criteria
+            </h5>
+
+            <p>
+              Specific conditions that must be satisfied for a story
+              to meet its expected business behavior.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Enabler
+            </h5>
+
+            <p>
+              Technical, architectural or infrastructure work needed
+              to support future business functionality.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Dependency
+            </h5>
+
+            <p>
+              Work that relies on another team, system, capability
+              or activity before it can be completed.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Definition of Ready
+            </h5>
+
+            <p>
+              Agreed criteria indicating that work contains enough
+              information and clarity to enter development.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Definition of Done
+            </h5>
+
+            <p>
+              Agreed criteria defining what must be completed before
+              work can be considered finished.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Backlog Refinement
+            </h5>
+
+            <p>
+              Ongoing activity where upcoming work is clarified,
+              decomposed, estimated and prepared for future delivery.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Iteration / Sprint
+            </h5>
+
+            <p>
+              A short delivery cycle during which the team builds,
+              tests and demonstrates working functionality.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              PI Objective
+            </h5>
+
+            <p>
+              A concise statement describing the business or technical
+              outcome a team intends to accomplish during the PI.
+            </p>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="glossary-item">
+
+            <h5>
+              Business Value
+            </h5>
+
+            <p>
+              The expected benefit delivered by a capability, such as
+              revenue, efficiency, risk reduction, compliance or
+              customer impact.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL SUMMARY
+========================================================= -->
+
+<section class="py-5">
+
+  <div class="container">
+
+    <h2 class="section-title mb-4">
+      My Approach in One Sentence
+    </h2>
+
+
+    <div class="approach-summary">
+
+      <div class="approach-flow">
+
+        <span>Learn the Process</span>
+
+        <span class="arrow">→</span>
+
+        <span>Understand Users</span>
+
+        <span class="arrow">→</span>
+
+        <span>Map Dependencies</span>
+
+        <span class="arrow">→</span>
+
+        <span>Build the Backlog</span>
+
+        <span class="arrow">→</span>
+
+        <span>Deliver</span>
+
+        <span class="arrow">→</span>
+
+        <span>Validate</span>
+
+        <span class="arrow">→</span>
+
+        <span>Measure</span>
+
+        <span class="arrow">→</span>
+
+        <span>Improve</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container text-center">
+
+    <strong>
+      SAP S/4HANA Product Owner | Innovation to Order
+    </strong>
+
+    <br>
+
+    <small>
+      Product Ownership • SAP S/4HANA • SAFe • Agile Delivery •
+      Enterprise Transformation
+    </small>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script>
+
+function filterGlossary() {
+
+  const input =
+    document.getElementById("glossarySearch");
+
+  const filter =
+    input.value.toLowerCase();
+
+  const items =
+    document.querySelectorAll(
+      "#glossaryList .glossary-item"
+    );
+
+  items.forEach(function(item) {
+
+    const text =
+      item.textContent.toLowerCase();
+
+    if (text.includes(filter)) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
+
+  });
+
+}
+
+</script>
+
+
+</body>
+</html>
