@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#111315" />
+  <link rel="icon" href="data:," />
+  <title>Honeywell Company and SAP Primer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap');
+    :root{
+      color-scheme:light dark;
+      --bg:#f1f2f0;--paper:#fff;--paper-2:#e7e9e6;--ink:#111315;--muted:#555c5b;--soft:#77807e;--line:#cfd3cf;
+      --red:#d7190f;--red-dark:#a90f08;--red-soft:#fae5e2;--yellow:#f0c419;--green:#087a50;--blue:#1a5e8c;
+      --grid:rgba(17,19,21,.055);--shadow:0 22px 60px rgba(17,19,21,.09);--radius:18px;
+    }
+    @media(prefers-color-scheme:dark){:root{
+      --bg:#0d0f10;--paper:#171a1b;--paper-2:#222627;--ink:#f1f3ef;--muted:#b6bebc;--soft:#87908e;--line:#353a3a;
+      --red:#ff4d43;--red-dark:#ff766f;--red-soft:#381b1a;--yellow:#f1ca3a;--green:#55c896;--blue:#7bb9df;
+      --grid:rgba(255,255,255,.05);--shadow:0 22px 60px rgba(0,0,0,.32);
+    }}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Manrope,sans-serif}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit}a:hover{color:var(--red-dark)}:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+    .page{width:min(1380px,100%);margin:auto;padding:24px clamp(16px,3.5vw,54px) 96px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:34px}
+    .rail{position:sticky;top:20px;align-self:start;height:calc(100vh - 40px);display:flex;flex-direction:column;border-right:1px solid var(--line);padding-right:24px}
+    .rail-meta{font:500 11px/1.6 "IBM Plex Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+    .rail-meta strong{display:block;color:var(--red);font-size:13px;letter-spacing:.1em;margin-bottom:5px}.rail nav{display:grid;gap:4px;margin-top:34px}.rail a{text-decoration:none;padding:9px 10px;border-radius:7px;color:var(--muted);font-size:13px;font-weight:700}.rail a.active,.rail a:hover{background:var(--paper);color:var(--ink)}
+    .legend{margin-top:auto;border-top:1px solid var(--line);padding-top:16px;display:grid;gap:9px}.legend-row{display:flex;align-items:center;gap:9px;font:500 10px/1.4 "IBM Plex Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}.dot{width:8px;height:8px;border-radius:50%}.confirmed{background:var(--green)}.likely{background:var(--yellow)}.confirm{background:var(--red)}
+    main{min-width:0}section{scroll-margin-top:22px}.hero{position:relative;min-height:600px;background:#121516;color:#f7f7f3;overflow:hidden;display:grid;align-content:space-between;padding:clamp(28px,5vw,62px);box-shadow:var(--shadow)}
+    .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:36px 36px;opacity:.55}.hero:after{content:"I2O";position:absolute;right:-18px;bottom:-64px;font:800 clamp(160px,25vw,330px)/1 Manrope,sans-serif;letter-spacing:-.09em;color:rgba(255,255,255,.045)}
+    .hero-top,.hero-copy,.hero-foot{position:relative;z-index:1}.hero-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font:500 11px/1.5 "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:#b8bfbd}.status-live{display:flex;align-items:center;gap:8px}.status-live:before{content:"";width:8px;height:8px;background:#6ed8a8;border-radius:50%;box-shadow:0 0 0 4px rgba(110,216,168,.12)}
+    h1{margin:54px 0 20px;max-width:900px;font-size:clamp(48px,8vw,104px);line-height:.91;letter-spacing:-.065em;font-weight:800}.hero-copy p{max-width:760px;margin:0;font-size:clamp(17px,2vw,22px);color:#cfd4d2}.hero-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin-top:60px}.thesis{max-width:700px;border-left:4px solid var(--red);padding-left:16px;font-weight:700}.role-chip{font:600 11px/1.4 "IBM Plex Mono",monospace;border:1px solid #56605e;padding:10px 12px;text-transform:uppercase;letter-spacing:.06em}
+    .section-head{display:grid;grid-template-columns:142px minmax(0,1fr);gap:22px;margin:78px 0 28px}.eyebrow{margin:6px 0 0;font:600 11px/1.4 "IBM Plex Mono",monospace;color:var(--red);text-transform:uppercase;letter-spacing:.09em}.section-head h2{margin:0;font-size:clamp(32px,4.2vw,56px);line-height:1.02;letter-spacing:-.045em}.section-head p:last-child{grid-column:2;margin:0;color:var(--muted);max-width:780px}
+    .briefing{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.company-card{background:var(--paper);padding:clamp(24px,4vw,42px);border-top:5px solid var(--red)}.company-card h3{margin:0 0 16px;font-size:clamp(26px,3vw,40px);line-height:1.08;letter-spacing:-.035em}.company-card p{margin:0;color:var(--muted)}.company-card p+p{margin-top:14px}.callout{margin-top:26px;background:var(--red-soft);padding:18px 20px;font-size:14px}.callout strong{color:var(--red-dark)}
+    .businesses{display:grid;gap:8px}.business{background:var(--paper);padding:18px;display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start}.business .num{font:600 12px/1 "IBM Plex Mono",monospace;color:var(--red);padding-top:5px}.business h4{margin:0 0 4px;font-size:16px}.business p{margin:0;color:var(--muted);font-size:13px}
+    .concept-line{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);background:var(--line);gap:1px}.concept{background:var(--paper);padding:23px 20px;min-height:215px}.concept .code{font:700 31px/1 "IBM Plex Mono",monospace;color:var(--red);letter-spacing:-.06em}.concept h3{font-size:18px;margin:22px 0 8px}.concept p{margin:0;color:var(--muted);font-size:13px}.concept .plain{display:block;margin-top:14px;font-size:12px;font-weight:700;color:var(--ink)}
+    .architecture{background:var(--paper);border:1px solid var(--line);padding:clamp(20px,3vw,34px)}.architecture-head{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-bottom:24px}.architecture-head h3{margin:0;font-size:23px}.architecture-head p{margin:2px 0 0;max-width:630px;color:var(--muted);font-size:14px}.arch-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;position:relative}.arch-item{border:1px solid var(--line);padding:16px;min-height:170px;background:var(--bg);cursor:pointer;text-align:left;color:var(--ink)}.arch-item:hover,.arch-item[aria-pressed="true"]{border-color:var(--red);background:var(--red-soft)}.arch-item .step{font:600 10px/1 "IBM Plex Mono",monospace;color:var(--red);text-transform:uppercase;letter-spacing:.08em}.arch-item strong{display:block;margin:18px 0 8px;font-size:15px}.arch-item span{display:block;font-size:12px;color:var(--muted)}.detail-panel{margin-top:10px;background:#111416;color:#f4f5f1;padding:22px;min-height:118px}.detail-panel .detail-tag{font:600 10px/1 "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.08em;color:#ff756d}.detail-panel h4{margin:9px 0 7px;font-size:19px}.detail-panel p{margin:0;color:#c0c6c4;font-size:14px;max-width:900px}
+    .process{position:relative}.process-row{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0}.phase{position:relative;padding:20px 15px 22px;border-top:3px solid var(--line);background:var(--paper);min-height:205px}.phase:after{content:"→";position:absolute;right:-8px;top:15px;z-index:2;color:var(--red);font-weight:800}.phase:last-child:after{display:none}.phase.active{border-color:var(--red);background:var(--red-soft)}.phase .n{font:600 10px/1 "IBM Plex Mono",monospace;color:var(--soft)}.phase h3{font-size:15px;line-height:1.25;margin:22px 0 8px}.phase p{font-size:12px;color:var(--muted);margin:0}.phase .object{display:inline-block;margin-top:14px;font:600 10px/1.3 "IBM Plex Mono",monospace;color:var(--red-dark)}
+    .translation{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.translation-card{background:var(--paper);padding:24px}.translation-card h3{margin:0 0 14px;font-size:18px}.translation-card ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}.translation-card li+li{margin-top:8px}
+    .workbench{display:grid;grid-template-columns:.82fr 1.18fr;gap:14px}.certainty{background:var(--paper);padding:24px}.certainty h3{margin:0 0 18px;font-size:20px}.task{display:grid;grid-template-columns:12px 1fr;gap:11px;padding:12px 0;border-top:1px solid var(--line)}.task:first-of-type{border-top:0}.task h4{margin:0 0 3px;font-size:14px}.task p{margin:0;color:var(--muted);font-size:12px}.task .dot{margin-top:6px}.week{background:#111416;color:#f3f5f1;padding:24px}.week h3{margin:0 0 18px;font-size:20px}.week-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.moment{border-top:1px solid #424947;padding:13px 0}.moment .time{font:600 10px/1 "IBM Plex Mono",monospace;color:#ff756d;text-transform:uppercase;letter-spacing:.07em}.moment h4{margin:7px 0 4px;font-size:14px}.moment p{margin:0;color:#bcc3c1;font-size:12px}
+    .raci{margin-top:14px;background:var(--paper);border:1px solid var(--line)}.raci-head,.raci-row{display:grid;grid-template-columns:1.3fr repeat(4,minmax(110px,.7fr));align-items:stretch}.raci-head{background:var(--paper-2);font:600 10px/1.3 "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}.raci-head div,.raci-row div{padding:13px 14px;border-right:1px solid var(--line)}.raci-head div:last-child,.raci-row div:last-child{border-right:0}.raci-row{border-top:1px solid var(--line);font-size:13px}.raci-row .activity{font-weight:700}.raci-row .lead{color:var(--red-dark);font-weight:800}.raci-note{padding:15px 18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+    .glossary-controls{display:grid;grid-template-columns:1fr auto;gap:12px;margin-bottom:14px}.search{position:relative}.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}.search input{width:100%;padding:13px 15px 13px 43px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px}.filters{display:flex;gap:6px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:var(--paper);color:var(--muted);padding:9px 12px;border-radius:99px;font-size:12px;font-weight:700;cursor:pointer}.filter[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}.glossary-meta{font:500 11px/1.4 "IBM Plex Mono",monospace;color:var(--soft);margin:0 0 10px}.glossary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.term{background:var(--paper);border:1px solid var(--line);padding:19px}.term-top{display:flex;justify-content:space-between;gap:12px}.term h3{margin:0;font-size:16px;line-height:1.25}.term .abbr{font:700 14px/1.3 "IBM Plex Mono",monospace;color:var(--red);white-space:nowrap}.term p{margin:10px 0 0;color:var(--muted);font-size:13px}.term .use{display:block;margin-top:11px;font-size:11px;font-weight:700;color:var(--ink)}.empty{display:none;padding:30px;background:var(--paper);text-align:center;color:var(--muted)}
+    .questions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;counter-reset:q}.question{counter-increment:q;background:var(--paper);padding:21px 20px 21px 60px;position:relative;font-weight:700}.question:before{content:counter(q,decimal-leading-zero);position:absolute;left:18px;top:24px;font:600 11px/1 "IBM Plex Mono",monospace;color:var(--red)}.question small{display:block;margin-top:7px;color:var(--muted);font-weight:500;line-height:1.5}
+    .sources{margin-top:76px;border-top:1px solid var(--line);padding-top:22px}.sources h2{font-size:22px;margin:0 0 8px}.sources p,.sources li{color:var(--muted);font-size:13px}.sources ol{padding-left:20px}.sources li+li{margin-top:8px}.stamp{font:500 10px/1.5 "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+    .mobile-nav{display:none}
+    @media(max-width:980px){.page{display:block;padding:14px 14px 92px}.rail{display:none}.hero{min-height:560px}.concept-line{grid-template-columns:repeat(2,minmax(0,1fr))}.arch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.arch-item:last-child{grid-column:1/-1}.process-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line)}.phase{border-top-width:2px}.phase:after{display:none}.raci{overflow:hidden}.raci-head{display:none}.raci-row{grid-template-columns:1fr 1fr}.raci-row .activity{grid-column:1/-1;background:var(--paper-2)}.raci-row div{border-right:0;border-top:1px solid var(--line)}.raci-row .activity{border-top:0}.mobile-nav{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:20;display:grid;grid-template-columns:repeat(5,1fr);background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:13px;overflow:hidden}.mobile-nav a{text-decoration:none;text-align:center;padding:11px 3px 9px;font-size:9px;font-weight:800;color:var(--muted)}.mobile-nav svg{display:block;margin:0 auto 3px}}
+    @media(max-width:650px){h1{font-size:51px}.hero{min-height:590px;padding:26px 23px}.hero-foot{grid-template-columns:1fr}.section-head{grid-template-columns:1fr;gap:8px;margin-top:60px}.section-head p:last-child{grid-column:1}.briefing,.translation,.workbench,.glossary-grid,.questions{grid-template-columns:1fr}.concept-line{grid-template-columns:1fr}.concept{min-height:0}.arch-grid{grid-template-columns:1fr}.arch-item:last-child{grid-column:auto}.process-row{grid-template-columns:1fr}.phase{min-height:0}.week-grid{grid-template-columns:1fr}.glossary-controls{grid-template-columns:1fr}.raci-row{grid-template-columns:1fr}.raci-row .activity{grid-column:auto}.raci-row div:before{content:attr(data-role);display:block;font:600 9px/1.3 "IBM Plex Mono",monospace;color:var(--soft);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<div class="page">
+  <aside class="rail" aria-label="Primer navigation">
+    <div class="rail-meta"><strong>Role 157976</strong>S4 Product Owner<br>Innovation to Order<br>Company + systems primer</div>
+    <nav>
+      <a href="#company" class="active">Company now</a>
+      <a href="#sap">SAP stack</a>
+      <a href="#flow">Workstream flow</a>
+      <a href="#role">Your likely work</a>
+      <a href="#terms">Terms</a>
+      <a href="#confirm">Confirm in interview</a>
+    </nav>
+    <div class="legend" aria-label="Confidence legend">
+      <div class="legend-row"><span class="dot confirmed"></span>Confirmed by role or source</div>
+      <div class="legend-row"><span class="dot likely"></span>Likely in this workstream</div>
+      <div class="legend-row"><span class="dot confirm"></span>Confirm with hiring team</div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-top"><span>System briefing · October 7, 2026</span><span class="status-live">Company context updated</span></div>
+      <div class="hero-copy">
+        <h1 id="hero-title">From idea<br>to order-ready.</h1>
+        <p>Honeywell makes complex physical products and automation systems. SAP S/4HANA is the digital backbone that turns product decisions into reliable data, materials, plans, costs, and orders. Your Product Owner job is likely to keep that chain aligned and deliverable.</p>
+      </div>
+      <div class="hero-foot">
+        <div class="thesis">Plain English: you probably will not design aircraft or factory controls. You will help design the business process and SAP capabilities that let Honeywell introduce, configure, manufacture, and sell products correctly.</div>
+        <div class="role-chip">S4 PO · Innovation to Order</div>
+      </div>
+    </section>
+
+    <section id="company">
+      <div class="section-head"><p class="eyebrow">01 / Company</p><h2>Know which Honeywell you are joining</h2><p>Honeywell’s structure changed in 2026. The current company named Honeywell Technologies is an automation business; Honeywell Aerospace and Solstice Advanced Materials are now separate public companies. The role’s exact employing entity and enterprise scope are worth confirming.</p></div>
+      <div class="briefing">
+        <article class="company-card">
+          <h3>An industrial technology company built around operational outcomes</h3>
+          <p>Honeywell Technologies sells hardware, software, controls, sensors, and services used in buildings, process industries, and industrial operations. Its value proposition centers on safety, productivity, efficiency, uptime, and the shift from automation toward more autonomous operations.</p>
+          <p>That explains why an Enterprise Resource Planning (ERP) transformation matters: the company’s product, supply, manufacturing, commercial, and finance processes must work across many businesses and locations without losing control or traceability.</p>
+          <div class="callout"><strong>Current-company note:</strong> Honeywell completed the Honeywell Aerospace spin-off on June 29, 2026. If interviewers use older segment language, listen for whether this S/4 program spans the pre-separation estate, the new Honeywell Technologies organization, transition-service obligations, or a specific business.</div>
+        </article>
+        <div class="businesses" aria-label="Honeywell Technologies business areas">
+          <article class="business"><span class="num">01</span><div><h4>Building Automation</h4><p>Hardware, software, sensors, and analytics for safer, more efficient, connected buildings.</p></div></article>
+          <article class="business"><span class="num">02</span><div><h4>Process Automation &amp; Technology</h4><p>Automation and process technologies for efficiency, reliability, and emissions reduction.</p></div></article>
+          <article class="business"><span class="num">03</span><div><h4>Industrial Automation</h4><p>Sensors and smart-edge devices that connect and control industrial environments.</p></div></article>
+          <article class="business"><span class="num">↗</span><div><h4>Why this matters to a PO</h4><p>Each business can have different product structures, plants, regulatory constraints, and legacy processes. The job is to enable variation without turning the global template into a collection of exceptions.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sap">
+      <div class="section-head"><p class="eyebrow">02 / SAP stack</p><h2>The four ideas underneath “S/4”</h2><p>SAP is the software company. S/4HANA is the enterprise system. HANA is the database technology. Fiori is the role-based user experience. Keep these layers separate when you speak.</p></div>
+      <div class="concept-line">
+        <article class="concept"><div class="code">SAP</div><h3>Systems, Applications, and Products</h3><p>The vendor and ecosystem behind enterprise software used to run finance, supply chain, manufacturing, procurement, sales, and other operations.</p><span class="plain">Think: the company and platform family.</span></article>
+        <article class="concept"><div class="code">ERP</div><h3>Enterprise Resource Planning</h3><p>A connected system of record for core business processes and shared data across departments.</p><span class="plain">Think: one operational nervous system.</span></article>
+        <article class="concept"><div class="code">S/4</div><h3>SAP S/4HANA</h3><p>SAP’s modern ERP suite. It joins transactions and near-real-time analytics around a simplified data model.</p><span class="plain">Think: the business engine being transformed.</span></article>
+        <article class="concept"><div class="code">UI</div><h3>User Interface</h3><p>The screens and controls a person uses. In modern SAP, SAP Fiori provides role-based apps and a launchpad.</p><span class="plain">Think: what each user sees and does.</span></article>
+      </div>
+
+      <div class="architecture" style="margin-top:14px">
+        <div class="architecture-head"><div><h3>How the system fits together</h3><p>Select a layer. This is a conceptual map—not a claim about Honeywell’s exact technical architecture.</p></div><span class="stamp">Interactive system map</span></div>
+        <div class="arch-grid" id="archGrid">
+          <button class="arch-item" data-key="experience" aria-pressed="true"><span class="step">Layer 01</span><strong>Experience</strong><span>SAP Fiori apps, forms, work queues, approvals, analytics</span></button>
+          <button class="arch-item" data-key="process" aria-pressed="false"><span class="step">Layer 02</span><strong>Process</strong><span>NPI, product data, sourcing, planning, production, order execution</span></button>
+          <button class="arch-item" data-key="core" aria-pressed="false"><span class="step">Layer 03</span><strong>Digital core</strong><span>SAP S/4HANA business rules, transactions, controls, and shared records</span></button>
+          <button class="arch-item" data-key="data" aria-pressed="false"><span class="step">Layer 04</span><strong>Master data</strong><span>Materials, bills of material, plants, suppliers, customers, units, statuses</span></button>
+          <button class="arch-item" data-key="integration" aria-pressed="false"><span class="step">Layer 05</span><strong>Integration</strong><span>Engineering, product lifecycle, manufacturing, planning, quality, and reporting tools</span></button>
+        </div>
+        <div class="detail-panel" aria-live="polite"><div class="detail-tag" id="detailTag">What the PO asks</div><h4 id="detailTitle">Does the right role see the right task, context, and decision?</h4><p id="detailText">A polished screen is not enough. Acceptance should prove that the user can complete the end-to-end job, with correct authorization, data, exception handling, and evidence.</p></div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="section-head"><p class="eyebrow">03 / Workstream</p><h2>Innovation to Order (I2O), step by step</h2><p>Honeywell’s exact process boundaries are not public in the role materials. This is the most likely end-to-end interpretation: move an approved product idea through governed product definition until commercial and operational systems can accept an order.</p></div>
+      <div class="process">
+        <div class="process-row">
+          <article class="phase active"><span class="n">01</span><h3>Idea &amp; business case</h3><p>Define customer problem, value, target market, and investment case.</p><span class="object">Output: approved concept</span></article>
+          <article class="phase"><span class="n">02</span><h3>New product introduction</h3><p>Establish gates, owners, dates, requirements, and readiness criteria.</p><span class="object">Output: NPI plan</span></article>
+          <article class="phase"><span class="n">03</span><h3>Product definition</h3><p>Create specifications, variants, engineering structure, and controlled changes.</p><span class="object">Output: product design</span></article>
+          <article class="phase"><span class="n">04</span><h3>Material &amp; BOM setup</h3><p>Create governed records for items, components, units, statuses, and relationships.</p><span class="object">Output: trusted master data</span></article>
+          <article class="phase"><span class="n">05</span><h3>Supply &amp; production readiness</h3><p>Confirm sourcing, planning, routings, capacity, quality, and plant extensions.</p><span class="object">Output: executable supply</span></article>
+          <article class="phase"><span class="n">06</span><h3>Commercial readiness</h3><p>Establish sales views, configuration rules, pricing inputs, compliance, and costing.</p><span class="object">Output: sellable offer</span></article>
+          <article class="phase"><span class="n">07</span><h3>Order accepted</h3><p>Create a valid order that flows downstream without manual repair.</p><span class="object">Outcome: order-ready product</span></article>
+        </div>
+      </div>
+      <div class="translation">
+        <article class="translation-card"><h3>Where failure shows up</h3><ul><li>A missing material field blocks planning or procurement.</li><li>An incorrect bill of material drives the wrong components.</li><li>A local exception breaks the global process or an integration.</li><li>Engineering changes do not reach manufacturing or sales in time.</li><li>The happy path works, but approvals or error handling do not.</li></ul></article>
+        <article class="translation-card"><h3>What success looks like</h3><ul><li>Product data is complete, valid, owned, and traceable.</li><li>Users can follow a standard process with clear exceptions.</li><li>Dependencies are visible before Program Increment (PI) commitment.</li><li>Acceptance covers process, data, controls, integration, and adoption.</li><li>Cycle time and rework improve—not just story completion.</li></ul></article>
+      </div>
+    </section>
+
+    <section id="role">
+      <div class="section-head"><p class="eyebrow">04 / Your role</p><h2>What you will most likely be working on</h2><p>The posting confirms backlog ownership, Program Increment Planning, SAP S/4HANA, Innovation-to-Order, material management, Jira, and cross-functional work. The exact modules, rollout wave, and authority model remain interview questions.</p></div>
+      <div class="workbench">
+        <article class="certainty"><h3>Work forecast</h3>
+          <div class="task"><span class="dot confirmed"></span><div><h4>Own and prioritize the Team Backlog</h4><p>Turn higher-level features into sequenced, team-ready work aligned to Product Management priorities.</p></div></div>
+          <div class="task"><span class="dot confirmed"></span><div><h4>Prepare for Program Increment (PI) Planning</h4><p>Bring priorities, acceptance intent, dependencies, risks, and enough refinement for a credible plan.</p></div></div>
+          <div class="task"><span class="dot confirmed"></span><div><h4>Write functional requirements and acceptance criteria</h4><p>Clarify business rules, scenarios, data impacts, controls, exceptions, and evidence of done.</p></div></div>
+          <div class="task"><span class="dot likely"></span><div><h4>Broker global-template versus local-process decisions</h4><p>Test whether a request is a true legal or operational gap, a configuration choice, or a preference.</p></div></div>
+          <div class="task"><span class="dot likely"></span><div><h4>Support testing and rollout readiness</h4><p>Shape User Acceptance Testing (UAT), resolve defects, confirm cutover criteria, and learn from hypercare.</p></div></div>
+          <div class="task"><span class="dot confirm"></span><div><h4>Own named SAP modules or integrations</h4><p>Likely touchpoints exist, but confirm the exact module, system integrator, business unit, and deployment phase.</p></div></div>
+        </article>
+        <article class="week"><h3>A realistic rhythm</h3><div class="week-grid">
+          <div class="moment"><span class="time">Refinement</span><h4>Make work executable</h4><p>Review stories with developers, functional consultants, architects, and testers; expose unanswered business decisions.</p></div>
+          <div class="moment"><span class="time">Stakeholder alignment</span><h4>Make trade-offs explicit</h4><p>Align process owners, product management, engineering, operations, and data owners around value and risk.</p></div>
+          <div class="moment"><span class="time">Dependency control</span><h4>Protect the end-to-end flow</h4><p>Track what another team, system, site, or data domain must provide—and by when.</p></div>
+          <div class="moment"><span class="time">Demonstration</span><h4>Inspect real process behavior</h4><p>Validate scenarios against acceptance criteria; capture feedback without turning every preference into scope.</p></div>
+          <div class="moment"><span class="time">Testing</span><h4>Decide what is acceptable</h4><p>Triage defects by business impact and decide whether evidence supports acceptance or further work.</p></div>
+          <div class="moment"><span class="time">PI events</span><h4>Connect team delivery to ART outcomes</h4><p>Plan, negotiate scope, surface risks, and align objectives across the Agile Release Train (ART).</p></div>
+        </div></article>
+      </div>
+
+      <div class="raci" aria-label="Likely decision rights matrix">
+        <div class="raci-head"><div>Decision / activity</div><div>Product Manager</div><div>Product Owner</div><div>Process Owner / SME</div><div>Delivery team / SI</div></div>
+        <div class="raci-row"><div class="activity">Feature priority &amp; ART outcomes</div><div class="lead" data-role="Product Manager">Leads</div><div data-role="Product Owner">Shapes</div><div data-role="Process Owner / SME">Advises</div><div data-role="Delivery team / SI">Estimates</div></div>
+        <div class="raci-row"><div class="activity">Team Backlog sequence</div><div data-role="Product Manager">Aligns</div><div class="lead" data-role="Product Owner">Leads</div><div data-role="Process Owner / SME">Advises</div><div data-role="Delivery team / SI">Inputs</div></div>
+        <div class="raci-row"><div class="activity">Business rules &amp; process policy</div><div data-role="Product Manager">Aligns</div><div data-role="Product Owner">Clarifies</div><div class="lead" data-role="Process Owner / SME">Owns</div><div data-role="Delivery team / SI">Tests feasibility</div></div>
+        <div class="raci-row"><div class="activity">Solution design &amp; build</div><div data-role="Product Manager">Informed</div><div data-role="Product Owner">Accepts outcome</div><div data-role="Process Owner / SME">Validates</div><div class="lead" data-role="Delivery team / SI">Leads</div></div>
+        <div class="raci-row"><div class="activity">Story acceptance</div><div data-role="Product Manager">Informed</div><div class="lead" data-role="Product Owner">Leads</div><div data-role="Process Owner / SME">Provides evidence</div><div data-role="Delivery team / SI">Demonstrates</div></div>
+        <div class="raci-note">This is a likely working model, not Honeywell’s published governance. Ask how decision rights are actually split among the Product Manager, Product Owner, business process owner, and system integrator (SI).</div>
+      </div>
+    </section>
+
+    <section id="terms">
+      <div class="section-head"><p class="eyebrow">05 / Vocabulary</p><h2>Terms you should be able to explain simply</h2><p>Search by acronym, full term, or concept. Each definition includes why it matters to this Product Owner role.</p></div>
+      <div class="glossary-controls"><div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="termSearch" type="search" placeholder="Search terms: BOM, backlog, data, testing…" aria-label="Search glossary" /></div><div class="filters" aria-label="Glossary filters"><button class="filter" data-filter="all" aria-pressed="true">All</button><button class="filter" data-filter="sap" aria-pressed="false">SAP</button><button class="filter" data-filter="product" aria-pressed="false">Product</button><button class="filter" data-filter="delivery" aria-pressed="false">Delivery</button></div></div>
+      <p class="glossary-meta" id="termCount">24 terms</p><div class="glossary-grid" id="glossaryGrid"></div><div class="empty" id="emptyTerms">No terms match that search.</div>
+    </section>
+
+    <section id="confirm">
+      <div class="section-head"><p class="eyebrow">06 / Interview</p><h2>Seven questions that turn “potential” into exact scope</h2><p>Use these to separate what the posting says from how the job actually works. The answers will reveal the module mix, transformation stage, authority, and near-term expectations.</p></div>
+      <div class="questions">
+        <div class="question">Which legal entity and business segments does this role support now?<small>Confirm the effect of the 2026 Honeywell Technologies and Honeywell Aerospace separation on scope.</small></div>
+        <div class="question">Where does Honeywell define the start and end of Innovation to Order?<small>Ask which NPI gates, engineering objects, material processes, and order-readiness outcomes are included.</small></div>
+        <div class="question">Which SAP modules and surrounding platforms are in this team’s boundary?<small>Listen for Product Lifecycle Management, Materials Management, Production Planning, Sales and Distribution, variant configuration, engineering, and data-governance tools.</small></div>
+        <div class="question">Is this a greenfield design, a legacy conversion, a deployment wave, or post-go-live optimization?<small>The work changes radically depending on program phase.</small></div>
+        <div class="question">What decisions can this Product Owner make without escalation?<small>Clarify Team Backlog priority, story acceptance, process policy, template exceptions, and release scope.</small></div>
+        <div class="question">What is the hardest dependency or source of rework today?<small>Probe for master data, interfaces, late business decisions, testing, environment readiness, or adoption.</small></div>
+        <div class="question">What measurable outcome must improve in the first 90 days?<small>Ask for cycle time, data quality, release predictability, defect escape, adoption, or business readiness—not output alone.</small></div>
+        <div class="question">How do Honeywell and the system integrator divide accountability?<small>Internal ownership should remain clear for business outcomes, priority, and acceptance.</small></div>
+      </div>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-title"><h2 id="sources-title">Sources &amp; boundaries</h2><p>Prepared October 7, 2026. Company structure reflects Honeywell’s June 29, 2026 spin-off announcement. Role facts are based on the supplied Honeywell posting for job 157976 and the interview-prep context. Process and architecture sections are informed, role-specific interpretations—not internal Honeywell documentation.</p><ol>
+      <li><a href="https://careers.honeywell.com/en/sites/Honeywell/job/157976/?lastSelectedFacet=POSTING_DATES&amp;mode=location&amp;selectedPostingDatesFacet=30" target="_blank" rel="noopener">Honeywell careers — job 157976, S4 Product Owner, Innovation to Order</a>.</li>
+      <li><a href="https://www.honeywell.com/us/en/news/press-releases/2026/06/honeywell-technologies-launches-independent-pure-play-automation-company-following-honeywell-aerospace-spin-off" target="_blank" rel="noopener">Honeywell, June 29, 2026 — company separation and current automation-company positioning</a>.</li>
+      <li><a href="https://www.sec.gov/Archives/edgar/data/773840/000077384026000031/hon2025annualreport.pdf" target="_blank" rel="noopener">Honeywell 2025 Annual Report — portfolio, business segments, operating model, and transformation context</a>.</li>
+      <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-s-4hana-cloud-revolutionizing-the-next-generation-of-cloud-erp/ba-p/13442141" target="_blank" rel="noopener">SAP — S/4HANA digital core, in-memory processing, role-based experience, and integration overview</a>.</li>
+      <li><a href="https://community.sap.com:443/t5/technology-blog-posts-by-sap/sap-fiori-for-sap-s-4hana-recommendations-for-transitioning-users-from-sap/bc-p/13508114" target="_blank" rel="noopener">SAP — Fiori’s role in delivering S/4HANA business value to users</a>.</li>
+      <li><a href="https://learning.sap.com/courses/implementing-product-lifecycle-management-in-sap-s-4hana-cloud-public-edition/product-variant-configuration_f4e0e4f4-603e-42e6-bdb8-57914f589623" target="_blank" rel="noopener">SAP Learning — variant configuration, configurable materials, bills of material, routings, and dependencies</a>.</li>
+    </ol></section>
+  </main>
+</div>
+
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <a href="#company"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V7l8-4 8 4v14M8 21v-6h8v6M8 9h.01M12 9h.01M16 9h.01"/></svg>Company</a>
+  <a href="#sap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h4M7 16h7"/></svg>SAP</a>
+  <a href="#flow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h5v5H4zM15 13h5v5h-5zM9 8.5h4a4 4 0 0 1 4 4v.5"/></svg>Flow</a>
+  <a href="#role"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg>Role</a>
+  <a href="#terms"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4"/></svg>Terms</a>
+</nav>
+
+<script>
+const arch={
+  experience:{tag:'What the PO asks',title:'Does the right role see the right task, context, and decision?',text:'A polished screen is not enough. Acceptance should prove that the user can complete the end-to-end job, with correct authorization, data, exception handling, and evidence.'},
+  process:{tag:'What the PO asks',title:'Does the workflow produce the intended business outcome?',text:'Map the happy path, exceptions, approvals, handoffs, and controls. A requirement should name who acts, what changes, what must be true, and what happens next.'},
+  core:{tag:'What the PO asks',title:'Are rules standardized without erasing real business needs?',text:'Favor standard capability and configuration before custom code. When a gap is real, make the value, risk, ownership, and lifetime maintenance cost visible to governance.'},
+  data:{tag:'What the PO asks',title:'Can downstream teams trust the record?',text:'Material master data and product structures must be complete, valid, governed, and synchronized. Missing or wrong data can block procurement, planning, manufacturing, costing, or sales.'},
+  integration:{tag:'What the PO asks',title:'Will the handoff work outside the demo?',text:'Define the source, destination, timing, mapping, error path, ownership, reconciliation, and recovery. End-to-end acceptance matters more than a single application screen.'}
+};
+document.querySelectorAll('.arch-item').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.arch-item').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));const d=arch[btn.dataset.key];document.getElementById('detailTag').textContent=d.tag;document.getElementById('detailTitle').textContent=d.title;document.getElementById('detailText').textContent=d.text;}));
+
+const terms=[
+ {cat:'sap',abbr:'SAP',name:'Systems, Applications, and Products',def:'The enterprise software company and ecosystem behind systems used to run core business operations.',use:'Use it as the vendor/platform family—not as a synonym for every screen.'},
+ {cat:'sap',abbr:'ERP',name:'Enterprise Resource Planning',def:'An integrated system for core functions such as finance, procurement, supply chain, manufacturing, and sales.',use:'The shared operational backbone.'},
+ {cat:'sap',abbr:'S/4HANA',name:'SAP Business Suite 4 SAP HANA',def:'SAP’s modern ERP suite built around the HANA in-memory database and a simplified data model.',use:'The transformation platform named in the role.'},
+ {cat:'sap',abbr:'HANA',name:'High-performance ANalytic Appliance',def:'SAP’s in-memory database technology for high-speed transaction processing and analytics.',use:'The database foundation—not the whole business application.'},
+ {cat:'sap',abbr:'Fiori',name:'SAP Fiori',def:'SAP’s role-based user experience, including task-focused apps and the Fiori Launchpad.',use:'Where UI and user adoption questions often surface.'},
+ {cat:'sap',abbr:'UI',name:'User Interface',def:'The screens, controls, messages, and visual interactions through which a user operates a system.',use:'Acceptance must cover usability and business completion.'},
+ {cat:'sap',abbr:'GUI',name:'Graphical User Interface',def:'A visual way to use software; “SAP GUI” also refers to SAP’s classic desktop-style interface.',use:'Do not assume Fiori replaces every classic transaction at once.'},
+ {cat:'sap',abbr:'MM',name:'Materials Management',def:'SAP capabilities supporting materials, procurement, inventory, and related logistics processes.',use:'Explicitly relevant to the posting’s material-management emphasis.'},
+ {cat:'sap',abbr:'PP',name:'Production Planning',def:'SAP capabilities for planning what to make, when, where, and with which resources and components.',use:'A likely downstream consumer of product and material data.'},
+ {cat:'sap',abbr:'SD',name:'Sales and Distribution',def:'SAP capabilities for sales orders, pricing, delivery, and billing processes.',use:'Where “order-ready” becomes operational.'},
+ {cat:'product',abbr:'I2O',name:'Innovation to Order',def:'The governed path from a product idea through introduction and product definition to commercial and operational order readiness.',use:'The product domain this PO is expected to own.'},
+ {cat:'product',abbr:'NPI',name:'New Product Introduction',def:'The cross-functional process for taking a new product through defined readiness gates toward launch.',use:'Think process, data, decisions, and handoffs—not only a project timeline.'},
+ {cat:'product',abbr:'PLM',name:'Product Lifecycle Management',def:'Processes and systems used to manage product information and changes from concept through retirement.',use:'A likely neighbor of S/4 in an engineering-heavy company.'},
+ {cat:'product',abbr:'MDM',name:'Master Data Management',def:'Governance of shared core records so they are consistent, complete, owned, and usable across systems.',use:'A bad master record creates downstream operational defects.'},
+ {cat:'product',abbr:'BOM',name:'Bill of Material',def:'The structured list of components and quantities required to make a product.',use:'Wrong structure can drive wrong purchasing or production.'},
+ {cat:'product',abbr:'ECM',name:'Engineering Change Management',def:'Controlled handling of product-design and engineering-data changes, including validity and traceability.',use:'Changes must reach the right downstream processes at the right time.'},
+ {cat:'product',abbr:'VC',name:'Variant Configuration',def:'Rules and product structures that let one configurable product represent many valid customer options.',use:'Important when complex products have many combinations.'},
+ {cat:'delivery',abbr:'PO',name:'Product Owner',def:'The team-level product role that clarifies work, orders the backlog, and accepts outcomes in collaboration with stakeholders.',use:'Own decisions and value—not just Jira hygiene.'},
+ {cat:'delivery',abbr:'PM',name:'Product Manager',def:'The role that typically owns product strategy, feature priorities, and outcomes across teams or an ART.',use:'Clarify the PM–PO boundary early.'},
+ {cat:'delivery',abbr:'SAFe',name:'Scaled Agile Framework',def:'A framework for coordinating Agile delivery across multiple teams, products, and planning horizons.',use:'The delivery model named in the posting.'},
+ {cat:'delivery',abbr:'ART',name:'Agile Release Train',def:'A long-lived team of Agile teams aligned to a shared mission and planning cadence.',use:'Your team backlog contributes to larger ART outcomes.'},
+ {cat:'delivery',abbr:'PI',name:'Program Increment',def:'A multi-iteration planning and delivery timebox used by an Agile Release Train.',use:'Arrive with priorities, risks, dependencies, and acceptance intent.'},
+ {cat:'delivery',abbr:'UAT',name:'User Acceptance Testing',def:'Business validation that a solution supports real scenarios and is acceptable for use.',use:'The PO shapes acceptance evidence; business users validate reality.'},
+ {cat:'delivery',abbr:'SI',name:'System Integrator',def:'An external or internal partner that helps design, configure, integrate, test, and deploy enterprise systems.',use:'Partner with the SI while retaining business ownership of priority and acceptance.'}
+];
+const grid=document.getElementById('glossaryGrid'),search=document.getElementById('termSearch'),empty=document.getElementById('emptyTerms'),count=document.getElementById('termCount');let filter='all';
+function renderTerms(){const q=search.value.trim().toLowerCase();const visible=terms.filter(t=>(filter==='all'||t.cat===filter)&&(!q||[t.abbr,t.name,t.def,t.use].join(' ').toLowerCase().includes(q)));grid.innerHTML='';visible.forEach(t=>{const a=document.createElement('article');a.className='term';const top=document.createElement('div');top.className='term-top';const h=document.createElement('h3');h.textContent=t.name;const ab=document.createElement('span');ab.className='abbr';ab.textContent=t.abbr;top.append(h,ab);const p=document.createElement('p');p.textContent=t.def;const u=document.createElement('span');u.className='use';u.textContent='ROLE LINK — '+t.use;a.append(top,p,u);grid.appendChild(a)});count.textContent=visible.length+(visible.length===1?' term':' terms');empty.style.display=visible.length?'none':'block'}
+search.addEventListener('input',renderTerms);document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{filter=btn.dataset.filter;document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));renderTerms()}));renderTerms();
+const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('.rail nav a')];if('IntersectionObserver'in window){new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-20% 0px -68%',threshold:0}).observe(sections[0]);const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-20% 0px -68%',threshold:0});sections.forEach(s=>ob.observe(s))}
+</script>
+</body>
+</html>

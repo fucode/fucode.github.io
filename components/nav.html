@@ -1,9 +1,10 @@
+
 <!-- includes/nav.html -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <div class="container">
 
-    <!-- Logo -->
-    <a href="index.html" class="navbar-brand">
+    <!-- Brand -->
+    <a class="navbar-brand" href="index.html">
       <img
         src="images/TIAA/bluelogo.png"
         alt="Faraz Uddin Logo"
@@ -12,7 +13,7 @@
       >
     </a>
 
-    <!-- Mobile Toggle -->
+    <!-- Mobile Navigation Toggle -->
     <button
       class="navbar-toggler"
       type="button"
@@ -25,13 +26,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navigation -->
+    <!-- Navigation Links -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto text-center align-items-lg-center">
 
         <!-- Home -->
         <li class="nav-item">
-          <a href="index.html" class="nav-link fw-semibold">
+          <a class="nav-link fw-semibold" href="index.html">
             Home
           </a>
         </li>
@@ -84,49 +85,71 @@
             class="dropdown-menu dropdown-menu-dark text-center"
             aria-labelledby="skillsDropdown"
           >
+
+            <!-- Honeywell Case Study -->
+            <li>
+              <a
+                class="dropdown-item"
+                href="honeywell-case-study-floating-toc.html"
+              >
+                Honeywell SAP S/4HANA Case Study
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- Data Product & Governance -->
             <li>
               <a class="dropdown-item" href="data_guide.html">
                 Data Product &amp; Governance
               </a>
             </li>
 
+            <!-- Enterprise Data -->
             <li>
               <a class="dropdown-item" href="Data.html">
                 Enterprise Data
               </a>
             </li>
 
+            <!-- API Testing -->
             <li>
               <a class="dropdown-item" href="API.html">
                 API Testing
               </a>
             </li>
 
+            <!-- SDLC & Agile -->
             <li>
               <a class="dropdown-item" href="Agile.html">
                 SDLC &amp; Agile
               </a>
             </li>
 
+            <!-- Backlog Refinement -->
             <li>
               <a class="dropdown-item" href="Grooming.html">
                 Backlog Refinement
               </a>
             </li>
 
+            <!-- Stakeholder Management -->
             <li>
               <a class="dropdown-item" href="Stakeholder.html">
                 Stakeholder Management
               </a>
             </li>
+
           </ul>
         </li>
 
         <!-- Resume -->
         <li class="nav-item ms-lg-3 my-2 my-lg-0">
           <a
-            href="images/TIAA/PO_Faraz.Uddin.Resume_2025.pdf"
             class="btn btn-outline-light fw-semibold px-4"
+            href="/images/TIAA/Faraz_Uddin_Resume_OCT26..pdf"
           >
             Resume
           </a>
@@ -134,10 +157,6 @@
 
       </ul>
     </div>
+
   </div>
 </nav>
-
-<!-- Load Navbar
-<div id="nav-placeholder"></div>
-<script src="js/load-components.js"></script>
--->

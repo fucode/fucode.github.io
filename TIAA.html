@@ -1,498 +1,1884 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="images/favicon.png" />
-    <title>Faraz Uddin</title>
-  </head>
-  <body>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>TIAA | Product Ownership & Digital Transformation | Faraz Uddin</title>
 
-<!-- Navigation -->
-<div id="nav-placeholder"></div>
+  <meta name="description"
+    content="TIAA product ownership, business analysis, investment research modernization, and PlanFocus institutional retirement platform case studies." />
 
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-    <!-- Header -->
-    <header class="header">
-      <!-- Hero -->
-      <div class="hero text-white pt-7 pb-4">
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
 
+    .tiaa-page {
+      --navy: #142638;
+      --navy-dark: #101c29;
+      --blue: #237a9d;
+      --teal: #38c5ba;
+      --ink: #192838;
+      --muted: #637184;
+      --light: #f4f7fa;
+      --border: #e1e7ed;
+
+      font-family: "Open Sans", sans-serif;
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    .tiaa-page a {
+      text-decoration: none;
+    }
+
+    .tiaa-page .section-pad {
+      padding: 85px 0;
+    }
+
+    .tiaa-page .eyebrow {
+      color: #087e78;
+      text-transform: uppercase;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      margin-bottom: 13px;
+    }
+
+    .tiaa-page .section-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .tiaa-page .section-lead {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .tiaa-page .tiaa-hero {
+      background:
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(56,197,186,.13),
+          transparent 36%
+        ),
+        linear-gradient(135deg, #101c29, #203e54);
+
+      padding: 155px 0 105px;
+      color: #fff;
+    }
+
+    .tiaa-page .tiaa-hero .eyebrow {
+      color: var(--teal);
+    }
+
+    .tiaa-page .hero-title {
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.055em;
+      margin-bottom: 25px;
+    }
+
+    .tiaa-page .hero-title span {
+      color: var(--teal);
+    }
+
+    .tiaa-page .hero-description {
+      color: #c4d0db;
+      max-width: 740px;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .tiaa-page .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 30px;
+    }
+
+    .tiaa-page .hero-tag {
+      color: #e4edf3;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: .77rem;
+      font-weight: 700;
+    }
+
+    .tiaa-page .hero-summary {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    .tiaa-page .hero-summary h3 {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .tiaa-page .hero-stat {
+      padding: 15px 0;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .tiaa-page .hero-stat strong {
+      color: var(--teal);
+      font-size: 1.5rem;
+      display: block;
+    }
+
+    .tiaa-page .hero-stat span {
+      color: #c5d1db;
+      font-size: .83rem;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .tiaa-page .soft-section {
+      background: var(--light);
+    }
+
+    .tiaa-page .content-card {
+      height: 100%;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 12px 32px rgba(20,38,56,.045);
+    }
+
+    .tiaa-page .content-card h3 {
+      font-size: 1.28rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .tiaa-page .role-label {
+      color: #087e78;
+      font-weight: 800;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 18px;
+    }
+
+    .tiaa-page .clean-list {
+      padding-left: 19px;
+      margin-bottom: 0;
+    }
+
+    .tiaa-page .clean-list li {
+      margin-bottom: 13px;
+      color: #4b5c6d;
+    }
+
+    .tiaa-page .clean-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       CASE STUDIES
+    ========================= */
+
+    .tiaa-page .case-heading {
+      border-left: 4px solid var(--teal);
+      padding-left: 20px;
+      margin-bottom: 30px;
+    }
+
+    .tiaa-page .case-heading h3 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .tiaa-page .case-heading p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .tiaa-page .story-block {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 27px;
+      margin-bottom: 17px;
+    }
+
+    .tiaa-page .story-block h4 {
+      font-size: 1.02rem;
+      font-weight: 800;
+      margin-bottom: 13px;
+    }
+
+    .tiaa-page .story-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tiaa-page .story-block ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .tiaa-page .story-block li {
+      margin-bottom: 10px;
+    }
+
+    .tiaa-page .result-block {
+      border-left: 4px solid var(--teal);
+      background: #eaf8f5;
+    }
+
+    /* =========================
+       SCREENSHOTS
+    ========================= */
+
+    .tiaa-page .screenshot-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      height: 100%;
+    }
+
+    .tiaa-page .screenshot-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 9px;
+      border: 1px solid #e8edf2;
+    }
+
+    .tiaa-page .screenshot-card h4 {
+      font-size: .94rem;
+      font-weight: 800;
+      margin: 17px 0 4px;
+    }
+
+    .tiaa-page .screenshot-card p {
+      font-size: .82rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* =========================
+       FEATURE GRID
+    ========================= */
+
+    .tiaa-page .feature-card {
+      height: 100%;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .tiaa-page .feature-card h4 {
+      font-size: 1.03rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .tiaa-page .feature-card p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       ACCORDION
+    ========================= */
+
+    .tiaa-page .accordion-item {
+      border-color: var(--border);
+    }
+
+    .tiaa-page .accordion-button {
+      font-weight: 800;
+      color: var(--ink);
+      padding: 19px 22px;
+    }
+
+    .tiaa-page .accordion-button:not(.collapsed) {
+      background: #eaf3f7;
+      color: #155b76;
+      box-shadow: none;
+    }
+
+    .tiaa-page .accordion-body {
+      padding: 25px;
+      color: #46586a;
+    }
+
+    .tiaa-page .accordion-body h5 {
+      font-weight: 800;
+      font-size: .95rem;
+      margin: 25px 0 12px;
+    }
+
+    .tiaa-page .accordion-body h5:first-child {
+      margin-top: 0;
+    }
+
+    .tiaa-page .accordion-body li {
+      margin-bottom: 9px;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .tiaa-page .action-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 21px;
+      background: var(--teal);
+      color: #10242b;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: .88rem;
+    }
+
+    .tiaa-page .action-button:hover {
+      background: #75ded4;
+      color: #10242b;
+    }
+
+    .tiaa-page .outline-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 20px;
+      border: 1px solid #b9c9d4;
+      border-radius: 8px;
+      color: #28556a;
+      font-weight: 800;
+      font-size: .88rem;
+    }
+
+    .tiaa-page .outline-button:hover {
+      background: #eaf3f7;
+    }
+
+    .tiaa-page .closing {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .tiaa-page .closing .section-title {
+      color: #fff;
+    }
+
+    .tiaa-page .closing p {
+      color: #becbd7;
+    }
+
+    /* =========================
+       FLOATING TABLE OF CONTENTS
+    ========================= */
+
+    .tiaa-page .toc-toggle {
+      position: fixed;
+      top: 110px;
+      right: 22px;
+      z-index: 1050;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 12px 17px;
+
+      background: #142638;
+      color: #fff;
+
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,.2);
+
+      font-size: .85rem;
+      font-weight: 800;
+      cursor: pointer;
+
+      transition: background .2s ease;
+    }
+
+    .tiaa-page .toc-toggle:hover {
+      background: #237a9d;
+    }
+
+    .tiaa-page .toc-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      width: min(370px, 90vw);
+      height: 100vh;
+      height: 100dvh;
+
+      z-index: 1101;
+
+      background: #fff;
+      box-shadow: -15px 0 50px rgba(0,0,0,.18);
+
+      transform: translateX(105%);
+      visibility: hidden;
+
+      transition:
+        transform .3s ease,
+        visibility .3s ease;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tiaa-page .toc-drawer.open {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .tiaa-page .toc-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+
+      background: rgba(10,20,30,.55);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity .3s ease,
+        visibility .3s ease;
+    }
+
+    .tiaa-page .toc-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .tiaa-page .toc-drawer-header {
+      background: #142638;
+      color: #fff;
+
+      padding: 27px 25px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tiaa-page .toc-drawer-header h2 {
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .tiaa-page .toc-close {
+      background: transparent;
+      color: #fff;
+      border: 0;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .tiaa-page .toc-drawer-body {
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .tiaa-page .toc-drawer-body a {
+      display: block;
+
+      padding: 13px 15px;
+      margin-bottom: 7px;
+
+      color: #34475b;
+      border-radius: 8px;
+
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+
+      transition: background .2s ease;
+    }
+
+    .tiaa-page .toc-drawer-body a:hover,
+    .tiaa-page .toc-drawer-body a.active {
+      background: #e8f5f3;
+      color: #087e78;
+    }
+
+    .tiaa-page .toc-drawer-body .toc-category {
+      color: #087e78;
+
+      font-size: .7rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: .1em;
+
+      margin: 22px 0 10px;
+    }
+
+    .tiaa-page .toc-drawer-body .toc-category:first-child {
+      margin-top: 0;
+    }
+
+    body.tiaa-toc-open {
+      overflow: hidden;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 991px) {
+      .tiaa-page .tiaa-hero {
+        padding: 125px 0 75px;
+      }
+
+      .tiaa-page .hero-summary {
+        margin-top: 30px;
+      }
+
+      .tiaa-page .section-pad {
+        padding: 65px 0;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .tiaa-page .toc-toggle {
+        top: auto;
+        bottom: 22px;
+        right: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .tiaa-page .toc-drawer,
+      .tiaa-page .toc-overlay {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- EXISTING SHARED NAVIGATION -->
+  <div id="nav-placeholder"></div>
+
+  <main class="tiaa-page">
+
+    <!-- =========================
+         FLOATING TABLE OF CONTENTS
+    ========================= -->
+
+    <button
+      type="button"
+      class="toc-toggle"
+      id="tiaaTocToggle"
+      aria-controls="tiaaTocDrawer"
+      aria-expanded="false"
+    >
+      <i class="fas fa-list-ul"></i>
+      Table of Contents
+    </button>
+
+    <div
+      class="toc-overlay"
+      id="tiaaTocOverlay"
+      aria-hidden="true"
+    ></div>
+
+    <aside
+      class="toc-drawer"
+      id="tiaaTocDrawer"
+      aria-label="TIAA Table of Contents"
+      aria-hidden="true"
+      inert
+    >
+      <div class="toc-drawer-header">
+        <h2>Table of Contents</h2>
+
+        <button
+          type="button"
+          class="toc-close"
+          id="tiaaTocClose"
+          aria-label="Close table of contents"
+        >
+          <i class="fas fa-times"></i>
+        </button>
       </div>
-      <svg
-        class="frame-decoration"
-        data-name="Layer 2"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        viewBox="0 0 1920 192.275"
-      >
-        <defs>
-          <style>
-            .cls-1 {
-              fill: #ffffff;
-            }
-          </style>
-        </defs>
-        <title>frame-decoration</title>
-        <path
-          class="cls-1"
-          d="M0,158.755s63.9,52.163,179.472,50.736c121.494-1.5,185.839-49.738,305.984-49.733,109.21,0,181.491,51.733,300.537,50.233,123.941-1.562,225.214-50.126,390.43-50.374,123.821-.185,353.982,58.374,458.976,56.373,217.907-4.153,284.6-57.236,284.6-57.236V351.03H0V158.755Z"
-          transform="translate(0 -158.755)"
-        />
-      </svg>
-    </header>
 
-<!-- TIAA Experience -->
-<section class="bg-white py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <div class="col-lg-6 mx-auto mb-4">
-        <img class="img-fluid rounded-3 mb-4" src="images/TIAA/Tiaa Logo.png" alt="TIAA Logo">
-      </div>
-      <h3>At TIAA, I worked with two Agile Scrum teams, splitting my time evenly between them.</h3>
-    </div>
+      <nav class="toc-drawer-body" aria-label="Page sections">
 
-    <div class="row gx-5">
-      <!-- MOD Team -->
-      <div class="col-lg-6 mb-4" data-aos="fade-up">
-        <h4 class="fw-bold mb-2">Market on Demand (MOD) Team</h4>
-        <p class="fw-semibold">Role: Product Owner & Scrum Master</p>
-        <ul class="fa-ul lh-lg">
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Managed UI/UX consistency and content workflows across multiple web properties—including <strong>public sites, microsites, and secure platforms</strong> (e.g., myTIAA, PlanFocus)—each governed by distinct UAT environments and release protocols.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Oversaw the <strong>Investment Screener</strong> tool and more than <strong>9,000 unique fund profile pages</strong>, enabling users to conduct deep fund analysis and make informed investment decisions.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Delivered feature enhancements for TIAA’s <strong>Brokerage platform</strong>.
-          </li>
-        </ul>
-      </div>
+        <div class="toc-category">Overview</div>
+        <a href="#overview">01. Introduction</a>
+        <a href="#teams">02. My Teams & Roles</a>
 
-      <!-- PlanFocus Team -->
-      <div class="col-lg-6 mb-4" data-aos="fade-up">
-        <h4 class="fw-bold mb-2">PlanFocus Team</h4>
-        <p class="fw-semibold">Role: Business Analyst</p>
-        <ul class="fa-ul lh-lg">
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Supported institutional <strong>retirement plan sponsors</strong> (e.g., HR and Benefits teams) in managing participant and plan data.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Enabled secure search and review of <strong>participant information</strong> to drive accurate reporting and plan compliance.
-          </li>
-          <li>
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            Helped sponsors use the platform to gain insights into <strong>financial wellness and engagement</strong>, enhancing plan strategy with actionable analytics.
-          </li>
-        </ul>
-      </div>
-    </div>
+        <div class="toc-category">Case Studies</div>
+        <a href="#mod-case-study">
+          03. Market on Demand Modernization
+        </a>
+        <a href="#planfocus-case-study">
+          04. PlanFocus 2.0 Modernization
+        </a>
 
-    <!-- Chevron centered below both columns -->
-    <div class="text-center mt-5">
-      <a href="#tiaa-mod-revamp">
-        <i class="fas fa-chevron-down fa-2x text-primary"></i>
-      </a>
-    </div>
-  </div>
-</section>
+        <div class="toc-category">Professional Experience</div>
+        <a href="#responsibilities">
+          05. Detailed Responsibilities
+        </a>
+        <a href="#investment-screener">
+          06. Investment Screener & Fund Profiles
+        </a>
 
+        <div class="toc-category">Platform Deep Dive</div>
+        <a href="#planfocus-overview">
+          07. PlanFocus Overview
+        </a>
+        <a href="#planfocus-reference">
+          08. Detailed Platform Guide
+        </a>
 
-<section id="tiaa-mod-revamp" class="py-5" id="Experience">
-  <div class="container">
-    <h3 class="mb-4 text-center">Strategic Contributions</h3>
-    <br>
-    <div class="card shadow-sm">
-      <div class="card-header bg-primary text-white">
-        <h3 class="mb-0">Modernizing TIAA’s Market on Demand (MOD) Platform</h3>
-      </div>
-      <div class="card-body">
-        <div class="text-center mb-4">
-          <i class="fas fa-chart-line fa-2x text-primary"></i>
+        <div class="toc-category">Navigation</div>
+        <a href="index.html">
+          <i class="fas fa-arrow-left me-2"></i>
+          Back to Portfolio
+        </a>
+
+      </nav>
+    </aside>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section id="overview" class="tiaa-hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-8">
+
+            <div class="eyebrow">
+              Professional Experience / Financial Services
+            </div>
+
+            <h1 class="hero-title">
+              TIAA<br />
+              <span>Product & Digital Transformation</span>
+            </h1>
+
+            <p class="hero-description">
+              Product ownership, business analysis, and Agile delivery
+              supporting investment research tools and institutional
+              retirement plan management experiences.
+            </p>
+
+            <div class="hero-tags">
+              <span class="hero-tag">Product Owner</span>
+              <span class="hero-tag">Scrum Master</span>
+              <span class="hero-tag">Business Analyst</span>
+              <span class="hero-tag">React Modernization</span>
+              <span class="hero-tag">Scaled Agile Framework (SAFe)</span>
+            </div>
+
+            <a href="#teams" class="action-button">
+              Explore My Experience
+              <i class="fas fa-arrow-down"></i>
+            </a>
+
+          </div>
+
+          <div class="col-lg-4">
+            <div class="hero-summary">
+
+              <h3>Experience at a Glance</h3>
+
+              <div class="hero-stat">
+                <strong>2</strong>
+                <span>Agile Scrum teams supported</span>
+              </div>
+
+              <div class="hero-stat">
+                <strong>9,000+</strong>
+                <span>Investment fund profile pages within MOD scope</span>
+              </div>
+
+              <div class="hero-stat">
+                <strong>50 / 50</strong>
+                <span>Responsibilities split between MOD and PlanFocus</span>
+              </div>
+
+              <div class="hero-stat">
+                <strong>2</strong>
+                <span>Major platform modernization initiatives</span>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-        <p class="fs-5 mb-4">
-          As part of a long-term, multi-PI initiative at TIAA, I played a key role in modernizing the Market on Demand (MOD) platform, which included revamping a high-traffic fund screener tool and over 9,000 individual investment profile pages. The effort involved migrating to a React-based architecture to enhance performance, user experience, and maintainability.
-        </p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <strong><i class="fas fa-map-marker-alt text-primary me-3"></i>Situation:</strong> The legacy MOD platform was outdated, slow, and difficult to scale. With over 9,000+ fund profile pages and a critical screener tool, TIAA needed a modern, responsive, and user-centric experience for both retail and institutional investors.
-          </li>
-          <li class="list-group-item">
-            <strong><i class="fas fa-tasks text-primary me-3"></i>Task:</strong> Collaborate with internal teams and cross-functional stakeholders to lead the modernization effort of the MOD platform, including redesigning UI/UX, introducing new features, and implementing a React front-end to significantly improve load times and usability.
-          </li>
-          <li class="list-group-item">
-            <strong><i class="fas fa-running text-primary me-3"></i>Action:</strong> 
-            <ul class="fa-ul fs-5">
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Gathered business and technical requirements through collaboration with Product, Design, Compliance, Accessibility, and Engineering teams across multiple PIs.</li>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Led the definition and grooming of epics and user stories to align roadmap goals with delivery teams following Agile and SAFe frameworks.</li>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Helped implement a scalable React-based front-end architecture that supported reusable components, improved responsiveness, and dramatically reduced page load times.</li>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Launched new interactive features including a Hypothetical $10K Growth Chart and dynamic fund comparison tools to enhance investor decision-making.</li>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Conducted regular demos and usability reviews with stakeholders to iterate on design and functionality based on feedback.</li>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Partnered closely with compliance and accessibility teams to ensure WCAG standards and FINRA regulations were met throughout development.</li>
-            </ul>
-          </li>
-          <li class="list-group-item">
-            <strong><i class="fas fa-check-circle text-primary me-3"></i>Result:</strong> Successfully delivered a modern, high-performance MOD platform with improved UX/UI, responsive design, and new investor tools. Load times improved by over 60%, profile engagement increased, and the platform became easier to maintain and scale across teams.
-          </li>
-        </ul>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- =========================
+         TEAMS
+    ========================= -->
 
-<section id="tiaa-planfocus" class="py-5">
-  <div class="container">
-    <div class="card shadow-sm">
-      <div class="card-header bg-primary text-white">
-        <h3 class="mb-0">PlanFocus 2.0: Modernizing TIAA’s Institutional Retirement Management Platform</h3>
-      </div>
-      <div class="card-body">
-        <div class="text-center mb-4">
-          <i class="fas fa-briefcase fa-2x text-primary"></i>
+    <section id="teams" class="section-pad">
+      <div class="container">
+
+        <div class="mb-5">
+          <div class="eyebrow">Roles & Responsibilities</div>
+
+          <h2 class="section-title">
+            Two Teams. Two Product Experiences.
+          </h2>
+
+          <p class="section-lead">
+            At TIAA, I split my time evenly across two Agile Scrum teams,
+            supporting different products, stakeholders, and delivery priorities.
+          </p>
         </div>
-        <p class="fs-5 mb-4">
-          I played a key role in the multi-year transformation of TIAA’s PlanFocus platform—our flagship institutional retirement plan management solution. The PlanFocus 2.0 initiative was a ground-up redesign, involving extensive collaboration across business, design, and engineering to deliver an intuitive, modern experience for plan sponsors and institutional partners.
-        </p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <strong><i class="fas fa-map-marker-alt text-primary me-3"></i>Situation:</strong> PlanFocus was a critical yet outdated portal for retirement plan sponsors managing employee benefits. The platform lacked modern UI/UX, was not fully responsive, and offered a fragmented user experience across workspaces.
-          </li>
-          <li class="list-group-item">
-            <strong><i class="fas fa-tasks text-primary me-3"></i>Task:</strong> Partner with cross-functional teams to redesign the PlanFocus platform from the ground up—upgrading legacy workspaces, aligning on entitlement flows, and launching new modules to enhance plan oversight, compliance, and education.
-          </li>
-          <li class="list-group-item">
-            <strong><i class="fas fa-running text-primary me-3"></i>Action:</strong> 
-            <ul class="fa-ul fs-5">
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Worked across product, engineering, UX, legal, and data teams to design an improved information architecture and component library for the platform.</li>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Defined detailed user flows and entitlement logic to support role-based access across multiple institutions and sponsors.</li>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Helped redesign and launch key workspace modules, including:</li>
-              <ul class="ms-5">
-                <li><strong>My Plans:</strong> A dashboard delivering visualizations and metrics for plan health.</li>
-                <li><strong>For Your Attention:</strong> A compliance-oriented task list with alerts and key dates.</li>
-                <li><strong>Plan Review:</strong> A data-driven module to assess participant readiness and compare peer benchmarks.</li>
-                <li><strong>Report & Analyze:</strong> Aggregated views across multiple plans to simplify strategic reporting.</li>
-                <li><strong>Resources for Employees:</strong> Curated content (videos, articles) to increase engagement and education.</li>
-                <li><strong>Resources for Plan Sponsors:</strong> Tools and references for managing complex retirement plans.</li>
-                <li><strong>Investment Insights:</strong> Timely market commentary from TIAA-CREF experts to aid in plan monitoring.</li>
+
+        <div class="row g-4">
+
+          <div class="col-lg-6">
+            <div class="content-card">
+
+              <div class="role-label">
+                Product Owner & Scrum Master
+              </div>
+
+              <h3>Market on Demand (MOD)</h3>
+
+              <p>
+                Supported investment research experiences across public
+                websites, microsites, and authenticated applications,
+                including myTIAA and PlanFocus.
+              </p>
+
+              <ul class="clean-list">
+                <li>
+                  Managed user interface and user experience
+                  (UI/UX) consistency and content workflows.
+                </li>
+                <li>
+                  Supported the Investment Screener and more than
+                  9,000 unique fund profile pages.
+                </li>
+                <li>
+                  Coordinated distinct user acceptance testing
+                  (UAT) environments and release processes.
+                </li>
+                <li>
+                  Delivered enhancements supporting TIAA's Brokerage platform.
+                </li>
+                <li>
+                  Facilitated Scrum ceremonies and backlog refinement.
+                </li>
               </ul>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Contributed to Agile PI planning, refinement sessions, and roadmap alignment over multiple program increments (PIs).</li>
-              <li class="mb-2"><span class="fa-li"><i class="fas fa-square text-primary"></i></span>Conducted user acceptance testing (UAT) coordination and served as the liaison between business and engineering during rollouts.</li>
-            </ul>
-          </li>
-          <li class="list-group-item">
-            <strong><i class="fas fa-check-circle text-primary me-3"></i>Result:</strong> Successfully delivered a modernized PlanFocus platform used by thousands of institutional clients. Improved task management, data clarity, and accessibility helped plan sponsors make more informed decisions, enhance compliance oversight, and improve employee engagement with retirement benefits.
-          </li>
-        </ul>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="content-card">
+
+              <div class="role-label">Business Analyst</div>
+
+              <h3>PlanFocus</h3>
+
+              <p>
+                Supported an institutional retirement plan management
+                platform used by plan sponsors, human resources teams,
+                benefits administrators, and institutional partners.
+              </p>
+
+              <ul class="clean-list">
+                <li>
+                  Gathered requirements and documented business
+                  processes, use cases, and user flows.
+                </li>
+                <li>
+                  Supported secure participant search and information review.
+                </li>
+                <li>
+                  Contributed to reporting, financial wellness,
+                  and engagement experiences.
+                </li>
+                <li>
+                  Supported entitlement and role-based access requirements.
+                </li>
+                <li>
+                  Coordinated UAT and cross-functional delivery activities.
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- =========================
+         MOD CASE STUDY
+    ========================= -->
 
+    <section id="mod-case-study" class="section-pad soft-section">
+      <div class="container">
 
+        <div class="eyebrow">
+          Case Study 01 / Investment Technology
+        </div>
 
+        <div class="case-heading">
+          <h3>Modernizing Market on Demand (MOD)</h3>
+          <p>
+            React front-end modernization, investment research,
+            reusable components, and investor experience improvements.
+          </p>
+        </div>
 
-<!-- Detailed Experience at TIAA -->
-<section class="bg-white py-5" >
-  <div class="container">
-    <h3 class="mb-4 text-center">Detailed Experience at TIAA</h3>
-    <div class="text-center mb-4">
-      <img src="/images/TIAA/Helping a partner-rafiki.png" alt="Bank of America Differences" class="img-fluid rounded shadow" style="max-width: 50%; width: 75%;">
-    </div>
-    <div class="row gx-5 z-1">
-      <div class="col-lg-10 offset-lg-1">
-        <ul class="fa-ul lh-lg">
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>50/50 Split Across Two Teams:</strong> Balanced responsibilities equally across the MOD and PlanFocus teams, adapting to their distinct goals, delivery cadences, and tech stacks.
-          </li>
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>MOD Team - Product Ownership:</strong> Oversaw the investment screener tool and over 9,000 dynamic fund profile pages, ensuring they delivered accurate and timely data across TIAA’s public, secure, and legacy platforms.
-          </li>
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>PlanFocus Team - Business Analysis:</strong> Supported the PlanFocus application by gathering requirements, documenting use cases, and helping deliver enhancements for plan sponsor features like participant lookup and engagement dashboards.
-          </li>
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>Scrum Facilitation:</strong> Led all Agile ceremonies including backlog refinement, sprint planning, daily stand-ups, and retrospectives across both teams when acting as Scrum Master.
-          </li>
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>Stakeholder Alignment:</strong> Worked closely with product managers, compliance, marketing, UX, and engineering teams to align priorities and drive outcomes across various channels.
-          </li>
-        </ul>
+        <p class="section-lead mb-4">
+          As part of a long-term, multi-Program Increment (PI) initiative,
+          I supported modernization of the Market on Demand platform,
+          including its Investment Screener and more than 9,000
+          investment fund profile pages.
+        </p>
+
+        <div class="story-block">
+          <h4>01 — Situation</h4>
+          <p>
+            The legacy MOD platform was outdated, slow, and difficult
+            to scale. TIAA needed a modern, responsive investment
+            research experience supporting both retail and
+            institutional investors.
+          </p>
+        </div>
+
+        <div class="story-block">
+          <h4>02 — Task</h4>
+          <p>
+            Collaborate with cross-functional teams to modernize the
+            platform, improve UI/UX, introduce new investor tools,
+            and support migration to a React-based front end.
+          </p>
+        </div>
+
+        <div class="story-block">
+          <h4>03 — Actions</h4>
+
+          <ul>
+            <li>
+              Gathered business and technical requirements with
+              Product, Design, Compliance, Accessibility, and Engineering.
+            </li>
+            <li>
+              Defined and refined epics, features, user stories,
+              and acceptance criteria across multiple PIs.
+            </li>
+            <li>
+              Supported reusable React components and responsive
+              front-end architecture.
+            </li>
+            <li>
+              Helped introduce interactive investor experiences,
+              including a hypothetical $10,000 growth chart and
+              dynamic fund comparison tools.
+            </li>
+            <li>
+              Facilitated demonstrations and usability reviews
+              to incorporate stakeholder feedback.
+            </li>
+            <li>
+              Partnered with compliance and accessibility teams
+              on Web Content Accessibility Guidelines (WCAG)
+              and Financial Industry Regulatory Authority
+              (FINRA) requirements.
+            </li>
+          </ul>
+        </div>
+
+        <div class="story-block result-block">
+          <h4>04 — Results</h4>
+          <p>
+            The modernization delivered improved responsive design,
+            reusable components, investor research tools, and
+            a more maintainable platform. The original project
+            account reported load-time improvements exceeding
+            60% and increased fund-profile engagement.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         PLANFOCUS CASE STUDY
+    ========================= -->
+
+    <section id="planfocus-case-study" class="section-pad">
+      <div class="container">
+
+        <div class="eyebrow">
+          Case Study 02 / Institutional Retirement
+        </div>
+
+        <div class="case-heading">
+          <h3>PlanFocus 2.0: Institutional Platform Modernization</h3>
+          <p>
+            Redesigning retirement plan management experiences
+            for sponsors and institutional partners.
+          </p>
+        </div>
+
+        <p class="section-lead mb-4">
+          I supported the multi-year PlanFocus 2.0 transformation,
+          working with business, design, and engineering teams
+          to modernize an institutional retirement management platform.
+        </p>
+
+        <div class="story-block">
+          <h4>01 — Situation</h4>
+          <p>
+            PlanFocus served retirement plan sponsors but relied on
+            aging workspaces, inconsistent navigation, and a fragmented
+            user experience. Modernization was needed to improve
+            usability, responsiveness, and operational efficiency.
+          </p>
+        </div>
+
+        <div class="story-block">
+          <h4>02 — Task</h4>
+          <p>
+            Support redesign of legacy workspaces, define business
+            requirements, clarify entitlement flows, and help
+            introduce modern features for plan oversight,
+            compliance, reporting, and education.
+          </p>
+        </div>
+
+        <div class="story-block">
+          <h4>03 — Actions</h4>
+
+          <ul>
+            <li>
+              Collaborated with Product, Engineering, UX,
+              Legal, and Data teams on information architecture
+              and reusable interface components.
+            </li>
+            <li>
+              Defined user flows and entitlement logic for
+              role-based access across plans and institutions.
+            </li>
+            <li>
+              Supported redesign of plan dashboards,
+              notifications, reporting, educational resources,
+              and investment insights.
+            </li>
+            <li>
+              Participated in PI planning, backlog refinement,
+              and roadmap alignment.
+            </li>
+            <li>
+              Coordinated UAT and acted as a liaison between
+              business stakeholders and engineering teams.
+            </li>
+          </ul>
+        </div>
+
+        <div class="story-block result-block">
+          <h4>04 — Results</h4>
+          <p>
+            The modernized platform improved access to plan information,
+            administrative workflows, reporting, and retirement
+            plan oversight. It supported institutional clients
+            in making more informed decisions and managing
+            participant-related responsibilities.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         RESPONSIBILITIES
+    ========================= -->
+
+    <section id="responsibilities" class="section-pad soft-section">
+      <div class="container">
+
+        <div class="eyebrow">
+          Execution & Collaboration
+        </div>
+
+        <h2 class="section-title">
+          Detailed Experience at TIAA
+        </h2>
+
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-8">
+            <div class="content-card">
+
+              <ul class="clean-list">
+                <li>
+                  <strong>Dual-Team Support:</strong>
+                  Balanced responsibilities equally across MOD
+                  and PlanFocus, adapting to different product goals
+                  and delivery cadences.
+                </li>
+                <li>
+                  <strong>Product Ownership:</strong>
+                  Managed requirements and backlog activities for
+                  investment research experiences and fund profile pages.
+                </li>
+                <li>
+                  <strong>Business Analysis:</strong>
+                  Supported PlanFocus enhancements through requirements,
+                  use cases, process analysis, and stakeholder coordination.
+                </li>
+                <li>
+                  <strong>Scrum Facilitation:</strong>
+                  Led backlog refinement, sprint planning,
+                  daily stand-ups, and retrospectives when
+                  acting as Scrum Master.
+                </li>
+                <li>
+                  <strong>Stakeholder Alignment:</strong>
+                  Worked with Product Management, Marketing,
+                  Compliance, UX, Engineering, and business teams.
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 text-center">
+            <img
+              src="images/TIAA/Helping a partner-rafiki.png"
+              alt="Illustration representing cross-functional collaboration"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         INVESTMENT SCREENER
+    ========================= -->
+
+    <section id="investment-screener" class="section-pad">
+      <div class="container">
+
+        <div class="eyebrow">Product Deep Dive</div>
+
+        <h2 class="section-title">
+          Investment Screener & Fund Profile Experience
+        </h2>
+
+        <p class="section-lead mb-5">
+          These public-facing tools help investors review
+          performance information, research funds, compare
+          investments, and examine individual fund profiles.
+        </p>
+
+        <div class="row g-4 mb-5">
+
+          <div class="col-lg-6">
+            <div class="content-card">
+              <h3>Data & API Validation</h3>
+              <p>
+                Validated data retrieved through application
+                programming interfaces (APIs) from internal
+                systems and external sources, supporting
+                consistency across public, authenticated,
+                and legacy applications.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="content-card">
+              <h3>Integration & Component Testing</h3>
+              <p>
+                Supported component-level testing and
+                third-party data integration, including
+                Morningstar data, to improve consistency,
+                accuracy, and completeness of investment information.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-4">
+            <div class="screenshot-card">
+              <img
+                src="images/TIAA/Screener Tool.png"
+                alt="TIAA investment screener interface"
+                loading="lazy"
+              />
+              <h4>Investment Screener</h4>
+              <p>Search, filter, and evaluate investment options.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="screenshot-card">
+              <img
+                src="images/TIAA/Fund Details.png"
+                alt="TIAA fund details interface"
+                loading="lazy"
+              />
+              <h4>Fund Details</h4>
+              <p>
+                Detailed investment information and fund characteristics.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="screenshot-card">
+              <img
+                src="images/TIAA/Fund Profile Page.png"
+                alt="TIAA investment fund profile page"
+                loading="lazy"
+              />
+              <h4>Fund Profile Page</h4>
+              <p>
+                Fund-specific performance data and investment information.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
         <div class="text-center mt-5">
-          <a href="#Screener">
-            <i class="fas fa-chevron-down fa-2x text-primary"></i>
+          <a
+            href="https://www.tiaa.org/public/investment-performance"
+            class="outline-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit TIAA Investment Performance
+            <i class="fas fa-external-link-alt"></i>
           </a>
         </div>
+
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Screener Tool -->
-<section class="bg-white py-5" id="Screener">
-  <div class="container">
-    <h3 class="mb-4 text-center">TIAA Investment Performance: Screener Tool & Profile Page</h3>
+    <!-- =========================
+         PLANFOCUS OVERVIEW
+    ========================= -->
 
-    <div class="row gx-5 z-1">
-      <div class="col-lg-10 offset-lg-1">
-        <ul class="fa-ul lh-lg">
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>Tool Overview:</strong> These public-facing tools allow users to view investment performance data and fund profiles, developed during my time at TIAA.
-          </li>
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>API Data Validation Across Channels:</strong> Conducted thorough validation of data pulled via APIs from internal systems and external sources, ensuring consistency and accuracy across public-facing websites, secure login environments, and legacy applications.
-          </li>    
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>Component Testing:</strong> Each component required detailed analysis and thorough testing to ensure APIs accurately pulled data from various internal and external databases.
-          </li>
-          <li class="mb-3">
-            <span class="fa-li"><i class="fas fa-square text-primary"></i></span>
-            <strong>Third-Party Integration:</strong> Integrated third-party data providers, including Morningstar, to enhance data accuracy and completeness.
-          </li>      
-        </ul>
+    <section id="planfocus-overview" class="section-pad soft-section">
+      <div class="container">
+
+        <div class="eyebrow">Platform Overview</div>
+
+        <h2 class="section-title">
+          Understanding PlanFocus
+        </h2>
+
+        <p class="section-lead mb-4">
+          Plan sponsors manage complex retirement programs,
+          regulatory responsibilities, participant information,
+          reporting requirements, and employee engagement.
+          PlanFocus brings these activities into a centralized
+          institutional management experience.
+        </p>
+
+        <p class="text-muted small mb-5">
+          Platform functionality described here reflects the
+          experience documented in this portfolio and may
+          differ from TIAA's current product.
+        </p>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <h4>My Plans</h4>
+              <p>
+                Plan-level dashboards, metrics, charts,
+                and information supporting plan oversight.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <h4>For Your Attention</h4>
+              <p>
+                Time-sensitive tasks, compliance alerts,
+                and reminders requiring sponsor action.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <h4>Plan Review</h4>
+              <p>
+                Participant trends, plan performance,
+                peer benchmarks, and retirement readiness insights.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <h4>Report & Analyze</h4>
+              <p>
+                Reporting and aggregated information
+                across multiple retirement plans.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <h4>Education & Resources</h4>
+              <p>
+                Educational materials, videos, webinars,
+                and resources for employees and plan sponsors.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <h4>Investment Insights</h4>
+              <p>
+                Market commentary, investment perspectives,
+                and information supporting plan monitoring.
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </section>
 
+    <!-- =========================
+         DETAILED PLATFORM GUIDE
+    ========================= -->
 
-      <style>
-        @media (max-width: 768px) {
-          .responsive-img-mobile {
-            max-width: 90% !important;
-            width: 100% !important;
+    <section id="planfocus-reference" class="section-pad">
+      <div class="container">
+
+        <div class="eyebrow">Functional Reference</div>
+
+        <h2 class="section-title">
+          PlanFocus Detailed Platform Guide
+        </h2>
+
+        <p class="section-lead mb-5">
+          Explore the primary functional areas of PlanFocus,
+          including navigation, administration, user access,
+          reporting, compliance, education, and document management.
+        </p>
+
+        <div class="accordion" id="planfocusAccordion">
+
+          <!-- NAVIGATION -->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingNavigation">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseNavigation"
+                aria-expanded="true"
+                aria-controls="collapseNavigation"
+              >
+                01 — Navigation & Home Page
+              </button>
+            </h3>
+
+            <div
+              id="collapseNavigation"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingNavigation"
+              data-bs-parent="#planfocusAccordion"
+            >
+              <div class="accordion-body">
+
+                <h5>Navigation Features</h5>
+
+                <ul>
+                  <li><strong>Tab Menu Bar:</strong> Access platform sections through navigation menus.</li>
+                  <li><strong>Search:</strong> Find authorized participants and relevant content, with predictive search results.</li>
+                  <li><strong>My Settings:</strong> Configure preferences such as alerts and prospectus delivery.</li>
+                  <li><strong>Contact Us:</strong> Access relationship management and service team information.</li>
+                  <li><strong>Notifications:</strong> Review time-sensitive tasks and action items.</li>
+                </ul>
+
+                <h5>Home Page Modules</h5>
+
+                <ul>
+                  <li>My Plans — plan-level performance and metrics.</li>
+                  <li>For Your Attention — important tasks and alerts.</li>
+                  <li>Plan Review — readiness analysis and benchmarks.</li>
+                  <li>Report & Analyze — aggregated plan information.</li>
+                  <li>Resources for Employees — participant education.</li>
+                  <li>Resources for Plan Sponsors — administration resources.</li>
+                  <li>Investment Insights — market commentary and research.</li>
+                </ul>
+
+                <p class="small text-muted">
+                  Available features vary by user permissions
+                  and plan configuration.
+                </p>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- ADMINISTRATION -->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingAdmin">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseAdmin"
+                aria-expanded="false"
+                aria-controls="collapseAdmin"
+              >
+                02 — Administration
+              </button>
+            </h3>
+
+            <div
+              id="collapseAdmin"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingAdmin"
+              data-bs-parent="#planfocusAccordion"
+            >
+              <div class="accordion-body">
+
+                <p>
+                  The Administration tab supports essential
+                  retirement plan operations and administrative tasks.
+                </p>
+
+                <ul>
+                  <li>Process contribution lists and remittances.</li>
+                  <li>Review participant transactions electronically.</li>
+                  <li>Add, remove, or update authorized site users.</li>
+                  <li>Securely exchange plan and participant data through File Exchange.</li>
+                  <li>Access forms for administrative and participant use.</li>
+                  <li>Support employee enrollment and funding processes.</li>
+                  <li>Monitor investment performance.</li>
+                  <li>Manage Revenue Credit Account functionality where applicable.</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- USERS -->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingUsers">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseUsers"
+                aria-expanded="false"
+                aria-controls="collapseUsers"
+              >
+                03 — Managing Site Users & Entitlements
+              </button>
+            </h3>
+
+            <div
+              id="collapseUsers"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingUsers"
+              data-bs-parent="#planfocusAccordion"
+            >
+              <div class="accordion-body">
+
+                <p>
+                  PlanFocus provides user management and
+                  role-based permissions to protect sensitive
+                  retirement plan and participant information.
+                </p>
+
+                <h5>Core Capabilities</h5>
+
+                <ul>
+                  <li>Add, edit, delete, deactivate, or reactivate users.</li>
+                  <li>Copy permission settings from existing users.</li>
+                  <li>Review a 12-month history of access changes.</li>
+                  <li>Approve access for third-party firms.</li>
+                  <li>Complete annual user access confirmations.</li>
+                </ul>
+
+                <h5>User Personas</h5>
+
+                <ul>
+                  <li><strong>Plan Sponsor / Location Sponsor:</strong> Broad plan administration and user-management access.</li>
+                  <li><strong>Responsibility Owner:</strong> Access and management within assigned responsibilities.</li>
+                  <li><strong>Access Rights Holder:</strong> Permissions limited to assigned actions.</li>
+                  <li><strong>External Users:</strong> Auditors, consultants, and other authorized professionals.</li>
+                  <li><strong>Legal Counsel:</strong> Users managed through the applicable administrator process.</li>
+                </ul>
+
+                <h5>Access Controls</h5>
+
+                <ul>
+                  <li><strong>Plan Scope:</strong> Assign access to specific or multiple plans.</li>
+                  <li><strong>Permissions:</strong> Edit & View or View Only.</li>
+                  <li><strong>Privacy:</strong> Restrict sensitive participant balances, compensation, and Social Security numbers.</li>
+                  <li><strong>Plan Review:</strong> Control access to salary-related reporting and benchmarking.</li>
+                </ul>
+
+                <h5>Functional Roles</h5>
+
+                <ul>
+                  <li>Contributions and Enrollments.</li>
+                  <li>Distributions and Loans.</li>
+                  <li>Compliance and Fee Management.</li>
+                  <li>Revenue Credit Account.</li>
+                  <li>Plan and Investment Changes.</li>
+                </ul>
+
+                <h5>User Administration Workflow</h5>
+
+                <ul>
+                  <li><strong>Add / Copy:</strong> Enter user details and assign permissions, or copy an existing profile.</li>
+                  <li><strong>Edit:</strong> Update user profiles, plans, and assigned roles.</li>
+                  <li><strong>Manage Firms:</strong> Assign third-party access and expiration dates.</li>
+                  <li><strong>History:</strong> Review recorded access changes.</li>
+                  <li><strong>Annual Confirmation:</strong> Review and certify authorized access.</li>
+                </ul>
+
+                <p class="small text-muted">
+                  The documented registration process included
+                  a one-time personal identification number (PIN)
+                  provided outside the online registration flow.
+                </p>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- REPORTING -->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingReporting">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseReporting"
+                aria-expanded="false"
+                aria-controls="collapseReporting"
+              >
+                04 — Reporting & Analytics
+              </button>
+            </h3>
+
+            <div
+              id="collapseReporting"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingReporting"
+              data-bs-parent="#planfocusAccordion"
+            >
+              <div class="accordion-body">
+
+                <p>
+                  Reporting capabilities help plan sponsors
+                  understand plan performance, monitor trends,
+                  and make informed decisions.
+                </p>
+
+                <ul>
+                  <li><strong>Standard Reporting:</strong> Predefined investment, enrollment, and contribution reports.</li>
+                  <li><strong>Explore:</strong> Flexible summaries and trends without predefined reports.</li>
+                  <li><strong>Custom Reporting:</strong> Tailored data views and analysis.</li>
+                  <li><strong>Scheduling:</strong> Automated report generation and email notifications.</li>
+                  <li><strong>Plan Review:</strong> Plan-specific analytics, benchmarks, and visualizations.</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- COMPLIANCE -->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingCompliance">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseCompliance"
+                aria-expanded="false"
+                aria-controls="collapseCompliance"
+              >
+                05 — Compliance & Fiduciary Oversight
+              </button>
+            </h3>
+
+            <div
+              id="collapseCompliance"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingCompliance"
+              data-bs-parent="#planfocusAccordion"
+            >
+              <div class="accordion-body">
+
+                <p>
+                  Compliance resources support plan sponsors
+                  in understanding and managing fiduciary
+                  responsibilities.
+                </p>
+
+                <ol>
+                  <li>Understand fiduciary obligations through guidance and educational resources.</li>
+                  <li>Assess plan compliance using diagnostic tools.</li>
+                  <li>Establish processes to address compliance requirements.</li>
+                </ol>
+
+                <h5>Supporting Tools</h5>
+
+                <ul>
+                  <li>Plan Governance Toolkit.</li>
+                  <li>Compliance Calendar.</li>
+                  <li>Fiduciary and Compliance Checklist.</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- EDUCATION -->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingEducation">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseEducation"
+                aria-expanded="false"
+                aria-controls="collapseEducation"
+              >
+                06 — Education & Investment Insights
+              </button>
+            </h3>
+
+            <div
+              id="collapseEducation"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingEducation"
+              data-bs-parent="#planfocusAccordion"
+            >
+              <div class="accordion-body">
+
+                <ul>
+                  <li><strong>Resources for Employees:</strong> Articles, educational content, consultations, and seminars.</li>
+                  <li><strong>Resources for Plan Sponsors:</strong> Research, webinars, videos, and administrative guidance.</li>
+                  <li><strong>Investment Insights:</strong> Market commentary, pricing, and performance information.</li>
+                  <li><strong>PlanFocus 101:</strong> Step-by-step platform guides and instructional videos.</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- DOCUMENT CENTER -->
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingDocuments">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseDocuments"
+                aria-expanded="false"
+                aria-controls="collapseDocuments"
+              >
+                07 — Document Center
+              </button>
+            </h3>
+
+            <div
+              id="collapseDocuments"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingDocuments"
+              data-bs-parent="#planfocusAccordion"
+            >
+              <div class="accordion-body">
+
+                <p>
+                  The Document Center acts as a centralized
+                  repository for retirement plan documentation,
+                  communications, and reporting materials.
+                </p>
+
+                <ul>
+                  <li><strong>Administration:</strong> Operational documents and plan adjustment confirmations.</li>
+                  <li><strong>Employee Communications:</strong> Campaign materials, Qualified Default Investment Alternative (QDIA) notices, and fund announcements.</li>
+                  <li><strong>Employee Engagement:</strong> Communication and education campaign reporting.</li>
+                  <li><strong>Plan Documentation:</strong> Plan rules, agreements, provisions, and amendments.</li>
+                  <li><strong>Plan Review:</strong> Electronic annual Plan Review reports.</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONCLUSION
+    ========================= -->
+
+    <section class="section-pad closing">
+      <div class="container text-center">
+
+        <div class="eyebrow" style="color:#38c5ba;">
+          Product Ownership & Business Analysis
+        </div>
+
+        <h2 class="section-title">
+          Connecting Product Strategy with Enterprise Delivery
+        </h2>
+
+        <p class="mx-auto mb-4" style="max-width:750px;">
+          My TIAA experience strengthened my ability to work
+          across business and technical teams, manage competing
+          priorities, support modernization initiatives, and
+          translate complex financial services requirements
+          into practical product enhancements.
+        </p>
+
+        <a href="index.html" class="action-button">
+          <i class="fas fa-arrow-left"></i>
+          Back to Portfolio
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EXISTING SHARED FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- EXISTING SITE SCRIPTS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/load-components.js"></script>
+
+  <!-- =========================
+       TABLE OF CONTENTS SCRIPT
+  ========================= -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const toggle = document.getElementById("tiaaTocToggle");
+      const drawer = document.getElementById("tiaaTocDrawer");
+      const overlay = document.getElementById("tiaaTocOverlay");
+      const closeBtn = document.getElementById("tiaaTocClose");
+
+      if (!toggle || !drawer || !overlay || !closeBtn) {
+        return;
+      }
+
+      const links = drawer.querySelectorAll('a[href^="#"]');
+      let lastFocusedElement = null;
+
+      function openToc() {
+        lastFocusedElement = document.activeElement;
+
+        drawer.inert = false;
+        drawer.classList.add("open");
+        overlay.classList.add("open");
+
+        drawer.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+
+        document.body.classList.add("tiaa-toc-open");
+        closeBtn.focus();
+      }
+
+      function closeToc() {
+        drawer.classList.remove("open");
+        overlay.classList.remove("open");
+
+        drawer.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+
+        drawer.inert = true;
+        document.body.classList.remove("tiaa-toc-open");
+
+        if (
+          lastFocusedElement &&
+          lastFocusedElement.isConnected
+        ) {
+          lastFocusedElement.focus();
+        }
+      }
+
+      toggle.addEventListener("click", function () {
+        if (drawer.classList.contains("open")) {
+          closeToc();
+        } else {
+          openToc();
+        }
+      });
+
+      closeBtn.addEventListener("click", closeToc);
+      overlay.addEventListener("click", closeToc);
+
+      links.forEach(function (link) {
+        link.addEventListener("click", closeToc);
+      });
+
+      document.addEventListener("keydown", function (event) {
+
+        if (!drawer.classList.contains("open")) {
+          return;
+        }
+
+        if (event.key === "Escape") {
+          closeToc();
+          return;
+        }
+
+        if (event.key === "Tab") {
+          const focusable = Array.from(
+            drawer.querySelectorAll(
+              'a[href], button:not([disabled])'
+            )
+          );
+
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+
+          if (
+            event.shiftKey &&
+            document.activeElement === first
+          ) {
+            event.preventDefault();
+            last.focus();
+          } else if (
+            !event.shiftKey &&
+            document.activeElement === last
+          ) {
+            event.preventDefault();
+            first.focus();
           }
         }
-      </style>
-      
-      <!-- Screener Tool Image -->
-      <div class="text-center mb-4">
-        <img src="/images/TIAA/Screener Tool.png" alt="Screener Tool" class="img-fluid rounded shadow responsive-img-mobile" style="max-width: 50%; width: 75%;">
-      </div>
-      
-      <!-- Fund Details Image -->
-      <div class="text-center mb-4">
-        <img src="/images/TIAA/Fund Details.png" alt="Fund Details" class="img-fluid rounded shadow responsive-img-mobile" style="max-width: 50%; width: 75%;">
-      </div>
-      
-      <!-- Fund Profile Page Image -->
-      <div class="text-center mb-4">
-        <img src="/images/TIAA/Fund Profile Page.png" alt="Fund Profile Page" class="img-fluid rounded shadow responsive-img-mobile" style="max-width: 50%; width: 75%;">
-      </div>
 
-      <div class="d-flex justify-content-center justify-content-center mt-4 mb-4">
-        <a class="btn btn-primary text-white learn-more-btn" href="https://www.tiaa.org/public/investment-performance">TIAA Investment Performance Screener Tool</a>
-      </div>
-      
-    </div>
-  </div>
-</section>
+      });
 
+      // Highlight the current section while scrolling.
 
-<section class="container my-5" id="planfocus-full">
-  <div class="row">
-    <div class="col-12">
-      <h2 class="mb-4 text-center">PlanFocus App Overview</h2>
+      const sections = Array.from(
+        document.querySelectorAll(
+          "main.tiaa-page section[id]"
+        )
+      );
 
-      <p class="mb-4 text-center">
-        <strong>Plan Sponsors</strong> face increasing complexity, regulatory demands, and rising participant expectations—all while internal resources remain limited. In multivendor environments, managing fiduciary duties and engaging employees effectively can be especially challenging. <strong>PlanFocus</strong> addresses these pain points by centralizing plan administration, simplifying compliance, and enhancing participant engagement through a unified platform—enabling sponsors to focus on delivering greater value.
-      </p>
-      
-      <p class="mb-4 text-center">
-        <strong>PlanFocus</strong> features intuitive navigation and a comprehensive suite of tools, resources, and insights designed to streamline administrative workflows, support fiduciary responsibilities, and enable informed decision-making. The platform empowers plan sponsors to evaluate plan performance, apply strategic enhancements, and improve participant outcomes.
-      </p>
-      
-      <p class="text-muted text-center">
-        <em>Note: Some features and functionalities described may have changed</em>
-      </p>
-      
-      
-      
-      <h3 class="mt-5 mb-3">Navigation Overview</h3>
-      <p class="mb-3">Access most PlanFocus sections with a single click using the navigation bar at the top of every page.</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>Tab Menu Bar:</strong> Hover to view a menu of links and select to navigate directly to your area of interest.</li>
-        <li class="list-group-item"><strong>Search:</strong> Quickly find participants in authorized plans or content across TIAA-CREF websites (public and secure) with predictive results as you type.</li>
-        <li class="list-group-item"><strong>My Settings:</strong> Customize personal settings, including email alerts and prospectus preferences.</li>
-        <li class="list-group-item"><strong>Contact Us:</strong> Access your TIAA-CREF service team, including your Relationship Manager, Client Services Manager, and participant support contact details.</li>
-        <li class="list-group-item"><strong>Notifications:</strong> View time-sensitive action items to manage critical tasks.</li>
-      </ul>
-      <p class="text-muted small">Note: Available features depend on your access level and plan configuration. Contact your plan sponsor for access-related questions.</p>
+      function updateActiveSection() {
+        let currentId = sections[0]?.id;
 
-      <h3 class="mt-5 mb-3">PlanFocus Home Page</h3>
-      <p class="mb-3">The home page provides a snapshot of plan and participant information, serving as a gateway to PlanFocus features.</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>My Plans:</strong> View key metrics and detailed charts for plan-level insights.</li>
-        <li class="list-group-item"><strong>For Your Attention:</strong> Manage time-sensitive tasks, compliance alerts, and calendar reminders to keep plans on track.</li>
-        <li class="list-group-item"><strong>Plan Review:</strong> Assess plan effectiveness using participant trends, peer benchmarks, and tips for better outcomes.</li>
-        <li class="list-group-item"><strong>Report & Analyze:</strong> Access an aggregated view of all managed plans to complement My Plans data.</li>
-        <li class="list-group-item"><strong>Resources for Employees:</strong> Explore educational videos, articles, and tools to engage employees.</li>
-        <li class="list-group-item"><strong>Resources for Plan Sponsors:</strong> Access webinars, videos, and guides to simplify plan management.</li>
-        <li class="list-group-item"><strong>Investment Insights:</strong> Review market commentary and economic perspectives from TIAA-CREF experts.</li>
-      </ul>
+        sections.forEach(function (section) {
+          if (
+            section.getBoundingClientRect().top <= 180
+          ) {
+            currentId = section.id;
+          }
+        });
 
-      <h3 class="mt-5 mb-3">Administration Tab</h3>
-      <p class="mb-3">The Administration Tab is your hub for completing essential plan-related tasks efficiently.</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item">Process contribution lists online for accurate remittance and timely reporting.</li>
-        <li class="list-group-item">Review participant transactions digitally with a streamlined, paperless process.</li>
-        <li class="list-group-item">Manage site users (add, remove, or edit access for sponsors, responsibility owners, auditors, or consultants). See the Managing Site Users section for details.</li>
-        <li class="list-group-item">Securely upload and exchange plan or participant data via File Exchange.</li>
-        <li class="list-group-item">Access and download forms for administrative or participant use, with some forms available for online completion.</li>
-        <li class="list-group-item">Additional tools: Enroll employees, remit funding, monitor investment performance, and manage Revenue Credit Account (if applicable).</li>
-      </ul>
+        links.forEach(function (link) {
+          const active =
+            link.getAttribute("href") === "#" + currentId;
 
-      <h3 class="mt-5 mb-3">Managing Site Users Functionality</h3>
-      <p class="mb-3">Easily manage PlanFocus users to control access for internal colleagues and external providers, ensuring secure and efficient plan management.</p>
-      <h4 class="mt-4 mb-3">Overview</h4>
-      <p class="mb-3">PlanFocus allows you to customize user access to protect sensitive data, streamline plan management, and enhance the employee experience. Manage users via the "Manage PlanFocus Users" page in the Administration Tab.</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item">Add, edit, or delete users, including copying settings from existing users.</li>
-        <li class="list-group-item">Deactivate or reactivate users with temporarily suspended roles.</li>
-        <li class="list-group-item">View a 12-month history of user access changes.</li>
-        <li class="list-group-item">Review and approve access for third-party firms (e.g., consultants, auditors).</li>
-        <li class="list-group-item">Complete the annual user confirmation process to maintain security.</li>
-      </ul>
-      <h4 class="mt-4 mb-3">User Types or User Personas</h4>
-      <p class="mb-3">PlanFocus supports two main user categories with specific access levels:</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>Plan Administrators (Internal Users):</strong>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Plan Sponsor (or Location Sponsor):</strong> Full access to add/edit users and perform all actions across plans.</li>
-            <li class="list-group-item"><strong>Responsibility Owner:</strong> Add/edit users and perform actions within assigned areas.</li>
-            <li class="list-group-item"><strong>Access Rights Holder:</strong> Perform actions only for assigned roles.</li>
-          </ul>
-        </li>
-        <li class="list-group-item"><strong>External Users:</strong> Professionals (e.g., auditors, consultants) granted access via their firm’s profile, managed under the "Manage Firms" tab. Legal counsel users are added like Plan Administrators.</li>
-      </ul>
-      <h4 class="mt-4 mb-3">Access Levels and Privacy</h4>
-      <p class="mb-3">Customize access for each user based on plans, roles, and actions:</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>Plans:</strong> Assign users to specific or all plans with varying roles per plan.</li>
-        <li class="list-group-item"><strong>Actions:</strong> Grant "Edit & View" or "View Only" permissions for each role.</li>
-        <li class="list-group-item"><strong>Privacy Options:</strong> Control access to sensitive data like participant balances, compensation, or Social Security numbers.</li>
-        <li class="list-group-item"><strong>Plan Review Access:</strong> For plans providing salary data, grant access to Plan Review for performance insights and peer benchmarks.</li>
-      </ul>
-      <h4 class="mt-4 mb-3">User Roles</h4>
-      <p class="mb-3">Assign roles to define user responsibilities:</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>Contributions and Enrollments:</strong> Manage contribution data, eligibility, enrollments, and funding transfers.</li>
-        <li class="list-group-item"><strong>Distributions and Loans:</strong> Handle distribution approvals, withdrawals, transfers, and loan requests.</li>
-        <li class="list-group-item"><strong>Compliance and Fee Management:</strong> Review fee disclosures, plan financials, and Plan Economics Reconciliation reports.</li>
-        <li class="list-group-item"><strong>Revenue Credit Account:</strong> Manage service provider payments and Plan Servicing Credits.</li>
-        <li class="list-group-item"><strong>Plan and Investment Changes:</strong> Oversee investment options, fund allocations, and plan enhancements.</li>
-      </ul>
-      <h4 class="mt-4 mb-3">How to Manage Users Functionality</h4>
-      <p class="mb-3">Use the Quick Start button or specific tabs on the "Manage PlanFocus Users" page:</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>Adding/Copying Users:</strong> Complete user profiles (name, email, phone, address, PIN) or copy settings from existing users. Legal counsel roles have preselected settings.</li>
-        <li class="list-group-item"><strong>Editing Users:</strong> Update profiles by name or by plan/role (for Sponsors/Responsibility Owners). Deactivate/reactivate users as needed.</li>
-        <li class="list-group-item"><strong>Managing Firms:</strong> Add or review third-party firm access, assign plans, set expiration dates, and view firm-assigned users.</li>
-        <li class="list-group-item"><strong>Viewing Change History:</strong> Review a 12-month log of user access changes.</li>
-        <li class="list-group-item"><strong>Annual Confirmation:</strong> Review and confirm user access annually to maintain security, with email and homepage alerts. Verify Business Edge firm access separately.</li>
-      </ul>
-      <p class="text-muted small">Note: Users must register with a one-time PIN provided offline. Unregistered users cannot access PlanFocus. Contact the Administrator Telephone Center at 888-842-7782 for support.</p>
+          link.classList.toggle("active", active);
 
-      <h3 class="mt-5 mb-3">Reporting Tab</h3>
-      <p class="mb-3">The Reporting Tab centralizes plan analytics to identify trends, set goals, and develop communication strategies.</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>Standard Reporting:</strong> Access predefined reports on investments, enrollments, contributions, and more, including "Most Commonly Used Reports" to answer key business questions.</li>
-        <li class="list-group-item"><strong>Explore:</strong> Navigate to summaries and trends without predefined reports for flexible data review.</li>
-        <li class="list-group-item"><strong>Custom Reporting:</strong> Create tailored reports to aggregate and analyze data for deeper insights.</li>
-        <li class="list-group-item"><strong>Scheduling:</strong> Automate report generation, receive email notifications, and view completed reports.</li>
-        <li class="list-group-item"><strong>Plan Review:</strong> Evaluate plan performance with plan-specific data, peer benchmarks, and dynamic graphics (analytics depend on provided data).</li>
-      </ul>
+          if (active) {
+            link.setAttribute(
+              "aria-current",
+              "location"
+            );
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
 
-      <h3 class="mt-5 mb-3">Compliance Tab</h3>
-      <p class="mb-3">Simplify compliance with a three-step process tailored to your plan’s needs:</p>
-      <ol class="list-group list-group-numbered mb-4">
-        <li class="list-group-item">Understand your fiduciary responsibilities with guided resources.</li>
-        <li class="list-group-item">Check your plan’s compliance status using diagnostic tools.</li>
-        <li class="list-group-item">Establish processes to achieve or maintain compliance with actionable steps.</li>
-      </ol>
-      <p class="mb-4">Tools include the Plan Governance Toolkit, Compliance Calendar (customized to your plan year-end), and Fiduciary and Compliance Checklist.</p>
+      window.addEventListener(
+        "scroll",
+        updateActiveSection,
+        { passive: true }
+      );
 
-      <h3 class="mt-5 mb-3">Education Tab</h3>
-      <p class="mb-3">Access resources to support participants and enhance plan management.</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>Resources for Employees:</strong> Provide articles, materials, and registration for one-on-one consultations or seminars to promote retirement readiness.</li>
-        <li class="list-group-item"><strong>Resources for Plan Sponsors:</strong> Access research, webinars, and videos on key topics to drive better outcomes.</li>
-        <li class="list-group-item"><strong>Investment Insights:</strong> Review market commentary, pricing, and performance data from TIAA-CREF experts.</li>
-        <li class="list-group-item"><strong>PlanFocus 101:</strong> Learn with step-by-step guides and instructional videos to maximize PlanFocus usage.</li>
-      </ul>
+      updateActiveSection();
 
-      <h3 class="mt-5 mb-3">Document Center Tab</h3>
-      <p class="mb-3">Organize and access plan documents in a virtual filing cabinet, with email notifications for new documents.</p>
-      <ul class="list-group list-group-flush mb-4">
-        <li class="list-group-item"><strong>Administration:</strong> Store documents for daily operations, such as plan adjustment confirmations.</li>
-        <li class="list-group-item"><strong>Employee Communications:</strong> Access campaign materials, Qualified Default Investment Alternative (QDIA) notices, and new fund announcements.</li>
-        <li class="list-group-item"><strong>Employee Engagement:</strong> Review reports on communication and education campaign results.</li>
-        <li class="list-group-item"><strong>Plan Documentation:</strong> Manage plan rules, agreements, provisions, and amendments.</li>
-        <li class="list-group-item"><strong>Plan Review:</strong> Access electronic copies of annual Plan Review reports.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    });
+  </script>
 
-
-
-
-<!--Social-->
-<section class="social text-bg-dark py-6 overflow-hidden">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3 text-center fs-4">
-        <div class="social-icons d-flex justify-content-center gap-4">
-          <a href="https://www.linkedin.com/in/faraz-uddin-429b9a15a/">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!--Footer-->
-
-    <footer class="border-top border-primary bg-dark text-white py-4">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-4 text-center">
-            <p>
-              Hand Coded By Faraz Uddin
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/load-components.js"></script>
-  </body>
+</body>
 </html>

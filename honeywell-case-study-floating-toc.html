@@ -397,6 +397,18 @@
     .toc-link span { color:var(--hw-accent); font-size:1.15rem; }
     .toc-link:hover, .toc-link:focus { color:var(--hw-secondary); transform:translateY(-2px);
       box-shadow:0 6px 18px rgba(0,0,0,.07); }
+
+    /* Floating page-only contents drawer */
+    .floating-toc { position:fixed; right:22px; bottom:24px; z-index:1100; font-family:"Open Sans",Arial,sans-serif; }
+    .floating-toc-toggle { display:flex; align-items:center; gap:10px; margin-left:auto; padding:13px 19px; border:0; border-radius:50px; background:var(--hw-primary); color:#fff; font-weight:700; box-shadow:0 6px 22px rgba(0,0,0,.22); cursor:pointer; }
+    .floating-toc-toggle:hover, .floating-toc-toggle:focus-visible { background:var(--hw-secondary); }
+    .floating-toc-panel { position:absolute; right:0; bottom:calc(100% + 12px); width:min(360px,calc(100vw - 32px)); max-height:min(65vh,580px); overflow:auto; background:#fff; border:1px solid var(--hw-border); border-radius:15px; box-shadow:0 12px 40px rgba(0,0,0,.20); padding:12px; }
+    .floating-toc-panel[hidden], .floating-toc[hidden] { display:none !important; }
+    .floating-toc-heading { display:flex; justify-content:space-between; align-items:center; padding:8px 8px 12px; color:var(--hw-primary); font-weight:700; }
+    .floating-toc-close { border:0; background:transparent; font-size:24px; color:var(--hw-muted); cursor:pointer; line-height:1; }
+    .floating-toc-panel a { display:block; padding:9px 12px; color:var(--hw-primary); text-decoration:none; border-radius:7px; font-size:.87rem; }
+    .floating-toc-panel a:hover, .floating-toc-panel a:focus-visible { background:var(--hw-light); color:var(--hw-secondary); }
+    @media(max-width:600px) { .floating-toc { right:14px; bottom:14px; } .floating-toc-panel { max-height:60vh; } }
   </style>
 </head>
 
@@ -2834,6 +2846,28 @@ And the transaction must maintain required audit information</div>
 </section>
 
 
+<!-- PAGE-ONLY FLOATING TABLE OF CONTENTS -->
+<aside class="floating-toc" id="floatingToc" hidden aria-label="Floating table of contents">
+  <div class="floating-toc-panel" id="floatingTocPanel" hidden>
+    <div class="floating-toc-heading"><span>Jump to section</span><button type="button" class="floating-toc-close" id="floatingTocClose" aria-label="Close contents">&times;</button></div>
+      <a href="#honeywell">01 — Honeywell Overview</a>
+      <a href="#sap">02 — Why SAP S/4HANA Matters</a>
+      <a href="#i2o">03 — Innovation to Order</a>
+      <a href="#operating-model">04 — Product Owner Operating Model</a>
+      <a href="#backlog">05 — Strategy to Backlog</a>
+      <a href="#story">06 — Sample User Story</a>
+      <a href="#prioritization">07 — Prioritization &amp; Tradeoffs</a>
+      <a href="#safe">08 — Scaled Agile &amp; PI Planning</a>
+      <a href="#sprint">09 — Sprint Delivery</a>
+      <a href="#plan">10 — First 90 Days</a>
+      <a href="#metrics">11 — Performance Measures</a>
+      <a href="#value">12 — How I Add Value</a>
+      <a href="#competition">13 — Competitive Landscape</a>
+      <a href="#appendix">14 — Appendix &amp; Glossaries</a>
+  </div>
+  <button type="button" class="floating-toc-toggle" id="floatingTocToggle" aria-controls="floatingTocPanel" aria-expanded="false">☰ &nbsp; Contents</button>
+</aside>
+
 <!-- MAIN PORTFOLIO FOOTER -->
 <div id="footer-placeholder"></div>
 
@@ -2870,6 +2904,36 @@ And the transaction must maintain required audit information</div>
 
   }
 
+</script>
+
+
+<script>
+(function () {
+  const toc = document.getElementById('floatingToc');
+  const panel = document.getElementById('floatingTocPanel');
+  const toggle = document.getElementById('floatingTocToggle');
+  const close = document.getElementById('floatingTocClose');
+  const originalContents = document.getElementById('contents');
+  if (!toc || !panel || !toggle || !originalContents) return;
+
+  function setOpen(open) {
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+  }
+  function updateVisibility() {
+    const pastContents = originalContents.getBoundingClientRect().bottom < 0;
+    toc.hidden = !pastContents;
+    if (!pastContents) setOpen(false);
+  }
+  toggle.addEventListener('click', () => setOpen(panel.hidden));
+  close.addEventListener('click', () => { setOpen(false); toggle.focus(); });
+  panel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') setOpen(false); });
+  document.addEventListener('click', event => { if (!toc.contains(event.target)) setOpen(false); });
+  window.addEventListener('scroll', updateVisibility, { passive:true });
+  window.addEventListener('resize', updateVisibility);
+  updateVisibility();
+})();
 </script>
 
 </body>
