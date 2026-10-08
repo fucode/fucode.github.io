@@ -1,6 +1,312 @@
-<!-- includes/footer.html -->
-<footer class="py-4 bg-dark text-white text-center">
+
+<!-- =========================================================
+     FARAZ UDDIN | SHARED PORTFOLIO FOOTER
+     File: components/footer.html
+
+     Matches the modern portfolio navbar
+     Compact charcoal + red design
+     No duplicate navigation menus
+     Responsive desktop and mobile layout
+========================================================= -->
+
+<style>
+  /* =====================================================
+     FOOTER BASE
+  ===================================================== */
+
+  #portfolioFooter {
+    --footer-bg: #17191d;
+    --footer-accent: #d71920;
+    --footer-text: #f8fafc;
+    --footer-muted: #b6bdc8;
+    --footer-border: rgba(255, 255, 255, 0.1);
+
+    position: relative;
+    width: 100%;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    font-family: "Open Sans", Arial, sans-serif;
+    border-top: 1px solid var(--footer-border);
+    padding: 28px 0 20px;
+    clear: both;
+  }
+
+  /* Subtle red accent */
+
+  #portfolioFooter::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      var(--footer-accent),
+      rgba(215, 25, 32, 0.35),
+      transparent
+    );
+  }
+
+  /* =====================================================
+     MAIN FOOTER
+  ===================================================== */
+
+  #portfolioFooter .footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 22px;
+  }
+
+  /* =====================================================
+     BRAND
+  ===================================================== */
+
+  #portfolioFooter .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    text-decoration: none;
+  }
+
+  #portfolioFooter .footer-logo {
+    width: 55px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+  }
+
+  #portfolioFooter .footer-brand:hover .footer-logo {
+    transform: scale(1.05);
+  }
+
+  #portfolioFooter .footer-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #portfolioFooter .footer-name {
+    color: #fff;
+    font-size: 0.94rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+  }
+
+  #portfolioFooter .footer-subtitle {
+    color: var(--footer-muted);
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* =====================================================
+     SOCIAL LINK
+  ===================================================== */
+
+  #portfolioFooter .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #portfolioFooter .footer-social-label {
+    color: var(--footer-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  #portfolioFooter .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--footer-border);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.045);
+    color: #fff;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  #portfolioFooter .footer-social-link:hover,
+  #portfolioFooter .footer-social-link:focus-visible {
+    background: var(--footer-accent);
+    border-color: var(--footer-accent);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* =====================================================
+     FOOTER BOTTOM
+  ===================================================== */
+
+  #portfolioFooter .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 18px;
+    border-top: 1px solid var(--footer-border);
+  }
+
+  #portfolioFooter .footer-copyright {
+    margin: 0;
+    color: var(--footer-muted);
+    font-size: 0.77rem;
+    font-weight: 500;
+  }
+
+  #portfolioFooter .footer-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: var(--footer-muted);
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+
+  #portfolioFooter .footer-credit i {
+    color: var(--footer-accent);
+    font-size: 0.9rem;
+  }
+
+  #portfolioFooter .footer-credit strong {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* =====================================================
+     RESPONSIVE MOBILE
+  ===================================================== */
+
+  @media (max-width: 767px) {
+
+    #portfolioFooter {
+      padding: 26px 0 20px;
+    }
+
+    #portfolioFooter .footer-main {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    #portfolioFooter .footer-brand {
+      justify-content: center;
+    }
+
+    #portfolioFooter .footer-social {
+      justify-content: center;
+    }
+
+    #portfolioFooter .footer-bottom {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    #portfolioFooter .footer-credit {
+      justify-content: center;
+    }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    #portfolioFooter *,
+    #portfolioFooter *::before,
+    #portfolioFooter *::after {
+      transition: none !important;
+    }
+
+  }
+</style>
+
+<!-- =========================================================
+     FOOTER CONTENT
+========================================================= -->
+
+<footer id="portfolioFooter">
+
   <div class="container">
-    <p>Hand Coded by Faraz Uddin</p>
+
+    <!-- MAIN FOOTER ROW -->
+
+    <div class="footer-main">
+
+      <!-- BRAND -->
+
+      <a
+        href="index.html"
+        class="footer-brand"
+        aria-label="Faraz Uddin - Home"
+      >
+
+        <img
+          src="images/TIAA/bluelogo.png"
+          alt=""
+          class="footer-logo"
+          width="55"
+          height="45"
+        >
+
+        <span class="footer-brand-text">
+
+          <span class="footer-name">
+            Faraz Uddin
+          </span>
+
+          <span class="footer-subtitle">
+            Product Owner &amp; Business Analyst
+          </span>
+
+        </span>
+
+      </a>
+
+      <!-- LINKEDIN -->
+
+      <div class="footer-social">
+
+        <span class="footer-social-label">
+          Connect with me
+        </span>
+
+        <a
+          href="https://www.linkedin.com/in/faraz-uddin-429b9a15a/"
+          class="footer-social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit my LinkedIn profile"
+          title="LinkedIn"
+        >
+
+          <i
+            class="fab fa-linkedin-in"
+            aria-hidden="true"
+          ></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
   </div>
+
 </footer>

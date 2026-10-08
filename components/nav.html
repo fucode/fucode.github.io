@@ -1,19 +1,394 @@
 
-<!-- includes/nav.html -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<!-- =========================================================
+     FARAZ UDDIN | SHARED PORTFOLIO NAVIGATION
+     File: includes/nav.html
+
+     Bootstrap 5 compatible
+     Modern charcoal + red portfolio theme
+     Desktop dropdowns + mobile collapsible navigation
+========================================================= -->
+
+<style>
+  :root {
+    --portfolio-nav-bg: #17191d;
+    --portfolio-nav-surface: #24272d;
+    --portfolio-nav-accent: #d71920;
+    --portfolio-nav-accent-hover: #b81018;
+    --portfolio-nav-text: #f8fafc;
+    --portfolio-nav-muted: #b6bdc8;
+    --portfolio-nav-border: rgba(255, 255, 255, 0.1);
+  }
+
+  /* =====================================================
+     NAVBAR
+  ===================================================== */
+
+  #portfolioNavbar {
+    background: rgba(23, 25, 29, 0.97);
+    border-bottom: 1px solid var(--portfolio-nav-border);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+    padding: 10px 0;
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      padding 0.25s ease;
+    z-index: 1040;
+  }
+
+  #portfolioNavbar.nav-scrolled {
+    background: rgba(18, 19, 22, 0.99);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+    padding: 6px 0;
+  }
+
+  /* =====================================================
+     BRAND
+  ===================================================== */
+
+  #portfolioNavbar .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    margin-right: 20px;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  #portfolioNavbar .brand-logo {
+    width: 55px;
+    height: 45px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+  }
+
+  #portfolioNavbar .navbar-brand:hover .brand-logo {
+    transform: scale(1.05);
+  }
+
+  #portfolioNavbar .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+
+  #portfolioNavbar .brand-name {
+    color: #fff;
+    font-size: 0.94rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  #portfolioNavbar .brand-subtitle {
+    color: var(--portfolio-nav-muted);
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* =====================================================
+     NAVIGATION LINKS
+  ===================================================== */
+
+  #portfolioNavbar .navbar-nav {
+    gap: 5px;
+  }
+
+  #portfolioNavbar .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    position: relative;
+    padding: 11px 16px;
+    border-radius: 9px;
+    color: var(--portfolio-nav-muted);
+    font-size: 0.87rem;
+    font-weight: 700;
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  #portfolioNavbar .nav-link:hover,
+  #portfolioNavbar .nav-link:focus-visible {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.065);
+  }
+
+  #portfolioNavbar .nav-link.active {
+    color: #fff;
+    background: rgba(215, 25, 32, 0.14);
+  }
+
+  #portfolioNavbar .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 3px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--portfolio-nav-accent);
+  }
+
+  /* =====================================================
+     DROPDOWNS
+  ===================================================== */
+
+  #portfolioNavbar .dropdown-menu {
+    min-width: 235px;
+    margin-top: 10px;
+    padding: 9px;
+    border: 1px solid var(--portfolio-nav-border);
+    border-radius: 14px;
+    background: var(--portfolio-nav-surface);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+  }
+
+  #portfolioNavbar .dropdown-menu-wide {
+    min-width: 285px;
+  }
+
+  #portfolioNavbar .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 13px;
+    border-radius: 8px;
+    color: #e2e5ea;
+    font-size: 0.83rem;
+    font-weight: 600;
+    white-space: normal;
+    transition:
+      background 0.18s ease,
+      color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  #portfolioNavbar .dropdown-item:hover,
+  #portfolioNavbar .dropdown-item:focus-visible {
+    color: #fff;
+    background: rgba(215, 25, 32, 0.17);
+    transform: translateX(2px);
+  }
+
+  #portfolioNavbar .dropdown-item.active {
+    color: #fff;
+    background: rgba(215, 25, 32, 0.22);
+  }
+
+  #portfolioNavbar .dropdown-item i {
+    width: 17px;
+    color: #e34c52;
+    font-size: 0.86rem;
+    text-align: center;
+  }
+
+  #portfolioNavbar .dropdown-divider {
+    margin: 9px 5px;
+    border-color: var(--portfolio-nav-border);
+    opacity: 1;
+  }
+
+  #portfolioNavbar .dropdown-label {
+    padding: 8px 13px 4px;
+    color: #9da6b5;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* =====================================================
+     RESUME BUTTON
+  ===================================================== */
+
+  #portfolioNavbar .resume-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 10px 19px;
+    border: 1px solid var(--portfolio-nav-accent);
+    border-radius: 9px;
+    background: var(--portfolio-nav-accent);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 800;
+    white-space: nowrap;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  #portfolioNavbar .resume-button:hover,
+  #portfolioNavbar .resume-button:focus-visible {
+    background: var(--portfolio-nav-accent-hover);
+    border-color: var(--portfolio-nav-accent-hover);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(215, 25, 32, 0.25);
+  }
+
+  /* =====================================================
+     MOBILE TOGGLE
+  ===================================================== */
+
+  #portfolioNavbar .navbar-toggler {
+    padding: 9px 11px;
+    border: 1px solid var(--portfolio-nav-border);
+    border-radius: 9px;
+    box-shadow: none;
+  }
+
+  #portfolioNavbar .navbar-toggler:focus-visible {
+    outline: 2px solid var(--portfolio-nav-accent);
+    outline-offset: 3px;
+  }
+
+  #portfolioNavbar .navbar-toggler-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  /* =====================================================
+     DESKTOP
+  ===================================================== */
+
+  @media (min-width: 992px) {
+    #portfolioNavbar .dropdown-menu {
+      animation: portfolioDropdownFade 0.18s ease;
+    }
+
+    @keyframes portfolioDropdownFade {
+      from {
+        opacity: 0;
+        transform: translateY(7px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  /* =====================================================
+     MOBILE
+  ===================================================== */
+
+  @media (max-width: 991.98px) {
+    #portfolioNavbar {
+      padding: 9px 0;
+    }
+
+    #portfolioNavbar .navbar-collapse {
+      margin-top: 13px;
+      padding: 15px 0 8px;
+      border-top: 1px solid var(--portfolio-nav-border);
+      max-height: calc(100dvh - 90px);
+      overflow-y: auto;
+    }
+
+    #portfolioNavbar .navbar-nav {
+      align-items: stretch !important;
+      gap: 4px;
+    }
+
+    #portfolioNavbar .nav-link {
+      justify-content: flex-start;
+      padding: 13px 15px;
+      width: 100%;
+    }
+
+    #portfolioNavbar .nav-link.active::after {
+      left: 15px;
+      right: auto;
+      width: 28px;
+    }
+
+    #portfolioNavbar .dropdown-menu {
+      width: 100%;
+      min-width: 0;
+      margin: 4px 0 8px;
+      border-radius: 10px;
+      box-shadow: none;
+    }
+
+    #portfolioNavbar .dropdown-item {
+      padding: 12px 14px;
+    }
+
+    #portfolioNavbar .resume-nav-item {
+      margin-top: 12px;
+    }
+
+    #portfolioNavbar .resume-button {
+      width: 100%;
+      padding: 13px 20px;
+    }
+
+    #portfolioNavbar .brand-logo {
+      width: 49px;
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    #portfolioNavbar .brand-name {
+      font-size: 0.85rem;
+    }
+
+    #portfolioNavbar .brand-subtitle {
+      font-size: 0.57rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #portfolioNavbar *,
+    #portfolioNavbar *::before,
+    #portfolioNavbar *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav
+  id="portfolioNavbar"
+  class="navbar navbar-expand-lg navbar-dark fixed-top"
+  aria-label="Main portfolio navigation"
+>
   <div class="container">
 
-    <!-- Brand -->
+    <!-- BRAND -->
+
     <a class="navbar-brand" href="index.html">
+
       <img
         src="images/TIAA/bluelogo.png"
-        alt="Faraz Uddin Logo"
-        width="65"
-        height="50"
+        alt=""
+        class="brand-logo"
+        width="55"
+        height="45"
       >
+
+      <span class="brand-text">
+        <span class="brand-name">Faraz Uddin</span>
+        <span class="brand-subtitle">Product Owner &amp; Business Analyst</span>
+      </span>
+
     </a>
 
-    <!-- Mobile Navigation Toggle -->
+    <!-- MOBILE TOGGLE -->
+
     <button
       class="navbar-toggler"
       type="button"
@@ -26,73 +401,113 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navigation Links -->
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto text-center align-items-lg-center">
+    <!-- LINKS -->
 
-        <!-- Home -->
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNavDropdown"
+    >
+
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <!-- HOME -->
+
         <li class="nav-item">
-          <a class="nav-link fw-semibold" href="index.html">
+
+          <a
+            class="nav-link"
+            href="index.html"
+            data-page="index.html"
+          >
+            <i class="fas fa-home" aria-hidden="true"></i>
             Home
           </a>
+
         </li>
 
-        <!-- Experience -->
+        <!-- EXPERIENCE -->
+
         <li class="nav-item dropdown">
+
           <a
-            class="nav-link dropdown-toggle fw-semibold"
+            class="nav-link dropdown-toggle"
             href="#"
             id="experienceDropdown"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
             Experience
           </a>
 
           <ul
-            class="dropdown-menu dropdown-menu-dark text-center"
+            class="dropdown-menu dropdown-menu-end"
             aria-labelledby="experienceDropdown"
           >
+
+            <li class="dropdown-label">
+              Professional Experience
+            </li>
+
             <li>
-              <a class="dropdown-item" href="WF_MS_2026.html">
+              <a
+                class="dropdown-item"
+                href="WF_MS_2026.html"
+              >
+                <i class="fas fa-building" aria-hidden="true"></i>
                 Wells Fargo
               </a>
             </li>
 
             <li>
-              <a class="dropdown-item" href="TIAA.html">
+              <a
+                class="dropdown-item"
+                href="TIAA.html"
+              >
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
                 TIAA
               </a>
             </li>
+
           </ul>
+
         </li>
 
-        <!-- Skills & Guides -->
+        <!-- SKILLS & GUIDES -->
+
         <li class="nav-item dropdown">
+
           <a
-            class="nav-link dropdown-toggle fw-semibold"
+            class="nav-link dropdown-toggle"
             href="#"
             id="skillsDropdown"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
             Skills &amp; Guides
           </a>
 
           <ul
-            class="dropdown-menu dropdown-menu-dark text-center"
+            class="dropdown-menu dropdown-menu-end dropdown-menu-wide"
             aria-labelledby="skillsDropdown"
           >
 
-            <!-- Honeywell Case Study -->
+            <li class="dropdown-label">
+              Product Case Studies
+            </li>
+
+            <!-- HONEYWELL -->
+
             <li>
               <a
                 class="dropdown-item"
                 href="honeywell-case-study-floating-toc.html"
               >
-                Honeywell SAP S/4HANA Case Study
+                <i class="fas fa-industry" aria-hidden="true"></i>
+                Honeywell SAP S/4HANA
               </a>
             </li>
 
@@ -100,63 +515,217 @@
               <hr class="dropdown-divider">
             </li>
 
-            <!-- Data Product & Governance -->
+            <li class="dropdown-label">
+              Technical &amp; Product Guides
+            </li>
+
+            <!-- DATA PRODUCT & GOVERNANCE -->
+
             <li>
-              <a class="dropdown-item" href="data_guide.html">
+              <a
+                class="dropdown-item"
+                href="data_guide.html"
+              >
+                <i class="fas fa-database" aria-hidden="true"></i>
                 Data Product &amp; Governance
               </a>
             </li>
 
-            <!-- Enterprise Data -->
+            <!-- ENTERPRISE DATA -->
+
             <li>
-              <a class="dropdown-item" href="Data.html">
+              <a
+                class="dropdown-item"
+                href="Data.html"
+              >
+                <i class="fas fa-server" aria-hidden="true"></i>
                 Enterprise Data
               </a>
             </li>
 
-            <!-- API Testing -->
+            <!-- API TESTING -->
+
             <li>
-              <a class="dropdown-item" href="API.html">
+              <a
+                class="dropdown-item"
+                href="API.html"
+              >
+                <i class="fas fa-code" aria-hidden="true"></i>
                 API Testing
               </a>
             </li>
 
-            <!-- SDLC & Agile -->
+            <!-- SDLC & AGILE -->
+
             <li>
-              <a class="dropdown-item" href="Agile.html">
+              <a
+                class="dropdown-item"
+                href="Agile.html"
+              >
+                <i class="fas fa-sync-alt" aria-hidden="true"></i>
                 SDLC &amp; Agile
               </a>
             </li>
 
-            <!-- Backlog Refinement -->
+            <!-- BACKLOG REFINEMENT -->
+
             <li>
-              <a class="dropdown-item" href="Grooming.html">
+              <a
+                class="dropdown-item"
+                href="Grooming.html"
+              >
+                <i class="fas fa-tasks" aria-hidden="true"></i>
                 Backlog Refinement
               </a>
             </li>
 
-            <!-- Stakeholder Management -->
+            <!-- STAKEHOLDER MANAGEMENT -->
+
             <li>
-              <a class="dropdown-item" href="Stakeholder.html">
+              <a
+                class="dropdown-item"
+                href="Stakeholder.html"
+              >
+                <i class="fas fa-users" aria-hidden="true"></i>
                 Stakeholder Management
               </a>
             </li>
 
           </ul>
+
         </li>
 
-        <!-- Resume -->
-        <li class="nav-item ms-lg-3 my-2 my-lg-0">
+        <!-- RESUME -->
+
+        <li class="nav-item resume-nav-item ms-lg-3">
+
           <a
-            class="btn btn-outline-light fw-semibold px-4"
-            href="/images/TIAA/Faraz_Uddin_Resume_OCT26..pdf"
+            class="resume-button"
+            href="images/TIAA/Faraz_Uddin_Resume_OCT26..pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
+            <i class="fas fa-file-pdf" aria-hidden="true"></i>
             Resume
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
+
         </li>
 
       </ul>
+
     </div>
 
   </div>
 </nav>
+
+<!-- =========================================================
+     NAVIGATION JAVASCRIPT
+
+     Works when nav.html is injected by load-components.js.
+     Prevents duplicate event listeners on repeated injection.
+========================================================= -->
+
+<script>
+  (function () {
+
+    const navbar = document.getElementById("portfolioNavbar");
+
+    if (!navbar || navbar.dataset.initialized === "true") {
+      return;
+    }
+
+    navbar.dataset.initialized = "true";
+
+    /* -----------------------------------------------------
+       NAVBAR SCROLL EFFECT
+    ----------------------------------------------------- */
+
+    function updateNavbarScroll() {
+      navbar.classList.toggle(
+        "nav-scrolled",
+        window.scrollY > 35
+      );
+    }
+
+    updateNavbarScroll();
+
+    window.addEventListener(
+      "scroll",
+      updateNavbarScroll,
+      { passive: true }
+    );
+
+    /* -----------------------------------------------------
+       ACTIVE PAGE INDICATOR
+    ----------------------------------------------------- */
+
+    const currentPage =
+      window.location.pathname.split("/").pop() || "index.html";
+
+    const navLinks = navbar.querySelectorAll(
+      ".nav-link[href], .dropdown-item[href]"
+    );
+
+    navLinks.forEach(function (link) {
+
+      const href = link.getAttribute("href");
+
+      if (!href || href === "#") {
+        return;
+      }
+
+      const linkPage = href.split("/").pop().split("?")[0];
+
+      if (linkPage.toLowerCase() === currentPage.toLowerCase()) {
+
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+
+        const dropdown = link.closest(".dropdown");
+
+        if (dropdown) {
+          const trigger = dropdown.querySelector(
+            ".nav-link.dropdown-toggle"
+          );
+
+          if (trigger) {
+            trigger.classList.add("active");
+          }
+        }
+      }
+    });
+
+    /* -----------------------------------------------------
+       COLLAPSE MOBILE MENU AFTER LINK SELECTION
+    ----------------------------------------------------- */
+
+    navbar.querySelectorAll(
+      ".dropdown-item, .nav-link:not(.dropdown-toggle)"
+    ).forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        const menu = navbar.querySelector(
+          "#navbarNavDropdown"
+        );
+
+        if (
+          menu &&
+          menu.classList.contains("show") &&
+          window.bootstrap &&
+          window.bootstrap.Collapse
+        ) {
+
+          window.bootstrap.Collapse
+            .getOrCreateInstance(menu)
+            .hide();
+
+        }
+
+      });
+
+    });
+
+  })();
+</script>

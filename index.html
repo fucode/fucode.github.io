@@ -2,134 +2,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Faraz Uddin | Product Owner & Product Management</title>
-  <meta name="description"
-    content="Faraz Uddin's portfolio featuring product ownership, business analysis, enterprise workflow modernization, Agile delivery, and product strategy." />
+  <meta name="description" content="Faraz Uddin's portfolio featuring product ownership, business analysis, enterprise workflow modernization, Agile delivery and product strategy.">
 
-  <link rel="icon" href="images/favicon.png" />
-  <link rel="stylesheet" href="css/font-awesome.css" />
-  <link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
+    :root {
+      --home-red: #d71920;
+      --home-red-dark: #a80f15;
+      --home-ink: #171717;
+      --home-charcoal: #242424;
+      --home-muted: #667085;
+      --home-light: #f6f7f9;
+      --home-border: #e4e7ec;
+      --home-radius: 20px;
+      --home-shadow: 0 18px 55px rgba(16,24,40,.09);
+    }
+
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 85px;
+      scroll-padding-top: 105px;
     }
 
     .portfolio-home {
-      --home-ink: #162131;
-      --home-dark: #101923;
-      --home-muted: #667085;
-      --home-accent: #38c5ba;
-      --home-light: #f5f7fa;
-      --home-border: #e4e9ef;
       font-family: "Open Sans", sans-serif;
       color: var(--home-ink);
       line-height: 1.7;
+    }
+
+    .portfolio-home *,
+    .portfolio-home *::before,
+    .portfolio-home *::after {
+      box-sizing: border-box;
     }
 
     .portfolio-home a {
       text-decoration: none;
     }
 
-    .portfolio-home .section-padding {
-      padding: 95px 0;
+    .portfolio-home [id] {
+      scroll-margin-top: 105px;
     }
 
-    .portfolio-home .section-kicker {
-      display: inline-block;
-      color: #087e78;
-      font-size: .76rem;
+    .portfolio-home .section-space {
+      padding: 100px 0;
+    }
+
+    .portfolio-home .soft-section {
+      background: var(--home-light);
+    }
+
+    .portfolio-home .dark-section {
+      background: linear-gradient(135deg,#151515,#252525);
+      color: #fff;
+    }
+
+    .portfolio-home .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--home-red);
+      font-size: .78rem;
       font-weight: 800;
-      letter-spacing: .15em;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      margin-bottom: 15px;
     }
 
-    .portfolio-home .section-heading {
-      font-size: clamp(2rem, 4vw, 3.15rem);
-      font-weight: 800;
-      letter-spacing: -.045em;
-      line-height: 1.17;
+    .portfolio-home .section-label::before {
+      content: "";
+      width: 30px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--home-red);
+    }
+
+    .portfolio-home .section-title {
+      max-width: 900px;
       margin-bottom: 20px;
+      font-size: clamp(2rem,4vw,3.15rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.04em;
     }
 
-    .portfolio-home .section-description {
+    .portfolio-home .section-intro {
+      max-width: 820px;
       color: var(--home-muted);
-      max-width: 740px;
-      font-size: 1.04rem;
+      font-size: 1.05rem;
+    }
+
+    .portfolio-home .dark-section .section-intro {
+      color: rgba(255,255,255,.7);
     }
 
     /* HERO */
 
-    .portfolio-home .home-hero {
+    .portfolio-home .hero {
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(
-          circle at 85% 20%,
-          rgba(56,197,186,.15),
-          transparent 35%
-        ),
-        linear-gradient(135deg, #101923, #1c2c3c);
+      padding: 145px 0 105px;
       color: #fff;
-      padding: 165px 0 115px;
+      background: linear-gradient(120deg,#0f0f0f 0%,#202020 68%,#3a0b0d 100%);
     }
 
-    .portfolio-home .home-hero::after {
-      content: "";
+    .portfolio-home .hero::before {
       position: absolute;
-      width: 540px;
-      height: 540px;
-      border: 1px solid rgba(255,255,255,.07);
+      content: "";
+      width: 650px;
+      height: 650px;
+      right: -250px;
+      top: -300px;
+      border: 1px solid rgba(255,255,255,.12);
       border-radius: 50%;
-      top: -240px;
-      right: -180px;
       pointer-events: none;
     }
 
-    .portfolio-home .hero-content {
+    .portfolio-home .hero::after {
+      position: absolute;
+      content: "";
+      width: 430px;
+      height: 430px;
+      right: -130px;
+      top: -185px;
+      border: 1px solid rgba(215,25,32,.55);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .portfolio-home .hero-content,
+    .portfolio-home .hero-side-card {
       position: relative;
       z-index: 2;
     }
 
     .portfolio-home .hero-eyebrow {
-      color: var(--home-accent);
-      font-size: .83rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      font-size: .8rem;
       font-weight: 800;
       letter-spacing: .14em;
       text-transform: uppercase;
-      margin-bottom: 25px;
     }
 
-    .portfolio-home .hero-title {
-      font-size: clamp(3.3rem, 7vw, 6.1rem);
+    .portfolio-home .hero-eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      background: var(--home-red);
+      border-radius: 99px;
+    }
+
+    .portfolio-home .hero h1 {
+      margin-bottom: 25px;
+      font-size: clamp(3.3rem,7vw,6rem);
       font-weight: 800;
       line-height: 1.02;
-      letter-spacing: -.06em;
-      margin-bottom: 25px;
+      letter-spacing: -.055em;
     }
 
-    .portfolio-home .hero-title span {
-      color: var(--home-accent);
+    .portfolio-home .text-accent {
+      color: var(--home-red);
     }
 
     .portfolio-home .hero-description {
-      max-width: 660px;
-      color: #c0ccd7;
+      max-width: 750px;
+      margin-bottom: 30px;
+      color: rgba(255,255,255,.75);
       font-size: 1.12rem;
       line-height: 1.85;
-      margin-bottom: 32px;
     }
 
     .portfolio-home .hero-tags {
@@ -140,66 +196,49 @@
     }
 
     .portfolio-home .hero-tag {
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 30px;
-      padding: 8px 15px;
-      font-size: .78rem;
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 999px;
+      color: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.06);
+      font-size: .82rem;
       font-weight: 700;
-      color: #e5ebf1;
-      background: rgba(255,255,255,.04);
     }
 
-    .portfolio-home .primary-action,
-    .portfolio-home .secondary-action {
+    .portfolio-home .primary-action {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 13px 23px;
-      border-radius: 8px;
-      font-weight: 800;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--home-red);
+      color: #fff;
       font-size: .9rem;
-      transition: .2s ease;
-    }
-
-    .portfolio-home .primary-action {
-      background: var(--home-accent);
-      color: #10232b;
+      font-weight: 800;
+      transition: background .2s ease,transform .2s ease;
     }
 
     .portfolio-home .primary-action:hover {
-      background: #70ded3;
-      color: #10232b;
+      background: var(--home-red-dark);
+      color: #fff;
       transform: translateY(-2px);
     }
 
-    .portfolio-home .secondary-action {
-      border: 1px solid rgba(255,255,255,.35);
-      color: #fff;
-    }
-
-    .portfolio-home .secondary-action:hover {
-      background: rgba(255,255,255,.1);
-      color: #fff;
-    }
-
-    .portfolio-home .hero-panel {
-      position: relative;
-      z-index: 2;
-      border: 1px solid rgba(255,255,255,.13);
-      border-radius: 20px;
+    .portfolio-home .hero-side-card {
       padding: 30px;
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 25px 60px rgba(0,0,0,.15);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--home-radius);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(12px);
     }
 
-    .portfolio-home .hero-panel-label {
-      color: var(--home-accent);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: .72rem;
+    .portfolio-home .hero-side-card h2 {
+      margin-bottom: 20px;
+      color: #fff;
+      font-size: 1.1rem;
       font-weight: 800;
-      margin-bottom: 25px;
     }
 
     .portfolio-home .capability-row {
@@ -213,71 +252,72 @@
     .portfolio-home .capability-icon {
       display: grid;
       place-items: center;
-      flex: 0 0 42px;
-      width: 42px;
-      height: 42px;
+      flex: 0 0 43px;
+      width: 43px;
+      height: 43px;
       border-radius: 11px;
-      background: rgba(56,197,186,.12);
-      color: var(--home-accent);
+      color: #ff5b60;
+      background: rgba(215,25,32,.15);
     }
 
     .portfolio-home .capability-row strong {
       display: block;
       color: #fff;
       font-size: .92rem;
-      margin-bottom: 3px;
     }
 
     .portfolio-home .capability-row p {
-      color: #acb9c6;
+      margin: 3px 0 0;
+      color: rgba(255,255,255,.62);
       font-size: .82rem;
-      margin: 0;
     }
 
-    /* INTRO */
-
-    .portfolio-home .intro-section {
-      background: #fff;
+    .portfolio-home .hero-bottom-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 5px;
+      background: var(--home-red);
     }
+
+    /* ABOUT */
 
     .portfolio-home .intro-card {
-      border-left: 4px solid var(--home-accent);
-      background: var(--home-light);
       padding: 30px;
-      border-radius: 0 15px 15px 0;
+      border: 1px solid var(--home-border);
+      border-left: 5px solid var(--home-red);
+      border-radius: 0 16px 16px 0;
+      background: var(--home-light);
     }
 
     .portfolio-home .intro-card p {
-      margin-bottom: 0;
-      color: #435166;
+      margin: 0;
+      color: #475467;
     }
 
-    /* PROJECTS */
-
-    .portfolio-home .projects-section {
-      background: var(--home-light);
-    }
+    /* FEATURED WORK */
 
     .portfolio-home .project-card {
       display: flex;
       flex-direction: column;
       height: 100%;
-      border: 1px solid var(--home-border);
-      border-radius: 20px;
-      background: #fff;
       overflow: hidden;
-      box-shadow: 0 14px 40px rgba(16,24,40,.055);
-      transition: transform .2s ease, box-shadow .2s ease;
+      border: 1px solid var(--home-border);
+      border-radius: var(--home-radius);
+      background: #fff;
+      box-shadow: var(--home-shadow);
+      transition: transform .25s ease,box-shadow .25s ease;
     }
 
     .portfolio-home .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 22px 48px rgba(16,24,40,.11);
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(16,24,40,.15);
     }
 
     .portfolio-home .project-banner {
-      min-height: 155px;
-      padding: 26px;
+      min-height: 195px;
+      padding: 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -285,30 +325,42 @@
     }
 
     .portfolio-home .project-banner.wells {
-      background: linear-gradient(135deg, #2a1216, #a61d27);
+      background: linear-gradient(135deg,#a80f15,#d71920);
     }
 
     .portfolio-home .project-banner.tiaa {
-      background: linear-gradient(135deg, #123b55, #28738b);
+      background: linear-gradient(135deg,#123b55,#28738b);
     }
 
     .portfolio-home .project-banner.honeywell {
-      background: linear-gradient(135deg, #202020, #555555);
+      background: linear-gradient(135deg,#202020,#484848);
+    }
+
+    .portfolio-home .project-banner-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
     .portfolio-home .project-type {
-      font-size: .72rem;
+      color: rgba(255,255,255,.8);
+      font-size: .73rem;
       font-weight: 800;
-      letter-spacing: .12em;
+      letter-spacing: .11em;
       text-transform: uppercase;
-      opacity: .85;
+    }
+
+    .portfolio-home .project-banner i {
+      font-size: 1.45rem;
+      color: rgba(255,255,255,.8);
     }
 
     .portfolio-home .project-banner h3 {
+      margin: 30px 0 0;
       color: #fff;
-      font-size: 1.6rem;
+      font-size: 1.75rem;
       font-weight: 800;
-      margin: 20px 0 0;
       letter-spacing: -.03em;
     }
 
@@ -316,175 +368,336 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      padding: 29px;
+      padding: 30px;
     }
 
     .portfolio-home .project-role {
-      color: #087e78;
+      margin-bottom: 15px;
+      color: var(--home-red-dark);
       font-size: .76rem;
       font-weight: 800;
+      letter-spacing: .07em;
       text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 13px;
     }
 
     .portfolio-home .project-body p {
+      margin-bottom: 22px;
       color: var(--home-muted);
       font-size: .93rem;
-      margin-bottom: 20px;
     }
 
     .portfolio-home .project-topics {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 25px;
+      margin-bottom: 27px;
     }
 
     .portfolio-home .topic {
-      padding: 6px 10px;
-      background: #eef3f6;
-      border-radius: 6px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--home-red-dark);
+      background: rgba(215,25,32,.08);
       font-size: .72rem;
-      font-weight: 700;
-      color: #405267;
+      font-weight: 800;
     }
 
     .portfolio-home .project-link {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      color: #087e78;
-      font-weight: 800;
-      font-size: .9rem;
+      gap: 10px;
       margin-top: auto;
+      color: var(--home-red-dark);
+      font-size: .91rem;
+      font-weight: 800;
     }
 
     .portfolio-home .project-link:hover {
-      color: #075d58;
+      color: var(--home-red);
     }
 
-    /* APPROACH */
+    /* PROCESS */
 
-    .portfolio-home .approach-section {
-      background: #fff;
-    }
-
-    .portfolio-home .approach-card {
+    .portfolio-home .process-card {
       height: 100%;
       padding: 30px;
       border: 1px solid var(--home-border);
-      border-radius: 17px;
+      border-radius: var(--home-radius);
       background: #fff;
+      box-shadow: var(--home-shadow);
     }
 
-    .portfolio-home .approach-number {
-      font-size: .78rem;
-      color: #087e78;
+    .portfolio-home .process-number {
+      display: inline-grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      margin-bottom: 23px;
+      border-radius: 50%;
+      background: var(--home-red);
+      color: #fff;
+      font-size: .85rem;
       font-weight: 800;
-      letter-spacing: .1em;
-      margin-bottom: 22px;
     }
 
-    .portfolio-home .approach-card h3 {
-      font-size: 1.13rem;
-      font-weight: 800;
+    .portfolio-home .process-card h3 {
       margin-bottom: 12px;
+      font-size: 1.1rem;
+      font-weight: 800;
     }
 
-    .portfolio-home .approach-card p {
+    .portfolio-home .process-card p {
+      margin: 0;
       color: var(--home-muted);
       font-size: .9rem;
-      margin-bottom: 0;
     }
 
     /* SKILLS */
 
-    .portfolio-home .skills-section {
-      background: #172330;
-      color: #fff;
-    }
-
-    .portfolio-home .skills-section .section-kicker {
-      color: var(--home-accent);
-    }
-
-    .portfolio-home .skills-section .section-description {
-      color: #afbdca;
-    }
-
-    .portfolio-home .skill-group {
+    .portfolio-home .skill-card {
       height: 100%;
-      padding: 28px;
+      padding: 30px;
       border: 1px solid rgba(255,255,255,.12);
-      border-radius: 16px;
-      background: rgba(255,255,255,.035);
+      border-radius: var(--home-radius);
+      background: rgba(255,255,255,.055);
     }
 
-    .portfolio-home .skill-group h3 {
-      font-size: 1.03rem;
-      font-weight: 800;
+    .portfolio-home .skill-icon {
+      margin-bottom: 20px;
+      color: #ff565c;
+      font-size: 1.55rem;
+    }
+
+    .portfolio-home .skill-card h3 {
+      margin-bottom: 20px;
       color: #fff;
-      margin-bottom: 17px;
+      font-size: 1.1rem;
+      font-weight: 800;
     }
 
-    .portfolio-home .skill-group ul {
-      list-style: none;
-      padding: 0;
+    .portfolio-home .skill-card ul {
       margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .portfolio-home .skill-group li {
-      color: #b7c3ce;
+    .portfolio-home .skill-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.72);
       font-size: .88rem;
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(255,255,255,.06);
     }
 
-    .portfolio-home .skill-group li:last-child {
+    .portfolio-home .skill-card li:last-child {
       border-bottom: 0;
     }
 
-    /* CTA */
+    /* CLOSING */
 
     .portfolio-home .closing-section {
-      background: #fff;
       text-align: center;
     }
 
+    .portfolio-home .closing-section .section-title {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .portfolio-home .closing-section p {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 30px;
       color: var(--home-muted);
     }
 
+    /* ============================================
+       COMPACT FLOATING TABLE OF CONTENTS
+       Small tab + popup above the tab
+       No overlay or full-height drawer
+    ============================================ */
+
+    .portfolio-home .floating-toc {
+      position: fixed;
+      right: 18px;
+      bottom: 20px;
+      z-index: 1100;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity .2s ease,
+                  transform .2s ease,
+                  visibility .2s ease;
+    }
+
+    .portfolio-home .floating-toc.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .portfolio-home .floating-toc-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-left: auto;
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 999px;
+      background: var(--home-charcoal);
+      color: #fff;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+      font-family: inherit;
+      font-size: .76rem;
+      font-weight: 800;
+      line-height: 1.2;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    .portfolio-home .floating-toc-toggle:hover,
+    .portfolio-home .floating-toc-toggle[aria-expanded="true"] {
+      background: var(--home-red-dark);
+    }
+
+    .portfolio-home .floating-toc-toggle i {
+      font-size: .78rem;
+    }
+
+    .portfolio-home .floating-toc-panel {
+      position: absolute;
+      right: 0;
+      bottom: calc(100% + 10px);
+      width: min(290px, calc(100vw - 30px));
+      max-height: min(62vh, 430px);
+      overflow-y: auto;
+      padding: 14px;
+      border: 1px solid var(--home-border);
+      border-radius: 13px;
+      background: #fff;
+      box-shadow: 0 14px 45px rgba(0,0,0,.18);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity .18s ease,
+                  transform .18s ease,
+                  visibility .18s ease;
+    }
+
+    .portfolio-home .floating-toc.open .floating-toc-panel {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .portfolio-home .floating-toc-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 2px 5px 10px;
+      border-bottom: 2px solid var(--home-red);
+    }
+
+    .portfolio-home .floating-toc-heading strong {
+      color: var(--home-ink);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .portfolio-home .floating-toc-close {
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      border: 0;
+      border-radius: 6px;
+      background: #f2f3f5;
+      color: #475467;
+      cursor: pointer;
+    }
+
+    .portfolio-home .floating-toc-category {
+      margin: 12px 6px 5px;
+      color: var(--home-red-dark);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-home .floating-toc-links a {
+      display: block;
+      padding: 7px 9px;
+      margin: 1px 0;
+      border-radius: 6px;
+      color: #344054;
+      font-size: .76rem;
+      font-weight: 700;
+      line-height: 1.4;
+      transition: background .15s ease,color .15s ease;
+    }
+
+    .portfolio-home .floating-toc-links a:hover,
+    .portfolio-home .floating-toc-links a.active {
+      background: #fff0f0;
+      color: var(--home-red-dark);
+    }
+
+    /* RESPONSIVE */
+
     @media (max-width: 991px) {
-      .portfolio-home .home-hero {
-        padding: 125px 0 85px;
+      .portfolio-home .hero {
+        padding: 120px 0 85px;
       }
 
-      .portfolio-home .hero-panel {
-        margin-top: 40px;
+      .portfolio-home .hero-side-card {
+        margin-top: 30px;
       }
 
-      .portfolio-home .section-padding {
-        padding: 70px 0;
+      .portfolio-home .section-space {
+        padding: 75px 0;
       }
     }
 
     @media (max-width: 575px) {
-      .portfolio-home .hero-title {
-        font-size: 3.2rem;
+      .portfolio-home .hero {
+        padding: 100px 0 70px;
+      }
+
+      .portfolio-home .hero h1 {
+        font-size: 3.1rem;
+      }
+
+      .portfolio-home .section-space {
+        padding: 65px 0;
       }
 
       .portfolio-home .hero-actions {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
       }
 
       .portfolio-home .hero-actions a {
         width: 100%;
+      }
+
+      .portfolio-home .floating-toc {
+        right: 12px;
+        bottom: 14px;
+      }
+
+      .portfolio-home .floating-toc-toggle {
+        padding: 8px 12px;
+        font-size: .72rem;
+      }
+
+      .portfolio-home .floating-toc-panel {
+        width: min(280px, calc(100vw - 24px));
       }
     }
 
@@ -494,7 +707,10 @@
       }
 
       .portfolio-home .project-card,
-      .portfolio-home .primary-action {
+      .portfolio-home .primary-action,
+      .portfolio-home .floating-toc,
+      .portfolio-home .floating-toc-toggle,
+      .portfolio-home .floating-toc-panel {
         transition: none;
       }
     }
@@ -503,33 +719,97 @@
 
 <body>
 
-  <!-- SHARED NAVIGATION -->
+  <!-- SHARED NAVIGATION: LOADED EXTERNALLY -->
   <div id="nav-placeholder"></div>
 
   <main class="portfolio-home">
 
-    <!-- HERO -->
-    <section class="home-hero">
+    <!-- =========================================
+         COMPACT TABLE OF CONTENTS
+    ========================================== -->
+
+    <div class="floating-toc" id="floatingToc">
+
+      <nav
+        class="floating-toc-panel"
+        id="floatingTocPanel"
+        aria-label="Portfolio table of contents"
+        aria-hidden="true"
+        inert
+      >
+        <div class="floating-toc-heading">
+          <strong>Table of Contents</strong>
+
+          <button
+            type="button"
+            class="floating-toc-close"
+            id="floatingTocClose"
+            aria-label="Close table of contents"
+          >
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="floating-toc-links">
+
+          <div class="floating-toc-category">Introduction</div>
+          <a href="#home">01. Home</a>
+          <a href="#about">02. About My Work</a>
+
+          <div class="floating-toc-category">Portfolio</div>
+          <a href="#featured-work">03. Featured Work</a>
+          <a href="#wells-fargo">04. Wells Fargo</a>
+          <a href="#tiaa">05. TIAA</a>
+          <a href="#honeywell">06. Honeywell / SAP</a>
+
+          <div class="floating-toc-category">Professional Approach</div>
+          <a href="#approach">07. How I Work</a>
+          <a href="#skills">08. Skills & Expertise</a>
+          <a href="#explore">09. Explore More</a>
+
+        </div>
+      </nav>
+
+      <button
+        type="button"
+        class="floating-toc-toggle"
+        id="floatingTocToggle"
+        aria-controls="floatingTocPanel"
+        aria-expanded="false"
+        aria-label="Open table of contents"
+      >
+        <i class="fas fa-list-ul" aria-hidden="true"></i>
+        <span>Contents</span>
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+      </button>
+
+    </div>
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <header class="hero" id="home">
       <div class="container">
         <div class="row align-items-center g-5">
 
           <div class="col-lg-8">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-up">
 
               <div class="hero-eyebrow">
                 Product Ownership • Business Analysis • Agile Delivery
               </div>
 
-              <h1 class="hero-title">
-                Faraz<br />
-                <span>Uddin.</span>
+              <h1>
+                Faraz<br>
+                <span class="text-accent">Uddin.</span>
               </h1>
 
               <p class="hero-description">
                 I bridge business strategy and technology to turn complex
                 requirements into practical, measurable product solutions.
-                My experience spans financial services, enterprise
-                workflows, risk and credit systems, and Agile product delivery.
+                My experience spans financial services, enterprise workflows,
+                risk and credit systems, and Agile product delivery.
               </p>
 
               <div class="hero-tags">
@@ -539,16 +819,10 @@
                 <span class="hero-tag">Certified Scrum Product Owner</span>
               </div>
 
-              <div class="hero-actions d-flex flex-wrap gap-3">
+              <div class="hero-actions">
                 <a href="#featured-work" class="primary-action">
                   Explore My Work
                   <i class="fas fa-arrow-right"></i>
-                </a>
-
-                <a href="images/TIAA/Faraz_Uddin_Resume_OCT26..pdf"
-                   class="secondary-action">
-                  <i class="fas fa-file-alt"></i>
-                  View Resume
                 </a>
               </div>
 
@@ -556,11 +830,9 @@
           </div>
 
           <div class="col-lg-4">
-            <div class="hero-panel">
+            <div class="hero-side-card" data-aos="fade-left">
 
-              <div class="hero-panel-label">
-                Core Capabilities
-              </div>
+              <h2>Core Capabilities</h2>
 
               <div class="capability-row">
                 <div class="capability-icon">
@@ -577,7 +849,7 @@
                   <i class="fas fa-project-diagram"></i>
                 </div>
                 <div>
-                  <strong>Business & Technical Analysis</strong>
+                  <strong>Business &amp; Technical Analysis</strong>
                   <p>Requirements, workflows, APIs and system integrations</p>
                 </div>
               </div>
@@ -607,55 +879,65 @@
 
         </div>
       </div>
-    </section>
 
-    <!-- INTRODUCTION -->
-    <section class="intro-section section-padding">
+      <div class="hero-bottom-line"></div>
+    </header>
+
+    <!-- =========================================
+         ABOUT
+    ========================================== -->
+
+    <section class="section-space" id="about">
       <div class="container">
         <div class="row align-items-center g-5">
 
-          <div class="col-lg-5">
-            <span class="section-kicker">About My Work</span>
-            <h2 class="section-heading">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="section-label">01 / About My Work</div>
+            <h2 class="section-title">
               Connecting business needs with technical execution.
             </h2>
           </div>
 
-          <div class="col-lg-7">
-            <p class="section-description">
+          <div class="col-lg-7" data-aos="fade-left">
+
+            <p class="section-intro mb-4">
               My background combines product ownership, business analysis,
               stakeholder management and Agile delivery within complex
               enterprise environments.
             </p>
 
-            <p class="section-description">
+            <p class="text-muted mb-4">
               I've worked with cross-functional teams to understand business
               problems, define requirements, manage dependencies, support
               testing and guide solutions through delivery.
             </p>
 
-            <div class="intro-card mt-4">
+            <div class="intro-card">
               <p>
-                <strong>My approach:</strong> Understand the problem,
-                identify the business value, collaborate with stakeholders,
-                translate needs into actionable product work, and validate
-                that the solution delivers the intended outcome.
+                <strong>My approach:</strong>
+                Understand the problem, identify the business value,
+                collaborate with stakeholders, translate needs into
+                actionable product work, and validate that the solution
+                delivers the intended outcome.
               </p>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED WORK -->
-    <section id="featured-work" class="projects-section section-padding">
+    <!-- =========================================
+         FEATURED WORK
+    ========================================== -->
+
+    <section class="section-space soft-section" id="featured-work">
       <div class="container">
 
-        <div class="mb-5">
-          <span class="section-kicker">Portfolio</span>
-          <h2 class="section-heading">Featured Work & Case Studies</h2>
-          <p class="section-description">
+        <div class="mb-5" data-aos="fade-up">
+          <div class="section-label">02 / Portfolio</div>
+          <h2 class="section-title">Featured Work &amp; Case Studies.</h2>
+          <p class="section-intro">
             A selection of enterprise product initiatives, professional
             experience and applied product-management case studies.
           </p>
@@ -664,16 +946,22 @@
         <div class="row g-4">
 
           <!-- WELLS FARGO -->
-          <div class="col-lg-4 col-md-6">
+
+          <div class="col-lg-4 col-md-6" id="wells-fargo" data-aos="fade-up">
             <article class="project-card">
 
               <div class="project-banner wells">
-                <span class="project-type">Professional Experience</span>
+                <div class="project-banner-top">
+                  <span class="project-type">Professional Experience</span>
+                  <i class="fas fa-building"></i>
+                </div>
                 <h3>Wells Fargo</h3>
               </div>
 
               <div class="project-body">
-                <div class="project-role">Merchant Services • Product Owner</div>
+                <div class="project-role">
+                  Merchant Services • Product Owner
+                </div>
 
                 <p>
                   Supported modernization of Merchant Services Operational
@@ -683,7 +971,7 @@
 
                 <div class="project-topics">
                   <span class="topic">Pega</span>
-                  <span class="topic">Risk & Credit</span>
+                  <span class="topic">Risk &amp; Credit</span>
                   <span class="topic">APIs</span>
                   <span class="topic">Workflow Automation</span>
                   <span class="topic">Agile</span>
@@ -699,17 +987,26 @@
           </div>
 
           <!-- TIAA -->
-          <div class="col-lg-4 col-md-6">
+
+          <div
+            class="col-lg-4 col-md-6"
+            id="tiaa"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <article class="project-card">
 
               <div class="project-banner tiaa">
-                <span class="project-type">Professional Experience</span>
+                <div class="project-banner-top">
+                  <span class="project-type">Professional Experience</span>
+                  <i class="fas fa-chart-line"></i>
+                </div>
                 <h3>TIAA</h3>
               </div>
 
               <div class="project-body">
                 <div class="project-role">
-                  Financial Services • Product & Agile Delivery
+                  Financial Services • Product &amp; Agile Delivery
                 </div>
 
                 <p>
@@ -736,11 +1033,20 @@
           </div>
 
           <!-- HONEYWELL -->
-          <div class="col-lg-4 col-md-6">
+
+          <div
+            class="col-lg-4 col-md-6"
+            id="honeywell"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <article class="project-card">
 
               <div class="project-banner honeywell">
-                <span class="project-type">Independent Product Case Study</span>
+                <div class="project-banner-top">
+                  <span class="project-type">Independent Product Case Study</span>
+                  <i class="fas fa-industry"></i>
+                </div>
                 <h3>Honeywell / SAP</h3>
               </div>
 
@@ -764,8 +1070,10 @@
                   <span class="topic">Strategy</span>
                 </div>
 
-                <a href="honeywell-case-study-floating-toc.html"
-                   class="project-link">
+                <a
+                  href="honeywell-case-study-floating-toc.html"
+                  class="project-link"
+                >
                   Explore Case Study
                   <i class="fas fa-arrow-right"></i>
                 </a>
@@ -775,20 +1083,24 @@
           </div>
 
         </div>
-
       </div>
     </section>
 
-    <!-- PRODUCT APPROACH -->
-    <section class="approach-section section-padding">
+    <!-- =========================================
+         HOW I WORK
+    ========================================== -->
+
+    <section class="section-space" id="approach">
       <div class="container">
 
-        <div class="mb-5">
-          <span class="section-kicker">How I Work</span>
-          <h2 class="section-heading">
+        <div class="mb-5" data-aos="fade-up">
+          <div class="section-label">03 / How I Work</div>
+
+          <h2 class="section-title">
             From business problem to product delivery.
           </h2>
-          <p class="section-description">
+
+          <p class="section-intro">
             A practical approach to moving work from discovery through
             implementation and continuous improvement.
           </p>
@@ -796,9 +1108,9 @@
 
         <div class="row g-4">
 
-          <div class="col-md-6 col-lg-3">
-            <div class="approach-card">
-              <div class="approach-number">01 / DISCOVER</div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up">
+            <div class="process-card">
+              <div class="process-number">01</div>
               <h3>Understand the Problem</h3>
               <p>
                 Engage stakeholders, identify user needs, examine current
@@ -807,20 +1119,28 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3">
-            <div class="approach-card">
-              <div class="approach-number">02 / DEFINE</div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="process-card">
+              <div class="process-number">02</div>
               <h3>Shape the Solution</h3>
               <p>
-                Establish scope, document requirements, identify
-                dependencies and prioritize work based on value and risk.
+                Establish scope, document requirements, identify dependencies
+                and prioritize work based on value and risk.
               </p>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3">
-            <div class="approach-card">
-              <div class="approach-number">03 / DELIVER</div>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="process-card">
+              <div class="process-number">03</div>
               <h3>Execute with the Team</h3>
               <p>
                 Refine the backlog, support sprint planning, resolve
@@ -829,13 +1149,17 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3">
-            <div class="approach-card">
-              <div class="approach-number">04 / VALIDATE</div>
-              <h3>Measure & Improve</h3>
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="process-card">
+              <div class="process-number">04</div>
+              <h3>Measure &amp; Improve</h3>
               <p>
-                Support user acceptance testing, review outcomes,
-                gather feedback and identify future enhancements.
+                Validate outcomes, collect feedback, review metrics
+                and identify opportunities for continuous improvement.
               </p>
             </div>
           </div>
@@ -844,60 +1168,95 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="skills-section section-padding">
+    <!-- =========================================
+         SKILLS
+    ========================================== -->
+
+    <section class="section-space dark-section" id="skills">
       <div class="container">
 
-        <div class="mb-5">
-          <span class="section-kicker">Capabilities</span>
-          <h2 class="section-heading">Skills & Expertise</h2>
-          <p class="section-description">
-            Business, product and technical capabilities used to support
-            enterprise software delivery.
+        <div class="mb-5" data-aos="fade-up">
+          <div class="section-label">04 / Skills &amp; Expertise</div>
+
+          <h2 class="section-title">
+            Product, delivery and technical capabilities.
+          </h2>
+
+          <p class="section-intro">
+            Experience connecting business needs, Agile execution
+            and enterprise technology.
           </p>
         </div>
 
         <div class="row g-4">
 
-          <div class="col-lg-4 col-md-6">
-            <div class="skill-group">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="skill-card">
+
+              <div class="skill-icon">
+                <i class="fas fa-layer-group"></i>
+              </div>
+
               <h3>Product Management</h3>
+
               <ul>
-                <li>Product Ownership</li>
                 <li>Product Discovery</li>
-                <li>Roadmap & Backlog Management</li>
+                <li>Roadmap &amp; Backlog Management</li>
                 <li>Stakeholder Prioritization</li>
-                <li>User Stories & Acceptance Criteria</li>
-                <li>Business Value & KPIs</li>
+                <li>User Stories &amp; Acceptance Criteria</li>
+                <li>Business Value &amp; KPIs</li>
               </ul>
+
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="skill-group">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="skill-card">
+
+              <div class="skill-icon">
+                <i class="fas fa-sync-alt"></i>
+              </div>
+
               <h3>Agile Delivery</h3>
+
               <ul>
-                <li>Scrum & Kanban</li>
-                <li>Sprint Planning & Refinement</li>
+                <li>Scrum &amp; Kanban</li>
+                <li>Sprint Planning &amp; Refinement</li>
                 <li>Scaled Agile Framework (SAFe)</li>
                 <li>Program Increment (PI) Planning</li>
                 <li>User Acceptance Testing (UAT)</li>
-                <li>Release Planning & Readiness</li>
+                <li>Release Planning &amp; Readiness</li>
               </ul>
+
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="skill-group">
-              <h3>Technical & Business Analysis</h3>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="skill-card">
+
+              <div class="skill-icon">
+                <i class="fas fa-code"></i>
+              </div>
+
+              <h3>Technical &amp; Business Analysis</h3>
+
               <ul>
                 <li>Business Process Mapping</li>
                 <li>Application Programming Interfaces (APIs)</li>
-                <li>Pega Workflow & Case Management</li>
-                <li>SQL & Data Analysis</li>
+                <li>Pega Workflow &amp; Case Management</li>
+                <li>SQL &amp; Data Analysis</li>
                 <li>System Integrations</li>
-                <li>Data Mapping & Reporting</li>
+                <li>Data Mapping &amp; Reporting</li>
               </ul>
+
             </div>
           </div>
 
@@ -905,24 +1264,27 @@
       </div>
     </section>
 
-    <!-- CLOSING -->
-    <section class="closing-section section-padding">
-      <div class="container">
+    <!-- =========================================
+         CLOSING
+    ========================================== -->
 
-        <span class="section-kicker">Explore More</span>
+    <section class="section-space closing-section" id="explore">
+      <div class="container" data-aos="fade-up">
 
-        <h2 class="section-heading">
-          Explore the work behind the experience.
+        <div class="section-label">05 / Explore More</div>
+
+        <h2 class="section-title">
+          Explore my product and technology work.
         </h2>
 
         <p>
-          Each case study provides a closer look at the business problems,
-          product decisions, technical context and delivery practices
-          involved in enterprise product work.
+          Learn more about my approach to product ownership,
+          business analysis, Agile delivery and enterprise
+          technology through my portfolio and case studies.
         </p>
 
         <a href="#featured-work" class="primary-action">
-          View Featured Work
+          View Case Studies
           <i class="fas fa-arrow-right"></i>
         </a>
 
@@ -931,13 +1293,208 @@
 
   </main>
 
-  <!-- SHARED FOOTER -->
+  <!-- SHARED FOOTER: LOADED EXTERNALLY -->
   <div id="footer-placeholder"></div>
 
   <!-- EXISTING SITE SCRIPTS -->
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
   <script src="js/load-components.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // Initialize existing scroll animations.
+      if (typeof AOS !== "undefined") {
+        AOS.init({
+          duration: 700,
+          once: true,
+          offset: 70
+        });
+      }
+
+      // ==========================================
+      // COMPACT FLOATING TABLE OF CONTENTS
+      // ==========================================
+
+      const toc = document.getElementById("floatingToc");
+      const toggle = document.getElementById("floatingTocToggle");
+      const panel = document.getElementById("floatingTocPanel");
+      const closeButton = document.getElementById("floatingTocClose");
+      const links = Array.from(
+        document.querySelectorAll(".floating-toc-links a")
+      );
+
+      if (!toc || !toggle || !panel || !closeButton) {
+        return;
+      }
+
+      let footerVisible = false;
+
+      function openToc() {
+        if (!toc.classList.contains("visible")) return;
+
+        toc.classList.add("open");
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("aria-label", "Close table of contents");
+        panel.setAttribute("aria-hidden", "false");
+        panel.removeAttribute("inert");
+      }
+
+      function closeToc(restoreFocus = false) {
+        const wasOpen = toc.classList.contains("open");
+
+        toc.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open table of contents");
+        panel.setAttribute("aria-hidden", "true");
+
+        if (restoreFocus && wasOpen) {
+          toggle.focus();
+        }
+
+        panel.setAttribute("inert", "");
+      }
+
+      function updateTocVisibility() {
+        const hasScrolled = window.scrollY > 180;
+
+        // Footer may be loaded asynchronously.
+        const footer = document.getElementById("footer-placeholder");
+        let footerInView = false;
+
+        if (footer) {
+          const rect = footer.getBoundingClientRect();
+
+          footerInView =
+            rect.height > 0 &&
+            rect.top < window.innerHeight &&
+            rect.bottom > 0;
+        }
+
+        footerVisible = footerInView;
+
+        const shouldShow = hasScrolled && !footerVisible;
+
+        toc.classList.toggle("visible", shouldShow);
+
+        if (!shouldShow) {
+          closeToc();
+          toggle.setAttribute("tabindex", "-1");
+        } else {
+          toggle.removeAttribute("tabindex");
+        }
+      }
+
+      toggle.addEventListener("click", function () {
+        if (toc.classList.contains("open")) {
+          closeToc();
+        } else {
+          openToc();
+        }
+      });
+
+      closeButton.addEventListener("click", function () {
+        closeToc(true);
+      });
+
+      // Close when selecting a section.
+      links.forEach(function (link) {
+        link.addEventListener("click", function () {
+          closeToc();
+        });
+      });
+
+      // Close when clicking outside the popup.
+      document.addEventListener("click", function (event) {
+        if (
+          toc.classList.contains("open") &&
+          !toc.contains(event.target)
+        ) {
+          closeToc();
+        }
+      });
+
+      // Close with Escape.
+      document.addEventListener("keydown", function (event) {
+        if (
+          event.key === "Escape" &&
+          toc.classList.contains("open")
+        ) {
+          closeToc(true);
+        }
+      });
+
+      // Highlight the current section in the TOC.
+      function updateActiveLink() {
+        const scrollPosition = window.scrollY + 150;
+        let activeId = "home";
+
+        links.forEach(function (link) {
+          const targetId = link.getAttribute("href").slice(1);
+          const section = document.getElementById(targetId);
+
+          if (section && section.offsetTop <= scrollPosition) {
+            activeId = targetId;
+          }
+        });
+
+        links.forEach(function (link) {
+          const targetId = link.getAttribute("href").slice(1);
+          const isActive = targetId === activeId;
+
+          link.classList.toggle("active", isActive);
+
+          if (isActive) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      // Scroll and resize handling.
+      let scrollScheduled = false;
+
+      function onViewportChange() {
+        if (scrollScheduled) return;
+
+        scrollScheduled = true;
+
+        requestAnimationFrame(function () {
+          updateTocVisibility();
+          updateActiveLink();
+          scrollScheduled = false;
+        });
+      }
+
+      window.addEventListener("scroll", onViewportChange, {
+        passive: true
+      });
+
+      window.addEventListener("resize", onViewportChange);
+
+      // Watch for the externally loaded footer.
+      const footerPlaceholder =
+        document.getElementById("footer-placeholder");
+
+      if (footerPlaceholder && typeof MutationObserver !== "undefined") {
+        const footerMutationObserver = new MutationObserver(function () {
+          updateTocVisibility();
+        });
+
+        footerMutationObserver.observe(footerPlaceholder, {
+          childList: true,
+          subtree: true
+        });
+      }
+
+      // Initial state.
+      updateTocVisibility();
+      updateActiveLink();
+
+    });
+  </script>
 
 </body>
 </html>

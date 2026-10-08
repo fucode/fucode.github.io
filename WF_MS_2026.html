@@ -752,6 +752,26 @@
         padding: 25px;
       }
     }
+
+    /* Wells Fargo floating table of contents */
+    .case-study-page [id] { scroll-margin-top: 105px; }
+    .case-study-page .wf-toc-toggle { position:fixed; right:22px; top:110px; z-index:1050; border:1px solid rgba(255,255,255,.2); border-radius:11px; background:#242424; color:#fff; padding:12px 17px; box-shadow:0 10px 28px rgba(0,0,0,.24); font-size:.85rem; font-weight:800; display:flex; gap:10px; align-items:center; cursor:pointer; }
+    .case-study-page .wf-toc-toggle:hover { background:var(--wf-red-dark); }
+    .case-study-page .wf-toc-overlay { position:fixed; inset:0; z-index:1100; background:rgba(10,10,10,.6); opacity:0; visibility:hidden; transition:opacity .25s,visibility .25s; }
+    .case-study-page .wf-toc-overlay.open { opacity:1; visibility:visible; }
+    .case-study-page .wf-toc-drawer { position:fixed; right:0; top:0; width:min(390px,92vw); height:100vh; height:100dvh; z-index:1101; background:#fff; box-shadow:-15px 0 55px rgba(0,0,0,.22); display:flex; flex-direction:column; transform:translateX(105%); visibility:hidden; transition:transform .28s,visibility .28s; }
+    .case-study-page .wf-toc-drawer.open { transform:translateX(0); visibility:visible; }
+    .case-study-page .wf-toc-head { display:flex; align-items:center; justify-content:space-between; background:#242424; color:#fff; padding:24px; border-bottom:4px solid var(--wf-red); }
+    .case-study-page .wf-toc-head h2 { color:#fff; font-size:1.1rem; font-weight:800; margin:0; }
+    .case-study-page .wf-toc-close { background:transparent; color:#fff; border:0; font-size:1.6rem; cursor:pointer; }
+    .case-study-page .wf-toc-links { padding:22px; overflow-y:auto; }
+    .case-study-page .wf-toc-category { font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--wf-red-dark); margin:22px 10px 10px; }
+    .case-study-page .wf-toc-category:first-child { margin-top:0; }
+    .case-study-page .wf-toc-links a { display:block; padding:11px 13px; margin:3px 0; border-radius:8px; font-size:.88rem; font-weight:700; color:#344054; }
+    .case-study-page .wf-toc-links a:hover,.case-study-page .wf-toc-links a.active { color:var(--wf-red-dark); background:#fff0f0; }
+    body.wf-toc-open { overflow:hidden; }
+    @media(max-width:575px) { .case-study-page .wf-toc-toggle { top:auto; bottom:22px; right:16px; } }
+    @media(prefers-reduced-motion:reduce) { .case-study-page .wf-toc-drawer,.case-study-page .wf-toc-overlay { transition:none; } }
   </style>
 </head>
 
@@ -765,6 +785,34 @@
 
 
   <main class="case-study-page">
+
+    <!-- Floating Wells Fargo table of contents -->
+    <button type="button" class="wf-toc-toggle" id="wfTocToggle" aria-controls="wfTocDrawer" aria-expanded="false"><i class="fas fa-list-ul" aria-hidden="true"></i> Table of Contents</button>
+    <div class="wf-toc-overlay" id="wfTocOverlay" aria-hidden="true"></div>
+    <aside class="wf-toc-drawer" id="wfTocDrawer" aria-label="Wells Fargo table of contents" aria-hidden="true" inert>
+      <div class="wf-toc-head"><h2>Table of Contents</h2><button type="button" class="wf-toc-close" id="wfTocClose" aria-label="Close table of contents">&times;</button></div>
+      <nav class="wf-toc-links" aria-label="Case study sections">
+        <div class="wf-toc-category">Introduction</div>
+        <a href="#overview">01. Overview</a>
+        <a href="#at-a-glance">02. At a Glance</a>
+        <a href="#msow-platform">03. MSOW Platform</a>
+        <a href="#product-portfolio">04. Product Portfolio</a>
+        <div class="wf-toc-category">Workflows & Architecture</div>
+        <a href="#technical-architecture">05. Technical Architecture</a>
+        <a href="#rpa-deep-dive">06. RPA Deep Dive</a>
+        <a href="#smb-deep-dive">07. SMB Deep Dive</a>
+        <a href="#rpa-vs-smb">08. RPA vs. SMB</a>
+        <a href="#data-architecture">09. Data & Architecture</a>
+        <div class="wf-toc-category">Delivery & Impact</div>
+        <a href="#my-contribution">10. My Contribution</a>
+        <a href="#delivery-approach">11. Delivery Approach</a>
+        <a href="#uat">12. User Acceptance Testing</a>
+        <a href="#outcomes">13. Outcomes</a>
+        <div class="wf-toc-category">Portfolio</div>
+        <a href="index.html">&larr; Back to Portfolio</a>
+      </nav>
+    </aside>
+
 
     <!-- =========================================================
          HERO
@@ -895,7 +943,7 @@
          01 OVERVIEW
     ========================================================= -->
 
-    <section class="section-space">
+    <section class="section-space" id="overview">
 
       <div class="container">
 
@@ -953,7 +1001,7 @@
          AT A GLANCE
     ========================================================= -->
 
-    <section class="section-space-sm soft-section">
+    <section class="section-space-sm soft-section" id="at-a-glance">
 
       <div class="container">
 
@@ -1066,7 +1114,7 @@
          02 MSOW PLATFORM
     ========================================================= -->
 
-    <section class="section-space">
+    <section class="section-space" id="msow-platform">
 
       <div class="container">
 
@@ -1176,7 +1224,7 @@
          03 PRODUCT PORTFOLIO
     ========================================================= -->
 
-    <section class="section-space soft-section">
+    <section class="section-space soft-section" id="product-portfolio">
 
       <div class="container">
 
@@ -1358,7 +1406,7 @@
          04 TECHNICAL ARCHITECTURE
     ========================================================= -->
 
-    <section class="section-space dark-section">
+    <section class="section-space dark-section" id="technical-architecture">
 
       <div class="container">
 
@@ -1594,7 +1642,7 @@
          UPDATED LAYOUT
     ========================================================= -->
 
-    <section class="section-space">
+    <section class="section-space" id="rpa-deep-dive">
 
       <div class="container">
 
@@ -1886,7 +1934,7 @@
          06 SMB DEEP DIVE
     ========================================================= -->
 
-    <section class="section-space soft-section">
+    <section class="section-space soft-section" id="smb-deep-dive">
 
       <div class="container">
 
@@ -2115,7 +2163,7 @@
          07 RPA VS SMB
     ========================================================= -->
 
-    <section class="section-space">
+    <section class="section-space" id="rpa-vs-smb">
 
       <div class="container">
 
@@ -2232,7 +2280,7 @@
          DATA & ARCHITECTURE TERMINOLOGY
     ========================================================= -->
 
-    <section class="section-space dark-section">
+    <section class="section-space dark-section" id="data-architecture">
 
       <div class="container">
 
@@ -2337,7 +2385,7 @@
          08 MY CONTRIBUTION
     ========================================================= -->
 
-    <section class="section-space">
+    <section class="section-space" id="my-contribution">
 
       <div class="container">
 
@@ -2500,7 +2548,7 @@
          09 DELIVERY APPROACH
     ========================================================= -->
 
-    <section class="section-space soft-section">
+    <section class="section-space soft-section" id="delivery-approach">
 
       <div class="container">
 
@@ -2659,7 +2707,7 @@
          10 UAT
     ========================================================= -->
 
-    <section class="section-space">
+    <section class="section-space" id="uat">
 
       <div class="container">
 
@@ -2742,7 +2790,7 @@
          11 OUTCOMES
     ========================================================= -->
 
-    <section class="section-space soft-section">
+    <section class="section-space soft-section" id="outcomes">
 
       <div class="container">
 
@@ -2880,6 +2928,29 @@
         offset: 70
       });
     }
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle=document.getElementById('wfTocToggle');
+      const drawer=document.getElementById('wfTocDrawer');
+      const overlay=document.getElementById('wfTocOverlay');
+      const closeButton=document.getElementById('wfTocClose');
+      if(!toggle||!drawer||!overlay||!closeButton)return;
+      const links=Array.from(drawer.querySelectorAll('a[href^="#"]'));
+      let previousFocus=null;
+      function openToc(){previousFocus=document.activeElement;drawer.inert=false;drawer.classList.add('open');overlay.classList.add('open');drawer.setAttribute('aria-hidden','false');toggle.setAttribute('aria-expanded','true');document.body.classList.add('wf-toc-open');closeButton.focus();}
+      function closeToc(restoreFocus=true){drawer.classList.remove('open');overlay.classList.remove('open');drawer.setAttribute('aria-hidden','true');drawer.inert=true;toggle.setAttribute('aria-expanded','false');document.body.classList.remove('wf-toc-open');if(restoreFocus&&previousFocus&&previousFocus.isConnected)previousFocus.focus();}
+      toggle.addEventListener('click',()=>drawer.classList.contains('open')?closeToc():openToc());
+      closeButton.addEventListener('click',()=>closeToc());
+      overlay.addEventListener('click',()=>closeToc());
+      links.forEach(link=>link.addEventListener('click',()=>closeToc(false)));
+      document.addEventListener('keydown',function(e){if(!drawer.classList.contains('open'))return;if(e.key==='Escape'){closeToc();return;}if(e.key==='Tab'){const focusable=Array.from(drawer.querySelectorAll('a[href],button:not([disabled])'));const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+      const sections=links.map(a=>document.getElementById(a.hash.slice(1))).filter(Boolean);
+      function updateActive(){let current=sections[0]?.id;sections.forEach(section=>{if(section.getBoundingClientRect().top<=180)current=section.id;});links.forEach(link=>{const active=link.hash==='#'+current;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});}
+      window.addEventListener('scroll',updateActive,{passive:true});updateActive();
+    });
   </script>
 
 </body>
